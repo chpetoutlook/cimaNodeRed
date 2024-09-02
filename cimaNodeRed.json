@@ -133,6 +133,234 @@
         "h": 768
     },
     {
+        "id": "f5c0254a8e87cb9e",
+        "type": "group",
+        "z": "751808589a92b14a",
+        "name": "Start Chrome",
+        "style": {
+            "fill": "#d1d1d1",
+            "label": true
+        },
+        "nodes": [
+            "f50fabff5ccdccb5",
+            "d59cd583374d3ca9",
+            "0a3d795a6df8b011",
+            "f0411fe6a95bbb08",
+            "4061504cd22b6086",
+            "862039fcefb0f096",
+            "4bdf6071bca71ca2",
+            "24967ce1cea89b9d",
+            "0f7be316f403642d",
+            "3abaeb48b16ac9eb"
+        ],
+        "x": 194,
+        "y": 39,
+        "w": 972,
+        "h": 282
+    },
+    {
+        "id": "b049f2a3e89c94a6",
+        "type": "group",
+        "z": "751808589a92b14a",
+        "name": "",
+        "style": {
+            "fill": "#d1d1d1",
+            "label": true
+        },
+        "nodes": [
+            "9489581a8094c0b6"
+        ],
+        "x": 544,
+        "y": 1159,
+        "w": 292,
+        "h": 82
+    },
+    {
+        "id": "6894234cd3cf5d07",
+        "type": "group",
+        "z": "b326d8d077e77e7a",
+        "name": "Short Task Loop",
+        "style": {
+            "fill": "#e3f3d3",
+            "label": true
+        },
+        "nodes": [
+            "1638a67c56865971",
+            "8b89f329a82bfed6",
+            "77f2f541c83fdbc3",
+            "a7d8108a4e153280",
+            "c4c16bdf71735fe1",
+            "4a2c4610f96ec367",
+            "837ca3dddd6d3f88"
+        ],
+        "x": 474,
+        "y": 539,
+        "w": 692,
+        "h": 222
+    },
+    {
+        "id": "c803e0682d074b98",
+        "type": "group",
+        "z": "b326d8d077e77e7a",
+        "name": "Short Task Loop",
+        "style": {
+            "fill": "#e3f3d3",
+            "label": true
+        },
+        "nodes": [
+            "f7833adb07fe5494",
+            "58e089ec8917c51c",
+            "96d76c6fe0e4d003",
+            "c097527e1ff7411a",
+            "ef5902f3dabd7fff",
+            "5e1437b93e12f451",
+            "724c55b43495a9e4"
+        ],
+        "x": 1194,
+        "y": 539,
+        "w": 692,
+        "h": 222
+    },
+    {
+        "id": "99c77abbc117cf9f",
+        "type": "group",
+        "z": "b326d8d077e77e7a",
+        "name": "Fine Tune & Debug Loop",
+        "style": {
+            "fill": "#e3f3d3",
+            "label": true
+        },
+        "nodes": [
+            "dc807127b4407f93",
+            "5099ba28e81c2373",
+            "ad20311fd2c73a10",
+            "99c5558fb42f69fc",
+            "83e01b980d591a8c",
+            "7c015af7f9489466",
+            "995ad83b99377710"
+        ],
+        "x": 1194,
+        "y": 779,
+        "w": 692,
+        "h": 222
+    },
+    {
+        "id": "4797c7b0a9eb125d",
+        "type": "group",
+        "z": "b326d8d077e77e7a",
+        "name": "Review for errors; edge cases",
+        "style": {
+            "fill": "#e3f3d3",
+            "label": true
+        },
+        "nodes": [
+            "0713676a3c782313",
+            "c4e873678cb4c841",
+            "57a2da1d197a98db",
+            "ac30414c6655dd06",
+            "d8a4a809a1dcaad1",
+            "f322d3b239caa967",
+            "107a09284f0dc8c6"
+        ],
+        "x": 474,
+        "y": 779,
+        "w": 692,
+        "h": 222
+    },
+    {
+        "id": "ad9ab3ccb98c5479",
+        "type": "group",
+        "z": "25ffd91f1979976d",
+        "name": "Start Chrome",
+        "style": {
+            "fill": "#d1d1d1",
+            "label": true
+        },
+        "nodes": [
+            "50b5ebf17c38bd1c",
+            "288cc212527de778",
+            "e0f37b3e31c3903c",
+            "47dc79bad9bac696",
+            "41c65bc386f2efd0",
+            "9d108a65765227a4",
+            "6df159f6597c93d8",
+            "c05684c26ae329fa",
+            "0a1fb772d6168db0",
+            "605afeb07790bcef"
+        ],
+        "x": 334,
+        "y": 79,
+        "w": 992,
+        "h": 282
+    },
+    {
+        "id": "800948336d4baaaa",
+        "type": "group",
+        "z": "6fd22f15cd2422d0",
+        "name": "Start Chrome",
+        "style": {
+            "fill": "#d1d1d1",
+            "label": true
+        },
+        "nodes": [
+            "31b8288b02620cfb",
+            "d058aac6d68b73c4",
+            "1f102993cb2cd091",
+            "4df1f5d4059f8e19",
+            "d11e099b958aeb59",
+            "529ac81730214a31",
+            "cd155de25c64c785",
+            "99fe35068c9a6c78",
+            "0fa9e9c17cfacb08",
+            "2aaa4823845f8d59"
+        ],
+        "x": 954,
+        "y": 79,
+        "w": 1012,
+        "h": 282
+    },
+    {
+        "id": "5c594a48b6c28844",
+        "type": "group",
+        "z": "6fd22f15cd2422d0",
+        "name": "Read Logs",
+        "style": {
+            "label": true,
+            "fill": "#d1d1d1"
+        },
+        "nodes": [
+            "inject1",
+            "function1",
+            "file_in",
+            "function2",
+            "d556157e463256ca"
+        ],
+        "x": 954,
+        "y": 399,
+        "w": 972,
+        "h": 182
+    },
+    {
+        "id": "25825ea846749a3b",
+        "type": "group",
+        "z": "6fd22f15cd2422d0",
+        "name": "Feedback Loop",
+        "style": {
+            "label": true,
+            "fill": "#d1d1d1"
+        },
+        "nodes": [
+            "bb2dc5712deab1c6",
+            "eb6dc2ef1c193e8c",
+            "5baadd96749c39f5",
+            "33fe79d54aca8805"
+        ],
+        "x": 954,
+        "y": 651.5,
+        "w": 972,
+        "h": 97
+    },
+    {
         "id": "dd2f628224cbb4c3",
         "type": "group",
         "z": "5fa172c20f49443b",
@@ -290,235 +518,6 @@
         "y": 1019,
         "w": 1492,
         "h": 142
-    },
-    {
-        "id": "f5c0254a8e87cb9e",
-        "type": "group",
-        "z": "751808589a92b14a",
-        "name": "Start Chrome",
-        "style": {
-            "fill": "#d1d1d1",
-            "label": true
-        },
-        "nodes": [
-            "f50fabff5ccdccb5",
-            "d59cd583374d3ca9",
-            "0a3d795a6df8b011",
-            "f0411fe6a95bbb08",
-            "4061504cd22b6086",
-            "862039fcefb0f096",
-            "4bdf6071bca71ca2",
-            "24967ce1cea89b9d",
-            "0f7be316f403642d",
-            "3abaeb48b16ac9eb"
-        ],
-        "x": 184,
-        "y": 39,
-        "w": 982,
-        "h": 282
-    },
-    {
-        "id": "b049f2a3e89c94a6",
-        "type": "group",
-        "z": "751808589a92b14a",
-        "name": "",
-        "style": {
-            "fill": "#d1d1d1",
-            "label": true
-        },
-        "nodes": [
-            "9489581a8094c0b6"
-        ],
-        "x": 534,
-        "y": 1159,
-        "w": 312,
-        "h": 82
-    },
-    {
-        "id": "6894234cd3cf5d07",
-        "type": "group",
-        "z": "b326d8d077e77e7a",
-        "name": "Short Task Loop",
-        "style": {
-            "fill": "#e3f3d3",
-            "label": true
-        },
-        "nodes": [
-            "1638a67c56865971",
-            "8b89f329a82bfed6",
-            "77f2f541c83fdbc3",
-            "a7d8108a4e153280",
-            "c4c16bdf71735fe1",
-            "4a2c4610f96ec367",
-            "837ca3dddd6d3f88"
-        ],
-        "x": 474,
-        "y": 539,
-        "w": 692,
-        "h": 222
-    },
-    {
-        "id": "c803e0682d074b98",
-        "type": "group",
-        "z": "b326d8d077e77e7a",
-        "name": "Short Task Loop",
-        "style": {
-            "fill": "#e3f3d3",
-            "label": true
-        },
-        "nodes": [
-            "f7833adb07fe5494",
-            "58e089ec8917c51c",
-            "96d76c6fe0e4d003",
-            "c097527e1ff7411a",
-            "ef5902f3dabd7fff",
-            "5e1437b93e12f451",
-            "724c55b43495a9e4"
-        ],
-        "x": 1194,
-        "y": 539,
-        "w": 692,
-        "h": 222
-    },
-    {
-        "id": "99c77abbc117cf9f",
-        "type": "group",
-        "z": "b326d8d077e77e7a",
-        "name": "Fine Tune & Debug Loop",
-        "style": {
-            "fill": "#e3f3d3",
-            "label": true
-        },
-        "nodes": [
-            "dc807127b4407f93",
-            "5099ba28e81c2373",
-            "ad20311fd2c73a10",
-            "99c5558fb42f69fc",
-            "83e01b980d591a8c",
-            "7c015af7f9489466",
-            "995ad83b99377710"
-        ],
-        "x": 1194,
-        "y": 779,
-        "w": 692,
-        "h": 222
-    },
-    {
-        "id": "4797c7b0a9eb125d",
-        "type": "group",
-        "z": "b326d8d077e77e7a",
-        "name": "Review for errors; edge cases",
-        "style": {
-            "fill": "#e3f3d3",
-            "label": true
-        },
-        "nodes": [
-            "0713676a3c782313",
-            "c4e873678cb4c841",
-            "57a2da1d197a98db",
-            "ac30414c6655dd06",
-            "d8a4a809a1dcaad1",
-            "f322d3b239caa967",
-            "107a09284f0dc8c6"
-        ],
-        "x": 474,
-        "y": 779,
-        "w": 692,
-        "h": 222
-    },
-    {
-        "id": "ad9ab3ccb98c5479",
-        "type": "group",
-        "z": "25ffd91f1979976d",
-        "name": "Start Chrome",
-        "style": {
-            "fill": "#d1d1d1",
-            "label": true
-        },
-        "nodes": [
-            "50b5ebf17c38bd1c",
-            "288cc212527de778",
-            "e0f37b3e31c3903c",
-            "47dc79bad9bac696",
-            "41c65bc386f2efd0",
-            "9d108a65765227a4",
-            "6df159f6597c93d8",
-            "c05684c26ae329fa",
-            "0a1fb772d6168db0",
-            "605afeb07790bcef"
-        ],
-        "x": 334,
-        "y": 79,
-        "w": 992,
-        "h": 282
-    },
-    {
-        "id": "800948336d4baaaa",
-        "type": "group",
-        "z": "6fd22f15cd2422d0",
-        "name": "Start Chrome",
-        "style": {
-            "fill": "#d1d1d1",
-            "label": true
-        },
-        "nodes": [
-            "31b8288b02620cfb",
-            "d058aac6d68b73c4",
-            "1f102993cb2cd091",
-            "4df1f5d4059f8e19",
-            "d11e099b958aeb59",
-            "529ac81730214a31",
-            "cd155de25c64c785",
-            "99fe35068c9a6c78",
-            "0fa9e9c17cfacb08",
-            "2aaa4823845f8d59"
-        ],
-        "x": 934,
-        "y": 79,
-        "w": 992,
-        "h": 282
-    },
-    {
-        "id": "5c594a48b6c28844",
-        "type": "group",
-        "z": "6fd22f15cd2422d0",
-        "name": "Read Logs",
-        "style": {
-            "label": true,
-            "fill": "#d1d1d1"
-        },
-        "nodes": [
-            "inject1",
-            "function1",
-            "file_in",
-            "function2",
-            "d556157e463256ca"
-        ],
-        "x": 954,
-        "y": 399,
-        "w": 1012,
-        "h": 182
-    },
-    {
-        "id": "25825ea846749a3b",
-        "type": "group",
-        "z": "6fd22f15cd2422d0",
-        "name": "Feedback Loop",
-        "style": {
-            "label": true,
-            "fill": "#d1d1d1"
-        },
-        "nodes": [
-            "bb2dc5712deab1c6",
-            "eb6dc2ef1c193e8c",
-            "33fe79d54aca8805",
-            "5baadd96749c39f5",
-            "bdd9f4e93b02164b"
-        ],
-        "x": 934,
-        "y": 679,
-        "w": 1052,
-        "h": 82
     },
     {
         "id": "e2bc7ac9aa77279e",
@@ -3197,8 +3196,8 @@
         "z": "6fd22f15cd2422d0",
         "name": "preset debug prompt + Content",
         "info": "",
-        "x": 1930,
-        "y": 1040,
+        "x": 1950,
+        "y": 1020,
         "wires": []
     },
     {
@@ -3207,7 +3206,7 @@
         "z": "6fd22f15cd2422d0",
         "g": "25825ea846749a3b",
         "name": "Run Prompt",
-        "func": "console.log('[Run Prompt] Starting execution');\n\nnode.status({ fill: \"blue\", shape: \"dot\", text: \"Running...\" });\n\ncontext.runPrompt = context.runPrompt || {};\ncontext.runPrompt.isStopRequested = msg.payload === \"stop\";\n\nlet browser, browserContext, currentPage;\n\nasync function connectAndSetupPage() {\n    if (!browser) {\n        browser = await playwright.chromium.connectOverCDP('http://localhost:27000');\n        browserContext = browser.contexts()[0];\n        currentPage = browserContext.pages()[0] || await browserContext.newPage();\n    }\n    return { browser, browserContext, currentPage };\n}\n\nasync function getCurrentPage() {\n    if (!browserContext) {\n        browser = await playwright.chromium.connectOverCDP('http://localhost:27000');\n        browserContext = browser.contexts()[0];\n    }\n    const pages = await browserContext.pages();\n    return pages[pages.length - 1];\n}\n\nasync function clickButtonIfVisible(selector, waitForHidden = false) {\n    try {\n        const page = await getCurrentPage();\n        const button = await page.$(selector);\n        const shouldClick = button && await button.isVisible();\n        if (shouldClick) {\n            await button.click();\n            if (waitForHidden) {\n                await page.waitForSelector(selector, { state: 'hidden', timeout: 60000 });\n            }\n        }\n        return shouldClick;\n    } catch (error) {\n        return false;\n    }\n}\n\nasync function reloadPageIfNecessary(retryCount) {\n    try {\n        const page = await getCurrentPage();\n        const shouldReload = [\n            retryCount > 0,\n            !await clickButtonIfVisible('button:has-text(\"Continue generating\")', true),\n            await page.$('#prompt-textarea').then(() => false).catch(() => true)\n        ].every(Boolean);\n\n        if (shouldReload) await page.reload({ waitUntil: 'networkidle' });\n    } catch (error) {\n        console.error(`[Run Prompt] Error in reloadPageIfNecessary: ${error.message}`);\n    }\n}\n\nasync function waitForResponseCompletion() {\n    let previousLength = 0, stableCount = 0;\n    const maxStableCount = 3;\n    const maxWaitTime = 120000; // 2 minutes\n    const startTime = Date.now();\n    let responseText = '';\n\n    while (Date.now() - startTime < maxWaitTime) {\n        if (context.runPrompt.isStopRequested) {\n            await stopGeneration();\n            clearStopRequestedState();\n            return '';\n        }\n\n        try {\n            const page = await getCurrentPage();\n            const scrollButtonSelector = 'button.cursor-pointer.absolute.z-10.rounded-full.bg-clip-padding.border.text-token-text-secondary.border-token-border-light.right-1\\\\/2.translate-x-1\\\\/2.bg-token-main-surface-primary.w-8.h-8.flex.items-center.justify-center.bottom-5';\n            const scrollButtonClicked = await clickButtonIfVisible(scrollButtonSelector);\n\n            if (scrollButtonClicked) {\n                await page.waitForTimeout(1000); // Wait for scroll animation\n            }\n\n            await page.waitForSelector('div.h-full article.w-full.text-token-text-primary', { timeout: 10000 });\n            const articles = await page.$$('div.h-full article.w-full.text-token-text-primary');\n\n            if (articles.length === 0) {\n                await page.waitForTimeout(3000);\n                continue;\n            }\n\n            const lastArticle = articles[articles.length - 1];\n            try {\n                responseText = await page.evaluate(article => {\n                    const markdownDiv = article.querySelector('.markdown.prose.w-full.break-words.dark\\\\:prose-invert.dark');\n                    return markdownDiv ? markdownDiv.innerText : '';\n                }, lastArticle);\n            } catch (error) {\n                responseText = await lastArticle.innerText();\n            }\n\n            const currentLength = responseText.length;\n            const isStable = currentLength === previousLength && currentLength > 0;\n            stableCount = isStable ? stableCount + 1 : 0;\n\n            if (stableCount >= maxStableCount) {\n                return responseText;\n            }\n\n            previousLength = currentLength;\n            await page.waitForTimeout(2000);\n        } catch (error) {\n            await new Promise(resolve => setTimeout(resolve, 3000));\n        }\n    }\n\n    return responseText;\n}\n\nasync function extractResponseText(currentPage) {\n    let responseText = '';\n    try {\n        const articles = await currentPage.$$('div.h-full article.w-full.text-token-text-primary');\n        if (articles.length > 0) {\n            const lastArticle = articles[articles.length - 1];\n            const copyButton = await lastArticle.$('button[aria-label=\"Copy\"]');\n            if (copyButton) {\n                await copyButton.click();\n                await currentPage.waitForTimeout(1000); // Wait for clipboard to be updated\n                responseText = await currentPage.evaluate(() => navigator.clipboard.readText());\n            } else {\n                const markdownDiv = await lastArticle.$('div.markdown');\n                responseText = markdownDiv ? await markdownDiv.innerText() : '';\n            }\n        }\n    } catch (error) {\n        try {\n            const lastArticle = await currentPage.$('div.h-full article.w-full.text-token-text-primary:last-child');\n            const textBaseElement = await lastArticle.$('.text-base');\n            responseText = textBaseElement ? await textBaseElement.innerText() : '';\n        } catch (innerError) {\n            responseText = '';\n        }\n    }\n\n    return responseText;\n}\n\nasync function stopGeneration() {\n    context.runPrompt.isStopRequested = true;\n    await clickButtonIfVisible('button[data-testid=\"stop-button\"][aria-label=\"Stop streaming\"]', true);\n    clearStopRequestedState();\n}\n\nfunction clearStopRequestedState() {\n    context.runPrompt.isStopRequested = false;\n}\n\nfunction cleanup(browser, result, msg) {\n    if (browser) {\n        browser.close();\n    }\n\n    node.status(result.status);\n\n    const isLastMessage = result.endOfSequence;\n    const firstOutput = {\n        ...msg,\n        payload: result.payload,\n        endOfSequence: !!isLastMessage,\n        _continuation: !isLastMessage\n    };\n    const secondOutput = {\n        ...msg,\n        payload: result.payload,\n        status: result.status.text,\n        _continuation: !isLastMessage,\n        error: result.error,\n        endOfSequence: isLastMessage\n    };\n\n    node.send([firstOutput, secondOutput]);\n\n    return result;\n}\n\nasync function runPrompt(msg) {\n    try {\n        await reloadPageIfNecessary(0);\n\n        const page = await getCurrentPage();\n        const newChatButton = await page.$('nav > a.flex.py-3.px-3.items-center.gap-3.rounded-md:has-text(\"New chat\")');\n        if (newChatButton) {\n            await newChatButton.click();\n            await page.waitForLoadState('networkidle');\n        }\n\n        await clickButtonIfVisible('button:has-text(\"Continue generating\")', true);\n\n        const promptText = msg.payload || 'Give me a recipe for biscuits';\n        await page.waitForSelector('#prompt-textarea', { state: 'attached', timeout: 30000 });\n        await page.fill('#prompt-textarea', promptText);\n        await page.click('button[data-testid=\"send-button\"]');\n\n        await waitForResponseCompletion();\n\n        const responseText = await extractResponseText(page);\n        await clickButtonIfVisible('button:has-text(\"I prefer this response\")');\n        await page.waitForSelector('button[data-testid=\"stop-button\"]', { state: 'hidden', timeout: 120000 });\n\n        return responseText;\n    } catch (error) {\n        console.error(`[Run Prompt] Error in runPrompt: ${error.message}`);\n        throw error;\n    }\n}\n\nasync function setupBrowser() {\n    try {\n        const { browser } = await connectAndSetupPage();\n        return browser;\n    } catch (error) {\n        throw new Error('Connection setup error: ' + error.message);\n    }\n}\n\nfunction isStopRequested() {\n    return context.runPrompt.isStopRequested;\n}\n\nasync function handleStopRequest(browser, msg) {\n    await stopGeneration();\n    return {\n        payload: \"stopped\",\n        status: { fill: \"yellow\", shape: \"dot\", text: \"Stopped\" }\n    };\n}\n\nasync function runPromptWithRetries(msg, maxRetries) {\n    for (let retryCount = 0; retryCount < maxRetries; retryCount++) {\n        if (isStopRequested()) {\n            return handleStopRequest();\n        }\n\n        try {\n            const payload = await runPrompt(msg);\n            return {\n                payload,\n                status: { fill: \"green\", shape: \"dot\", text: \"done\" }\n            };\n        } catch (error) {\n            console.error(`[Run Prompt] Attempt ${retryCount + 1} failed:`, error);\n            await reloadPageIfNecessary(retryCount + 1);\n\n            if (retryCount === maxRetries - 1) {\n                throw error;\n            }\n        }\n    }\n    throw new Error('Max retries reached');\n}\n\nfunction isLastStep(msg) {\n    return msg.currentStep === msg.totalSteps - 1;\n}\n\nfunction handleLastStep(result) {\n    return {\n        ...result,\n        endOfSequence: true,\n        status: { fill: \"green\", shape: \"dot\", text: \"Sequence Complete\" }\n    }; \n}\n\nfunction handleError(error) {\n    return {\n        payload: 'Error occurred: ' + error.message,\n        status: { fill: \"red\", shape: \"ring\", text: \"Error\" },\n        error: error.message\n    };\n}\n\nasync function executeScript(msg) {\n    const maxRetries = 3;\n    let browser;\n    let result = { payload: null, status: null, error: null };\n\n    try {\n        browser = await setupBrowser();\n\n        if (isStopRequested()) {\n            return handleStopRequest(browser, msg);\n        }\n\n        result = await runPromptWithRetries(msg, maxRetries);\n\n        if (isLastStep(msg)) {\n            result = handleLastStep(result);\n        }\n    } catch (error) {\n        result = handleError(error);\n    }\n\n    return cleanup(browser, result, msg);\n}\n\nexecuteScript(msg);\nreturn null;\n",
+        "func": "console.log('[Run Prompt Main] Starting execution');\n\nnode.status({ fill: \"blue\", shape: \"dot\", text: \"Running...\" });\n\ncontext.runPrompt = context.runPrompt || {};\ncontext.runPrompt.isStopRequested = msg.payload === \"stop\";\ncontext.runPrompt.responseCount = context.runPrompt.responseCount || 0;\n\nlet browser, browserContext, currentPage;\n\nasync function connectAndSetupPage() {\n    if (!browser) {\n        browser = await playwright.chromium.connectOverCDP('http://localhost:27000');\n        browserContext = browser.contexts()[0];\n        currentPage = browserContext.pages()[0] || await browserContext.newPage();\n    }\n    return { browser, browserContext, currentPage };\n}\n\nasync function getCurrentPage() {\n    if (!browserContext) {\n        browser = await playwright.chromium.connectOverCDP('http://localhost:27000');\n        browserContext = browser.contexts()[0];\n    }\n    const pages = await browserContext.pages();\n    return pages[pages.length - 1];\n}\n\nasync function clickButtonIfVisible(selector, waitForHidden = false) {\n    try {\n        const page = await getCurrentPage();\n        const button = await page.$(selector);\n        const shouldClick = button && await button.isVisible();\n        if (shouldClick) {\n            await button.click();\n            if (waitForHidden) {\n                await page.waitForSelector(selector, { state: 'hidden', timeout: 60000 });\n            }\n        }\n        return shouldClick;\n    } catch (error) {\n        return false;\n    }\n}\n\nasync function reloadPageIfNecessary(retryCount) {\n    try {\n        const page = await getCurrentPage();\n        const shouldReload = [\n            retryCount > 0,\n            !await clickButtonIfVisible('button:has-text(\"Continue generating\")', true),\n            await page.$('#prompt-textarea').then(() => false).catch(() => true)\n        ].every(Boolean);\n\n        if (shouldReload) await page.reload({ waitUntil: 'networkidle' });\n    } catch (error) {\n        console.error(`[Run Prompt Main] Error in reloadPageIfNecessary: ${error.message}`);\n    }\n}\n\nasync function waitForResponseCompletion() {\n    let previousLength = 0, stableCount = 0;\n    const maxStableCount = 3;\n    const maxWaitTime = 120000; // 2 minutes\n    const startTime = Date.now();\n    let responseText = '';\n\n    while (Date.now() - startTime < maxWaitTime) {\n        if (context.runPrompt.isStopRequested) {\n            await stopGeneration();\n            clearStopRequestedState();\n            return '';\n        }\n\n        try {\n            const page = await getCurrentPage();\n            const scrollButtonSelector = 'button.cursor-pointer.absolute.z-10.rounded-full.bg-clip-padding.border.text-token-text-secondary.border-token-border-light.right-1\\\\/2.translate-x-1\\\\/2.bg-token-main-surface-primary.w-8.h-8.flex.items-center.justify-center.bottom-5';\n            const scrollButtonClicked = await clickButtonIfVisible(scrollButtonSelector);\n\n            if (scrollButtonClicked) {\n                await page.waitForTimeout(1000); // Wait for scroll animation\n            }\n\n            await page.waitForSelector('div.h-full article.w-full.text-token-text-primary', { timeout: 10000 });\n            const articles = await page.$$('div.h-full article.w-full.text-token-text-primary');\n\n            if (articles.length === 0) {\n                await page.waitForTimeout(3000);\n                continue;\n            }\n\n            const lastArticle = articles[articles.length - 1];\n            try {\n                responseText = await page.evaluate(article => {\n                    const markdownDiv = article.querySelector('.markdown.prose.w-full.break-words.dark\\\\:prose-invert.dark');\n                    return markdownDiv ? markdownDiv.innerText : '';\n                }, lastArticle);\n            } catch (error) {\n                responseText = await lastArticle.innerText();\n            }\n\n            const currentLength = responseText.length;\n            const isStable = currentLength === previousLength && currentLength > 0;\n            stableCount = isStable ? stableCount + 1 : 0;\n\n            if (stableCount >= maxStableCount) {\n                return responseText;\n            }\n\n            previousLength = currentLength;\n            await page.waitForTimeout(2000);\n        } catch (error) {\n            await new Promise(resolve => setTimeout(resolve, 3000));\n        }\n    }\n\n    return responseText;\n}\n\nasync function extractResponseText(currentPage) {\n    let responseText = '';\n    try {\n        const articles = await currentPage.$$('div.h-full article.w-full.text-token-text-primary');\n        if (articles.length > 0) {\n            const lastArticle = articles[articles.length - 1];\n            const copyButton = await lastArticle.$('button[aria-label=\"Copy\"]');\n            if (copyButton) {\n                await copyButton.click();\n                await currentPage.waitForTimeout(1000); // Wait for clipboard to be updated\n                responseText = await currentPage.evaluate(() => navigator.clipboard.readText());\n            } else {\n                const markdownDiv = await lastArticle.$('div.markdown');\n                responseText = markdownDiv ? await markdownDiv.innerText() : '';\n            }\n        }\n    } catch (error) {\n        try {\n            const lastArticle = await currentPage.$('div.h-full article.w-full.text-token-text-primary:last-child');\n            const textBaseElement = await lastArticle.$('.text-base');\n            responseText = textBaseElement ? await textBaseElement.innerText() : '';\n        } catch (innerError) {\n            responseText = '';\n        }\n    }\n\n    return responseText;\n}\n\nasync function stopGeneration() {\n    context.runPrompt.isStopRequested = true;\n    await clickButtonIfVisible('button[data-testid=\"stop-button\"][aria-label=\"Stop streaming\"]', true);\n    clearStopRequestedState();\n}\n\nfunction clearStopRequestedState() {\n    context.runPrompt.isStopRequested = false;\n}\n\nfunction cleanup(browser, result, msg) {\n    if (browser) {\n        browser.close();\n    }\n\n    node.status(result.status);\n\n    const isLastMessage = result.endOfSequence;\n    const firstOutput = {\n        ...msg,\n        payload: result.payload,\n        endOfSequence: !!isLastMessage,\n        _continuation: !isLastMessage\n    };\n    const secondOutput = {\n        ...msg,\n        payload: result.payload,\n        status: result.status.text,\n        _continuation: !isLastMessage,\n        error: result.error,\n        endOfSequence: isLastMessage\n    };\n\n    node.send([firstOutput, secondOutput]);\n\n    return result;\n}\n\nasync function runPrompt(msg) {\n    try {\n        await reloadPageIfNecessary(0);\n\n        const page = await getCurrentPage();\n        const newChatButton = await page.$('nav > a.flex.py-3.px-3.items-center.gap-3.rounded-md:has-text(\"New chat\")');\n        if (newChatButton) {\n            await newChatButton.click();\n            await page.waitForLoadState('networkidle');\n        }\n\n        await clickButtonIfVisible('button:has-text(\"Continue generating\")', true);\n\n        const promptText = msg.payload || 'Give me a recipe for biscuits';\n        await page.waitForSelector('#prompt-textarea', { state: 'attached', timeout: 30000 });\n        await page.fill('#prompt-textarea', promptText);\n        await page.click('button[data-testid=\"send-button\"]');\n\n        await waitForResponseCompletion();\n\n        const responseText = await extractResponseText(page);\n        await clickButtonIfVisible('button:has-text(\"I prefer this response\")');\n        await page.waitForSelector('button[data-testid=\"stop-button\"]', { state: 'hidden', timeout: 120000 });\n\n    \n        msg[`response${context.runPrompt.responseCount}`] = responseText;\n        context.runPrompt.responseCount += 1;\n        return responseText;\n    } catch (error) {\n        console.error(`[Run Prompt Main] Error in runPrompt: ${error.message}`);\n        throw error;\n    }\n}\n\nasync function setupBrowser() {\n    try {\n        const { browser } = await connectAndSetupPage();\n        return browser;\n    } catch (error) {\n        throw new Error('Connection setup error: ' + error.message);\n    }\n}\n\nfunction isStopRequested() {\n    return context.runPrompt.isStopRequested;\n}\n\nasync function handleStopRequest(browser, msg) {\n    await stopGeneration();\n    return {\n        payload: \"stopped\",\n        status: { fill: \"yellow\", shape: \"dot\", text: \"Stopped\" }\n    };\n}\n\nasync function runPromptWithRetries(msg, maxRetries) {\n    for (let retryCount = 0; retryCount < maxRetries; retryCount++) {\n        if (isStopRequested()) {\n            return handleStopRequest();\n        }\n\n        try {\n            const payload = await runPrompt(msg);\n            return {\n                payload,\n                status: { fill: \"green\", shape: \"dot\", text: \"done\" }\n            };\n        } catch (error) {\n            console.error(`[Run Prompt Main] Attempt ${retryCount + 1} failed:`, error);\n            await reloadPageIfNecessary(retryCount + 1);\n\n            if (retryCount === maxRetries - 1) {\n                throw error;\n            }\n        }\n    }\n    throw new Error('Max retries reached');\n}\n\nfunction isLastStep(msg) {\n    return msg.currentStep === msg.totalSteps - 1;\n}\n\nfunction handleLastStep(result) {\n    return {\n        ...result,\n        endOfSequence: true,\n        status: { fill: \"green\", shape: \"dot\", text: \"Sequence Complete\" }\n    };\n}\n\nfunction handleError(error) {\n    return {\n        payload: 'Error occurred: ' + error.message,\n        status: { fill: \"red\", shape: \"ring\", text: \"Error\" },\n        error: error.message\n    };\n}\n\nasync function executeScript(msg) {\n    const maxRetries = 3;\n    let browser;\n    let result = { payload: null, status: null, error: null };\n\n    try {\n        browser = await setupBrowser();\n\n        if (isStopRequested()) {\n            return handleStopRequest(browser, msg);\n        }\n\n        result = await runPromptWithRetries(msg, maxRetries);\n\n        if (isLastStep(msg)) {\n            result = handleLastStep(result);\n        }\n    } catch (error) {\n        result = handleError(error);\n    }\n\n    return cleanup(browser, result, msg);\n}\n\nexecuteScript(msg);\nreturn null;\n",
         "outputs": 2,
         "timeout": "",
         "noerr": 20,
@@ -3219,12 +3218,13 @@
                 "module": "playwright"
             }
         ],
-        "x": 1890,
-        "y": 720,
+        "x": 1830,
+        "y": 700,
         "wires": [
             [],
             [
-                "eb6dc2ef1c193e8c"
+                "eb6dc2ef1c193e8c",
+                "61726b12fb9a0373"
             ]
         ]
     },
@@ -3254,35 +3254,11 @@
                 "module": "os"
             }
         ],
-        "x": 1250,
-        "y": 720,
+        "x": 1290,
+        "y": 700,
         "wires": [
             [
-                "bdd9f4e93b02164b"
-            ]
-        ]
-    },
-    {
-        "id": "33fe79d54aca8805",
-        "type": "function",
-        "z": "6fd22f15cd2422d0",
-        "g": "25825ea846749a3b",
-        "name": "dynamicCmd",
-        "func": "// Function to handle the parsing of localCmd blocks\nfunction parseLocalCmd(line, dynamicCmd, currentCmdName, nestedCmdBuffer, capturingNestedCmd) {\n    // Start capturing the command when '- cmd' is detected\n    if (line.startsWith('- cmd')) {\n        currentCmdName = line.replace('- ', '').trim();  // Capture command name (e.g., 'cmd1')\n        capturingNestedCmd = true;  // Start capturing the nested command\n        nestedCmdBuffer = \"\";  // Initialize buffer for command content\n        node.warn(`[function:dynamicCmd] Started capturing nested command: ${currentCmdName}`);\n    }\n    // Continue capturing until the command ends\n    else if (capturingNestedCmd) {\n        node.warn('[function:dynamicCmd] Capturing nested command block started');\n\n        // Check if the line includes a backtick, indicating a potential command boundary\n        if (line.includes('`')) {\n            node.warn('[function:dynamicCmd] Line includes backtick: ' + line);\n\n            // If the backtick is within the first 3 characters, remove it\n            if (line.indexOf('`') <= 2 || line.startsWith('-')) {\n                node.warn('[function:dynamicCmd] Backtick found within the first 3 characters or line starts with \"-\", removing.');\n                line = line.replace('`', '');\n            }\n\n            // If the line starts and ends with a backtick, handle it accordingly\n            if (line.trim().startsWith('`') && line.trim().endsWith('`')) {\n                node.warn('[function:dynamicCmd] Line starts and ends with backtick. Capturing single-line command.');\n                nestedCmdBuffer += line.replace(/^-\\s*`/, '').replace(/`$/, '').trim();\n                dynamicCmd.localCmds.push({ name: currentCmdName, commands: [nestedCmdBuffer.trim()] });\n                node.warn(`[function:dynamicCmd] Finished capturing single-line command: ${nestedCmdBuffer.trim()}`);\n                nestedCmdBuffer = \"\";  // Clear buffer\n                capturingNestedCmd = false;  // Stop capturing\n            } \n            // If the line ends with a backtick, it's the end of a multi-line command\n            else if (line.endsWith('`')) {\n                node.warn('[function:dynamicCmd] Line ends with backtick. Capturing final command line.');\n                nestedCmdBuffer += line.replace(/^-\\s*`/, '').replace(/`$/, '').trim();\n                dynamicCmd.localCmds.push({ name: currentCmdName, commands: [nestedCmdBuffer.trim()] });\n                node.warn(`[function:dynamicCmd] Finished capturing multi-line command: ${nestedCmdBuffer.trim()}`);\n                nestedCmdBuffer = \"\";  // Clear buffer\n                capturingNestedCmd = false;  // Stop capturing\n            } \n            // If the line starts with a backtick but doesn't end with it, continue capturing\n            else if (line.trim().startsWith('`')) {\n                node.warn('[function:dynamicCmd] Line starts with backtick but does not end with it. Beginning multi-line capture.');\n                nestedCmdBuffer += line.replace(/^-\\s*`/, '').trim() + \"\\n\";\n            } else {\n                // If the line contains a backtick but isn't the start or end, continue capturing\n                node.warn('[function:dynamicCmd] Line contains embedded backtick but is part of the command.');\n                nestedCmdBuffer += line.replace(/^-\\s*/, '').trim() + \"\\n\";\n            }\n        } \n        // If there's no backtick, continue capturing as part of a multi-line command\n        else {\n            node.warn('[function:dynamicCmd] Line does not include backtick. Adding to nested command buffer.');\n            nestedCmdBuffer += line.replace(/^-\\s*/, '').trim() + \"\\n\";\n        }\n    }\n\n    return { currentCmdName, nestedCmdBuffer, capturingNestedCmd };\n}\n\n// Function to parse the input text and extract commands\nfunction parseInputText(inputText) {\n    let dynamicCmd = {\n        localCmds: [],\n        contextCmds: [],\n        compileCmd: [],\n        addedPrompts: []\n    };\n\n    let lines = inputText.split('\\n');\n    let currentSection = null;\n    let dynamicCmdFound = false;\n    let capturingNestedCmd = false;\n    let nestedCmdBuffer = \"\";  // Buffer to hold nested commands\n    let currentCmdName = \"\";    // Store the name of the current command (e.g., cmd1)\n\n    lines.forEach(line => {\n        node.warn(`[function:dynamicCmd] Processing line: '${line}'`);\n        line = line.trim();  // Trim whitespace\n\n        if (line.startsWith('dynamicCmd:')) {\n            currentSection = 'dynamicCmd';\n            dynamicCmdFound = true;\n            node.warn(\"[function:dynamicCmd] Detected 'dynamicCmd' section.\");\n        } else if (line.startsWith('- localCmd:')) {\n            currentSection = 'localCmd';\n        } else if (line.startsWith('- contextCmd:')) {\n            currentSection = 'contextCmd';\n            let cmd = parseCommand(line.replace('- ', ''));\n            dynamicCmd.contextCmds.push(cmd.cmdValue);\n        } else if (line.startsWith('- compileCmd:')) {\n            currentSection = 'compileCmd';\n        } else if (line.startsWith('- addedPrompts:')) {\n            currentSection = 'addedPrompts';\n        }\n\n        // Handle localCmd processing by calling the parseLocalCmd function\n        if (currentSection === 'localCmd') {\n            ({ currentCmdName, nestedCmdBuffer, capturingNestedCmd } = parseLocalCmd(line, dynamicCmd, currentCmdName, nestedCmdBuffer, capturingNestedCmd));\n        }\n    }); // Close the forEach loop\n\n    // If no dynamicCmd section is found, return the original input text\n    if (!dynamicCmdFound) {\n        return null;\n    }\n\n    node.warn(\"[function:dynamicCmd] Finished parsing input text.\");\n    node.warn(`[function:dynamicCmd] Parsed dynamicCmd: ${JSON.stringify(dynamicCmd)}`);\n    return dynamicCmd;\n}\n\n// Function to parse an individual command\nfunction parseCommand(cmdText) {\n    let cmdParts = cmdText.split(':');\n    let cmdName = cmdParts[0].trim();\n    let cmdValue = cmdParts.slice(1).join(':').trim(); // Join the rest in case ':' exists in the value\n    return { cmdName, cmdValue };\n}\n\n// Function to execute local commands\nfunction executeLocalCommands(localCmds) {\n    let localResult = \"\";\n    \n    localCmds.forEach((cmdBlock, index) => {\n        node.warn(`[function:dynamicCmd] Executing command block: ${cmdBlock.name}`);\n        node.warn(`[function:dynamicCmd] Command content: ${JSON.stringify(cmdBlock)}`);\n\n        if (cmdBlock.commands.length === 0) {\n            node.warn(`[function:dynamicCmd] No commands found in: ${cmdBlock.name}`);\n        }\n\n        cmdBlock.commands.forEach(cmd => {\n            node.warn(`[function:dynamicCmd] Executing command: ${cmd}`);\n\n            try {\n                // Dynamically create and execute the function\n                let dynamicFunction = new Function(cmd);\n                let result = dynamicFunction();  // Execute the function\n                \n                // Check if the function returned a value\n                if (result !== undefined) {\n                    node.warn(`[function:dynamicCmd] Command executed successfully with result: ${result}`);\n                    localResult += result + \"\\n\";  // Accumulate results\n                } else {\n                    node.warn(`[function:dynamicCmd] Command executed successfully but returned no result.`);\n                }\n            } catch (error) {\n                node.error(`[function:dynamicCmd] Error executing command: ${error.message}`);\n            }\n        });\n    });\n\n    node.warn(`[function:dynamicCmd] Finished executing all commands. Final accumulated result: ${localResult.trim()}`);\n    return localResult.trim();\n}\n\n\n// Function to execute context commands\nfunction executeContextCommands(contextCmds) {\n    let contextResult = \"\";\n    contextCmds.forEach(cmd => {\n        node.warn(\"Executing context command: \" + cmd);\n\n        try {\n            // Dynamically create and execute the function\n            let dynamicFunction = new Function(cmd);\n            contextResult += dynamicFunction() + \"\\n\";  // Execute and accumulate results\n        } catch (error) {\n            node.error('Error executing context command: ' + error.message);\n        }\n    });\n    return contextResult;\n}\n\n// Function to process compileCmd\nfunction processCompileCmd(compileCmd) {\n    let compiledPrompt = \"\";\n    compileCmd.forEach(cmd => {\n        node.warn(\"Processing compile command: \" + cmd);\n        compiledPrompt += cmd + \"\\n\";\n    });\n\n    // Return compiled prompt\n    node.warn(\"Compiled prompt: \\n\" + compiledPrompt);\n    return compiledPrompt;\n}\n\n// Function to process addedPrompts\nfunction processAddedPrompts(addedPrompts, concatenatedResult) {\n    let resultArray = [];\n\n    // First, add the concatenated result to the array\n    resultArray.push(concatenatedResult);\n\n    // Then, add each added prompt as a separate entry in the array\n    addedPrompts.forEach(prompt => {\n        node.warn(\"Processing added prompt: \" + prompt);\n        resultArray.push(prompt);\n    });\n\n    return resultArray;\n}\n\n// Function to execute the parsed commands\nfunction executeCommands(dynamicCmd) {\n    // Step 1: Execute local commands and store the results in a variable\n    let localResult = executeLocalCommands(dynamicCmd.localCmds);\n\n    // Step 2: Execute context commands and store the results in a variable\n    let contextResult = executeContextCommands(dynamicCmd.contextCmds);\n\n    // Step 3: Execute compile commands and store the results in a variable\n    let compileResult = processCompileCmd(dynamicCmd.compileCmd);\n\n    // Step 4: Concatenate these 3 variables together into a single variable\n    let concatenatedResult = localResult + contextResult + compileResult;\n\n    // Step 5: Add this concatenated result into an array along with each bullet point under addedPrompts\n    let finalArray = processAddedPrompts(dynamicCmd.addedPrompts, concatenatedResult);\n\n    return finalArray;\n}\n\n// Main function to handle the entire process\nfunction handleDynamicCmd(inputText) {\n    node.warn(\"[function:dynamicCmd] Starting handleDynamicCmd function.\");\n\n    // Parse the input text\n    let dynamicCmd = parseInputText(inputText);\n\n    // If dynamicCmd is null, it means the \"dynamicCmd\" section wasn't found,\n    // so return the original input text.\n    if (!dynamicCmd) {\n        return inputText;\n    }\n\n    // Execute the parsed commands\n    let finalResult = executeCommands(dynamicCmd);\n\n    // Return the final result array\n    return finalResult;\n}\n\n// Start of the function node logic\nlet processedResult = handleDynamicCmd(msg.payload);\n\n// Set msg.payload to the final result array\nmsg.payload = processedResult;\n\nreturn msg;",
-        "outputs": 2,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1650,
-        "y": 720,
-        "wires": [
-            [
-                "bb2dc5712deab1c6"
-            ],
-            [
-                "15eb11ee04b9a840"
+                "33fe79d54aca8805"
             ]
         ]
     },
@@ -3304,7 +3280,7 @@
                 "module": "playwright"
             }
         ],
-        "x": 1600,
+        "x": 1620,
         "y": 320,
         "wires": [
             [
@@ -3324,7 +3300,7 @@
         "tostatus": false,
         "complete": "false",
         "targetType": "full",
-        "x": 1830,
+        "x": 1870,
         "y": 320,
         "wires": []
     },
@@ -3350,7 +3326,7 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "x": 1300,
+        "x": 1320,
         "y": 320,
         "wires": [
             [
@@ -3384,7 +3360,7 @@
                 "module": "os"
             }
         ],
-        "x": 1330,
+        "x": 1350,
         "y": 220,
         "wires": [
             [
@@ -3415,7 +3391,7 @@
         "topic": "",
         "payload": "startChrome",
         "payloadType": "str",
-        "x": 1070,
+        "x": 1090,
         "y": 160,
         "wires": [
             [
@@ -3437,7 +3413,7 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1630,
+        "x": 1650,
         "y": 220,
         "wires": []
     },
@@ -3463,7 +3439,7 @@
         "topic": "",
         "payload": "endProcess",
         "payloadType": "str",
-        "x": 1070,
+        "x": 1090,
         "y": 220,
         "wires": [
             [
@@ -3493,7 +3469,7 @@
         "topic": "",
         "payload": "restartProcess",
         "payloadType": "str",
-        "x": 1060,
+        "x": 1080,
         "y": 280,
         "wires": [
             [
@@ -3508,7 +3484,7 @@
         "g": "800948336d4baaaa",
         "name": "Always make sure to set chatgpt appearance to dark;",
         "info": "Sign in via ch.peterlee@gmail.com\nAlways make sure to set chatgpt appearance to dark\nMake sure to allow clipboard",
-        "x": 1700,
+        "x": 1720,
         "y": 280,
         "wires": []
     },
@@ -3519,7 +3495,7 @@
         "g": "800948336d4baaaa",
         "name": "1. Initializes Chrome",
         "info": "",
-        "x": 1050,
+        "x": 1070,
         "y": 120,
         "wires": []
     },
@@ -3549,7 +3525,7 @@
                 "module": "os"
             }
         ],
-        "x": 1870,
+        "x": 1840,
         "y": 540,
         "wires": [
             [
@@ -3583,32 +3559,11 @@
                 "module": "os"
             }
         ],
-        "x": 1040,
-        "y": 720,
+        "x": 1060,
+        "y": 700,
         "wires": [
             [
                 "eb6dc2ef1c193e8c"
-            ]
-        ]
-    },
-    {
-        "id": "bdd9f4e93b02164b",
-        "type": "function",
-        "z": "6fd22f15cd2422d0",
-        "g": "25825ea846749a3b",
-        "name": "dynamicVars",
-        "func": "function parseDynamicVariables(body, msg) {\n    console.log('[dynamicVars] Starting parseDynamicVariables function');\n\n    if (!msg || typeof msg !== 'object') {\n        console.warn('[dynamicVars] Warning: msg is not a valid object');\n        return body; // Return the original body if msg is not valid\n    }\n\n    const objectReplacements = new Map();\n    let counter = 0;\n\n    function resolveValue(p1) {\n        const parts = p1.split('.');\n        let value = msg;\n\n        // Start from index 1 if the first part is 'msg'\n        const startIndex = parts[0] === 'msg' ? 1 : 0;\n\n        for (let i = startIndex; i < parts.length; i++) {\n            const part = parts[i];\n\n            if (value && typeof value === 'object' && part in value) {\n                value = value[part];\n            } else {\n                console.warn(`[dynamicVars] Warning: ${part} does not exist in the object`);\n                return null;\n            }\n        }\n\n        return value;\n    }\n\n    function handleUndefinedOrNull(p1, value) {\n        if (value === undefined || value === null) {\n            console.warn(`[dynamicVars] Warning: ${p1} is ${value === undefined ? 'undefined' : 'null'}`);\n            return `[${p1} not available]`;\n        }\n        return null;\n    }\n\n    function handleObject(p1, value) {\n        if (typeof value === 'object') {\n            const marker = `__OBJECT_REPLACEMENT_${counter}__`;\n            objectReplacements.set(marker, value);\n            counter++;\n            return marker;\n        }\n        return null;\n    }\n\n    // Replace dynamic variables with markers\n    const intermediateResult = body.replace(/\\$\\<\\<([^>]+)\\>\\>\\$/g, (match, p1) => {\n        const value = resolveValue(p1);\n        if (value === null) {\n            return `[${p1} not available]`;\n        }\n\n        const undefinedOrNullResult = handleUndefinedOrNull(p1, value);\n        if (undefinedOrNullResult) {\n            return undefinedOrNullResult;\n        }\n\n        const objectResult = handleObject(p1, value);\n        if (objectResult) {\n            return objectResult;\n        }\n\n        return String(value);\n    });\n\n    // Replace markers with actual objects\n    let finalResult = intermediateResult;\n    for (const [marker, value] of objectReplacements) {\n        finalResult = finalResult.replace(marker, JSON.stringify(value));\n    }\n\n    return finalResult;\n}\n\nfunction processPrompt() {\n    if (!msg.payload) {\n        console.error('[dynamicVars] Error: msg.payload is not defined');\n        node.error('msg.payload is not defined');\n        node.status({ fill: \"red\", shape: \"ring\", text: \"No prompt provided\" });\n        return null;\n    }\n\n    try {\n        const processedPrompt = parseDynamicVariables(msg.payload, msg);\n        node.status({ fill: \"green\", shape: \"dot\", text: \"Prompt processed\" });\n        return processedPrompt;\n    } catch (error) {\n        console.error(`[dynamicVars] Failed to process prompt: ${error.message}`);\n        node.error(`Failed to process prompt: ${error.message}`);\n        node.status({ fill: \"red\", shape: \"ring\", text: \"Failed to process prompt\" });\n        return null;\n    }\n}\n\n// Usage\ntry {\n    const processedPrompt = processPrompt();\n    if (processedPrompt) {\n        msg.processedPrompt = processedPrompt; // Add the processed prompt as a new property\n        msg.payload = processedPrompt; // Update msg.payload with the processed prompt\n        return msg;\n    } else {\n        return null;\n    }\n} catch (error) {\n    console.error(`[dynamicVars] Unexpected error: ${error.message}`);\n    node.error(`Unexpected error: ${error.message}`);\n    return null;\n}\n",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1450,
-        "y": 720,
-        "wires": [
-            [
-                "33fe79d54aca8805"
             ]
         ]
     },
@@ -3634,11 +3589,11 @@
         "id": "da5c196c586655f9",
         "type": "function",
         "z": "6fd22f15cd2422d0",
-        "name": "Run Prompt",
-        "func": "console.log('[Run Prompt] Starting execution');\n\nnode.status({ fill: \"blue\", shape: \"dot\", text: \"Running...\" });\n\ncontext.runPrompt = context.runPrompt || {};\ncontext.runPrompt.isStopRequested = msg.payload === \"stop\";\n\nconsole.log('context.runPrompt:', context.runPrompt);\n\nlet browser, browserContext, currentPage;\nconsole.log('[Run Prompt] Initial state:', { browser, browserContext, currentPage });\n\nasync function connectAndSetupPage() {\n    console.log('[Run Prompt] Entering connectAndSetupPage');\n    if (!browser) {\n        console.log('[Run Prompt] Browser not initialized, connecting...');\n        browser = await playwright.chromium.connectOverCDP('http://localhost:27000');\n        console.log('[Run Prompt] Browser connected');\n        browserContext = browser.contexts()[0];\n        console.log('[Run Prompt] Browser context obtained');\n        currentPage = browserContext.pages()[0] || await browserContext.newPage();\n        console.log('[Run Prompt] Current page set');\n    }\n    //    console.log('[Run Prompt] Exiting connectAndSetupPage:', { browser, browserContext, currentPage });\n    return { browser, browserContext, currentPage };\n}\n\nasync function getCurrentPage() {\n    console.log('[Run Prompt] Entering getCurrentPage');\n    if (!browserContext) {\n        console.log('[Run Prompt] Browser context not found, creating new one');\n        browser = await playwright.chromium.connectOverCDP('http://localhost:27000');\n        browserContext = browser.contexts()[0];\n        console.log('[Run Prompt] New browser context created');\n    }\n    const pages = await browserContext.pages();\n    console.log('[Run Prompt] Number of pages:', pages.length);\n    const currentPage = pages[pages.length - 1];\n    //console.log('[Run Prompt] Exiting getCurrentPage, current page:', currentPage);\n    return currentPage;\n}\n\nasync function clickButtonIfVisible(selector, waitForHidden = false) {\n    try {\n        const page = await getCurrentPage();\n        const button = await page.$(selector);\n        const shouldClick = button && await button.isVisible();\n\n        if (shouldClick) {\n            await button.click();\n\n            if (waitForHidden) {\n                await page.waitForSelector(selector, { state: 'hidden', timeout: 60000 });\n            }\n        }\n\n        return shouldClick;\n    } catch (error) {\n        return false;\n    }\n}\n\nasync function reloadPageIfNecessary(retryCount) {\n    console.log('[Run Prompt] Entering reloadPageIfNecessary:', { retryCount });\n    try {\n        const page = await getCurrentPage();\n        const shouldReload = [\n            retryCount > 0,\n            !await clickButtonIfVisible('button:has-text(\"Continue generating\")', true),\n            await page.$('#prompt-textarea').then(() => false).catch(() => true)\n        ].every(Boolean);\n\n        console.log('[Run Prompt] Should reload:', shouldReload);\n        shouldReload && await page.reload({ waitUntil: 'networkidle' });\n        console.log('[Run Prompt] Page reloaded:', shouldReload);\n    } catch (error) {\n        console.log(`[Run Prompt] Error in reloadPageIfNecessary: ${error.message}`);\n    }\n}\n\nasync function waitForResponseCompletion() {\n    console.log('[Run Prompt] Entering waitForResponseCompletion');\n    console.log('[Run Prompt] Initializing variables');\n\n    let previousLength = 0, currentLength = 0, stableCount = 0;\n    const maxStableCount = 3;\n    const maxWaitTime = 120000; // 2 minutes\n    const startTime = Date.now();\n    let responseText = '';\n\n    console.log(`[Run Prompt] Max stable count: ${maxStableCount}, Max wait time: ${maxWaitTime}ms`);\n\n    while (Date.now() - startTime < maxWaitTime) {\n        console.log(`[Run Prompt] Elapsed time: ${Date.now() - startTime}ms`);\n\n        if (context.runPrompt.isStopRequested) {\n            console.log('[Run Prompt] Stop requested. Halting response completion.');\n            await stopGeneration();\n            clearStopRequestedState();\n            return '';\n        }\n\n        try {\n            console.log('[Run Prompt] Attempting to get current page');\n            const page = await getCurrentPage();\n            console.log('[Run Prompt] Successfully got current page');\n\n            // Check for scroll-to-bottom button and click if visible\n            console.log('[Run Prompt] Checking for scroll-to-bottom button');\n            const scrollButtonSelector = 'button.cursor-pointer.absolute.z-10.rounded-full.bg-clip-padding.border.text-token-text-secondary.border-token-border-light.right-1\\\\/2.translate-x-1\\\\/2.bg-token-main-surface-primary.w-8.h-8.flex.items-center.justify-center.bottom-5';\n            const scrollButtonClicked = await clickButtonIfVisible(scrollButtonSelector);\n\n            if (scrollButtonClicked) {\n                console.log('[Run Prompt] Scroll-to-bottom button clicked, waiting for scroll animation');\n                await page.waitForTimeout(1000); // Wait for scroll animation\n                console.log('[Run Prompt] Scroll animation wait complete');\n            } else {\n                console.log('[Run Prompt] Scroll-to-bottom button not found or not clicked');\n            }\n\n            console.log('[Run Prompt] Waiting for article selector');\n            await page.waitForSelector('div.h-full article.w-full.text-token-text-primary', { timeout: 10000 });\n            console.log('[Run Prompt] Article selector found');\n\n            console.log('[Run Prompt] Querying for articles');\n            const articles = await page.$$('div.h-full article.w-full.text-token-text-primary');\n            console.log(`[Run Prompt] Found ${articles.length} articles`);\n\n            if (articles.length === 0) {\n                console.log('[Run Prompt] No articles found, waiting...');\n                await page.waitForTimeout(3000);\n                continue;\n            }\n\n            const lastArticle = articles[articles.length - 1];\n            console.log('[Run Prompt] Attempting to extract content from last article');\n            try {\n                responseText = await page.evaluate(article => {\n                    const markdownDiv = article.querySelector('.markdown.prose.w-full.break-words.dark\\\\:prose-invert.dark');\n                    return markdownDiv ? markdownDiv.innerText : '';\n                }, lastArticle);\n                console.log('[Run Prompt] Content extracted successfully');\n            } catch (error) {\n                console.log('[Run Prompt] Error extracting content:', error.message);\n                console.log('[Run Prompt] Falling back to article.innerText()');\n                responseText = await lastArticle.innerText();\n                console.log('[Run Prompt] Fallback content extraction complete');\n            }\n\n            currentLength = responseText.length;\n            console.log(`[Run Prompt] Current response length: ${currentLength}`);\n            if (currentLength == 0) {\n                console.log('[Run Prompt] No content found in the response');\n            }\n\n            const isStable = currentLength === previousLength && currentLength > 0;\n            stableCount = isStable ? stableCount + 1 : 0;\n            console.log(`[Run Prompt] Is response stable: ${isStable}, Stable count: ${stableCount}`);\n\n            if (stableCount >= maxStableCount) {\n                console.log('[Run Prompt] Response appears to be complete');\n                return responseText;\n            }\n\n            previousLength = currentLength;\n            console.log('[Run Prompt] Waiting for 2 seconds before next iteration');\n            await page.waitForTimeout(2000);\n        } catch (error) {\n            console.log(`[Run Prompt] Error in waitForResponseCompletion: ${error.message}`);\n            console.log('[Run Prompt] Error stack:', error.stack);\n            console.log('[Run Prompt] Waiting for 3 seconds before retrying');\n            await new Promise(resolve => setTimeout(resolve, 3000));\n        }\n    }\n\n    console.log('[Run Prompt] Max wait time exceeded. Returning current response.');\n    return responseText;\n}\n\nasync function extractResponseText(currentPage) {\n    console.log('[Run Prompt] Entering extractResponseText');\n    let responseText = '';\n    let lastArticle;\n\n    try {\n        // Find all articles within the h-full div\n        const articles = await currentPage.$$('div.h-full article.w-full.text-token-text-primary');\n        console.log(`[Run Prompt] Found ${articles.length} articles`);\n\n        if (articles.length > 0) {\n            // Get the last article\n            lastArticle = articles[articles.length - 1];\n            console.log('[Run Prompt] Selected the last article');\n        } else {\n            throw new Error('No articles found');\n        }\n\n        // Find and click the copy button\n        const copyButton = await lastArticle.$('button[aria-label=\"Copy\"]');\n        if (copyButton) {\n            await copyButton.click();\n            await currentPage.waitForTimeout(1000); // Wait for clipboard to be updated\n\n            // Get clipboard contents\n            responseText = await currentPage.evaluate(() => navigator.clipboard.readText());\n            console.log('[Run Prompt] Response extracted from clipboard');\n        } else {\n            console.log('[Run Prompt] Copy button not found, falling back to original method');\n            const markdownDiv = await lastArticle.$('div.markdown');\n            if (markdownDiv) {\n                responseText = await markdownDiv.innerText();\n            } else {\n                throw new Error('Markdown div not found');\n            }\n        }\n    } catch (error) {\n        console.log('[Run Prompt] Error extracting content:', error.message);\n        try {\n            if (!lastArticle) {\n                lastArticle = await currentPage.$('div.h-full article.w-full.text-token-text-primary:last-child');\n                if (!lastArticle) {\n                    throw new Error('Unable to find last article');\n                }\n            }\n            const textBaseElement = await lastArticle.$('.text-base');\n            if (textBaseElement) {\n                responseText = await textBaseElement.innerText();\n                console.log('[Run Prompt] Response extracted using alternative selector');\n            } else {\n                throw new Error('Alternative selector not found');\n            }\n        } catch (innerError) {\n            console.log('[Run Prompt] Alternative selector also failed, using entire article content');\n            if (lastArticle) {\n                responseText = await lastArticle.innerText();\n            } else {\n                console.log('[Run Prompt] Failed to extract any content');\n                responseText = '';\n            }\n        }\n    }\n\n    console.log('[Run Prompt] Exiting extractResponseText, response length:', responseText.length);\n    return responseText;\n}\n\nasync function stopGeneration() {\n    console.log('[Run Prompt] Entering stopGeneration');\n    context.runPrompt.isStopRequested = true;\n    await clickButtonIfVisible('button[data-testid=\"stop-button\"][aria-label=\"Stop streaming\"]', true);\n    clearStopRequestedState();\n    console.log('[Run Prompt] Exiting stopGeneration');\n}\n\nfunction clearStopRequestedState() {\n    context.runPrompt.isStopRequested = false;\n    console.log('[Run Prompt] Stop requested state cleared.');\n}\n\nfunction cleanup(browser, result, msg) {\n    if (browser) {\n        browser.close().then(() => console.log('[Run Prompt] Browser closed'));\n    }\n\n    node.status(result.status);\n\n    const isLastMessage = result.endOfSequence;\n\n    const firstOutput = {\n        ...msg,\n        payload: result.payload,\n        endOfSequence: !!isLastMessage,\n        _continuation: !isLastMessage  // Set _continuation to true for the last message\n    };\n\n    const secondOutput = {\n        ...msg,\n        payload: result.payload,\n        status: result.status.text,\n        _continuation: !isLastMessage,\n        error: result.error,\n        endOfSequence: isLastMessage === true\n    };\n\n    node.send([firstOutput, secondOutput]);\n\n    return result;\n}\n\nasync function runPrompt(msg) {\n    console.log('[Run Prompt] Entering runPrompt');\n    try {\n        await reloadPageIfNecessary(0);\n\n        const page = await getCurrentPage();\n        console.log('[Run Prompt] Got current page in runPrompt');\n\n        const newChatButton = await page.$('nav > a.flex.py-3.px-3.items-center.gap-3.rounded-md:has-text(\"New chat\")');\n        if (newChatButton) {\n            console.log('[Run Prompt] Found new chat button, clicking...');\n            await newChatButton.click();\n            await page.waitForLoadState('networkidle');\n            console.log('[Run Prompt] Clicked new chat button');\n        } else {\n            console.log('[Run Prompt] New chat button not found');\n        }\n\n        await clickButtonIfVisible('button:has-text(\"Continue generating\")', true);\n\n        const promptText = msg.payload || 'Give me a recipe for biscuits';\n        console.log('[Run Prompt] Entering prompt:', promptText);\n        await page.waitForSelector('#prompt-textarea', { state: 'attached', timeout: 30000 });\n        await page.fill('#prompt-textarea', promptText);\n        await page.click('button[data-testid=\"send-button\"]');\n        console.log('[Run Prompt] Sent prompt');\n\n        await waitForResponseCompletion();\n\n        const responseText = await extractResponseText(page);\n        await clickButtonIfVisible('button:has-text(\"I prefer this response\")');\n        await page.waitForSelector('button[data-testid=\"stop-button\"]', { state: 'hidden', timeout: 120000 });\n\n        console.log('[Run Prompt] Exiting runPrompt');\n        return responseText;\n    } catch (error) {\n        console.log(`[Run Prompt] Error in runPrompt: ${error.message}`);\n        console.log('[Run Prompt] Error stack:', error.stack);\n        throw error;\n    }\n}\n\n\nasync function setupBrowser() {\n    try {\n        const { browser } = await connectAndSetupPage();\n        return browser;\n    } catch (error) {\n        throw new Error('Connection setup error: ' + error.message);\n    }\n}\n\nfunction isStopRequested() {\n    return context.runPrompt.isStopRequested;\n}\n\nasync function handleStopRequest(browser, msg) {\n    await stopGeneration();\n    return {\n        payload: \"stopped\",\n        status: { fill: \"yellow\", shape: \"dot\", text: \"Stopped\" }\n    };\n}\n\nasync function runPromptWithRetries(msg, maxRetries) {\n    for (let retryCount = 0; retryCount < maxRetries; retryCount++) {\n        if (isStopRequested()) {\n            return handleStopRequest();\n        }\n\n        try {\n            const payload = await runPrompt(msg);\n            return {\n                payload,\n                status: { fill: \"green\", shape: \"dot\", text: \"done\" }\n            };\n        } catch (error) {\n            console.error(`[Run Prompt] Attempt ${retryCount + 1} failed:`, error);\n            await reloadPageIfNecessary(retryCount + 1);\n\n            if (retryCount === maxRetries - 1) {\n                throw error;\n            }\n        }\n    }\n    throw new Error('Max retries reached');\n}\n\nfunction isLastStep(msg) {\n    console.log('This is the last step');\n    return msg.currentStep === msg.totalSteps - 1;\n}\n\nfunction handleLastStep(result) {\n    return {\n        ...result,\n        endOfSequence: true,\n        status: { fill: \"green\", shape: \"dot\", text: \"Sequence Complete\" }\n    }; \n}\n\nfunction handleError(error) {\n    return {\n        payload: 'Error occurred: ' + error.message,\n        status: { fill: \"red\", shape: \"ring\", text: \"Error\" },\n        error: error.message\n    };\n}\n\nasync function executeScript(msg) {\n    console.log('[Run Prompt] Entering executeScript');\n    const maxRetries = 3;\n    let browser;\n    let result = { payload: null, status: null, error: null };\n\n    try {\n        browser = await setupBrowser();\n        \n        if (isStopRequested()) {\n            return handleStopRequest(browser, msg);\n        }\n\n        result = await runPromptWithRetries(msg, maxRetries);\n\n        if (isLastStep(msg)) {\n            result = handleLastStep(result);\n            console.log('last step result: ', result);\n        }\n    } catch (error) {\n        result = handleError(error);\n    }\n\n    return cleanup(browser, result, msg);\n}\n\n\n\nexecuteScript(msg);\n\nreturn null;\n",
+        "name": "Run Prompt Side",
+        "func": "console.log('[Run Prompt Side] Starting execution');\n\nnode.status({ fill: \"blue\", shape: \"dot\", text: \"Running...\" });\n\ncontext.runPrompt = context.runPrompt || {};\ncontext.runPrompt.isStopRequested = msg.payload === \"stop\";\n\nconsole.log('context.runPrompt:', context.runPrompt);\n\nlet browser, browserContext, currentPage;\nconsole.log('[Run Prompt Side] Initial state:', { browser, browserContext, currentPage });\n\nasync function connectAndSetupPage() {\n    console.log('[Run Prompt Side] Entering connectAndSetupPage');\n    if (!browser) {\n        console.log('[Run Prompt Side] Browser not initialized, connecting...');\n        browser = await playwright.chromium.connectOverCDP('http://localhost:27000');\n        console.log('[Run Prompt Side] Browser connected');\n        browserContext = browser.contexts()[0];\n        console.log('[Run Prompt Side] Browser context obtained');\n        currentPage = browserContext.pages()[0] || await browserContext.newPage();\n        console.log('[Run Prompt Side] Current page set');\n    }\n    //    console.log('[Run Prompt Side] Exiting connectAndSetupPage:', { browser, browserContext, currentPage });\n    return { browser, browserContext, currentPage };\n}\n\nasync function getCurrentPage() {\n    console.log('[Run Prompt Side] Entering getCurrentPage');\n    if (!browserContext) {\n        console.log('[Run Prompt Side] Browser context not found, creating new one');\n        browser = await playwright.chromium.connectOverCDP('http://localhost:27000');\n        browserContext = browser.contexts()[0];\n        console.log('[Run Prompt Side] New browser context created');\n    }\n    const pages = await browserContext.pages();\n    console.log('[Run Prompt Side] Number of pages:', pages.length);\n    const currentPage = pages[pages.length - 1];\n    //console.log('[Run Prompt Side] Exiting getCurrentPage, current page:', currentPage);\n    return currentPage;\n}\n\nasync function clickButtonIfVisible(selector, waitForHidden = false) {\n    try {\n        const page = await getCurrentPage();\n        const button = await page.$(selector);\n        const shouldClick = button && await button.isVisible();\n\n        if (shouldClick) {\n            await button.click();\n\n            if (waitForHidden) {\n                await page.waitForSelector(selector, { state: 'hidden', timeout: 60000 });\n            }\n        }\n\n        return shouldClick;\n    } catch (error) {\n        return false;\n    }\n}\n\nasync function reloadPageIfNecessary(retryCount) {\n    console.log('[Run Prompt Side] Entering reloadPageIfNecessary:', { retryCount });\n    try {\n        const page = await getCurrentPage();\n        const shouldReload = [\n            retryCount > 0,\n            !await clickButtonIfVisible('button:has-text(\"Continue generating\")', true),\n            await page.$('#prompt-textarea').then(() => false).catch(() => true)\n        ].every(Boolean);\n\n        console.log('[Run Prompt Side] Should reload:', shouldReload);\n        shouldReload && await page.reload({ waitUntil: 'networkidle' });\n        console.log('[Run Prompt Side] Page reloaded:', shouldReload);\n    } catch (error) {\n        console.log(`[Run Prompt Side] Error in reloadPageIfNecessary: ${error.message}`);\n    }\n}\n\nasync function waitForResponseCompletion() {\n    console.log('[Run Prompt Side] Entering waitForResponseCompletion');\n    console.log('[Run Prompt Side] Initializing variables');\n\n    let previousLength = 0, currentLength = 0, stableCount = 0;\n    const maxStableCount = 3;\n    const maxWaitTime = 120000; // 2 minutes\n    const startTime = Date.now();\n    let responseText = '';\n\n    console.log(`[Run Prompt Side] Max stable count: ${maxStableCount}, Max wait time: ${maxWaitTime}ms`);\n\n    while (Date.now() - startTime < maxWaitTime) {\n        console.log(`[Run Prompt Side] Elapsed time: ${Date.now() - startTime}ms`);\n\n        if (context.runPrompt.isStopRequested) {\n            console.log('[Run Prompt Side] Stop requested. Halting response completion.');\n            await stopGeneration();\n            clearStopRequestedState();\n            return '';\n        }\n\n        try {\n            console.log('[Run Prompt Side] Attempting to get current page');\n            const page = await getCurrentPage();\n            console.log('[Run Prompt Side] Successfully got current page');\n\n            // Check for scroll-to-bottom button and click if visible\n            console.log('[Run Prompt Side] Checking for scroll-to-bottom button');\n            const scrollButtonSelector = 'button.cursor-pointer.absolute.z-10.rounded-full.bg-clip-padding.border.text-token-text-secondary.border-token-border-light.right-1\\\\/2.translate-x-1\\\\/2.bg-token-main-surface-primary.w-8.h-8.flex.items-center.justify-center.bottom-5';\n            const scrollButtonClicked = await clickButtonIfVisible(scrollButtonSelector);\n\n            if (scrollButtonClicked) {\n                console.log('[Run Prompt Side] Scroll-to-bottom button clicked, waiting for scroll animation');\n                await page.waitForTimeout(1000); // Wait for scroll animation\n                console.log('[Run Prompt Side] Scroll animation wait complete');\n            } else {\n                console.log('[Run Prompt Side] Scroll-to-bottom button not found or not clicked');\n            }\n\n            console.log('[Run Prompt Side] Waiting for article selector');\n            await page.waitForSelector('div.h-full article.w-full.text-token-text-primary', { timeout: 10000 });\n            console.log('[Run Prompt Side] Article selector found');\n\n            console.log('[Run Prompt Side] Querying for articles');\n            const articles = await page.$$('div.h-full article.w-full.text-token-text-primary');\n            console.log(`[Run Prompt Side] Found ${articles.length} articles`);\n\n            if (articles.length === 0) {\n                console.log('[Run Prompt Side] No articles found, waiting...');\n                await page.waitForTimeout(3000);\n                continue;\n            }\n\n            const lastArticle = articles[articles.length - 1];\n            console.log('[Run Prompt Side] Attempting to extract content from last article');\n            try {\n                responseText = await page.evaluate(article => {\n                    const markdownDiv = article.querySelector('.markdown.prose.w-full.break-words.dark\\\\:prose-invert.dark');\n                    return markdownDiv ? markdownDiv.innerText : '';\n                }, lastArticle);\n                console.log('[Run Prompt Side] Content extracted successfully');\n            } catch (error) {\n                console.log('[Run Prompt Side] Error extracting content:', error.message);\n                console.log('[Run Prompt Side] Falling back to article.innerText()');\n                responseText = await lastArticle.innerText();\n                console.log('[Run Prompt Side] Fallback content extraction complete');\n            }\n\n            currentLength = responseText.length;\n            console.log(`[Run Prompt Side] Current response length: ${currentLength}`);\n            if (currentLength == 0) {\n                console.log('[Run Prompt Side] No content found in the response');\n            }\n\n            const isStable = currentLength === previousLength && currentLength > 0;\n            stableCount = isStable ? stableCount + 1 : 0;\n            console.log(`[Run Prompt Side] Is response stable: ${isStable}, Stable count: ${stableCount}`);\n\n            if (stableCount >= maxStableCount) {\n                console.log('[Run Prompt Side] Response appears to be complete');\n                return responseText;\n            }\n\n            previousLength = currentLength;\n            console.log('[Run Prompt Side] Waiting for 2 seconds before next iteration');\n            await page.waitForTimeout(2000);\n        } catch (error) {\n            console.log(`[Run Prompt Side] Error in waitForResponseCompletion: ${error.message}`);\n            console.log('[Run Prompt Side] Error stack:', error.stack);\n            console.log('[Run Prompt Side] Waiting for 3 seconds before retrying');\n            await new Promise(resolve => setTimeout(resolve, 3000));\n        }\n    }\n\n    console.log('[Run Prompt Side] Max wait time exceeded. Returning current response.');\n    return responseText;\n}\n\nasync function extractResponseText(currentPage) {\n    console.log('[Run Prompt Side] Entering extractResponseText');\n    let responseText = '';\n    let lastArticle;\n\n    try {\n        // Find all articles within the h-full div\n        const articles = await currentPage.$$('div.h-full article.w-full.text-token-text-primary');\n        console.log(`[Run Prompt Side] Found ${articles.length} articles`);\n\n        if (articles.length > 0) {\n            // Get the last article\n            lastArticle = articles[articles.length - 1];\n            console.log('[Run Prompt Side] Selected the last article');\n        } else {\n            throw new Error('No articles found');\n        }\n\n        // Find and click the copy button\n        const copyButton = await lastArticle.$('button[aria-label=\"Copy\"]');\n        if (copyButton) {\n            await copyButton.click();\n            await currentPage.waitForTimeout(1000); // Wait for clipboard to be updated\n\n            // Get clipboard contents\n            responseText = await currentPage.evaluate(() => navigator.clipboard.readText());\n            console.log('[Run Prompt Side] Response extracted from clipboard');\n        } else {\n            console.log('[Run Prompt Side] Copy button not found, falling back to original method');\n            const markdownDiv = await lastArticle.$('div.markdown');\n            if (markdownDiv) {\n                responseText = await markdownDiv.innerText();\n            } else {\n                throw new Error('Markdown div not found');\n            }\n        }\n    } catch (error) {\n        console.log('[Run Prompt Side] Error extracting content:', error.message);\n        try {\n            if (!lastArticle) {\n                lastArticle = await currentPage.$('div.h-full article.w-full.text-token-text-primary:last-child');\n                if (!lastArticle) {\n                    throw new Error('Unable to find last article');\n                }\n            }\n            const textBaseElement = await lastArticle.$('.text-base');\n            if (textBaseElement) {\n                responseText = await textBaseElement.innerText();\n                console.log('[Run Prompt Side] Response extracted using alternative selector');\n            } else {\n                throw new Error('Alternative selector not found');\n            }\n        } catch (innerError) {\n            console.log('[Run Prompt Side] Alternative selector also failed, using entire article content');\n            if (lastArticle) {\n                responseText = await lastArticle.innerText();\n            } else {\n                console.log('[Run Prompt Side] Failed to extract any content');\n                responseText = '';\n            }\n        }\n    }\n\n    console.log('[Run Prompt Side] Exiting extractResponseText, response length:', responseText.length);\n    return responseText;\n}\n\nasync function stopGeneration() {\n    console.log('[Run Prompt Side] Entering stopGeneration');\n    context.runPrompt.isStopRequested = true;\n    await clickButtonIfVisible('button[data-testid=\"stop-button\"][aria-label=\"Stop streaming\"]', true);\n    clearStopRequestedState();\n    console.log('[Run Prompt Side] Exiting stopGeneration');\n}\n\nfunction clearStopRequestedState() {\n    context.runPrompt.isStopRequested = false;\n    console.log('[Run Prompt Side] Stop requested state cleared.');\n}\n\nfunction cleanup(browser, result, msg) {\n    if (browser) {\n        browser.close().then(() => console.log('[Run Prompt Side] Browser closed'));\n    }\n\n    node.status(result.status);\n\n    const isLastMessage = result.endOfSequence;\n\n    const firstOutput = {\n        ...msg,\n        payload: result.payload,\n        endOfSequence: !!isLastMessage,\n        _continuation: !isLastMessage  // Set _continuation to true for the last message\n    };\n\n    const secondOutput = {\n        ...msg,\n        payload: result.payload,\n        status: result.status.text,\n        _continuation: !isLastMessage,\n        error: result.error,\n        endOfSequence: isLastMessage === true\n    };\n\n    node.send([firstOutput, secondOutput]);\n\n    return result;\n}\n\nasync function runPrompt(msg) {\n    console.log('[Run Prompt Side] Entering runPrompt');\n    try {\n        await reloadPageIfNecessary(0);\n\n        const page = await getCurrentPage();\n        console.log('[Run Prompt Side] Got current page in runPrompt');\n\n        // ... (existing code for new chat button)\n\n        const promptText = msg.payload || 'Give me a recipe for biscuits';\n        console.log('[Run Prompt Side] Entering prompt:', promptText);\n        await page.waitForSelector('#prompt-textarea', { state: 'attached', timeout: 30000 });\n        await page.fill('#prompt-textarea', promptText);\n\n        // Handle sidePrompt if present\n        if (msg.sidePrompt && msg.sidePrompt.length > 0) {\n            console.log('[Run Prompt Side] Handling sidePrompt');\n            const sidePromptText = msg.sidePrompt.join('\\n');\n            await page.evaluate((text) => {\n                const textarea = document.querySelector('#prompt-textarea');\n                textarea.value += '\\n\\n' + text;\n                textarea.dispatchEvent(new Event('input', { bubbles: true }));\n            }, sidePromptText);\n        }\n\n        await page.click('button[data-testid=\"send-button\"]');\n        console.log('[Run Prompt Side] Sent prompt');\n\n        await waitForResponseCompletion();\n\n        const responseText = await extractResponseText(page);\n        await clickButtonIfVisible('button:has-text(\"I prefer this response\")');\n        await page.waitForSelector('button[data-testid=\"stop-button\"]', { state: 'hidden', timeout: 120000 });\n\n        console.log('[Run Prompt Side] Exiting runPrompt');\n        return responseText;\n    } catch (error) {\n        console.log(`[Run Prompt Side] Error in runPrompt: ${error.message}`);\n        console.log('[Run Prompt Side] Error stack:', error.stack);\n        throw error;\n    }\n}\n\n\nasync function setupBrowser() {\n    try {\n        const { browser } = await connectAndSetupPage();\n        return browser;\n    } catch (error) {\n        throw new Error('Connection setup error: ' + error.message);\n    }\n}\n\nfunction isStopRequested() {\n    return context.runPrompt.isStopRequested;\n}\n\nasync function handleStopRequest(browser, msg) {\n    await stopGeneration();\n    return {\n        payload: \"stopped\",\n        status: { fill: \"yellow\", shape: \"dot\", text: \"Stopped\" }\n    };\n}\n\nasync function runPromptWithRetries(msg, maxRetries) {\n    for (let retryCount = 0; retryCount < maxRetries; retryCount++) {\n        if (isStopRequested()) {\n            return handleStopRequest();\n        }\n\n        try {\n            const payload = await runPrompt(msg);\n            return {\n                payload,\n                status: { fill: \"green\", shape: \"dot\", text: \"done\" }\n            };\n        } catch (error) {\n            console.error(`[Run Prompt Side] Attempt ${retryCount + 1} failed:`, error);\n            await reloadPageIfNecessary(retryCount + 1);\n\n            if (retryCount === maxRetries - 1) {\n                throw error;\n            }\n        }\n    }\n    throw new Error('Max retries reached');\n}\n\nfunction isLastStep(msg) {\n    console.log('This is the last step');\n    return msg.currentStep === msg.totalSteps - 1;\n}\n\nfunction handleLastStep(result) {\n    return {\n        ...result,\n        endOfSequence: true,\n        status: { fill: \"green\", shape: \"dot\", text: \"Sequence Complete\" }\n    }; \n}\n\nfunction handleError(error) {\n    return {\n        payload: 'Error occurred: ' + error.message,\n        status: { fill: \"red\", shape: \"ring\", text: \"Error\" },\n        error: error.message\n    };\n}\n\nasync function executeScript(msg) {\n    console.log('[Run Prompt Side] Entering executeScript');\n    const maxRetries = 3;\n    let browser;\n    let result = { payload: null, status: null, error: null };\n\n    try {\n        browser = await setupBrowser();\n        \n        if (isStopRequested()) {\n            return handleStopRequest(browser, msg);\n        }\n\n        result = await runPromptWithRetries(msg, maxRetries);\n\n        if (isLastStep(msg)) {\n            result = handleLastStep(result);\n            console.log('last step result: ', result);\n        }\n    } catch (error) {\n        result = handleError(error);\n    }\n\n    return cleanup(browser, result, msg);\n}\n\n\n\nexecuteScript(msg);\n\nreturn null;\n",
         "outputs": 3,
         "timeout": "",
-        "noerr": 0,
+        "noerr": 23,
         "initialize": "",
         "finalize": "",
         "libs": [
@@ -3647,8 +3602,8 @@
                 "module": "playwright"
             }
         ],
-        "x": 1650,
-        "y": 920,
+        "x": 1630,
+        "y": 940,
         "wires": [
             [],
             [
@@ -3663,8 +3618,8 @@
         "id": "15eb11ee04b9a840",
         "type": "function",
         "z": "6fd22f15cd2422d0",
-        "name": "Sequence Controller",
-        "func": "// Use node context to persist state across messages\nlet isProcessing = context.get('isProcessing') || false;\nlet prompts = context.get('prompts') || [];\nlet currentStep = context.get('currentStep') || 0;\nlet cimaPrompts = global.get('userRootPaths').cimaPrompts;\n\nfunction loadPrompts() {\n\n    const username = os.userInfo().username;\n\n    // Join DOCUMENTS_PATH with the specific folder structure\n    const filePath = msg.filePath\n    //const filePath = path.join(DOCUMENTS_PATH, 'Sync', 'PeterMainVault', '9 - Prompts', 'Execute', 'OtherPrompts.md');\n    console.log('File path:', filePath);\n\n    try {\n        const content = fs.readFileSync(filePath, 'utf8');\n        const sections = content.split('\\n# ');\n\n        prompts = sections.slice(1).map(section => {\n            const [title, ...bodyLines] = section.split('\\n');\n            return {\n                title: title.trim(),\n                body: bodyLines.join('\\n').trim()\n            };\n        });\n\n        context.set('prompts', prompts);\n        console.log(`[Sequence Controller] Loaded ${prompts.length} prompts`);\n        node.status({ fill: \"blue\", shape: \"dot\", text: `Loaded ${prompts.length} prompts` });\n    } catch (error) {\n        console.error(`[Sequence Controller] Failed to load prompts: ${error.message}`);\n        node.error(`Failed to load prompts from ${filePath}: ${error.message}`);\n        node.status({ fill: \"red\", shape: \"ring\", text: \"Failed to load prompts\" });\n    }\n}\n\nfunction processNextPrompt() {\n    console.log(`[Sequence Controller] Processing next prompt. Current step: ${currentStep + 1}`);\n    if (currentStep < prompts.length) {\n        const msg = {\n            currentStep: currentStep,\n            totalSteps: prompts.length,  // Add this line\n            promptConfig: prompts[currentStep],\n            payload: prompts[currentStep].body,\n            _continuation: true\n        };\n        console.log(`[Sequence Controller] Sending prompt ${currentStep + 1} of ${prompts.length}`);\n        node.send(msg);\n        node.status({ fill: \"blue\", shape: \"dot\", text: `Processing prompt ${currentStep + 1} of ${prompts.length}` });\n    } else {\n        console.log('[Sequence Controller] All prompts processed. Stopping.');\n        stopProcessing();\n    }\n}\n\nfunction startProcessing() {\n    console.log('[Sequence Controller] Starting processing');\n    isProcessing = true;\n    currentStep = 0;\n    context.set('isProcessing', isProcessing);\n    context.set('currentStep', currentStep);\n    processNextPrompt();\n}\n\nfunction stopProcessing() {\n    console.log('[Sequence Controller] Stopping processing');\n    isProcessing = false;\n    currentStep = 0;\n    prompts = [];\n    context.set('isProcessing', false);\n    context.set('currentStep', 0);\n    context.set('prompts', []);\n    node.status({ fill: \"yellow\", shape: \"dot\", text: \"Sequence Stopped, Prompts Unloaded\" });\n    // Send message to the Playwright function node if not last msg\n    if (msg._continuation == true){node.send({ payload: \"stop\" });}\n\n}\n\n// Load prompts if they haven't been loaded yet\nif (!prompts.length) {\n    loadPrompts();\n}\n\nif (msg._continuation) {\n    console.log(`[Sequence Controller] Received continuation message with payload: ${msg.payload}`);\n    if (isProcessing) {\n        if (msg.status === \"done\" || msg.status === \"End of Sequence\") {\n            console.log('[Sequence Controller] Received \"done\" or \"End of Sequence\" signal. Processing next prompt.');\n            currentStep++;\n            context.set('currentStep', currentStep);\n            processNextPrompt();\n        } else if (msg.status === \"error\") {\n            console.log(`[Sequence Controller] Error occurred: ${msg.error}. Stopping sequence.`);\n            stopProcessing();\n        }\n    }\n} else {\n    console.log(`[Sequence Controller] Received new message with payload: ${msg.payload}`);\n    if (msg.status === \"start\") {\n        startProcessing();\n    } else if (msg.status === \"stop\") {\n        stopProcessing();\n    } else if (msg.status === \"reload\") {\n        loadPrompts();\n    } else if (msg.status === \"Sequence Complete\") {\n        stopProcessing();\n        console.log('[Sequence Controller] All prompts processed. Stopping.'); \n        node.status({ fill: \"green\", shape: \"dot\", text: \"All prompts processed. Stopping.\" });\n    } else {\n        console.log(`[Sequence Controller] Unrecognized message: ${msg.payload}`);\n    }\n}\n\nreturn null;",
+        "name": "Sequence Controller Side",
+        "func": "// Use node context to persist state across messages\nlet isProcessing = context.get('isProcessing') || false;\nlet prompts = context.get('prompts') || [];\nlet currentStep = context.get('currentStep') || 0;\n\nfunction processPrompts(inputPrompts) {\n    console.log('[Sequence Controller Side] Processing input prompts');\n    prompts = inputPrompts.map(prompt => {\n        return {\n            title: prompt.title || 'Untitled Prompt',\n            body: prompt.body || '',\n            sidePrompt: prompt.sidePrompt || []\n        };\n    });\n\n    context.set('prompts', prompts);\n    console.log(`[Sequence Controller Side] Processed ${prompts.length} prompts`);\n    node.status({ fill: \"blue\", shape: \"dot\", text: `Loaded ${prompts.length} prompts` });\n}\n\nfunction processNextPrompt() {\n    console.log(`[Sequence Controller Side] Processing next prompt. Current step: ${currentStep + 1}`);\n    if (currentStep < prompts.length) {\n        const msg = {\n            currentStep: currentStep,\n            totalSteps: prompts.length,\n            promptConfig: prompts[currentStep],\n            payload: prompts[currentStep].body,\n            sidePrompt: prompts[currentStep].sidePrompt,\n            _continuation: true\n        };\n        console.log(`[Sequence Controller Side] Sending prompt ${currentStep + 1} of ${prompts.length}`);\n        node.send(msg);\n        node.status({ fill: \"blue\", shape: \"dot\", text: `Processing prompt ${currentStep + 1} of ${prompts.length}` });\n    } else {\n        console.log('[Sequence Controller Side] All prompts processed. Stopping.');\n        stopProcessing();\n    }\n}\n\nfunction startProcessing() {\n    console.log('[Sequence Controller Side] Starting processing');\n    isProcessing = true;\n    currentStep = 0;\n    context.set('isProcessing', isProcessing);\n    context.set('currentStep', currentStep);\n    processNextPrompt();\n}\n\nfunction stopProcessing() {\n    console.log('[Sequence Controller Side] Stopping processing');\n    isProcessing = false;\n    currentStep = 0;\n    prompts = [];\n    context.set('isProcessing', false);\n    context.set('currentStep', 0);\n    context.set('prompts', []);\n    node.status({ fill: \"yellow\", shape: \"dot\", text: \"Sequence Stopped, Prompts Unloaded\" });\n    // Send message to the Playwright function node if not last msg\n    if (msg._continuation == true) {\n        node.send({ payload: \"stop\" });\n    }\n}\n\n// Main logic\nif (msg._continuation) {\n    console.log(`[Sequence Controller Side] Received continuation message with payload: ${msg.payload}`);\n    if (isProcessing) {\n        if (msg.status === \"done\" || msg.status === \"End of Sequence\") {\n            console.log('[Sequence Controller Side] Received \"done\" or \"End of Sequence\" signal. Processing next prompt.');\n            currentStep++;\n            context.set('currentStep', currentStep);\n            processNextPrompt();\n        } else if (msg.status === \"error\") {\n            console.log(`[Sequence Controller Side] Error occurred: ${msg.error}. Stopping sequence.`);\n            stopProcessing();\n        }\n    }\n} else {\n    console.log(`[Sequence Controller Side] Received new message with payload: ${JSON.stringify(msg.payload)}`);\n    if (msg.status === \"start\") {\n        if (Array.isArray(msg.payload)) {\n            processPrompts(msg.payload);\n            startProcessing();\n        } else {\n            console.log('[Sequence Controller Side] Invalid input: payload is not an array of prompts');\n            node.status({ fill: \"red\", shape: \"ring\", text: \"Invalid input\" });\n        }\n    } else if (msg.status === \"stop\") {\n        stopProcessing();\n    } else if (msg.status === \"Sequence Complete\") {\n        stopProcessing();\n        console.log('[Sequence Controller Side] All prompts processed. Stopping.');\n        node.status({ fill: \"green\", shape: \"dot\", text: \"All prompts processed. Stopping.\" });\n    } else {\n        console.log(`[Sequence Controller Side] Unrecognized message: ${JSON.stringify(msg)}`);\n    }\n}\n\nreturn null;",
         "outputs": 1,
         "timeout": "",
         "noerr": 0,
@@ -3684,12 +3639,54 @@
                 "module": "os"
             }
         ],
-        "x": 1660,
+        "x": 1610,
         "y": 820,
         "wires": [
             [
                 "da5c196c586655f9"
             ]
+        ]
+    },
+    {
+        "id": "61726b12fb9a0373",
+        "type": "debug",
+        "z": "6fd22f15cd2422d0",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2040,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "33fe79d54aca8805",
+        "type": "function",
+        "z": "6fd22f15cd2422d0",
+        "g": "25825ea846749a3b",
+        "name": "dynamicCmd",
+        "func": "// 1. Function to parse dynamic variables in the body using the msg object\nfunction parseDynamicVariables(body, msg, context) {\n    console.log('[function:dynamicCmd] Starting parseDynamicVariables function');\n\n    if (!msg || typeof msg !== 'object') {\n        console.warn('[function:dynamicCmd] Warning: msg is not a valid object');\n        return body; // Return the original body if msg is not valid\n    }\n\n    const objectReplacements = new Map();\n    let counter = 0;\n\n    function resolveValue(p1) {\n        // Check if the dynamic variable is an execution command\n        const executeMatch = p1.match(/^execute\\((.*)\\)$/);\n        if (executeMatch) {\n            let command = executeMatch[1].trim();\n            try {\n                // Ensure the command is a valid function body\n                if (command.endsWith(';')) {\n                    command = command.slice(0, -1); // Remove trailing semicolon\n                }\n\n                // Dynamically execute the command\n                const dynamicFunction = new Function('context', 'msg', `return ${command}`);\n                const value = dynamicFunction(context, msg);\n                return value !== undefined ? value : `[${command} returned undefined]`;\n            } catch (error) {\n                console.error(`[function:dynamicCmd] Error executing command: ${error.message}`);\n                return `[Error executing command: ${error.message}]`;\n            }\n        }\n\n        // If not an execute command, process as usual\n        const parts = p1.split('.');\n        let value = msg;\n\n        // Start from index 1 if the first part is 'msg'\n        const startIndex = parts[0] === 'msg' ? 1 : 0;\n\n        for (let i = startIndex; i < parts.length; i++) {\n            const part = parts[i];\n\n            if (value && typeof value === 'object' && part in value) {\n                value = value[part];\n            } else {\n                console.warn(`[function:dynamicCmd] Warning: ${part} does not exist in the object`);\n                return `[${p1} not available]`;\n            }\n        }\n\n        return value;\n    }\n\n    function handleUndefinedOrNull(p1, value) {\n        if (value === undefined || value === null) {\n            console.warn(`[function:dynamicCmd] Warning: ${p1} is ${value === undefined ? 'undefined' : 'null'}`);\n            return `[${p1} not available]`;\n        }\n        return null;\n    }\n\n    function handleObject(p1, value) {\n        if (typeof value === 'object') {\n            const marker = `__OBJECT_REPLACEMENT_${counter}__`;\n            objectReplacements.set(marker, value);\n            counter++;\n            return marker;\n        }\n        return null;\n    }\n\n    // Replace dynamic variables with markers\n    const intermediateResult = body.replace(/\\$\\<\\<([^>]+)\\>\\>\\$/g, (match, p1) => {\n        const value = resolveValue(p1);\n        if (value === null) {\n            return `[${p1} not available]`;\n        }\n\n        const undefinedOrNullResult = handleUndefinedOrNull(p1, value);\n        if (undefinedOrNullResult) {\n            return undefinedOrNullResult;\n        }\n\n        const objectResult = handleObject(p1, value);\n        if (objectResult) {\n            return objectResult;\n        }\n\n        return String(value);\n    });\n\n    // Replace markers with actual objects\n    let finalResult = intermediateResult;\n    for (const [marker, value] of objectReplacements) {\n        finalResult = finalResult.replace(marker, JSON.stringify(value));\n    }\n    console.log(\"finalResult : \", finalResult);\n    return finalResult;\n}\n\n// 2. Generalized function to execute commands with added safety checks\nfunction executeCommands(commands, context, msg) {\n    let resultAccumulator = \"\";\n\n    commands.forEach((cmdBlock, index) => {\n        node.warn(`[function:dynamicCmd] Executing command block: ${cmdBlock.name || `Command ${index + 1}`}`);\n        node.warn(`[function:dynamicCmd] Command content: ${JSON.stringify(cmdBlock)}`);\n\n        if (cmdBlock.commands.length === 0) {\n            node.warn(`[function:dynamicCmd] No commands found in: ${cmdBlock.name || `Command ${index + 1}`}`);\n        }\n\n        cmdBlock.commands.forEach(cmd => {\n            if (cmd.trim() === '') {\n                node.warn(`[function:dynamicCmd] Skipping empty command.`);\n                return; // Skip empty commands\n            }\n\n            node.warn(`[function:dynamicCmd] Executing command: ${cmd}`);\n\n            try {\n                // Dynamically create and execute the function with a timeout to prevent hanging\n                let result;\n                const dynamicFunction = new Function('context', 'msg', cmd);\n                const timeout = setTimeout(() => {\n                    throw new Error(\"Command execution timed out.\");\n                }, 5000); // Set a timeout of 5 seconds\n\n                result = dynamicFunction(context, msg);  // Pass context and execute the function\n                clearTimeout(timeout); // Clear the timeout if execution completes\n\n                // Check if the function returned a value\n                if (result !== undefined) {\n                    node.warn(`[function:dynamicCmd] Command executed successfully with result: ${result}`);\n                    resultAccumulator += result + \"\\n\";  // Accumulate results\n                } else {\n                    node.warn(`[function:dynamicCmd] Command executed successfully but returned no result.`);\n                }\n            } catch (error) {\n                node.error(`[function:dynamicCmd] Error executing command: ${error.message}`);\n                resultAccumulator += `[Error executing command: ${error.message}]\\n`; // Accumulate error message\n            }\n        });\n    });\n\n    node.warn(`[function:dynamicCmd] Finished executing all commands. Final accumulated result: ${resultAccumulator.trim()}`);\n    return resultAccumulator.trim();\n}\n\n// 3. Function to process compileCmd\nfunction processCompileCmd(compileCmd, localResult = \"\", context) {\n  let compiledPrompt = \"\";\n  let previousResponse = \"\";\n  localResult = localResult || \"\";\n\n  node.warn(`[processCompileCmd] Initial localResult: ${localResult}`);\n  node.warn(`[processCompileCmd] Initial compileCmd array: ${JSON.stringify(compileCmd)}`);\n\n  const processCommand = (cmd) => {\n    node.warn(`[processCompileCmd] Processing command: ${cmd}`);\n\n    // Skip lines with command-related keywords\n    if (cmd.match(/^(compileCmd:|localCmd\\d+|sidePrompt\\d+|compile\\d+|mainPrompt)/)) {\n      node.warn(`[processCompileCmd] Skipping command: ${cmd}`);\n      return \"\";\n    }\n\n    // Skip lines that are part of a side prompt\n    if (cmd.match(/^This is line \\d+ of side prompt\\.$/)) {\n      node.warn(`[processCompileCmd] Skipping side prompt line: ${cmd}`);\n      return \"\";\n    }\n\n    // Handle {previousResponse} placeholder\n    if (cmd.includes(\"{previousResponse}\")) {\n      if (msg.currentStep !== undefined) {\n        const previousStepIndex = msg.currentStep - 1;\n        const previousResponseKey = `response${previousStepIndex}`;\n        previousResponse = msg[previousResponseKey] || `[${previousResponseKey} not available]`;\n      } else {\n        previousResponse = \"[currentStep not defined]\";\n      }\n      cmd = cmd.replace(\"{previousResponse}\", previousResponse);\n      node.warn(`[processCompileCmd] After replacing {previousResponse}, cmd: ${cmd}`);\n    }\n\n    // Handle $<<localResult>>$ placeholder\n    if (cmd.includes(\"$<<localResult>>$\")) {\n      // Extract only the numeric result from localResult\n      const numericResult = localResult.match(/\\d+/);\n      const replacementValue = numericResult ? numericResult[0] : \"No numeric result found\";\n      node.warn(`[processCompileCmd] $<<localResult>>$ found. Replacing with: ${replacementValue}`);\n      cmd = cmd.replace(\"$<<localResult>>$\", replacementValue);\n      node.warn(`[processCompileCmd] After replacing $<<localResult>>$, cmd: ${cmd}`);\n    } else {\n      node.warn(`[processCompileCmd] No $<<localResult>>$ found in command. Current command: ${cmd}`);\n    }\n\n    // Handle dynamic variables\n    if (cmd.includes(\"$<<\")) {\n      node.warn(`[processCompileCmd] Parsing dynamic variables in cmd: ${cmd}`);\n      cmd = parseDynamicVariables(cmd, msg, context);\n      node.warn(`[processCompileCmd] After parseDynamicVariables, cmd: ${cmd}`);\n    }\n\n    return cmd + \"\\n\";\n  };\n\n  compileCmd.forEach(cmd => {\n    if (typeof cmd === 'string') {\n      compiledPrompt += processCommand(cmd);\n    } else if (typeof cmd === 'object' && cmd !== null) {\n      Object.keys(cmd).forEach(nestedCmdKey => {\n        node.warn(`[processCompileCmd] Processing nested command block: ${nestedCmdKey}`);\n        cmd[nestedCmdKey].forEach(nestedCmd => {\n          compiledPrompt += processCommand(nestedCmd);\n        });\n      });\n    }\n  });\n\n  // Final compiled prompt logging and return\n  node.warn(`[processCompileCmd] Final compiled prompt:\\n${compiledPrompt}`);\n  return compiledPrompt;\n}\n\n// 5. Function to execute the parsed commands block by block\nfunction executeCommandsBlockByBlock(dynamicCmd, context) {\n    let finalArray = [];\n\n    for (const section of dynamicCmd.sections) {\n        switch (section.type) {\n            case 'commandSet':\n                for (const command of section.commands) {\n                    let result;\n                    switch (command.type) {\n                        case 'localCmd':\n                            result = executeCommands([command], context, msg);\n                            break;\n                        case 'sidePrompt':\n                        case 'mainPrompt':\n                            result = command.commands.join(\"\\n\");\n                            break;\n                        case 'compile':\n                            result = processCompileCmd(command.commands, finalArray.join(\"\\n\"), context);\n                            break;\n                    }\n                    finalArray.push(result);\n                    node.warn(`[function:dynamicCmd] Result after processing block: ${result}`);\n                }\n                break;\n        }\n    }\n\n    return finalArray;\n}\n\n// Function to handle the parsing of localCmd blocks, updated to handle multi-line commands properly\nfunction parseLocalCmd(line, dynamicCmd, currentCmdName, nestedCmdBuffer, capturingNestedCmd) {\n    // Start capturing the command when '- localCmd1' is detected\n    if (line.startsWith('- localCmd')) {\n        currentCmdName = line.replace('- ', '').trim();  // Capture command name (e.g., 'localCmd1')\n        capturingNestedCmd = true;  // Start capturing the nested command\n        nestedCmdBuffer = \"\";  // Initialize buffer for command content\n        node.warn(`[function:dynamicCmd] Started capturing nested command: ${currentCmdName}`);\n    }\n    // Continue capturing until the command ends\n    else if (capturingNestedCmd) {\n        node.warn('[function:dynamicCmd] Capturing nested command block started');\n\n        // Continue capturing as part of a multi-line command\n        nestedCmdBuffer += line.replace(/^-\\s*/, '').trim() + \"\\n\";\n\n        // Check if this is the end of the multi-line command\n        if (line.trim().endsWith('`')) {\n            capturingNestedCmd = false;\n            nestedCmdBuffer = nestedCmdBuffer.trim(); // Trim any trailing whitespace/newlines\n\n            // Remove the backticks at the beginning and end of the command\n            if (nestedCmdBuffer.startsWith('`') && nestedCmdBuffer.endsWith('`')) {\n                nestedCmdBuffer = nestedCmdBuffer.slice(1, -1);\n            }\n\n            dynamicCmd.localCmds.push({ name: currentCmdName, commands: [nestedCmdBuffer] });\n            node.warn(`[function:dynamicCmd] Finished capturing multi-line command: ${nestedCmdBuffer}`);\n            nestedCmdBuffer = \"\";  // Clear buffer\n        }\n    }\n\n    return { currentCmdName, nestedCmdBuffer, capturingNestedCmd };\n}\n\n// 6. Function to parse the input text and extract commands, while stripping out comments\nfunction parseInputText(inputText) {\n    let dynamicCmd = {\n        sections: []\n    };\n\n    let lines = inputText.split('\\n');\n    let currentSection = null;\n    let currentCommand = null;\n    let capturingNestedCmd = false;\n    let nestedCmdBuffer = \"\";  // Buffer to hold nested commands\n    let currentCmdName = \"\";    // Store the name of the current command (e.g., localCmd1)\n\n    lines.forEach(line => {\n        // Strip out comments that start with \"//\"\n        line = line.replace(/\\/\\/.*$/, '').trim();\n\n        if (line === '') {\n            return;  // Skip empty lines after removing comments\n        }\n\n        node.warn(`[function:dynamicCmd] Processing line: '${line}'`);\n\n        if (line.startsWith('dynamicCmd')) {\n            currentSection = { type: 'commandSet', commands: [] };\n            dynamicCmd.sections.push(currentSection);\n            node.warn(\"[function:dynamicCmd] Detected 'dynamicCmd' section.\");\n        } else if (line.startsWith('- ')) {\n            // Check if this is a new section (e.g., '- commandSet')\n            if (line.startsWith('- commandSet')) {\n                currentSection = { type: 'commandSet', commands: [] };\n                dynamicCmd.sections.push(currentSection);\n                node.warn(\"[function:dynamicCmd] Detected 'commandSet' section.\");\n                return;  // Continue to the next line\n            }\n\n            // Handle the start of a new command\n            if (line.startsWith('- localCmd')) {\n                // Finalize the previous command if necessary\n                if (currentCommand && capturingNestedCmd) {\n                    currentCommand.commands.push(nestedCmdBuffer.trim());\n                    nestedCmdBuffer = \"\";\n                    capturingNestedCmd = false;\n                }\n\n                currentCommand = { type: 'localCmd', commands: [] };\n                currentSection.commands.push(currentCommand);\n                currentCmdName = line.replace('- ', '').trim();  // Update the command name\n                capturingNestedCmd = true;  // Start capturing for multi-line commands\n                node.warn(`[function:dynamicCmd] Started capturing nested command: ${currentCmdName}`);\n            } else if (line.startsWith('- sidePrompt')) {\n                currentCommand = { type: 'sidePrompt', commands: [] };\n                currentSection.commands.push(currentCommand);\n                capturingNestedCmd = true;  // Start capturing sidePrompt lines\n            } else if (capturingNestedCmd && currentCommand.type === 'sidePrompt') {\n                if (line.trim() === '`') {\n                    capturingNestedCmd = false;  // End of sidePrompt\n                } else {\n                    currentCommand.commands.push(line.trim());\n                }\n            } else if (line.startsWith('- compile')) {\n                currentCommand = { type: 'compile', commands: [] };\n                currentSection.commands.push(currentCommand);\n            } else if (line.startsWith('- mainPrompt')) {\n                currentCommand = { type: 'mainPrompt', commands: [] };\n                currentSection.commands.push(currentCommand);\n            } else if (capturingNestedCmd) {\n                nestedCmdBuffer += line.replace('- ', '').trim() + \"\\n\";\n\n                // Check if this is the end of the multi-line command\n                if (line.trim().endsWith('`')) {\n                    capturingNestedCmd = false;\n                    nestedCmdBuffer = nestedCmdBuffer.trim(); // Trim any trailing whitespace/newlines\n\n                    // Remove the backticks at the beginning and end of the command\n                    if (nestedCmdBuffer.startsWith('`') && nestedCmdBuffer.endsWith('`')) {\n                        nestedCmdBuffer = nestedCmdBuffer.slice(1, -1);\n                    }\n\n                    currentCommand.commands.push(nestedCmdBuffer);\n                    node.warn(`[function:dynamicCmd] Finished capturing multi-line command: ${nestedCmdBuffer}`);\n                    nestedCmdBuffer = \"\";  // Clear buffer\n                }\n            } else {\n                if (currentCommand) {\n                    currentCommand.commands.push(line.replace('- ', '').trim());\n                } else {\n                    node.error(`[function:dynamicCmd] Error: Current command is null when processing line: ${line}`);\n                }\n            }\n        } else if (capturingNestedCmd) {\n            nestedCmdBuffer += line.trim() + \"\\n\";\n\n            // Check if this is the end of the multi-line command\n            if (line.trim().endsWith('`')) {\n                capturingNestedCmd = false;\n                nestedCmdBuffer = nestedCmdBuffer.trim(); // Trim any trailing whitespace/newlines\n\n                // Remove the backticks at the beginning and end of the command\n                if (nestedCmdBuffer.startsWith('`') && nestedCmdBuffer.endsWith('`')) {\n                    nestedCmdBuffer = nestedCmdBuffer.slice(1, -1);\n                }\n\n                currentCommand.commands.push(nestedCmdBuffer);\n                node.warn(`[function:dynamicCmd] Finished capturing multi-line command: ${nestedCmdBuffer}`);\n                nestedCmdBuffer = \"\";  // Clear buffer\n            }\n        }\n    });\n\n    // Finalize the last command\n    if (currentCommand && capturingNestedCmd) {\n        currentCommand.commands.push(nestedCmdBuffer.trim());\n    }\n\n    node.warn(\"[function:dynamicCmd] Finished parsing input text.\");\n    node.warn(`[function:dynamicCmd] Parsed dynamicCmd: ${JSON.stringify(dynamicCmd)}`);\n    return dynamicCmd;\n}\n\n// 7. Main function to handle the entire process block by block\nfunction handleDynamicCmd(inputText, msg) {\n    node.warn(\"[function:dynamicCmd] Starting handleDynamicCmd function.\");\n\n    // Check if inputText contains the \"dynamicCmd\" section\n    if (!inputText.includes(\"dynamicCmd\")) {\n        node.warn(\"[function:dynamicCmd] No dynamicCmd section found. Passing message unchanged.\");\n        return msg.payload; // Pass the message on if no dynamicCmd is found\n    }\n\n    try {\n        // Parse the input text for dynamicCmd sections\n        let dynamicCmd = parseInputText(inputText);\n\n        let finalResult;\n        if (!dynamicCmd) {\n            node.warn(\"[function:dynamicCmd] No dynamicCmd section found after parsing. Proceeding with dynamicVars parsing.\");\n            // If no dynamicCmd section is found after parsing, parse dynamic variables in the inputText directly\n            finalResult = parseDynamicVariables(inputText, msg, context);\n        } else {\n            node.warn(\"[function:dynamicCmd] dynamicCmd section found. Executing commands block by block.\");\n            // Execute the parsed commands block by block if dynamicCmd is present\n            finalResult = executeCommandsBlockByBlock(dynamicCmd, context);\n        }\n\n        // Set msg.payload to the final result\n        msg.payload = finalResult;\n\n        // Return the final msg object\n        return msg;\n    } catch (error) {\n        node.error(`[function:dynamicCmd] Error occurred: ${error.message}`);\n        return { payload: `Error occurred: ${error.message}` };\n    }\n}\n\n// 8. Start of the function node logic\nlet processedResult = handleDynamicCmd(msg.payload, msg);\n\n// 9. Set msg.payload to the final result array\nmsg.payload = processedResult;\n\n// 10. Send it\nreturn msg;\n",
+        "outputs": 3,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1610,
+        "y": 700,
+        "wires": [
+            [
+                "bb2dc5712deab1c6"
+            ],
+            [
+                "15eb11ee04b9a840"
+            ],
+            []
         ]
     },
     {
