@@ -69,8 +69,8 @@
         "category": "",
         "in": [
             {
-                "x": 100,
-                "y": 220,
+                "x": 220,
+                "y": 240,
                 "wires": [
                     {
                         "id": "inputHandler"
@@ -80,8 +80,8 @@
         ],
         "out": [
             {
-                "x": 1440,
-                "y": 120,
+                "x": 960,
+                "y": 540,
                 "wires": [
                     {
                         "id": "94b392982f53c55a",
@@ -90,8 +90,8 @@
                 ]
             },
             {
-                "x": 1460,
-                "y": 240,
+                "x": 960,
+                "y": 600,
                 "wires": [
                     {
                         "id": "94b392982f53c55a",
@@ -100,8 +100,8 @@
                 ]
             },
             {
-                "x": 1460,
-                "y": 360,
+                "x": 960,
+                "y": 660,
                 "wires": [
                     {
                         "id": "94b392982f53c55a",
@@ -324,8 +324,8 @@
             "0fa9e9c17cfacb08",
             "2aaa4823845f8d59"
         ],
-        "x": 1014,
-        "y": 919,
+        "x": 434,
+        "y": 119,
         "w": 1012,
         "h": 282
     },
@@ -345,8 +345,8 @@
             "458713510b3edb94",
             "27692842a0727548"
         ],
-        "x": 994,
-        "y": 1279,
+        "x": 414,
+        "y": 479,
         "w": 1002,
         "h": 182
     },
@@ -369,10 +369,55 @@
             "42084202e8df7601",
             "8b103669b683092f"
         ],
-        "x": 994,
-        "y": 1551.5,
+        "x": 414,
+        "y": 751.5,
         "w": 1072,
         "h": 277
+    },
+    {
+        "id": "7b7c1084c38a93ca",
+        "type": "group",
+        "z": "ecd378f1d3401d0d",
+        "name": "Read Logs",
+        "style": {
+            "label": true,
+            "fill": "#d1d1d1"
+        },
+        "nodes": [
+            "8b79eb7951f13d35",
+            "1f9e9648a6fdea3e",
+            "eb2951843983362b",
+            "4490085b05c634e4",
+            "3819d7a1bb987cd4"
+        ],
+        "x": 254,
+        "y": 79,
+        "w": 982,
+        "h": 182
+    },
+    {
+        "id": "25b6777d38d17718",
+        "type": "group",
+        "z": "ecd378f1d3401d0d",
+        "name": "Feedback Loop",
+        "style": {
+            "label": true,
+            "fill": "#d1d1d1"
+        },
+        "nodes": [
+            "c1e5648ebbc40637",
+            "ecb21505f2b71198",
+            "7735c94e771bdaf5",
+            "a142d35aa4e7a75c",
+            "f808f68ecb565594",
+            "cebfdb8ca306df09",
+            "0121c003d821a526",
+            "4f260a029e80f953"
+        ],
+        "x": 254,
+        "y": 351.5,
+        "w": 1072,
+        "h": 297
     },
     {
         "id": "dd2f628224cbb4c3",
@@ -534,51 +579,6 @@
         "h": 142
     },
     {
-        "id": "7b7c1084c38a93ca",
-        "type": "group",
-        "z": "ecd378f1d3401d0d",
-        "name": "Read Logs",
-        "style": {
-            "label": true,
-            "fill": "#d1d1d1"
-        },
-        "nodes": [
-            "8b79eb7951f13d35",
-            "1f9e9648a6fdea3e",
-            "eb2951843983362b",
-            "4490085b05c634e4",
-            "3819d7a1bb987cd4"
-        ],
-        "x": 254,
-        "y": 79,
-        "w": 982,
-        "h": 182
-    },
-    {
-        "id": "25b6777d38d17718",
-        "type": "group",
-        "z": "ecd378f1d3401d0d",
-        "name": "Feedback Loop",
-        "style": {
-            "label": true,
-            "fill": "#d1d1d1"
-        },
-        "nodes": [
-            "c1e5648ebbc40637",
-            "ecb21505f2b71198",
-            "7735c94e771bdaf5",
-            "a142d35aa4e7a75c",
-            "f808f68ecb565594",
-            "cebfdb8ca306df09",
-            "0121c003d821a526",
-            "4f260a029e80f953"
-        ],
-        "x": 254,
-        "y": 351.5,
-        "w": 1072,
-        "h": 297
-    },
-    {
         "id": "e2bc7ac9aa77279e",
         "type": "mongodb4-client",
         "name": "Basic Connection",
@@ -609,41 +609,47 @@
         "wholemsg": "false"
     },
     {
+        "id": "d21e854a8cd56e18",
+        "type": "jsonlogic_engine",
+        "z": "dynamicCmdSubflow",
+        "name": "",
+        "methods": ""
+    },
+    {
         "id": "inputHandler",
         "type": "function",
         "z": "dynamicCmdSubflow",
-        "name": "Input Handler",
-        "func": "// Input Handler\nconst flowContext = flow.get('flowContext') || {};\n\n// Update the latest message\nflowContext.latestMsg = msg;\nflow.set('flowContext', flowContext);\n\nconsole.log(\"[processMessage] Starting processMessage function.\");\nconsole.log(`[processMessage] Input msg: ${JSON.stringify(msg)}`);\n\n// Check if this is a sidePrompt completion message\nif (msg.sidePromptStatus === \"done\") {\n    console.log(\"[processMessage] Received sidePrompt completion message.\");\n    flow.set('waitingForSidePrompt', false);\n    flow.set('sidePromptResult', msg.payload);\n    flow.set('flowContext', flowContext);\n    return [null, msg, null]; // Send sidePrompt completion to output2\n}\n// Check if this is a sidePrompt completion message\nif (msg.status === \"stop\") {\n    console.log(\"[processMessage] Received stop message.\");\n    return [null, null, null]; // Send sidePrompt completion to output2\n}\n\n// Check if this is a dynamicCmd message\nif (msg.payload && typeof msg.payload === 'string' && msg.payload.includes('dynamicCmd')) {\n    return [msg, null, null]; // Send dynamicCmd messages to mainProcessor\n}\n\n// For all other messages, pass through to output1\nreturn [msg, null, null];",
-        "outputs": 3,
-        "timeout": "",
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 260,
-        "y": 220,
-        "wires": [
-            [
-                "1c1bc00d9a8c86d6"
-            ],
-            [],
-            []
-        ]
-    },
-    {
-        "id": "1c1bc00d9a8c86d6",
-        "type": "function",
-        "z": "dynamicCmdSubflow",
-        "name": "Initial Parser",
-        "func": "// The Initial Parser Layer\n\nfunction parseInputText(inputText) {\n    console.log(`[parseInputText] Starting to parse input text`);\n    console.log(`[parseInputText] Input text length: ${inputText.length} characters`);\n\n    const lines = inputText.split('\\n');\n    console.log(`[parseInputText] Number of lines: ${lines.length}`);\n\n    let dynamicCmd = { sections: [] };\n    let currentCommand = null;\n    let isCapturingNestedCommand = false;\n    let nestedCommandBuffer = '';\n\n    console.log(`[parseInputText] Initialized parsing variables`);\n\n    const processLine = (line, index) => {\n        console.log(`[parseInputText] Processing line ${index + 1}: '${line}'`);\n\n        const originalLine = line;\n        line = line.replace(/\\/\\/.*$/, '').trim(); // Remove comments\n\n        if (line !== originalLine) {\n            console.log(`[parseInputText] Removed comment. New line: '${line}'`);\n        }\n\n        if (line === 'dynamicCmd') {\n            dynamicCmd.sections.push({ type: 'commandSet', commands: [] });\n            console.log(`[parseInputText] Detected 'dynamicCmd' section. Created new command set. Total sections: ${dynamicCmd.sections.length}`);\n            return;\n        }\n\n        if (line === '- commandSet') {\n            console.log(`[parseInputText] Detected commandSet line, ignoring.`);\n            return;\n        }\n\n        const mainCommandMatch = line.match(/^-\\s*(\\w+)(\\d+)/);\n        if (mainCommandMatch) {\n            const [, cmdType, cmdNumber] = mainCommandMatch;\n            currentCommand = { type: cmdType, number: cmdNumber, commands: [] };\n            dynamicCmd.sections[dynamicCmd.sections.length - 1].commands.push(currentCommand);\n            console.log(`[parseInputText] Started new main command: ${cmdType}${cmdNumber}. Total commands in current section: ${dynamicCmd.sections[dynamicCmd.sections.length - 1].commands.length}`);\n        } else if (line.startsWith('- `')) {\n            isCapturingNestedCommand = true;\n            nestedCommandBuffer = line.substring(3);\n            console.log(`[parseInputText] Started capturing nested command. Initial buffer: '${nestedCommandBuffer}'`);\n        } else if (isCapturingNestedCommand) {\n            if (line.endsWith('`')) {\n                nestedCommandBuffer += line.substring(0, line.length - 1);\n                currentCommand.commands.push(nestedCommandBuffer);\n                isCapturingNestedCommand = false;\n                console.log(`[parseInputText] Finished capturing nested command: '${nestedCommandBuffer}'`);\n                console.log(`[parseInputText] Total commands for ${currentCommand.type}${currentCommand.number}: ${currentCommand.commands.length}`);\n            } else {\n                nestedCommandBuffer += line + '\\n';\n                console.log(`[parseInputText] Capturing nested command. Current buffer length: ${nestedCommandBuffer.length} characters`);\n            }\n        } else if (line.startsWith('-') && currentCommand) {\n            const subCommand = line.substring(1).trim();\n            currentCommand.commands.push(subCommand);\n            console.log(`[parseInputText] Added sub-command to ${currentCommand.type}${currentCommand.number}: '${subCommand}'`);\n            console.log(`[parseInputText] Total commands for ${currentCommand.type}${currentCommand.number}: ${currentCommand.commands.length}`);\n        } else {\n            console.log(`[parseInputText] Skipped line: '${line}'`);\n        }\n    };\n\n    lines.forEach(processLine);\n\n    console.log(`[parseInputText] Finished parsing input text.`);\n    console.log(`[parseInputText] Total sections in dynamicCmd: ${dynamicCmd.sections.length}`);\n    dynamicCmd.sections.forEach((section, index) => {\n        console.log(`[parseInputText] Section ${index + 1} has ${section.commands.length} commands`);\n    });\n    console.log(`[parseInputText] Final parsed dynamicCmd: ${JSON.stringify(dynamicCmd, null, 2)}`);\n\n    return dynamicCmd;\n}\n\n// Node-RED function node entry point\nif (msg.payload && typeof msg.payload === 'string' && msg.payload.includes('dynamicCmd')) {\n    console.log(`[Initial Parser] Received message with dynamicCmd content`);\n    const parsedCmd = parseInputText(msg.payload);\n    flow.set('parsedDynamicCmd', parsedCmd);  // This line adds flow-level persistence\n    console.log(`[Initial Parser] Stored parsed dynamicCmd in flow context`);\n    msg.dynamicCmd = parsedCmd;\n    console.log(`[Initial Parser] Attached parsed dynamicCmd to msg object`);\n    return [msg, null, null];\n} else {\n    console.log(`[Initial Parser] Received non-dynamicCmd message, passing through`);\n    msg.dynamicCmd = false;\n    return [msg, null, null]; // Pass through non-dynamicCmd messages\n}",
+        "name": "inputConditionals",
+        "func": "// Input Handler\nconst flowContext = flow.get('flowContext') || {};\n\n// Update the latest message\nflowContext.latestMsg = msg;\nflow.set('flowContext', flowContext);\n\nconsole.log(\"[inputConditionals] Starting inputConditionals function.\");\nconsole.log(`[inputConditionals] Input msg: ${JSON.stringify(msg)}`);\n\n// Check if this is a sidePrompt completion message\nif (msg.sidePromptStatus === \"done\") {\n    console.log(\"[inputConditionals] Received sidePrompt completion message.\");\n    flow.set('waitingForSidePrompt', false);\n    flow.set('sidePromptResult', msg.payload);\n    flow.set('flowContext', flowContext);\n    return msg; // Send sidePrompt completion to output2\n}\n// Check if this is a sidePrompt completion message\nif (msg.status === \"stop\") {\n    console.log(\"[inputConditionals] Received stop message.\");\n    return null; // Send sidePrompt completion to output2\n}\n\n// Check if this is a dynamicCmd message\nif (msg.payload && typeof msg.payload === 'string' && msg.payload.includes('dynamicCmd')) {\n    return msg; // Send dynamicCmd messages to mainProcessor\n}\n\n// For all other messages, pass through to output1\nreturn msg;",
         "outputs": 1,
         "timeout": "",
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 450,
-        "y": 220,
+        "x": 670,
+        "y": 240,
+        "wires": [
+            [
+                "1c1bc00d9a8c86d6"
+            ]
+        ],
+        "info": "# processMessage Function Breakdown\r\n\r\n## 1. Input Phase\r\n- **Always executed**\r\n- Update `flowContext` with latest message\r\n- Log function start and input message\r\n\r\n## 2. Processing Phase\r\n\r\n### Case 1: Regular message (most common)\r\n- **Condition:** Message doesn't meet any special conditions\r\n- **Action:** Pass message through unchanged\r\n- **Output:** First output (index 0)\r\n\r\n### Case 2: dynamicCmd message (common)\r\n- **Condition:** `msg.payload` exists, is a string, and contains \"dynamicCmd\"\r\n- **Action:** Pass message through unchanged\r\n- **Output:** First output (index 0)\r\n\r\n### Case 3: sidePrompt completion (less common)\r\n- **Condition:** `msg.sidePromptStatus` equals \"done\"\r\n- **Action:** \r\n  - Update flow variables (`waitingForSidePrompt`, `sidePromptResult`, `flowContext`)\r\n  - Log receipt of sidePrompt completion\r\n- **Output:** Second output (index 1)\r\n\r\n### Case 4: Stop message (edge case)\r\n- **Condition:** `msg.status` equals \"stop\"\r\n- **Action:** Log receipt of stop message\r\n- **Output:** No output (all null)\r\n\r\n## 3. Output Phase\r\n- Determine final output based on processing phase\r\n- Return array with message in appropriate index:\r\n  - [message, null, null] for first output\r\n  - [null, message, null] for second output\r\n  - [null, null, null] for stop message"
+    },
+    {
+        "id": "1c1bc00d9a8c86d6",
+        "type": "function",
+        "z": "dynamicCmdSubflow",
+        "name": "initialParser",
+        "func": "// The initialParser Layer\n\nfunction parseInputText(inputText) {\n    console.log(`[parseInputText] Starting to parse input text`);\n    console.log(`[parseInputText] Input text length: ${inputText.length} characters`);\n\n    const lines = inputText.split('\\n');\n    console.log(`[parseInputText] Number of lines: ${lines.length}`);\n\n    let dynamicCmd = { sections: [] };\n    let currentCommand = null;\n    let isCapturingNestedCommand = false;\n    let nestedCommandBuffer = '';\n\n    console.log(`[parseInputText] Initialized parsing variables`);\n\n    const processLine = (line, index) => {\n        console.log(`[parseInputText] Processing line ${index + 1}: '${line}'`);\n\n        const originalLine = line;\n        line = line.replace(/\\/\\/.*$/, '').trim(); // Remove comments\n\n        if (line !== originalLine) {\n            console.log(`[parseInputText] Removed comment. New line: '${line}'`);\n        }\n\n        if (line === 'dynamicCmd') {\n            dynamicCmd.sections.push({ type: 'commandSet', commands: [] });\n            console.log(`[parseInputText] Detected 'dynamicCmd' section. Created new command set. Total sections: ${dynamicCmd.sections.length}`);\n            return;\n        }\n\n        if (line === '- commandSet') {\n            console.log(`[parseInputText] Detected commandSet line, ignoring.`);\n            return;\n        }\n\n        const mainCommandMatch = line.match(/^-\\s*(\\w+)(\\d+)/);\n        if (mainCommandMatch) {\n            const [, cmdType, cmdNumber] = mainCommandMatch;\n            currentCommand = { type: cmdType, number: cmdNumber, commands: [] };\n            dynamicCmd.sections[dynamicCmd.sections.length - 1].commands.push(currentCommand);\n            console.log(`[parseInputText] Started new main command: ${cmdType}${cmdNumber}. Total commands in current section: ${dynamicCmd.sections[dynamicCmd.sections.length - 1].commands.length}`);\n        } else if (line.startsWith('- `')) {\n            isCapturingNestedCommand = true;\n            nestedCommandBuffer = line.substring(3);\n            console.log(`[parseInputText] Started capturing nested command. Initial buffer: '${nestedCommandBuffer}'`);\n        } else if (isCapturingNestedCommand) {\n            if (line.endsWith('`')) {\n                nestedCommandBuffer += line.substring(0, line.length - 1);\n                currentCommand.commands.push(nestedCommandBuffer);\n                isCapturingNestedCommand = false;\n                console.log(`[parseInputText] Finished capturing nested command: '${nestedCommandBuffer}'`);\n                console.log(`[parseInputText] Total commands for ${currentCommand.type}${currentCommand.number}: ${currentCommand.commands.length}`);\n            } else {\n                nestedCommandBuffer += line + '\\n';\n                console.log(`[parseInputText] Capturing nested command. Current buffer length: ${nestedCommandBuffer.length} characters`);\n            }\n        } else if (line.startsWith('-') && currentCommand) {\n            const subCommand = line.substring(1).trim();\n            currentCommand.commands.push(subCommand);\n            console.log(`[parseInputText] Added sub-command to ${currentCommand.type}${currentCommand.number}: '${subCommand}'`);\n            console.log(`[parseInputText] Total commands for ${currentCommand.type}${currentCommand.number}: ${currentCommand.commands.length}`);\n        } else {\n            console.log(`[parseInputText] Skipped line: '${line}'`);\n        }\n    };\n\n    lines.forEach(processLine);\n\n    console.log(`[parseInputText] Finished parsing input text.`);\n    console.log(`[parseInputText] Total sections in dynamicCmd: ${dynamicCmd.sections.length}`);\n    dynamicCmd.sections.forEach((section, index) => {\n        console.log(`[parseInputText] Section ${index + 1} has ${section.commands.length} commands`);\n    });\n    console.log(`[parseInputText] Final parsed dynamicCmd: ${JSON.stringify(dynamicCmd, null, 2)}`);\n\n    return dynamicCmd;\n}\n\n// Node-RED function node entry point\nif (msg.payload && typeof msg.payload === 'string' && msg.payload.includes('dynamicCmd')) {\n    console.log(`[initialParser] Received message with dynamicCmd content`);\n    const parsedCmd = parseInputText(msg.payload);\n    flow.set('parsedDynamicCmd', parsedCmd);  // This line adds flow-level persistence\n    console.log(`[initialParser] Stored parsed dynamicCmd in flow context`);\n    msg.dynamicCmd = parsedCmd;\n    console.log(`[initialParser] Attached parsed dynamicCmd to msg object`);\n    return [msg, null, null];\n} else {\n    console.log(`[initialParser] Received non-dynamicCmd message, passing through`);\n    msg.dynamicCmd = false;\n    return [msg, null, null]; // Pass through non-dynamicCmd messages\n}",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 650,
+        "y": 320,
         "wires": [
             [
                 "d9c9b8665a5ca2df"
@@ -651,27 +657,11 @@
         ]
     },
     {
-        "id": "0b6223d6f4e28f6e",
-        "type": "link in",
-        "z": "dynamicCmdSubflow",
-        "name": "link in 1",
-        "links": [
-            "205f5ac50db17009"
-        ],
-        "x": 125,
-        "y": 280,
-        "wires": [
-            [
-                "inputHandler"
-            ]
-        ]
-    },
-    {
         "id": "d9c9b8665a5ca2df",
         "type": "function",
         "z": "dynamicCmdSubflow",
-        "name": "Execution & Commands",
-        "func": "// Execution & Commands\n\nconsole.log('[Execution & Commands] Starting execution');\n\nconst flowContext = flow.get('flowContext') || {};\n\nfunction parseIncomingMessage(msg) {\n    if (msg.dynamicCmd && !msg.currentCommand) {\n        console.log('[parseIncomingMessage] New dynamic command detected');\n        return { type: 'newDynamicCmd', data: msg.dynamicCmd };\n    } else if (msg.type === 'processedResult') {\n        console.log('[parseIncomingMessage] Processed result received');\n        return { type: 'processedResult', data: msg.data, command: msg.command };\n    } else {\n        console.log('[parseIncomingMessage] Pass through message');\n        return { type: 'passThrough', data: msg };\n    }\n}\n\nasync function executeCommandsBlockByBlock(dynamicCmd) {\n    console.log('[executeCommandsBlockByBlock] Starting execution of commands');\n\n    if (!dynamicCmd || !dynamicCmd.sections || !Array.isArray(dynamicCmd.sections)) {\n        console.error(\"[executeCommandsBlockByBlock] Invalid dynamicCmd structure:\", dynamicCmd);\n        throw new Error(\"Invalid dynamicCmd structure\");\n    }\n\n    let flowContext = flow.get('flowContext') || {};\n    flowContext.previousResponse = flowContext.previousResponse || '[Previous response not available]';\n    flow.set('flowContext', flowContext);\n\n    let finalResult = \"\";\n\n    for (let sectionIndex = 0; sectionIndex < dynamicCmd.sections.length; sectionIndex++) {\n        console.log(`[executeCommandsBlockByBlock] Processing section ${sectionIndex}`);\n        const section = dynamicCmd.sections[sectionIndex];\n\n        if (!section || !section.commands || !Array.isArray(section.commands)) {\n            console.warn(`[executeCommandsBlockByBlock] Invalid section structure at index ${sectionIndex}:`, section);\n            continue;\n        }\n\n        for (let commandIndex = 0; commandIndex < section.commands.length; commandIndex++) {\n            console.log(`[executeCommandsBlockByBlock] Processing command ${commandIndex} in section ${sectionIndex}`);\n            const command = section.commands[commandIndex];\n\n            if (!command || !command.type) {\n                console.warn(`[executeCommandsBlockByBlock] Invalid command at section ${sectionIndex}, command ${commandIndex}:`, command);\n                continue;\n            }\n\n            let result;\n\n            try {\n                console.log(`[executeCommandsBlockByBlock] Executing command of type: ${command.type}`);\n                result = await executeCommand(command);\n\n                console.log(`[executeCommandsBlockByBlock] Command result:`, result);\n                command.result = result;\n                finalResult += (finalResult ? \"\\n\" : \"\") + result;\n\n                flowContext[`${command.type}${command.number}Result`] = result;\n                flow.set('flowContext', flowContext);\n\n                command.processedResult = result;\n            } catch (error) {\n                console.error(`[executeCommandsBlockByBlock] Error executing command ${command.type}:`, error);\n                command.processedResult = `[Error: ${error.message}]`;\n            }\n\n            await new Promise(resolve => setTimeout(resolve, 100));\n        }\n    }\n\n    // Add the dynamicCmdComplete flag\n    msg.dynamicCmdComplete = true;\n    \n    return finalResult;\n}\n\nasync function executeCommand(command) {\n    flow.set('currentCommand', command);\n    flow.set('currentResult', '');\n    flow.set('triggerDynamicVars', Date.now());\n    console.log('[executeCommand] Set currentCommand and triggerDynamicVars in flow');\n\n    const msgToSend = {\n        dynamicCmd: true,\n        command: command,\n        triggerDynamicVars: Date.now()\n    };\n    console.log('[executeCommand] Sending message:', JSON.stringify(msgToSend));\n    node.send(msgToSend);\n\n    return await waitForProcessedResult(60000);\n}\n\nfunction waitForProcessedResult(timeout = 30000) {\n    console.log('[waitForProcessedResult] Starting to wait for processed result');\n    return new Promise((resolve, reject) => {\n        const startTime = Date.now();\n        const checkProcessedResult = () => {\n            const currentContext = flow.get('flowContext') || {};\n            if (currentContext.processedResultReady) {\n                console.log('[waitForProcessedResult] Processed result is ready');\n                currentContext.processedResultReady = false;\n                flow.set('flowContext', currentContext);\n                resolve(currentContext.processedResult);\n            } else if (Date.now() - startTime > timeout) {\n                console.warn('[waitForProcessedResult] Timeout reached while waiting for processed result');\n                reject(new Error('Timeout waiting for processed result'));\n            } else {\n                console.log('[waitForProcessedResult] Processed result not ready, checking again in 500ms');\n                setTimeout(checkProcessedResult, 500);\n            }\n        };\n        checkProcessedResult();\n    });\n}\n\nfunction handleMessage() {\n    console.log('[handleMessage] Starting message handling');\n    try {\n        const parsedMsg = parseIncomingMessage(msg);\n\n        switch (parsedMsg.type) {\n            case 'newDynamicCmd':\n                if (!parsedMsg.data) {\n                    throw new Error(\"Invalid dynamicCmd data\");\n                }\n                console.log('[handleMessage] Executing new dynamic command');\n                executeCommandsBlockByBlock(parsedMsg.data)\n                    .then(result => {\n                        console.log('[handleMessage] Command execution completed. Result:', result);\n                        flow.set('finalResult', result);\n                        console.log('[handleMessage] Set finalResult in flow');\n                        node.send({ payload: result, dynamicCmdComplete: true });\n                    })\n                    .catch(error => {\n                        console.error(\"[handleMessage] Error processing commands:\", error);\n                        node.error(\"Error processing commands: \" + error.message, msg);\n                    });\n                break;\n\n            case 'processedResult':\n                console.log('[handleMessage] Setting processed result');\n                flow.set('processedResult', parsedMsg.data);\n                flow.set('processedResultReady', true);\n                console.log('[handleMessage] Updated flow variables: processedResult and processedResultReady');\n                break;\n\n            case 'passThrough':\n            default:\n                console.log('[handleMessage] Passing through message');\n                node.send(msg);\n                break;\n        }\n    } catch (error) {\n        console.error(\"[handleMessage] Error in handleMessage:\", error);\n        node.error(\"Error in handleMessage: \" + error.message, msg);\n    }\n}\n\nconsole.log('[Execution & Commands] Calling handleMessage');\nhandleMessage();\n\nconsole.log('[Execution & Commands] Execution completed');\nreturn null;",
+        "name": "blockExecutor",
+        "func": "// blockExecutor\n\nconsole.log('[blockExecutor] Starting execution');\n\nconst flowContext = flow.get('flowContext') || {};\n\nfunction helper_waitProcessing(timeout = 30000) {\n    console.log('[helper_waitProcessing] Starting to wait for processed result');\n    return new Promise((resolve, reject) => {\n        const startTime = Date.now();\n        const checkProcessedResult = () => {\n            const currentContext = flow.get('flowContext') || {};\n            if (currentContext.processedResultReady) {\n                console.log('[helper_waitProcessing] Processed result is ready');\n                currentContext.processedResultReady = false;\n                flow.set('flowContext', currentContext);\n                resolve(currentContext.processedResult);\n            } else if (Date.now() - startTime > timeout) {\n                console.warn('[helper_waitProcessing] Timeout reached while waiting for processed result');\n                reject(new Error('Timeout waiting for processed result'));\n            } else {\n                console.log('[helper_waitProcessing] Processed result not ready, checking again in 500ms');\n                setTimeout(checkProcessedResult, 500);\n            }\n        };\n        checkProcessedResult();\n    });\n}\n\nasync function executeCommand(command) {\n    flow.set('currentCommand', command);\n    flow.set('currentResult', '');\n    flow.set('triggerDynamicVars', Date.now());\n    console.log('[executeCommand] Set currentCommand and triggerDynamicVars in flow');\n\n    const msgToSend = {\n        dynamicCmd: true,\n        command: command,\n        triggerDynamicVars: Date.now()\n    };\n    console.log('[executeCommand] Sending message:', JSON.stringify(msgToSend));\n    node.send(msgToSend);\n\n    return await helper_waitProcessing(60000);\n}\n\nasync function executeBlockCommands(dynamicCmd) {\n    console.log('[executeBlockCommands] Starting execution of commands');\n\n    if (!dynamicCmd || !dynamicCmd.sections || !Array.isArray(dynamicCmd.sections)) {\n        console.error(\"[executeBlockCommands] Invalid dynamicCmd structure:\", dynamicCmd);\n        throw new Error(\"Invalid dynamicCmd structure\");\n    }\n\n    let flowContext = flow.get('flowContext') || {};\n    flowContext.previousResponse = flowContext.previousResponse || '[Previous response not available]';\n    flow.set('flowContext', flowContext);\n\n    let finalResult = \"\";\n\n    for (let sectionIndex = 0; sectionIndex < dynamicCmd.sections.length; sectionIndex++) {\n        console.log(`[executeBlockCommands] Processing section ${sectionIndex}`);\n        const section = dynamicCmd.sections[sectionIndex];\n\n        if (!section || !section.commands || !Array.isArray(section.commands)) {\n            console.warn(`[executeBlockCommands] Invalid section structure at index ${sectionIndex}:`, section);\n            continue;\n        }\n\n        for (let commandIndex = 0; commandIndex < section.commands.length; commandIndex++) {\n            console.log(`[executeBlockCommands] Processing command ${commandIndex} in section ${sectionIndex}`);\n            const command = section.commands[commandIndex];\n\n            if (!command || !command.type) {\n                console.warn(`[executeBlockCommands] Invalid command at section ${sectionIndex}, command ${commandIndex}:`, command);\n                continue;\n            }\n\n            let result;\n\n            try {\n                console.log(`[executeBlockCommands] Executing command of type: ${command.type}`);\n                result = await executeCommand(command);\n\n                console.log(`[executeBlockCommands] Command result:`, result);\n                command.result = result;\n                finalResult += (finalResult ? \"\\n\" : \"\") + result;\n\n                flowContext[`${command.type}${command.number}Result`] = result;\n                flow.set('flowContext', flowContext);\n\n                command.processedResult = result;\n            } catch (error) {\n                console.error(`[executeBlockCommands] Error executing command ${command.type}:`, error);\n                command.processedResult = `[Error: ${error.message}]`;\n            }\n\n            await new Promise(resolve => setTimeout(resolve, 100));\n        }\n    }\n\n    // Add the dynamicCmdComplete flag\n    msg.dynamicCmdComplete = true;\n    \n    return finalResult;\n}\n\nfunction parseIncomingMessage(msg) {\n    if (msg.dynamicCmd && !msg.currentCommand) {\n        console.log('[parseIncomingMessage] New dynamic command detected');\n        return { type: 'newDynamicCmd', data: msg.dynamicCmd };\n    } else if (msg.type === 'processedResult') {\n        console.log('[parseIncomingMessage] Processed result received');\n        return { type: 'processedResult', data: msg.data, command: msg.command };\n    } else {\n        console.log('[parseIncomingMessage] Pass through message');\n        return { type: 'passThrough', data: msg };\n    }\n}\n\nfunction handleMessage() {\n    console.log('[handleMessage] Starting message handling');\n    try {\n        const parsedMsg = parseIncomingMessage(msg);\n\n        switch (parsedMsg.type) {\n            case 'newDynamicCmd':\n                if (!parsedMsg.data) {\n                    throw new Error(\"Invalid dynamicCmd data\");\n                }\n                console.log('[handleMessage] Executing new dynamic command');\n                executeBlockCommands(parsedMsg.data)\n                    .then(result => {\n                        console.log('[handleMessage] Command execution completed. Result:', result);\n                        flow.set('finalResult', result);\n                        console.log('[handleMessage] Set finalResult in flow');\n                        node.send({ payload: result, dynamicCmdComplete: true });\n                    })\n                    .catch(error => {\n                        console.error(\"[handleMessage] Error processing commands:\", error);\n                        node.error(\"Error processing commands: \" + error.message, msg);\n                    });\n                break;\n\n            case 'processedResult':\n                console.log('[handleMessage] Setting processed result');\n                flow.set('processedResult', parsedMsg.data);\n                flow.set('processedResultReady', true);\n                console.log('[handleMessage] Updated flow variables: processedResult and processedResultReady');\n                break;\n\n            case 'passThrough':\n            default:\n                console.log('[handleMessage] Passing through message');\n                node.send(msg);\n                break;\n        }\n    } catch (error) {\n        console.error(\"[handleMessage] Error in handleMessage:\", error);\n        node.error(\"Error in handleMessage: \" + error.message, msg);\n    }\n}\n\nconsole.log('[blockExecutor] Calling handleMessage');\nhandleMessage();\n\nconsole.log('[blockExecutor] Execution completed');\nreturn null;",
         "outputs": 1,
         "timeout": "",
         "noerr": 0,
@@ -679,7 +669,7 @@
         "finalize": "",
         "libs": [],
         "x": 660,
-        "y": 220,
+        "y": 400,
         "wires": [
             [
                 "c8091fa058f1e46a"
@@ -690,16 +680,16 @@
         "id": "c8091fa058f1e46a",
         "type": "function",
         "z": "dynamicCmdSubflow",
-        "name": "Dynamic Vars & Command Executor",
-        "func": "// Dynamic Vars & Command Executor\n\nconsole.log('[Dynamic Vars & Command Executor] Starting execution');\n\nlet flowContext = flow.get('flowContext') || {};\n\nfunction parseDynamicVariables(text, context) {\n    console.log('[parseDynamicVariables] Starting function with text:', text);\n\n    if (typeof text !== 'string') {\n        console.warn('[parseDynamicVariables] Warning: text is not a string. Type:', typeof text);\n        if (text === null || text === undefined) {\n            console.warn('[parseDynamicVariables] Text is null or undefined. Returning empty string.');\n            return '';\n        }\n        try {\n            text = String(text);\n            console.log('[parseDynamicVariables] Converted text to string:', text);\n        } catch (error) {\n            console.error('[parseDynamicVariables] Error converting text to string:', error);\n            return '[Error: Unable to process non-string input]';\n        }\n    }\n\n    if (!msg || typeof msg !== 'object') {\n        console.warn('[parseDynamicVariables] Warning: msg is not a valid object');\n        return text;\n    }\n\n    try {\n        // Handle previousResponse and sidePromptResult\n        if (context && context.latestMsg && typeof context.latestMsg.currentStep === 'number') {\n            const currentStep = context.latestMsg.currentStep;\n            const previousStep = currentStep - 1;\n            const previousResponseKey = `response${previousStep}`;\n\n            if (previousStep >= 0 && context.latestMsg[previousResponseKey]) {\n                const previousResponse = context.latestMsg[previousResponseKey];\n                console.log(`[parseDynamicVariables] Found previousResponse for step ${previousStep}:`, previousResponse);\n                text = text.replace(/{previousResponse}/g, previousResponse);\n            } else {\n                console.warn(`[parseDynamicVariables] No previousResponse found for step ${previousStep}`);\n                text = text.replace(/{previousResponse}/g, '[Previous response not available]');\n            }\n        } else {\n            console.warn('[parseDynamicVariables] Unable to determine previousResponse from context');\n            text = text.replace(/{previousResponse}/g, '[Previous response not available]');\n        }\n\n        console.log('[parseDynamicVariables] After replacing previousResponse:', text);\n        text = text.replace(/{sidePromptResult}/g, context.sidePromptResult || '[Side prompt result not available]');\n\n        // Replace $<<commandTypeNumberResult>>$\n        text = text.replace(/\\$<<(\\w+)(\\d+)Result>>\\$/g, (match, cmdType, cmdNumber) => {\n            const resultKey = `${cmdType}${cmdNumber}Result`;\n            const result = context[resultKey] || `[${resultKey} not available]`;\n            console.log(`[parseDynamicVariables] Replaced ${match} with:`, result);\n            return result;\n        });\n\n        // Replace $<<execute(...)>>$\n        text = text.replace(/\\$<<execute\\((.*?)\\)>>\\$/g, (match, code) => {\n            console.log(`[parseDynamicVariables] Executing code:`, code);\n            try {\n                code = code.replace(/;$/, '');\n                const safeContext = createSafeContext(msg, context);\n                const result = new Function('context', `with(context) { return (${code}); }`)(safeContext);\n                console.log(`[parseDynamicVariables] Execution result:`, result);\n                return result !== undefined ? result : '[undefined]';\n            } catch (error) {\n                console.error(`[parseDynamicVariables] Error executing: ${error.message}`);\n                return `[Error executing: ${error.message}]`;\n            }\n        });\n\n        // Handle regular msg property access\n        text = text.replace(/\\$<<([\\w.]+)>>\\$/g, (match, path) => {\n            console.log(`[parseDynamicVariables] Accessing msg property:`, path);\n            const parts = path.split('.');\n            let value = msg;\n            for (const part of parts) {\n                if (value && typeof value === 'object' && part in value) {\n                    value = value[part];\n                } else {\n                    console.warn(`[parseDynamicVariables] Warning: ${path} not available in msg`);\n                    return `[${path} not available]`;\n                }\n            }\n            const result = typeof value === 'object' ? JSON.stringify(value) : String(value);\n            console.log(`[parseDynamicVariables] Msg property value:`, result);\n            return result;\n        });\n\n        console.log(`[parseDynamicVariables] Final result: ${text}`);\n        return text;\n    } catch (error) {\n        console.error('[parseDynamicVariables] Unexpected error:', error);\n        return `[Error: ${error.message}]`;\n    }\n}\n\nfunction createSafeContext(msg, context) {\n    return {\n        flow: {\n            get: (key) => {\n                const value = flow.get(key);\n                console.log(`[createSafeContext] flow.get('${key}'):`, value);\n                return value;\n            },\n            set: (key, value) => {\n                console.log(`[createSafeContext] flow.set('${key}'):`, value);\n                flow.set(key, value);\n            }\n        },\n        global: {\n            get: (key) => {\n                const value = global.get(key);\n                console.log(`[createSafeContext] global.get('${key}'):`, value);\n                return value;\n            },\n            set: (key, value) => {\n                console.log(`[createSafeContext] global.set('${key}'):`, value);\n                global.set(key, value);\n            }\n        },\n        msg: msg,\n        context: context\n    };\n}\n\nfunction executeCommand(command, context) {\n    console.log(`[executeCommand] Executing command:`, JSON.stringify(command));\n    let result = '';\n\n    switch (command.type) {\n        case 'localCmd':\n            result = executeLocalCmd(command, msg, context);\n            break;\n        case 'compileCmd':\n        case 'packCmd':\n            result = executeCompileOrPackCmd(command, msg, context);\n            break;\n        case 'mainPromptCmd':\n            result = executeMainPromptCmd(command, msg, context);\n            break;\n        case 'sidePromptCmd':\n            result = executeSidePromptCmd(command, msg, context);\n            break;\n        default:\n            console.warn(`[executeCommand] Unknown command type: ${command.type}`);\n            result = `[Unknown command type: ${command.type}]`;\n    }\n\n    console.log(`[executeCommand] Result:`, result);\n    return result;\n}\n\nfunction executeLocalCmd(command, msg, context) {\n    console.log(`[executeLocalCmd] Executing local command:`, JSON.stringify(command));\n    let result = '';\n    try {\n        const commandString = command.commands.join('\\n');\n        console.log(`[executeLocalCmd] Executing: ${commandString}`);\n        const safeContext = createSafeContext(msg, context);\n        const wrappedCommand = `with(this) { ${commandString} }`;\n        const commandResult = new Function(wrappedCommand).call(safeContext);\n        result = commandResult !== undefined ? commandResult : '';\n    } catch (error) {\n        console.error(`[executeLocalCmd] Error: ${error.message}`);\n        result = `[Error: ${error.message}]`;\n    }\n    console.log(`[executeLocalCmd] Result:`, result);\n    return result;\n}\n\nfunction executeCompileOrPackCmd(command, msg, context) {\n    console.log(`[executeCompileOrPackCmd] Executing compile/pack command:`, JSON.stringify(command));\n    let result = '';\n\n    if (command && Array.isArray(command.commands)) {\n        result = command.commands.map(cmd => {\n            return parseDynamicVariables(cmd, context);\n        }).join('\\n');\n    } else {\n        console.warn(`[executeCompileOrPackCmd] Invalid command structure:`, JSON.stringify(command));\n        result = '[Error: Invalid command structure]';\n    }\n\n    console.log(`[executeCompileOrPackCmd] Result:`, result);\n    return result.trim();\n}\n\nfunction executeMainPromptCmd(command, msg, context) {\n    console.log(`[executeMainPromptCmd] Executing main prompt command:`, JSON.stringify(command));\n    const result = command.commands.map(cmd => parseDynamicVariables(cmd, context)).join('\\n');\n    console.log(`[executeMainPromptCmd] Result:`, result);\n    return result;\n}\n\nasync function executeSidePromptCmd(command, msg, context) {\n    console.log(`[executeSidePromptCmd] Executing side prompt command:`, JSON.stringify(command));\n    const sidePromptCommands = command.commands;\n\n    // Set flow level variable indicating side prompt processing\n    flow.set('waitingForSidePrompt', true);\n\n    // Execute side prompt commands\n    const result = sidePromptCommands.map(cmd => parseDynamicVariables(cmd, context)).join('\\n');\n\n    // Send out the message with side prompts\n    node.send({ payload: result, sidePrompt: true });\n\n    console.log(`[executeSidePromptCmd] Sent side prompt, waiting for result`);\n\n    try {\n        // Wait for the side prompt result\n        const sidePromptResult = await waitForSidePromptResult();\n\n        // Update flow context with side prompt result\n        flowContext.sidePromptResult = sidePromptResult;\n        flow.set('flowContext', flowContext);\n\n        console.log(`[executeSidePromptCmd] Received side prompt result:`, sidePromptResult);\n        return sidePromptResult;\n    } catch (error) {\n        console.error(`[executeSidePromptCmd] Error waiting for side prompt result:`, error);\n        return `[Error: ${error.message}]`;\n    } finally {\n        // Reset the processing flag\n        flow.set('waitingForSidePrompt', false);\n    }\n}\n\nfunction waitForSidePromptResult(timeout = 100000) {\n    console.log('[waitForSidePromptResult] Starting to wait for side prompt result');\n    return new Promise((resolve, reject) => {\n        const startTime = Date.now();\n        const checkSidePromptResult = () => {\n            let sidePromptResult = flow.get('sidePromptResult') || {};\n            if (flow.get('waitingForSidePrompt') == false) {\n                console.log('[waitForSidePromptResult] Side prompt result is ready');\n                resolve(sidePromptResult);\n            } else if (Date.now() - startTime > timeout) {\n                console.warn('[waitForSidePromptResult] Timeout reached while waiting for side prompt result');\n                reject(new Error('Timeout waiting for side prompt result'));\n            } else {\n                console.log('[waitForSidePromptResult] Side prompt result not ready, checking again in 1000ms');\n                setTimeout(checkSidePromptResult, 1300);\n            }\n        };\n        checkSidePromptResult();\n    });\n}\n\n\nfunction main() {\n    console.log('[main] Starting main function');\n\n    if (!msg.dynamicCmd) {\n        console.log('[main] Not a dynamic command message, passing through');\n        let outputType = 'normal'; // Default output type\n        return {\n            ...msg,\n            outputType: outputType // Add this line to pass the outputType\n        };\n    }\n\n    const command = msg.command;\n    const triggerDynamicVars = msg.triggerDynamicVars;\n\n    console.log('[main] Received command:', JSON.stringify(command));\n    console.log('[main] triggerDynamicVars:', triggerDynamicVars);\n\n    // Refresh flowContext at the beginning of main\n    let flowContext = flow.get('flowContext') || {};\n\n    if (command && triggerDynamicVars) {\n        console.log('[main] Processing command');\n        let finalResult;\n        let outputType = 'dynamicCmd'; // Default output type\n        console.log('[main] Output type:', outputType);\n\n        try {\n            console.log('[main] Executing command:', JSON.stringify(command));\n            const executedResult = executeCommand(command, flowContext);\n            console.log('[main] Executed result:', executedResult);\n            finalResult = executedResult;\n\n            // Set outputType based on command type\n            if (command.type === 'sidePromptCmd') {\n                outputType = 'sidePrompt';\n            } else if (command.type === 'mainPromptCmd') {\n                outputType = 'normal';\n            }\n            // Add more conditions for other command types if needed\n\n        } catch (error) {\n            console.error('[main] Error executing command:', error);\n            finalResult = `[Error: ${error.message}]`;\n            outputType = 'error';\n        }\n\n        console.log('[main] Final result:', finalResult);\n        console.log('[main] Output type:', outputType);\n\n        flowContext.processedResult = finalResult;\n        flowContext.processedResultReady = true;\n        flow.set('flowContext', flowContext);\n\n        const resultKey = `${command.type}${command.number}Result`;\n        flowContext[resultKey] = finalResult;\n        flow.set('flowContext', flowContext);\n        console.log(`[main] Stored result for ${resultKey} in flowContext`);\n\n        console.log('[main] Returning processed result');\n        return {\n            ...msg,\n            processedResult: {\n                type: 'processedResult',\n                data: finalResult,\n                command: command\n            },\n            outputType: outputType // Add this line to pass the outputType\n        };\n    } else {\n        console.log('[main] Invalid command or trigger, passing through message');\n        return msg;\n    }\n}\n\n// Add this line to log any errors that might occur\ntry {\n    return main();\n} catch (error) {\n    console.error('[Dynamic Vars & Command Executor] Error in main function:', error);\n    return msg;\n}",
+        "name": "commandExecutor",
+        "func": "// commandExecutor\n\nconsole.log('[commandExecutor] Starting execution');\n\nlet flowContext = flow.get('flowContext') || {};\n\nfunction parseDynamicVariables(text, context) {\n    console.log('[parseDynamicVariables] Starting function with text:', text);\n\n    if (typeof text !== 'string') {\n        console.warn('[parseDynamicVariables] Warning: text is not a string. Type:', typeof text);\n        if (text === null || text === undefined) {\n            console.warn('[parseDynamicVariables] Text is null or undefined. Returning empty string.');\n            return '';\n        }\n        try {\n            text = String(text);\n            console.log('[parseDynamicVariables] Converted text to string:', text);\n        } catch (error) {\n            console.error('[parseDynamicVariables] Error converting text to string:', error);\n            return '[Error: Unable to process non-string input]';\n        }\n    }\n\n    if (!msg || typeof msg !== 'object') {\n        console.warn('[parseDynamicVariables] Warning: msg is not a valid object');\n        return text;\n    }\n\n    try {\n        // Handle previousResponse and sidePromptResult\n        if (context && context.latestMsg && typeof context.latestMsg.currentStep === 'number') {\n            const currentStep = context.latestMsg.currentStep;\n            const previousStep = currentStep - 1;\n            const previousResponseKey = `response${previousStep}`;\n\n            if (previousStep >= 0 && context.latestMsg[previousResponseKey]) {\n                const previousResponse = context.latestMsg[previousResponseKey];\n                console.log(`[parseDynamicVariables] Found previousResponse for step ${previousStep}:`, previousResponse);\n                text = text.replace(/{previousResponse}/g, previousResponse);\n            } else {\n                console.warn(`[parseDynamicVariables] No previousResponse found for step ${previousStep}`);\n                text = text.replace(/{previousResponse}/g, '[Previous response not available]');\n            }\n        } else {\n            console.warn('[parseDynamicVariables] Unable to determine previousResponse from context');\n            text = text.replace(/{previousResponse}/g, '[Previous response not available]');\n        }\n\n        console.log('[parseDynamicVariables] After replacing previousResponse:', text);\n        text = text.replace(/{sidePromptResult}/g, context.sidePromptResult || '[Side prompt result not available]');\n\n        // Replace $<<commandTypeNumberResult>>$\n        text = text.replace(/\\$<<(\\w+)(\\d+)Result>>\\$/g, (match, cmdType, cmdNumber) => {\n            const resultKey = `${cmdType}${cmdNumber}Result`;\n            const result = context[resultKey] || `[${resultKey} not available]`;\n            console.log(`[parseDynamicVariables] Replaced ${match} with:`, result);\n            return result;\n        });\n\n        // Replace $<<execute(...)>>$\n        text = text.replace(/\\$<<execute\\((.*?)\\)>>\\$/g, (match, code) => {\n            console.log(`[parseDynamicVariables] Executing code:`, code);\n            try {\n                code = code.replace(/;$/, '');\n                const safeContext = createSafeContext(msg, context);\n                const result = new Function('context', `with(context) { return (${code}); }`)(safeContext);\n                console.log(`[parseDynamicVariables] Execution result:`, result);\n                return result !== undefined ? result : '[undefined]';\n            } catch (error) {\n                console.error(`[parseDynamicVariables] Error executing: ${error.message}`);\n                return `[Error executing: ${error.message}]`;\n            }\n        });\n\n        // Handle regular msg property access\n        text = text.replace(/\\$<<([\\w.]+)>>\\$/g, (match, path) => {\n            console.log(`[parseDynamicVariables] Accessing msg property:`, path);\n            const parts = path.split('.');\n            let value = msg;\n            for (const part of parts) {\n                if (value && typeof value === 'object' && part in value) {\n                    value = value[part];\n                } else {\n                    console.warn(`[parseDynamicVariables] Warning: ${path} not available in msg`);\n                    return `[${path} not available]`;\n                }\n            }\n            const result = typeof value === 'object' ? JSON.stringify(value) : String(value);\n            console.log(`[parseDynamicVariables] Msg property value:`, result);\n            return result;\n        });\n\n        console.log(`[parseDynamicVariables] Final result: ${text}`);\n        return text;\n    } catch (error) {\n        console.error('[parseDynamicVariables] Unexpected error:', error);\n        return `[Error: ${error.message}]`;\n    }\n}\n\nfunction createSafeContext(msg, context) {\n    return {\n        flow: {\n            get: (key) => {\n                const value = flow.get(key);\n                console.log(`[createSafeContext] flow.get('${key}'):`, value);\n                return value;\n            },\n            set: (key, value) => {\n                console.log(`[createSafeContext] flow.set('${key}'):`, value);\n                flow.set(key, value);\n            }\n        },\n        global: {\n            get: (key) => {\n                const value = global.get(key);\n                console.log(`[createSafeContext] global.get('${key}'):`, value);\n                return value;\n            },\n            set: (key, value) => {\n                console.log(`[createSafeContext] global.set('${key}'):`, value);\n                global.set(key, value);\n            }\n        },\n        msg: msg,\n        context: context\n    };\n}\n\nfunction executeCommand(command, context) {\n    console.log(`[executeCommand] Executing command:`, JSON.stringify(command));\n    let result = '';\n\n    switch (command.type) {\n        case 'localCmd':\n            result = executeLocalCmd(command, msg, context);\n            break;\n        case 'compileCmd':\n        case 'packCmd':\n            result = executeCompileOrPackCmd(command, msg, context);\n            break;\n        case 'mainPromptCmd':\n            result = executeMainPromptCmd(command, msg, context);\n            break;\n        case 'sidePromptCmd':\n            result = executeSidePromptCmd(command, msg, context);\n            break;\n        default:\n            console.warn(`[executeCommand] Unknown command type: ${command.type}`);\n            result = `[Unknown command type: ${command.type}]`;\n    }\n\n    console.log(`[executeCommand] Result:`, result);\n    return result;\n}\n\nfunction executeLocalCmd(command, msg, context) {\n    console.log(`[executeLocalCmd] Executing local command:`, JSON.stringify(command));\n    let result = '';\n    try {\n        const commandString = command.commands.join('\\n');\n        console.log(`[executeLocalCmd] Executing: ${commandString}`);\n        const safeContext = createSafeContext(msg, context);\n        const wrappedCommand = `with(this) { ${commandString} }`;\n        const commandResult = new Function(wrappedCommand).call(safeContext);\n        result = commandResult !== undefined ? commandResult : '';\n    } catch (error) {\n        console.error(`[executeLocalCmd] Error: ${error.message}`);\n        result = `[Error: ${error.message}]`;\n    }\n    console.log(`[executeLocalCmd] Result:`, result);\n    return result;\n}\n\nfunction executeCompileOrPackCmd(command, msg, context) {\n    console.log(`[executeCompileOrPackCmd] Executing compile/pack command:`, JSON.stringify(command));\n    let result = '';\n\n    if (command && Array.isArray(command.commands)) {\n        result = command.commands.map(cmd => {\n            return parseDynamicVariables(cmd, context);\n        }).join('\\n');\n    } else {\n        console.warn(`[executeCompileOrPackCmd] Invalid command structure:`, JSON.stringify(command));\n        result = '[Error: Invalid command structure]';\n    }\n\n    console.log(`[executeCompileOrPackCmd] Result:`, result);\n    return result.trim();\n}\n\nfunction executeMainPromptCmd(command, msg, context) {\n    console.log(`[executeMainPromptCmd] Executing main prompt command:`, JSON.stringify(command));\n    const result = command.commands.map(cmd => parseDynamicVariables(cmd, context)).join('\\n');\n    console.log(`[executeMainPromptCmd] Result:`, result);\n    return result;\n}\n\nasync function executeSidePromptCmd(command, msg, context) {\n    console.log(`[executeSidePromptCmd] Executing side prompt command:`, JSON.stringify(command));\n    const sidePromptCommands = command.commands;\n\n    // Set flow level variable indicating side prompt processing\n    flow.set('waitingForSidePrompt', true);\n\n    // Execute side prompt commands\n    const result = sidePromptCommands.map(cmd => parseDynamicVariables(cmd, context)).join('\\n');\n\n    // Send out the message with side prompts\n    node.send({ payload: result, sidePrompt: true });\n\n    console.log(`[executeSidePromptCmd] Sent side prompt, waiting for result`);\n\n    try {\n        // Wait for the side prompt result\n        const sidePromptResult = await waitForSidePromptResult();\n\n        // Update flow context with side prompt result\n        flowContext.sidePromptResult = sidePromptResult;\n        flow.set('flowContext', flowContext);\n\n        console.log(`[executeSidePromptCmd] Received side prompt result:`, sidePromptResult);\n        return sidePromptResult;\n    } catch (error) {\n        console.error(`[executeSidePromptCmd] Error waiting for side prompt result:`, error);\n        return `[Error: ${error.message}]`;\n    } finally {\n        // Reset the processing flag\n        flow.set('waitingForSidePrompt', false);\n    }\n}\n\nfunction waitForSidePromptResult(timeout = 100000) {\n    console.log('[waitForSidePromptResult] Starting to wait for side prompt result');\n    return new Promise((resolve, reject) => {\n        const startTime = Date.now();\n        const checkSidePromptResult = () => {\n            let sidePromptResult = flow.get('sidePromptResult') || {};\n            if (flow.get('waitingForSidePrompt') == false) {\n                console.log('[waitForSidePromptResult] Side prompt result is ready');\n                resolve(sidePromptResult);\n            } else if (Date.now() - startTime > timeout) {\n                console.warn('[waitForSidePromptResult] Timeout reached while waiting for side prompt result');\n                reject(new Error('Timeout waiting for side prompt result'));\n            } else {\n                console.log('[waitForSidePromptResult] Side prompt result not ready, checking again in 1000ms');\n                setTimeout(checkSidePromptResult, 1300);\n            }\n        };\n        checkSidePromptResult();\n    });\n}\n\n\nfunction main() {\n    console.log('[main] Starting main function');\n\n    if (!msg.dynamicCmd) {\n        console.log('[main] Not a dynamic command message, passing through');\n        let outputType = 'normal'; // Default output type\n        return {\n            ...msg,\n            outputType: outputType // Add this line to pass the outputType\n        };\n    }\n\n    const command = msg.command;\n    const triggerDynamicVars = msg.triggerDynamicVars;\n\n    console.log('[main] Received command:', JSON.stringify(command));\n    console.log('[main] triggerDynamicVars:', triggerDynamicVars);\n\n    // Refresh flowContext at the beginning of main\n    let flowContext = flow.get('flowContext') || {};\n\n    if (command && triggerDynamicVars) {\n        console.log('[main] Processing command');\n        let finalResult;\n        let outputType = 'dynamicCmd'; // Default output type\n        console.log('[main] Output type:', outputType);\n\n        try {\n            console.log('[main] Executing command:', JSON.stringify(command));\n            const executedResult = executeCommand(command, flowContext);\n            console.log('[main] Executed result:', executedResult);\n            finalResult = executedResult;\n\n            // Set outputType based on command type\n            if (command.type === 'sidePromptCmd') {\n                outputType = 'sidePrompt';\n            } else if (command.type === 'mainPromptCmd') {\n                outputType = 'normal';\n            }\n            // Add more conditions for other command types if needed\n\n        } catch (error) {\n            console.error('[main] Error executing command:', error);\n            finalResult = `[Error: ${error.message}]`;\n            outputType = 'error';\n        }\n\n        console.log('[main] Final result:', finalResult);\n        console.log('[main] Output type:', outputType);\n\n        flowContext.processedResult = finalResult;\n        flowContext.processedResultReady = true;\n        flow.set('flowContext', flowContext);\n\n        const resultKey = `${command.type}${command.number}Result`;\n        flowContext[resultKey] = finalResult;\n        flow.set('flowContext', flowContext);\n        console.log(`[main] Stored result for ${resultKey} in flowContext`);\n\n        console.log('[main] Returning processed result');\n        return {\n            ...msg,\n            processedResult: {\n                type: 'processedResult',\n                data: finalResult,\n                command: command\n            },\n            outputType: outputType // Add this line to pass the outputType\n        };\n    } else {\n        console.log('[main] Invalid command or trigger, passing through message');\n        return msg;\n    }\n}\n\n// Add this line to log any errors that might occur\ntry {\n    return main();\n} catch (error) {\n    console.error('[commandExecutor] Error in main function:', error);\n    return msg;\n}",
         "outputs": 1,
         "timeout": "",
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 960,
-        "y": 220,
+        "x": 670,
+        "y": 480,
         "wires": [
             [
                 "94b392982f53c55a"
@@ -710,6 +700,179 @@
         "id": "94b392982f53c55a",
         "type": "function",
         "z": "dynamicCmdSubflow",
+        "name": "outputHandler",
+        "func": "// The Output Handler Layer\n\nfunction determineOutputType(msg) {\n    console.log('[determineOutputType] Starting output type determination');\n    console.log(`[determineOutputType] Input message:`, JSON.stringify(msg));\n\n    if (typeof msg !== 'object' || msg === null) {\n        console.warn('[determineOutputType] Invalid message object');\n        return 'normal';\n    }\n\n    if (msg.outputType) {\n        console.log(`[determineOutputType] Output type explicitly set: ${msg.outputType}`);\n        return msg.outputType;\n    }\n\n    if (msg.processedResult && msg.processedResult.type === 'processedResult') {\n        console.log('[determineOutputType] ProcessedResult found');\n        const command = msg.processedResult.command;\n        if (command && command.type === 'sidePromptCmd') {\n            console.log('[determineOutputType] SidePromptCmd detected');\n            return 'sidePrompt';\n        }\n    }\n\n    try {\n        const dynamicCmd = flow.get('dynamicCmd');\n        console.log('[determineOutputType] DynamicCmd:', JSON.stringify(dynamicCmd));\n        if (dynamicCmd && Array.isArray(dynamicCmd.sections) && dynamicCmd.sections.length > 0) {\n            const lastSection = dynamicCmd.sections[dynamicCmd.sections.length - 1];\n            if (Array.isArray(lastSection.commands) && lastSection.commands.length > 0) {\n                const lastCommand = lastSection.commands[lastSection.commands.length - 1];\n                console.log(`[determineOutputType] Last command type: ${lastCommand.type}`);\n                if (lastCommand.type === 'sidePromptCmd') {\n                    return 'sidePrompt';\n                }\n            }\n        }\n    } catch (error) {\n        console.error('[determineOutputType] Error checking dynamic command:', error);\n    }\n\n    if (dynamicCmd === undefined && msg.sidePrompt === true) {\n        console.log('[determineOutputType] dynamicCmd is undefined and msg.sidePrompt is true');\n        return 'sidePrompt';\n    }\n    \n    console.log('[determineOutputType] Defaulting to normal output type');\n    return 'normal';\n}\n\nfunction handleNormalOutput(msg) {\n    console.log('[handleNormalOutput] Handling normal output');\n    console.log('[handleNormalOutput] Returning message:', JSON.stringify(msg));\n    return [msg, null, null];\n}\n\nfunction handleSidePromptOutput(msg) {\n    console.log('[handleSidePromptOutput] Handling side prompt output');\n    console.log('[handleSidePromptOutput] Input message:', JSON.stringify(msg));\n\n    let sidePromptContent;\n    if (msg.processedResult &&\n        msg.processedResult.command &&\n        msg.processedResult.command.type === 'sidePromptCmd' &&\n        Array.isArray(msg.processedResult.command.commands)) {\n        sidePromptContent = msg.processedResult.command.commands;\n    } else if (Array.isArray(msg.payload)) {\n        sidePromptContent = msg.payload;\n    } else {\n        sidePromptContent = [msg.payload];\n    }\n\n    const sidePromptMsg = {\n        ...msg,\n        status: \"start\",\n        sidePrompt: true,\n        payload: sidePromptContent,\n        sidePromptNumber: msg.processedResult.command.number,\n    };\n\n    console.log(`[handleSidePromptOutput] Formatted side prompt message:`, JSON.stringify(sidePromptMsg));\n    return [null, sidePromptMsg, null];\n}\n\nfunction handleErrorOutput(msg) {\n    console.log('[handleErrorOutput] Handling error output');\n    console.log('[handleErrorOutput] Error message:', JSON.stringify(msg));\n    return [null, null, msg];\n}\n\nfunction garbageCollect() {\n    console.log('[garbageCollect] Starting garbage collection');\n    const flowKeys = flow.keys();\n    flowKeys.forEach(key => {\n        flow.set(key, undefined);\n        console.log(`[garbageCollect] Cleared flow variable: ${key}`);\n    });\n    console.log('[garbageCollect] Garbage collection completed');\n}\n\n// Main execution logic\nconsole.log('[Output Handler] Starting main execution logic');\n\nconst parsedExecutionResult = flow.get('parsedExecutionResult');\nif (parsedExecutionResult) {\n    console.log('[Output Handler] parsedExecutionResult found:', JSON.stringify(parsedExecutionResult));\n    msg.payload = parsedExecutionResult;\n}\n\nconst outputType = determineOutputType(msg);\nconsole.log(`[Output Handler] Determined output type: ${outputType}`);\n\nif (msg.dynamicCmd !== false && msg.dynamicCmdComplete === true) {\n    console.log('[Output Handler] Dynamic command completed, triggering garbage collection');\n    garbageCollect();\n}\n\nflow.set('lastOutputType', outputType);\nconsole.log(`[Output Handler] Stored lastOutputType: ${outputType}`);\n\nconsole.log(`[Output Handler] Switching based on output type: ${outputType}`);\nlet result;\nswitch (outputType) {\n    case 'normal':\n        result = handleNormalOutput(msg);\n        break;\n    case 'dynamicCmd':\n        console.log('[Output Handler] Handling dynamicCmd (no action)');\n        result = [null, null, null];\n        break;\n    case 'sidePrompt':\n        result = handleSidePromptOutput(msg);\n        break;\n    case 'error':\n        result = handleErrorOutput(msg);\n        break;\n    default:\n        console.warn(`[Output Handler] Unknown output type: ${outputType}, treating as normal`);\n        result = handleNormalOutput(msg);\n}\n\nconsole.log('[Output Handler] Final result:', JSON.stringify(result));\nreturn result;\n",
+        "outputs": 4,
+        "timeout": "",
+        "noerr": 5,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 660,
+        "y": 560,
+        "wires": [
+            [],
+            [],
+            [],
+            [
+                "a7e703fb030a015e"
+            ]
+        ]
+    },
+    {
+        "id": "c9770c87f37d1b12",
+        "type": "comment",
+        "z": "dynamicCmdSubflow",
+        "name": "Check Descriptions for Breakdown",
+        "info": "",
+        "x": 340,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "58fe2f2d6be6d7e0",
+        "type": "switch",
+        "z": "dynamicCmdSubflow",
+        "name": "Stage Router",
+        "property": "stage",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "stage1",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "stage2",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "stage3",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "complete",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 5,
+        "x": 380,
+        "y": 400,
+        "wires": [
+            [
+                "inputHandler"
+            ],
+            [
+                "1c1bc00d9a8c86d6"
+            ],
+            [
+                "d9c9b8665a5ca2df"
+            ],
+            [
+                "c8091fa058f1e46a"
+            ],
+            [
+                "94b392982f53c55a"
+            ]
+        ]
+    },
+    {
+        "id": "453dd7f3e67e45e8",
+        "type": "function",
+        "z": "dynamicCmdSubflow",
+        "name": "Input Handler",
+        "func": "// Input Handler\nconst flowContext = flow.get('flowContext') || {};\n\n// Update the latest message\nflowContext.latestMsg = msg;\nflow.set('flowContext', flowContext);\n\nconsole.log(\"[processMessage] Starting processMessage function.\");\nconsole.log(`[processMessage] Input msg: ${JSON.stringify(msg)}`);\n\n// Check if this is a sidePrompt completion message\nif (msg.sidePromptStatus === \"done\") {\n    console.log(\"[processMessage] Received sidePrompt completion message.\");\n    flow.set('waitingForSidePrompt', false);\n    flow.set('sidePromptResult', msg.payload);\n    flow.set('flowContext', flowContext);\n    return [null, msg, null]; // Send sidePrompt completion to output2\n}\n// Check if this is a sidePrompt completion message\nif (msg.status === \"stop\") {\n    console.log(\"[processMessage] Received stop message.\");\n    return [null, null, null]; // Send sidePrompt completion to output2\n}\n\n// Check if this is a dynamicCmd message\nif (msg.payload && typeof msg.payload === 'string' && msg.payload.includes('dynamicCmd')) {\n    return [msg, null, null]; // Send dynamicCmd messages to mainProcessor\n}\n\n// For all other messages, pass through to output1\nreturn [msg, null, null];",
+        "outputs": 3,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 400,
+        "y": 1280,
+        "wires": [
+            [
+                "2fd0c190f20ef579"
+            ],
+            [],
+            []
+        ],
+        "info": "# processMessage Function Breakdown\r\n\r\n## 1. Input Phase\r\n- **Always executed**\r\n- Update `flowContext` with latest message\r\n- Log function start and input message\r\n\r\n## 2. Processing Phase\r\n\r\n### Case 1: Regular message (most common)\r\n- **Condition:** Message doesn't meet any special conditions\r\n- **Action:** Pass message through unchanged\r\n- **Output:** First output (index 0)\r\n\r\n### Case 2: dynamicCmd message (common)\r\n- **Condition:** `msg.payload` exists, is a string, and contains \"dynamicCmd\"\r\n- **Action:** Pass message through unchanged\r\n- **Output:** First output (index 0)\r\n\r\n### Case 3: sidePrompt completion (less common)\r\n- **Condition:** `msg.sidePromptStatus` equals \"done\"\r\n- **Action:** \r\n  - Update flow variables (`waitingForSidePrompt`, `sidePromptResult`, `flowContext`)\r\n  - Log receipt of sidePrompt completion\r\n- **Output:** Second output (index 1)\r\n\r\n### Case 4: Stop message (edge case)\r\n- **Condition:** `msg.status` equals \"stop\"\r\n- **Action:** Log receipt of stop message\r\n- **Output:** No output (all null)\r\n\r\n## 3. Output Phase\r\n- Determine final output based on processing phase\r\n- Return array with message in appropriate index:\r\n  - [message, null, null] for first output\r\n  - [null, message, null] for second output\r\n  - [null, null, null] for stop message"
+    },
+    {
+        "id": "2fd0c190f20ef579",
+        "type": "function",
+        "z": "dynamicCmdSubflow",
+        "name": "Initial Parser",
+        "func": "// The Initial Parser Layer\n\nfunction parseInputText(inputText) {\n    console.log(`[parseInputText] Starting to parse input text`);\n    console.log(`[parseInputText] Input text length: ${inputText.length} characters`);\n\n    const lines = inputText.split('\\n');\n    console.log(`[parseInputText] Number of lines: ${lines.length}`);\n\n    let dynamicCmd = { sections: [] };\n    let currentCommand = null;\n    let isCapturingNestedCommand = false;\n    let nestedCommandBuffer = '';\n\n    console.log(`[parseInputText] Initialized parsing variables`);\n\n    const processLine = (line, index) => {\n        console.log(`[parseInputText] Processing line ${index + 1}: '${line}'`);\n\n        const originalLine = line;\n        line = line.replace(/\\/\\/.*$/, '').trim(); // Remove comments\n\n        if (line !== originalLine) {\n            console.log(`[parseInputText] Removed comment. New line: '${line}'`);\n        }\n\n        if (line === 'dynamicCmd') {\n            dynamicCmd.sections.push({ type: 'commandSet', commands: [] });\n            console.log(`[parseInputText] Detected 'dynamicCmd' section. Created new command set. Total sections: ${dynamicCmd.sections.length}`);\n            return;\n        }\n\n        if (line === '- commandSet') {\n            console.log(`[parseInputText] Detected commandSet line, ignoring.`);\n            return;\n        }\n\n        const mainCommandMatch = line.match(/^-\\s*(\\w+)(\\d+)/);\n        if (mainCommandMatch) {\n            const [, cmdType, cmdNumber] = mainCommandMatch;\n            currentCommand = { type: cmdType, number: cmdNumber, commands: [] };\n            dynamicCmd.sections[dynamicCmd.sections.length - 1].commands.push(currentCommand);\n            console.log(`[parseInputText] Started new main command: ${cmdType}${cmdNumber}. Total commands in current section: ${dynamicCmd.sections[dynamicCmd.sections.length - 1].commands.length}`);\n        } else if (line.startsWith('- `')) {\n            isCapturingNestedCommand = true;\n            nestedCommandBuffer = line.substring(3);\n            console.log(`[parseInputText] Started capturing nested command. Initial buffer: '${nestedCommandBuffer}'`);\n        } else if (isCapturingNestedCommand) {\n            if (line.endsWith('`')) {\n                nestedCommandBuffer += line.substring(0, line.length - 1);\n                currentCommand.commands.push(nestedCommandBuffer);\n                isCapturingNestedCommand = false;\n                console.log(`[parseInputText] Finished capturing nested command: '${nestedCommandBuffer}'`);\n                console.log(`[parseInputText] Total commands for ${currentCommand.type}${currentCommand.number}: ${currentCommand.commands.length}`);\n            } else {\n                nestedCommandBuffer += line + '\\n';\n                console.log(`[parseInputText] Capturing nested command. Current buffer length: ${nestedCommandBuffer.length} characters`);\n            }\n        } else if (line.startsWith('-') && currentCommand) {\n            const subCommand = line.substring(1).trim();\n            currentCommand.commands.push(subCommand);\n            console.log(`[parseInputText] Added sub-command to ${currentCommand.type}${currentCommand.number}: '${subCommand}'`);\n            console.log(`[parseInputText] Total commands for ${currentCommand.type}${currentCommand.number}: ${currentCommand.commands.length}`);\n        } else {\n            console.log(`[parseInputText] Skipped line: '${line}'`);\n        }\n    };\n\n    lines.forEach(processLine);\n\n    console.log(`[parseInputText] Finished parsing input text.`);\n    console.log(`[parseInputText] Total sections in dynamicCmd: ${dynamicCmd.sections.length}`);\n    dynamicCmd.sections.forEach((section, index) => {\n        console.log(`[parseInputText] Section ${index + 1} has ${section.commands.length} commands`);\n    });\n    console.log(`[parseInputText] Final parsed dynamicCmd: ${JSON.stringify(dynamicCmd, null, 2)}`);\n\n    return dynamicCmd;\n}\n\n// Node-RED function node entry point\nif (msg.payload && typeof msg.payload === 'string' && msg.payload.includes('dynamicCmd')) {\n    console.log(`[Initial Parser] Received message with dynamicCmd content`);\n    const parsedCmd = parseInputText(msg.payload);\n    flow.set('parsedDynamicCmd', parsedCmd);  // This line adds flow-level persistence\n    console.log(`[Initial Parser] Stored parsed dynamicCmd in flow context`);\n    msg.dynamicCmd = parsedCmd;\n    console.log(`[Initial Parser] Attached parsed dynamicCmd to msg object`);\n    return [msg, null, null];\n} else {\n    console.log(`[Initial Parser] Received non-dynamicCmd message, passing through`);\n    msg.dynamicCmd = false;\n    return [msg, null, null]; // Pass through non-dynamicCmd messages\n}",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 590,
+        "y": 1280,
+        "wires": [
+            [
+                "723737664577a42e"
+            ]
+        ]
+    },
+    {
+        "id": "723737664577a42e",
+        "type": "function",
+        "z": "dynamicCmdSubflow",
+        "name": "Block Execution Handler",
+        "func": "// Block Execution Handler\n\nconsole.log('[Block Execution Handler] Starting execution');\n\nconst flowContext = flow.get('flowContext') || {};\n\nfunction helper_waitProcessing(timeout = 30000) {\n    console.log('[helper_waitProcessing] Starting to wait for processed result');\n    return new Promise((resolve, reject) => {\n        const startTime = Date.now();\n        const checkProcessedResult = () => {\n            const currentContext = flow.get('flowContext') || {};\n            if (currentContext.processedResultReady) {\n                console.log('[helper_waitProcessing] Processed result is ready');\n                currentContext.processedResultReady = false;\n                flow.set('flowContext', currentContext);\n                resolve(currentContext.processedResult);\n            } else if (Date.now() - startTime > timeout) {\n                console.warn('[helper_waitProcessing] Timeout reached while waiting for processed result');\n                reject(new Error('Timeout waiting for processed result'));\n            } else {\n                console.log('[helper_waitProcessing] Processed result not ready, checking again in 500ms');\n                setTimeout(checkProcessedResult, 500);\n            }\n        };\n        checkProcessedResult();\n    });\n}\n\nasync function executeCommand(command) {\n    flow.set('currentCommand', command);\n    flow.set('currentResult', '');\n    flow.set('triggerDynamicVars', Date.now());\n    console.log('[executeCommand] Set currentCommand and triggerDynamicVars in flow');\n\n    const msgToSend = {\n        dynamicCmd: true,\n        command: command,\n        triggerDynamicVars: Date.now()\n    };\n    console.log('[executeCommand] Sending message:', JSON.stringify(msgToSend));\n    node.send(msgToSend);\n\n    return await helper_waitProcessing(60000);\n}\n\nasync function executeBlockCommands(dynamicCmd) {\n    console.log('[executeBlockCommands] Starting execution of commands');\n\n    if (!dynamicCmd || !dynamicCmd.sections || !Array.isArray(dynamicCmd.sections)) {\n        console.error(\"[executeBlockCommands] Invalid dynamicCmd structure:\", dynamicCmd);\n        throw new Error(\"Invalid dynamicCmd structure\");\n    }\n\n    let flowContext = flow.get('flowContext') || {};\n    flowContext.previousResponse = flowContext.previousResponse || '[Previous response not available]';\n    flow.set('flowContext', flowContext);\n\n    let finalResult = \"\";\n\n    for (let sectionIndex = 0; sectionIndex < dynamicCmd.sections.length; sectionIndex++) {\n        console.log(`[executeBlockCommands] Processing section ${sectionIndex}`);\n        const section = dynamicCmd.sections[sectionIndex];\n\n        if (!section || !section.commands || !Array.isArray(section.commands)) {\n            console.warn(`[executeBlockCommands] Invalid section structure at index ${sectionIndex}:`, section);\n            continue;\n        }\n\n        for (let commandIndex = 0; commandIndex < section.commands.length; commandIndex++) {\n            console.log(`[executeBlockCommands] Processing command ${commandIndex} in section ${sectionIndex}`);\n            const command = section.commands[commandIndex];\n\n            if (!command || !command.type) {\n                console.warn(`[executeBlockCommands] Invalid command at section ${sectionIndex}, command ${commandIndex}:`, command);\n                continue;\n            }\n\n            let result;\n\n            try {\n                console.log(`[executeBlockCommands] Executing command of type: ${command.type}`);\n                result = await executeCommand(command);\n\n                console.log(`[executeBlockCommands] Command result:`, result);\n                command.result = result;\n                finalResult += (finalResult ? \"\\n\" : \"\") + result;\n\n                flowContext[`${command.type}${command.number}Result`] = result;\n                flow.set('flowContext', flowContext);\n\n                command.processedResult = result;\n            } catch (error) {\n                console.error(`[executeBlockCommands] Error executing command ${command.type}:`, error);\n                command.processedResult = `[Error: ${error.message}]`;\n            }\n\n            await new Promise(resolve => setTimeout(resolve, 100));\n        }\n    }\n\n    // Add the dynamicCmdComplete flag\n    msg.dynamicCmdComplete = true;\n    \n    return finalResult;\n}\n\nfunction parseIncomingMessage(msg) {\n    if (msg.dynamicCmd && !msg.currentCommand) {\n        console.log('[parseIncomingMessage] New dynamic command detected');\n        return { type: 'newDynamicCmd', data: msg.dynamicCmd };\n    } else if (msg.type === 'processedResult') {\n        console.log('[parseIncomingMessage] Processed result received');\n        return { type: 'processedResult', data: msg.data, command: msg.command };\n    } else {\n        console.log('[parseIncomingMessage] Pass through message');\n        return { type: 'passThrough', data: msg };\n    }\n}\n\nfunction handleMessage() {\n    console.log('[handleMessage] Starting message handling');\n    try {\n        const parsedMsg = parseIncomingMessage(msg);\n\n        switch (parsedMsg.type) {\n            case 'newDynamicCmd':\n                if (!parsedMsg.data) {\n                    throw new Error(\"Invalid dynamicCmd data\");\n                }\n                console.log('[handleMessage] Executing new dynamic command');\n                executeBlockCommands(parsedMsg.data)\n                    .then(result => {\n                        console.log('[handleMessage] Command execution completed. Result:', result);\n                        flow.set('finalResult', result);\n                        console.log('[handleMessage] Set finalResult in flow');\n                        node.send({ payload: result, dynamicCmdComplete: true });\n                    })\n                    .catch(error => {\n                        console.error(\"[handleMessage] Error processing commands:\", error);\n                        node.error(\"Error processing commands: \" + error.message, msg);\n                    });\n                break;\n\n            case 'processedResult':\n                console.log('[handleMessage] Setting processed result');\n                flow.set('processedResult', parsedMsg.data);\n                flow.set('processedResultReady', true);\n                console.log('[handleMessage] Updated flow variables: processedResult and processedResultReady');\n                break;\n\n            case 'passThrough':\n            default:\n                console.log('[handleMessage] Passing through message');\n                node.send(msg);\n                break;\n        }\n    } catch (error) {\n        console.error(\"[handleMessage] Error in handleMessage:\", error);\n        node.error(\"Error in handleMessage: \" + error.message, msg);\n    }\n}\n\nconsole.log('[Block Execution Handler] Calling handleMessage');\nhandleMessage();\n\nconsole.log('[Block Execution Handler] Execution completed');\nreturn null;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 790,
+        "y": 1280,
+        "wires": [
+            [
+                "452daca17c2a6273"
+            ]
+        ]
+    },
+    {
+        "id": "ec08e1800503a437",
+        "type": "function",
+        "z": "dynamicCmdSubflow",
+        "name": "Dynamic Vars & Command Executor",
+        "func": "// Dynamic Vars & Command Executor\n\nconsole.log('[Dynamic Vars & Command Executor] Starting execution');\n\nlet flowContext = flow.get('flowContext') || {};\n\nfunction parseDynamicVariables(text, context) {\n    console.log('[parseDynamicVariables] Starting function with text:', text);\n\n    if (typeof text !== 'string') {\n        console.warn('[parseDynamicVariables] Warning: text is not a string. Type:', typeof text);\n        if (text === null || text === undefined) {\n            console.warn('[parseDynamicVariables] Text is null or undefined. Returning empty string.');\n            return '';\n        }\n        try {\n            text = String(text);\n            console.log('[parseDynamicVariables] Converted text to string:', text);\n        } catch (error) {\n            console.error('[parseDynamicVariables] Error converting text to string:', error);\n            return '[Error: Unable to process non-string input]';\n        }\n    }\n\n    if (!msg || typeof msg !== 'object') {\n        console.warn('[parseDynamicVariables] Warning: msg is not a valid object');\n        return text;\n    }\n\n    try {\n        // Handle previousResponse and sidePromptResult\n        if (context && context.latestMsg && typeof context.latestMsg.currentStep === 'number') {\n            const currentStep = context.latestMsg.currentStep;\n            const previousStep = currentStep - 1;\n            const previousResponseKey = `response${previousStep}`;\n\n            if (previousStep >= 0 && context.latestMsg[previousResponseKey]) {\n                const previousResponse = context.latestMsg[previousResponseKey];\n                console.log(`[parseDynamicVariables] Found previousResponse for step ${previousStep}:`, previousResponse);\n                text = text.replace(/{previousResponse}/g, previousResponse);\n            } else {\n                console.warn(`[parseDynamicVariables] No previousResponse found for step ${previousStep}`);\n                text = text.replace(/{previousResponse}/g, '[Previous response not available]');\n            }\n        } else {\n            console.warn('[parseDynamicVariables] Unable to determine previousResponse from context');\n            text = text.replace(/{previousResponse}/g, '[Previous response not available]');\n        }\n\n        console.log('[parseDynamicVariables] After replacing previousResponse:', text);\n        text = text.replace(/{sidePromptResult}/g, context.sidePromptResult || '[Side prompt result not available]');\n\n        // Replace $<<commandTypeNumberResult>>$\n        text = text.replace(/\\$<<(\\w+)(\\d+)Result>>\\$/g, (match, cmdType, cmdNumber) => {\n            const resultKey = `${cmdType}${cmdNumber}Result`;\n            const result = context[resultKey] || `[${resultKey} not available]`;\n            console.log(`[parseDynamicVariables] Replaced ${match} with:`, result);\n            return result;\n        });\n\n        // Replace $<<execute(...)>>$\n        text = text.replace(/\\$<<execute\\((.*?)\\)>>\\$/g, (match, code) => {\n            console.log(`[parseDynamicVariables] Executing code:`, code);\n            try {\n                code = code.replace(/;$/, '');\n                const safeContext = createSafeContext(msg, context);\n                const result = new Function('context', `with(context) { return (${code}); }`)(safeContext);\n                console.log(`[parseDynamicVariables] Execution result:`, result);\n                return result !== undefined ? result : '[undefined]';\n            } catch (error) {\n                console.error(`[parseDynamicVariables] Error executing: ${error.message}`);\n                return `[Error executing: ${error.message}]`;\n            }\n        });\n\n        // Handle regular msg property access\n        text = text.replace(/\\$<<([\\w.]+)>>\\$/g, (match, path) => {\n            console.log(`[parseDynamicVariables] Accessing msg property:`, path);\n            const parts = path.split('.');\n            let value = msg;\n            for (const part of parts) {\n                if (value && typeof value === 'object' && part in value) {\n                    value = value[part];\n                } else {\n                    console.warn(`[parseDynamicVariables] Warning: ${path} not available in msg`);\n                    return `[${path} not available]`;\n                }\n            }\n            const result = typeof value === 'object' ? JSON.stringify(value) : String(value);\n            console.log(`[parseDynamicVariables] Msg property value:`, result);\n            return result;\n        });\n\n        console.log(`[parseDynamicVariables] Final result: ${text}`);\n        return text;\n    } catch (error) {\n        console.error('[parseDynamicVariables] Unexpected error:', error);\n        return `[Error: ${error.message}]`;\n    }\n}\n\nfunction createSafeContext(msg, context) {\n    return {\n        flow: {\n            get: (key) => {\n                const value = flow.get(key);\n                console.log(`[createSafeContext] flow.get('${key}'):`, value);\n                return value;\n            },\n            set: (key, value) => {\n                console.log(`[createSafeContext] flow.set('${key}'):`, value);\n                flow.set(key, value);\n            }\n        },\n        global: {\n            get: (key) => {\n                const value = global.get(key);\n                console.log(`[createSafeContext] global.get('${key}'):`, value);\n                return value;\n            },\n            set: (key, value) => {\n                console.log(`[createSafeContext] global.set('${key}'):`, value);\n                global.set(key, value);\n            }\n        },\n        msg: msg,\n        context: context\n    };\n}\n\nfunction executeCommand(command, context) {\n    console.log(`[executeCommand] Executing command:`, JSON.stringify(command));\n    let result = '';\n\n    switch (command.type) {\n        case 'localCmd':\n            result = executeLocalCmd(command, msg, context);\n            break;\n        case 'compileCmd':\n        case 'packCmd':\n            result = executeCompileOrPackCmd(command, msg, context);\n            break;\n        case 'mainPromptCmd':\n            result = executeMainPromptCmd(command, msg, context);\n            break;\n        case 'sidePromptCmd':\n            result = executeSidePromptCmd(command, msg, context);\n            break;\n        default:\n            console.warn(`[executeCommand] Unknown command type: ${command.type}`);\n            result = `[Unknown command type: ${command.type}]`;\n    }\n\n    console.log(`[executeCommand] Result:`, result);\n    return result;\n}\n\nfunction executeLocalCmd(command, msg, context) {\n    console.log(`[executeLocalCmd] Executing local command:`, JSON.stringify(command));\n    let result = '';\n    try {\n        const commandString = command.commands.join('\\n');\n        console.log(`[executeLocalCmd] Executing: ${commandString}`);\n        const safeContext = createSafeContext(msg, context);\n        const wrappedCommand = `with(this) { ${commandString} }`;\n        const commandResult = new Function(wrappedCommand).call(safeContext);\n        result = commandResult !== undefined ? commandResult : '';\n    } catch (error) {\n        console.error(`[executeLocalCmd] Error: ${error.message}`);\n        result = `[Error: ${error.message}]`;\n    }\n    console.log(`[executeLocalCmd] Result:`, result);\n    return result;\n}\n\nfunction executeCompileOrPackCmd(command, msg, context) {\n    console.log(`[executeCompileOrPackCmd] Executing compile/pack command:`, JSON.stringify(command));\n    let result = '';\n\n    if (command && Array.isArray(command.commands)) {\n        result = command.commands.map(cmd => {\n            return parseDynamicVariables(cmd, context);\n        }).join('\\n');\n    } else {\n        console.warn(`[executeCompileOrPackCmd] Invalid command structure:`, JSON.stringify(command));\n        result = '[Error: Invalid command structure]';\n    }\n\n    console.log(`[executeCompileOrPackCmd] Result:`, result);\n    return result.trim();\n}\n\nfunction executeMainPromptCmd(command, msg, context) {\n    console.log(`[executeMainPromptCmd] Executing main prompt command:`, JSON.stringify(command));\n    const result = command.commands.map(cmd => parseDynamicVariables(cmd, context)).join('\\n');\n    console.log(`[executeMainPromptCmd] Result:`, result);\n    return result;\n}\n\nasync function executeSidePromptCmd(command, msg, context) {\n    console.log(`[executeSidePromptCmd] Executing side prompt command:`, JSON.stringify(command));\n    const sidePromptCommands = command.commands;\n\n    // Set flow level variable indicating side prompt processing\n    flow.set('waitingForSidePrompt', true);\n\n    // Execute side prompt commands\n    const result = sidePromptCommands.map(cmd => parseDynamicVariables(cmd, context)).join('\\n');\n\n    // Send out the message with side prompts\n    node.send({ payload: result, sidePrompt: true });\n\n    console.log(`[executeSidePromptCmd] Sent side prompt, waiting for result`);\n\n    try {\n        // Wait for the side prompt result\n        const sidePromptResult = await waitForSidePromptResult();\n\n        // Update flow context with side prompt result\n        flowContext.sidePromptResult = sidePromptResult;\n        flow.set('flowContext', flowContext);\n\n        console.log(`[executeSidePromptCmd] Received side prompt result:`, sidePromptResult);\n        return sidePromptResult;\n    } catch (error) {\n        console.error(`[executeSidePromptCmd] Error waiting for side prompt result:`, error);\n        return `[Error: ${error.message}]`;\n    } finally {\n        // Reset the processing flag\n        flow.set('waitingForSidePrompt', false);\n    }\n}\n\nfunction waitForSidePromptResult(timeout = 100000) {\n    console.log('[waitForSidePromptResult] Starting to wait for side prompt result');\n    return new Promise((resolve, reject) => {\n        const startTime = Date.now();\n        const checkSidePromptResult = () => {\n            let sidePromptResult = flow.get('sidePromptResult') || {};\n            if (flow.get('waitingForSidePrompt') == false) {\n                console.log('[waitForSidePromptResult] Side prompt result is ready');\n                resolve(sidePromptResult);\n            } else if (Date.now() - startTime > timeout) {\n                console.warn('[waitForSidePromptResult] Timeout reached while waiting for side prompt result');\n                reject(new Error('Timeout waiting for side prompt result'));\n            } else {\n                console.log('[waitForSidePromptResult] Side prompt result not ready, checking again in 1000ms');\n                setTimeout(checkSidePromptResult, 1300);\n            }\n        };\n        checkSidePromptResult();\n    });\n}\n\n\nfunction main() {\n    console.log('[main] Starting main function');\n\n    if (!msg.dynamicCmd) {\n        console.log('[main] Not a dynamic command message, passing through');\n        let outputType = 'normal'; // Default output type\n        return {\n            ...msg,\n            outputType: outputType // Add this line to pass the outputType\n        };\n    }\n\n    const command = msg.command;\n    const triggerDynamicVars = msg.triggerDynamicVars;\n\n    console.log('[main] Received command:', JSON.stringify(command));\n    console.log('[main] triggerDynamicVars:', triggerDynamicVars);\n\n    // Refresh flowContext at the beginning of main\n    let flowContext = flow.get('flowContext') || {};\n\n    if (command && triggerDynamicVars) {\n        console.log('[main] Processing command');\n        let finalResult;\n        let outputType = 'dynamicCmd'; // Default output type\n        console.log('[main] Output type:', outputType);\n\n        try {\n            console.log('[main] Executing command:', JSON.stringify(command));\n            const executedResult = executeCommand(command, flowContext);\n            console.log('[main] Executed result:', executedResult);\n            finalResult = executedResult;\n\n            // Set outputType based on command type\n            if (command.type === 'sidePromptCmd') {\n                outputType = 'sidePrompt';\n            } else if (command.type === 'mainPromptCmd') {\n                outputType = 'normal';\n            }\n            // Add more conditions for other command types if needed\n\n        } catch (error) {\n            console.error('[main] Error executing command:', error);\n            finalResult = `[Error: ${error.message}]`;\n            outputType = 'error';\n        }\n\n        console.log('[main] Final result:', finalResult);\n        console.log('[main] Output type:', outputType);\n\n        flowContext.processedResult = finalResult;\n        flowContext.processedResultReady = true;\n        flow.set('flowContext', flowContext);\n\n        const resultKey = `${command.type}${command.number}Result`;\n        flowContext[resultKey] = finalResult;\n        flow.set('flowContext', flowContext);\n        console.log(`[main] Stored result for ${resultKey} in flowContext`);\n\n        console.log('[main] Returning processed result');\n        return {\n            ...msg,\n            processedResult: {\n                type: 'processedResult',\n                data: finalResult,\n                command: command\n            },\n            outputType: outputType // Add this line to pass the outputType\n        };\n    } else {\n        console.log('[main] Invalid command or trigger, passing through message');\n        return msg;\n    }\n}\n\n// Add this line to log any errors that might occur\ntry {\n    return main();\n} catch (error) {\n    console.error('[Dynamic Vars & Command Executor] Error in main function:', error);\n    return msg;\n}",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 710,
+        "y": 1400,
+        "wires": [
+            [
+                "d43e8839d4280907"
+            ]
+        ]
+    },
+    {
+        "id": "81428f12b31e784a",
+        "type": "function",
+        "z": "dynamicCmdSubflow",
         "name": "Output Handler",
         "func": "// The Output Handler Layer\n\nfunction determineOutputType(msg) {\n    console.log('[determineOutputType] Starting output type determination');\n    console.log(`[determineOutputType] Input message:`, JSON.stringify(msg));\n\n    if (typeof msg !== 'object' || msg === null) {\n        console.warn('[determineOutputType] Invalid message object');\n        return 'normal';\n    }\n\n    if (msg.outputType) {\n        console.log(`[determineOutputType] Output type explicitly set: ${msg.outputType}`);\n        return msg.outputType;\n    }\n\n    if (msg.processedResult && msg.processedResult.type === 'processedResult') {\n        console.log('[determineOutputType] ProcessedResult found');\n        const command = msg.processedResult.command;\n        if (command && command.type === 'sidePromptCmd') {\n            console.log('[determineOutputType] SidePromptCmd detected');\n            return 'sidePrompt';\n        }\n    }\n\n    try {\n        const dynamicCmd = flow.get('dynamicCmd');\n        console.log('[determineOutputType] DynamicCmd:', JSON.stringify(dynamicCmd));\n        if (dynamicCmd && Array.isArray(dynamicCmd.sections) && dynamicCmd.sections.length > 0) {\n            const lastSection = dynamicCmd.sections[dynamicCmd.sections.length - 1];\n            if (Array.isArray(lastSection.commands) && lastSection.commands.length > 0) {\n                const lastCommand = lastSection.commands[lastSection.commands.length - 1];\n                console.log(`[determineOutputType] Last command type: ${lastCommand.type}`);\n                if (lastCommand.type === 'sidePromptCmd') {\n                    return 'sidePrompt';\n                }\n            }\n        }\n    } catch (error) {\n        console.error('[determineOutputType] Error checking dynamic command:', error);\n    }\n\n    if (dynamicCmd === undefined && msg.sidePrompt === true) {\n        console.log('[determineOutputType] dynamicCmd is undefined and msg.sidePrompt is true');\n        return 'sidePrompt';\n    }\n    \n    console.log('[determineOutputType] Defaulting to normal output type');\n    return 'normal';\n}\n\nfunction handleNormalOutput(msg) {\n    console.log('[handleNormalOutput] Handling normal output');\n    console.log('[handleNormalOutput] Returning message:', JSON.stringify(msg));\n    return [msg, null, null];\n}\n\nfunction handleSidePromptOutput(msg) {\n    console.log('[handleSidePromptOutput] Handling side prompt output');\n    console.log('[handleSidePromptOutput] Input message:', JSON.stringify(msg));\n\n    let sidePromptContent;\n    if (msg.processedResult &&\n        msg.processedResult.command &&\n        msg.processedResult.command.type === 'sidePromptCmd' &&\n        Array.isArray(msg.processedResult.command.commands)) {\n        sidePromptContent = msg.processedResult.command.commands;\n    } else if (Array.isArray(msg.payload)) {\n        sidePromptContent = msg.payload;\n    } else {\n        sidePromptContent = [msg.payload];\n    }\n\n    const sidePromptMsg = {\n        ...msg,\n        status: \"start\",\n        sidePrompt: true,\n        payload: sidePromptContent,\n        sidePromptNumber: msg.processedResult.command.number,\n    };\n\n    console.log(`[handleSidePromptOutput] Formatted side prompt message:`, JSON.stringify(sidePromptMsg));\n    return [null, sidePromptMsg, null];\n}\n\nfunction handleErrorOutput(msg) {\n    console.log('[handleErrorOutput] Handling error output');\n    console.log('[handleErrorOutput] Error message:', JSON.stringify(msg));\n    return [null, null, msg];\n}\n\nfunction garbageCollect() {\n    console.log('[garbageCollect] Starting garbage collection');\n    const flowKeys = flow.keys();\n    flowKeys.forEach(key => {\n        flow.set(key, undefined);\n        console.log(`[garbageCollect] Cleared flow variable: ${key}`);\n    });\n    console.log('[garbageCollect] Garbage collection completed');\n}\n\n// Main execution logic\nconsole.log('[Output Handler] Starting main execution logic');\n\nconst parsedExecutionResult = flow.get('parsedExecutionResult');\nif (parsedExecutionResult) {\n    console.log('[Output Handler] parsedExecutionResult found:', JSON.stringify(parsedExecutionResult));\n    msg.payload = parsedExecutionResult;\n}\n\nconst outputType = determineOutputType(msg);\nconsole.log(`[Output Handler] Determined output type: ${outputType}`);\n\nif (msg.dynamicCmd !== false && msg.dynamicCmdComplete === true) {\n    console.log('[Output Handler] Dynamic command completed, triggering garbage collection');\n    garbageCollect();\n}\n\nflow.set('lastOutputType', outputType);\nconsole.log(`[Output Handler] Stored lastOutputType: ${outputType}`);\n\nconsole.log(`[Output Handler] Switching based on output type: ${outputType}`);\nlet result;\nswitch (outputType) {\n    case 'normal':\n        result = handleNormalOutput(msg);\n        break;\n    case 'dynamicCmd':\n        console.log('[Output Handler] Handling dynamicCmd (no action)');\n        result = [null, null, null];\n        break;\n    case 'sidePrompt':\n        result = handleSidePromptOutput(msg);\n        break;\n    case 'error':\n        result = handleErrorOutput(msg);\n        break;\n    default:\n        console.warn(`[Output Handler] Unknown output type: ${outputType}, treating as normal`);\n        result = handleNormalOutput(msg);\n}\n\nconsole.log('[Output Handler] Final result:', JSON.stringify(result));\nreturn result;\n",
         "outputs": 3,
@@ -718,9 +881,174 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1220,
-        "y": 220,
+        "x": 580,
+        "y": 1580,
         "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "d43e8839d4280907",
+        "type": "change",
+        "z": "dynamicCmdSubflow",
+        "name": "Change Node",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "$upper(payload)",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1000,
+        "y": 1400,
+        "wires": [
+            [
+                "81428f12b31e784a"
+            ]
+        ]
+    },
+    {
+        "id": "452daca17c2a6273",
+        "type": "change",
+        "z": "dynamicCmdSubflow",
+        "name": "Change Node",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "$upper(payload)",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1000,
+        "y": 1280,
+        "wires": [
+            [
+                "ec08e1800503a437"
+            ]
+        ]
+    },
+    {
+        "id": "aa0dd13ba0fe6694",
+        "type": "switch",
+        "z": "dynamicCmdSubflow",
+        "name": "Stage Router",
+        "property": "stage",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "stage1",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "stage2",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "stage3",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "complete",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 4,
+        "x": 760,
+        "y": 1680,
+        "wires": [
+            [],
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "20c264e522cfbd42",
+        "type": "link in",
+        "z": "dynamicCmdSubflow",
+        "name": "link in 3",
+        "links": [
+            "a7e703fb030a015e"
+        ],
+        "x": 215,
+        "y": 720,
+        "wires": [
+            [
+                "58fe2f2d6be6d7e0"
+            ]
+        ]
+    },
+    {
+        "id": "a7e703fb030a015e",
+        "type": "link out",
+        "z": "dynamicCmdSubflow",
+        "name": "link out 4",
+        "mode": "link",
+        "links": [
+            "20c264e522cfbd42"
+        ],
+        "x": 965,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "0c4133305132ce6a",
+        "type": "switch",
+        "z": "dynamicCmdSubflow",
+        "name": "Stage Router",
+        "property": "stage",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "stage1",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "stage2",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "stage3",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "complete",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 4,
+        "x": 660,
+        "y": 880,
+        "wires": [
+            [],
             [],
             [],
             []
@@ -3240,8 +3568,8 @@
         "z": "6fd22f15cd2422d0",
         "name": "preset debug prompt + Content",
         "info": "",
-        "x": 2990,
-        "y": 1020,
+        "x": 2410,
+        "y": 220,
         "wires": []
     },
     {
@@ -3262,8 +3590,8 @@
                 "module": "playwright"
             }
         ],
-        "x": 1680,
-        "y": 1160,
+        "x": 1100,
+        "y": 360,
         "wires": [
             [
                 "d058aac6d68b73c4"
@@ -3282,8 +3610,8 @@
         "tostatus": false,
         "complete": "false",
         "targetType": "full",
-        "x": 1930,
-        "y": 1160,
+        "x": 1350,
+        "y": 360,
         "wires": []
     },
     {
@@ -3308,8 +3636,8 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "x": 1380,
-        "y": 1160,
+        "x": 800,
+        "y": 360,
         "wires": [
             [
                 "31b8288b02620cfb"
@@ -3342,8 +3670,8 @@
                 "module": "os"
             }
         ],
-        "x": 1410,
-        "y": 1060,
+        "x": 830,
+        "y": 260,
         "wires": [
             [
                 "529ac81730214a31",
@@ -3373,8 +3701,8 @@
         "topic": "",
         "payload": "startChrome",
         "payloadType": "str",
-        "x": 1150,
-        "y": 1000,
+        "x": 570,
+        "y": 200,
         "wires": [
             [
                 "4df1f5d4059f8e19"
@@ -3395,8 +3723,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1710,
-        "y": 1060,
+        "x": 1130,
+        "y": 260,
         "wires": []
     },
     {
@@ -3421,8 +3749,8 @@
         "topic": "",
         "payload": "endProcess",
         "payloadType": "str",
-        "x": 1150,
-        "y": 1060,
+        "x": 570,
+        "y": 260,
         "wires": [
             [
                 "4df1f5d4059f8e19"
@@ -3451,8 +3779,8 @@
         "topic": "",
         "payload": "restartProcess",
         "payloadType": "str",
-        "x": 1140,
-        "y": 1120,
+        "x": 560,
+        "y": 320,
         "wires": [
             [
                 "4df1f5d4059f8e19"
@@ -3466,8 +3794,8 @@
         "g": "800948336d4baaaa",
         "name": "Always make sure to set chatgpt appearance to dark;",
         "info": "Sign in via ch.peterlee@gmail.com\nAlways make sure to set chatgpt appearance to dark\nMake sure to allow clipboard",
-        "x": 1780,
-        "y": 1120,
+        "x": 1200,
+        "y": 320,
         "wires": []
     },
     {
@@ -3477,8 +3805,8 @@
         "g": "800948336d4baaaa",
         "name": "1. Initializes Chrome",
         "info": "",
-        "x": 1130,
-        "y": 960,
+        "x": 550,
+        "y": 160,
         "wires": []
     },
     {
@@ -3493,8 +3821,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 2940,
-        "y": 1080,
+        "x": 2360,
+        "y": 280,
         "wires": [
             []
         ]
@@ -3511,8 +3839,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 2340,
-        "y": 1060,
+        "x": 1760,
+        "y": 260,
         "wires": [
             [
                 "3847b83049aabd0f"
@@ -3535,8 +3863,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 2520,
-        "y": 1040,
+        "x": 1940,
+        "y": 240,
         "wires": []
     },
     {
@@ -3560,8 +3888,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 2180,
-        "y": 1060,
+        "x": 1600,
+        "y": 260,
         "wires": [
             [
                 "4d910338dc678e98"
@@ -3581,8 +3909,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 2520,
-        "y": 1100,
+        "x": 1940,
+        "y": 300,
         "wires": []
     },
     {
@@ -3601,8 +3929,8 @@
         "randomUnits": "seconds",
         "drop": false,
         "outputs": 1,
-        "x": 1080,
-        "y": 1500,
+        "x": 500,
+        "y": 700,
         "wires": [
             [
                 "525ededf5411f55d"
@@ -3615,8 +3943,8 @@
         "z": "6fd22f15cd2422d0",
         "name": "preset debug prompt + Content",
         "info": "",
-        "x": 1990,
-        "y": 1900,
+        "x": 1410,
+        "y": 1100,
         "wires": []
     },
     {
@@ -3631,8 +3959,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1960,
-        "y": 1960,
+        "x": 1380,
+        "y": 1160,
         "wires": [
             []
         ]
@@ -3650,8 +3978,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 2220,
-        "y": 1620,
+        "x": 1640,
+        "y": 820,
         "wires": []
     },
     {
@@ -3666,8 +3994,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1340,
-        "y": 1940,
+        "x": 760,
+        "y": 1140,
         "wires": [
             [
                 "5a875d3bc724522a"
@@ -3690,8 +4018,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1520,
-        "y": 1920,
+        "x": 940,
+        "y": 1120,
         "wires": []
     },
     {
@@ -3715,8 +4043,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 1180,
-        "y": 1940,
+        "x": 600,
+        "y": 1140,
         "wires": [
             [
                 "5eedbfc64a760a47"
@@ -3736,8 +4064,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1520,
-        "y": 1980,
+        "x": 940,
+        "y": 1180,
         "wires": []
     },
     {
@@ -3748,8 +4076,8 @@
         "path": "",
         "enabled": false,
         "exporttype": "original",
-        "x": 880,
-        "y": 1500,
+        "x": 300,
+        "y": 700,
         "wires": [
             [
                 "d248b33ccca637ad"
@@ -3770,8 +4098,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 1110,
-        "y": 1320,
+        "x": 530,
+        "y": 520,
         "wires": [
             [
                 "51e86c26bd777951"
@@ -3791,8 +4119,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1110,
-        "y": 1380,
+        "x": 530,
+        "y": 580,
         "wires": [
             [
                 "525ededf5411f55d"
@@ -3810,8 +4138,8 @@
         "format": "utf8",
         "sendError": false,
         "allProps": false,
-        "x": 1360,
-        "y": 1420,
+        "x": 780,
+        "y": 620,
         "wires": [
             [
                 "458713510b3edb94"
@@ -3831,8 +4159,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1590,
-        "y": 1420,
+        "x": 1010,
+        "y": 620,
         "wires": [
             [
                 "27692842a0727548"
@@ -3865,8 +4193,8 @@
                 "module": "os"
             }
         ],
-        "x": 1900,
-        "y": 1420,
+        "x": 1320,
+        "y": 620,
         "wires": [
             [
                 "eca15312159d4910"
@@ -3891,8 +4219,8 @@
                 "module": "playwright"
             }
         ],
-        "x": 1950,
-        "y": 1600,
+        "x": 1370,
+        "y": 800,
         "wires": [
             [],
             [
@@ -3927,8 +4255,8 @@
                 "module": "os"
             }
         ],
-        "x": 1330,
-        "y": 1600,
+        "x": 750,
+        "y": 800,
         "wires": [
             [
                 "a5f31990c3510d5f"
@@ -3961,8 +4289,8 @@
                 "module": "os"
             }
         ],
-        "x": 1100,
-        "y": 1600,
+        "x": 520,
+        "y": 800,
         "wires": [
             [
                 "71c927bf29b50bd2"
@@ -3978,8 +4306,8 @@
         "links": [
             "a593028ef3f4668a"
         ],
-        "x": 1165,
-        "y": 1660,
+        "x": 585,
+        "y": 860,
         "wires": [
             [
                 "71c927bf29b50bd2"
@@ -3996,8 +4324,8 @@
         "links": [
             "9ff7d5131f370507"
         ],
-        "x": 2025,
-        "y": 1680,
+        "x": 1445,
+        "y": 880,
         "wires": []
     },
     {
@@ -4006,8 +4334,8 @@
         "z": "6fd22f15cd2422d0",
         "g": "abb6cb8cc176530d",
         "name": "",
-        "x": 1660,
-        "y": 1600,
+        "x": 1080,
+        "y": 800,
         "wires": [
             [
                 "fa21567ba22fdb93"
@@ -4030,8 +4358,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 2180,
-        "y": 2100,
+        "x": 1600,
+        "y": 1300,
         "wires": [
             [],
             [
@@ -4065,8 +4393,8 @@
                 "module": "os"
             }
         ],
-        "x": 2180,
-        "y": 2200,
+        "x": 1600,
+        "y": 1400,
         "wires": [
             [
                 "909c8ed716c7b4f4"
@@ -4093,8 +4421,8 @@
                 "module": "playwright"
             }
         ],
-        "x": 2180,
-        "y": 2300,
+        "x": 1600,
+        "y": 1500,
         "wires": [
             [],
             [
@@ -4128,8 +4456,8 @@
                 "module": "os"
             }
         ],
-        "x": 1630,
-        "y": 2200,
+        "x": 1050,
+        "y": 1400,
         "wires": [
             [
                 "a873632c88c762da"
@@ -4154,8 +4482,8 @@
                 "module": "playwright"
             }
         ],
-        "x": 1630,
-        "y": 2300,
+        "x": 1050,
+        "y": 1500,
         "wires": [
             [],
             [
@@ -4190,8 +4518,8 @@
                 "module": "os"
             }
         ],
-        "x": 1650,
-        "y": 1700,
+        "x": 1070,
+        "y": 900,
         "wires": [
             [
                 "8b103669b683092f"
@@ -4219,8 +4547,8 @@
                 "module": "playwright"
             }
         ],
-        "x": 1650,
-        "y": 1780,
+        "x": 1070,
+        "y": 980,
         "wires": [
             [],
             [
