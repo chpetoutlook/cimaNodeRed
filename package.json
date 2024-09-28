@@ -5,7 +5,8 @@
     "dependencies": {
         "node-red-contrib-flowman": "0.0.12",
         "node-red-contrib-mongodb4": "2.5.2",
-        "node-red-contrib-ollama": "0.1.9"
+        "node-red-contrib-ollama": "0.1.9",
+        "node-red-contrib-json-logic": "2.0.1"
     },
     "node-red": {
         "settings": {
