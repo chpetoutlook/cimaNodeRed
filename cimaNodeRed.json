@@ -15,14 +15,6 @@
         "env": []
     },
     {
-        "id": "b08cf4da1c0556fb",
-        "type": "tab",
-        "label": "testBet",
-        "disabled": false,
-        "info": "",
-        "env": []
-    },
-    {
         "id": "25ffd91f1979976d",
         "type": "tab",
         "label": "chatGPT",
@@ -3114,33 +3106,6 @@
             [
                 "ce4d24263c44e46c"
             ]
-        ]
-    },
-    {
-        "id": "17bf8a0db751f0c0",
-        "type": "inject",
-        "z": "b08cf4da1c0556fb",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 340,
-        "y": 240,
-        "wires": [
-            []
         ]
     },
     {
