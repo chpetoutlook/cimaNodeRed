@@ -686,6 +686,31 @@
         "h": 142
     },
     {
+        "id": "a586fff4950d8220",
+        "type": "group",
+        "z": "67ce124139a68312",
+        "name": "Watch Excel",
+        "style": {
+            "fill": "#d1d1d1",
+            "label": true
+        },
+        "nodes": [
+            "10f68b36e358e292",
+            "fe4819e3d613d93a",
+            "db6e77bc844bc09d",
+            "e8b81628c45befd9",
+            "b939c2ad8f432d14",
+            "dab8435d998c9375",
+            "df992b41e14064be",
+            "08f4933eee0bc124",
+            "0a20fbf7a9ae7a4f"
+        ],
+        "x": 54,
+        "y": 939,
+        "w": 1132,
+        "h": 242
+    },
+    {
         "id": "e2bc7ac9aa77279e",
         "type": "mongodb4-client",
         "name": "Basic Connection",
@@ -1208,7 +1233,7 @@
         "topic": "",
         "payloadType": "date",
         "x": 270,
-        "y": 600,
+        "y": 580,
         "wires": [
             [
                 "71c51d19f152c495"
@@ -1228,7 +1253,7 @@
         "finalize": "",
         "libs": [],
         "x": 540,
-        "y": 600,
+        "y": 580,
         "wires": [
             []
         ]
@@ -1274,7 +1299,7 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 890,
+        "x": 880,
         "y": 760,
         "wires": [
             [
@@ -1403,8 +1428,8 @@
         "z": "67ce124139a68312",
         "name": "Inner function ; add AI additions together.",
         "info": "",
-        "x": 1220,
-        "y": 1040,
+        "x": 540,
+        "y": 720,
         "wires": []
     },
     {
@@ -1412,7 +1437,7 @@
         "type": "function",
         "z": "67ce124139a68312",
         "name": "Inject File Names",
-        "func": "// Assuming githubPath is retrieved from the global context\nlet githubPath = global.get('userRootPaths').github;\n\n// Constructing the file paths dynamically using the githubPath\nconst filePaths = [\n    path.join(githubPath, 'cimaNode', 'Restructured', 'b_Middleman', 'Subfunctions', 'D1c_betCalculator copy.js'),\n    path.join(githubPath, 'cimaNode', 'Restructured', 'b_Middleman', 'Subfunctions', 'D1c_betCalculator.js'),\n    path.join(githubPath, 'cimaNode', 'Restructured', 'b_Middleman', 'Subfunctions', 'D1a_sortedBets_functions.js')\n];\n\nmsg = {\n    payload: filePaths\n};\n\nnode.send(msg);\n\nreturn null;",
+        "func": "// Assuming githubPath is retrieved from the global context\nlet githubPath = global.get('userRootPaths').github;\nlet documents = global.get('userRootPaths').documents;\n\n// Constructing the file paths dynamically using the githubPath\nconst filePaths = [\n    //path.join(documents, 'Sync', 'CimaExtraFiles', 'Excel', 'CimaFormatLoad_2.xlsx'),\n    path.join(githubPath, 'cimaNode', 'Restructured', 'b_Middleman', 'Subfunctions', 'D1c_betCalculator copy.js'),\n    path.join(githubPath, 'cimaNode', 'Restructured', 'b_Middleman', 'Subfunctions', 'D1c_betCalculator.js'),\n    path.join(githubPath, 'cimaNode', 'Restructured', 'b_Middleman', 'Subfunctions', 'D1a_sortedBets_functions.js')\n];\n\nmsg = {\n    payload: filePaths\n};\n\nnode.send(msg);\n\nreturn null;",
         "outputs": 1,
         "timeout": "",
         "noerr": 0,
@@ -1424,7 +1449,7 @@
                 "module": "path"
             }
         ],
-        "x": 470,
+        "x": 450,
         "y": 760,
         "wires": [
             [
@@ -1446,7 +1471,7 @@
         "statusVal": "filename",
         "statusType": "auto",
         "x": 880,
-        "y": 880,
+        "y": 800,
         "wires": []
     },
     {
@@ -1457,10 +1482,10 @@
         "props": [],
         "repeat": "",
         "crontab": "",
-        "once": true,
+        "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "x": 230,
+        "x": 220,
         "y": 760,
         "wires": [
             [
@@ -1676,7 +1701,7 @@
             }
         ],
         "x": 460,
-        "y": 520,
+        "y": 500,
         "wires": [
             [
                 "e83c9d3383a75f0a"
@@ -1697,7 +1722,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 630,
-        "y": 520,
+        "y": 500,
         "wires": []
     },
     {
@@ -1718,7 +1743,7 @@
         "payload": "start",
         "payloadType": "str",
         "x": 240,
-        "y": 520,
+        "y": 500,
         "wires": [
             [
                 "5604bb667c62adce"
@@ -1738,8 +1763,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 180,
-        "y": 1160,
+        "x": 320,
+        "y": 1340,
         "wires": [
             [
                 "5c11b0e0be27f868"
@@ -1758,8 +1783,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 380,
-        "y": 1160,
+        "x": 520,
+        "y": 1340,
         "wires": [
             [
                 "e55f1c0b5e2b5a23"
@@ -1782,8 +1807,8 @@
         "authType": "",
         "senderr": false,
         "headers": [],
-        "x": 580,
-        "y": 1160,
+        "x": 720,
+        "y": 1340,
         "wires": [
             [
                 "ca20c306ae4bf461"
@@ -1802,8 +1827,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 780,
-        "y": 1160,
+        "x": 920,
+        "y": 1340,
         "wires": [
             [
                 "1f863bb49d4e2f34"
@@ -1826,8 +1851,8 @@
         "authType": "",
         "senderr": false,
         "headers": [],
-        "x": 980,
-        "y": 1160,
+        "x": 1120,
+        "y": 1340,
         "wires": [
             [
                 "179990bfe6a2bd7e"
@@ -1845,8 +1870,8 @@
         "tostatus": false,
         "complete": "true",
         "targetType": "full",
-        "x": 1130,
-        "y": 1160,
+        "x": 1270,
+        "y": 1340,
         "wires": []
     },
     {
@@ -1856,8 +1881,211 @@
         "name": "Global Assets Indexer",
         "info": "",
         "x": 240,
-        "y": 460,
+        "y": 440,
         "wires": []
+    },
+    {
+        "id": "10f68b36e358e292",
+        "type": "function",
+        "z": "67ce124139a68312",
+        "g": "a586fff4950d8220",
+        "name": "Watch Files",
+        "func": "let filePaths;\nlet userRootPaths = global.get('userRootPaths');\n\nif (Array.isArray(msg.payload)) {\n    filePaths = msg.payload; // Use payload directly if it's an array\n} else if (typeof msg.payload === 'string') {\n    filePaths = msg.payload.split(','); // Split payload into an array if it's a comma-separated string\n} else {\n    node.error('Invalid payload type. Expected an array or a comma-separated string.');\n    return null;\n}\n\nnode.warn('filepaths : ' + filePaths.length);\n\nconst debounceTimeout = 500; // Adjust this value as needed (in milliseconds)\nconst fileChangeTimers = {};\n\nfilePaths.forEach(path => {\n    if (fs.existsSync(path)) {\n        fs.watch(path, (eventType, filename) => {\n            if (filename) {\n                clearTimeout(fileChangeTimers[path]); // Clear any previous timer\n\n                fileChangeTimers[path] = setTimeout(() => {\n                    const changeMsg = {\n                        payload: path,\n                        filename: filename,\n                        topic: path,\n                        file: filename,\n                        type: eventType,\n                        size: fs.statSync(path).size\n                    };\n                    node.send(changeMsg);\n                }, debounceTimeout);\n            }\n        });\n    } else {\n        node.error(`File ${path} does not exist.`);\n    }\n});\n\nreturn null;\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "fs",
+                "module": "fs"
+            }
+        ],
+        "x": 590,
+        "y": 1020,
+        "wires": [
+            [
+                "db6e77bc844bc09d",
+                "e8b81628c45befd9"
+            ]
+        ]
+    },
+    {
+        "id": "fe4819e3d613d93a",
+        "type": "function",
+        "z": "67ce124139a68312",
+        "g": "a586fff4950d8220",
+        "name": "Inject Excel",
+        "func": "// Assuming githubPath is retrieved from the global context\nlet githubPath = global.get('userRootPaths').github;\nlet documents = global.get('userRootPaths').documents;\n\n// Constructing the file paths dynamically using the githubPath\nconst filePaths = [\n    path.join(documents, 'Sync', 'CimaExtraFiles', 'Excel', 'CimaFormatLoad_2.xlsx'),\n    //path.join(githubPath, 'cimaNode', 'Restructured', 'b_Middleman', 'Subfunctions', 'D1c_betCalculator copy.js'),\n    //path.join(githubPath, 'cimaNode', 'Restructured', 'b_Middleman', 'Subfunctions', 'D1c_betCalculator.js'),\n    //path.join(githubPath, 'cimaNode', 'Restructured', 'b_Middleman', 'Subfunctions', 'D1a_sortedBets_functions.js')\n];\n\nmsg = {\n    payload: filePaths\n};\n\nnode.send(msg);\n\nreturn null;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "path",
+                "module": "path"
+            }
+        ],
+        "x": 410,
+        "y": 1020,
+        "wires": [
+            [
+                "10f68b36e358e292"
+            ]
+        ]
+    },
+    {
+        "id": "08f4933eee0bc124",
+        "type": "inject",
+        "z": "67ce124139a68312",
+        "g": "a586fff4950d8220",
+        "name": "Inject File Names",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 190,
+        "y": 1020,
+        "wires": [
+            [
+                "fe4819e3d613d93a"
+            ]
+        ]
+    },
+    {
+        "id": "db6e77bc844bc09d",
+        "type": "switch",
+        "z": "67ce124139a68312",
+        "g": "a586fff4950d8220",
+        "name": "Check Disable Watch",
+        "property": "disableWatch",
+        "propertyType": "flow",
+        "rules": [
+            {
+                "t": "false"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 820,
+        "y": 1020,
+        "wires": [
+            [
+                "df992b41e14064be"
+            ]
+        ]
+    },
+    {
+        "id": "e8b81628c45befd9",
+        "type": "debug",
+        "z": "67ce124139a68312",
+        "g": "a586fff4950d8220",
+        "name": "Debug filename",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "filename",
+        "targetType": "msg",
+        "statusVal": "filename",
+        "statusType": "auto",
+        "x": 800,
+        "y": 1060,
+        "wires": []
+    },
+    {
+        "id": "0a20fbf7a9ae7a4f",
+        "type": "function",
+        "z": "67ce124139a68312",
+        "g": "a586fff4950d8220",
+        "name": "Reset Disable Watch (No Change)",
+        "func": "flow.set('disableWatch', false);\nreturn { payload: 'Watch node enabled (no change)' };",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1020,
+        "y": 1140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b939c2ad8f432d14",
+        "type": "delay",
+        "z": "67ce124139a68312",
+        "g": "a586fff4950d8220",
+        "name": "Enable Watch",
+        "pauseType": "delay",
+        "timeout": ".3",
+        "timeoutUnits": "seconds",
+        "rate": "",
+        "nbRateUnits": "",
+        "randomFirst": "",
+        "randomLast": "",
+        "randomUnits": "seconds",
+        "allowrate": false,
+        "outputs": 1,
+        "x": 1060,
+        "y": 1080,
+        "wires": [
+            [
+                "0a20fbf7a9ae7a4f"
+            ]
+        ]
+    },
+    {
+        "id": "dab8435d998c9375",
+        "type": "comment",
+        "z": "67ce124139a68312",
+        "g": "a586fff4950d8220",
+        "name": "Excel Watch",
+        "info": "",
+        "x": 410,
+        "y": 980,
+        "wires": []
+    },
+    {
+        "id": "df992b41e14064be",
+        "type": "function",
+        "z": "67ce124139a68312",
+        "g": "a586fff4950d8220",
+        "name": "Trigger Loader File",
+        "func": "// Function node to trigger A0_GeneralLoader.js\nlet githubPath = global.get('userRootPaths').github;\n\n// Path to your A0_GeneralLoader.js file\nconst loaderPath = path.join(githubPath, 'cimaNode', 'Restructured', 'b_Middleman', 'A0_LoaderScripts', 'A0_GeneralLoader.js');\n\nconst child = childProcess.spawn('node', [loaderPath]);\n\nlet stdout = '';\nlet stderr = '';\n\nchild.stdout.on('data', (data) => {\n    stdout += data.toString();\n    node.log(`stdout: ${data}`);\n});\n\nchild.stderr.on('data', (data) => {\n    stderr += data.toString();\n    node.warn(`stderr: ${data}`);\n});\n\nchild.on('close', (code) => {\n    if (code !== 0) {\n        node.error(`Process exited with code ${code}`);\n        msg.payload = { error: `Process exited with code ${code}`, stderr: stderr };\n    } else {\n        msg.payload = stdout;\n    }\n    node.send(msg);\n});\n\nchild.on('error', (error) => {\n    node.error(`Error: ${error.message}`);\n    msg.payload = { error: error.message };\n    node.send(msg);\n});\n\nreturn null;  // This prevents the node from sending a message immediately",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "fs",
+                "module": "fs"
+            },
+            {
+                "var": "path",
+                "module": "path"
+            },
+            {
+                "var": "childProcess",
+                "module": "child_process"
+            }
+        ],
+        "x": 1050,
+        "y": 1020,
+        "wires": [
+            [
+                "b939c2ad8f432d14"
+            ]
+        ]
     },
     {
         "id": "4a45cc485f644505",
