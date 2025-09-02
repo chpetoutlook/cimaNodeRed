@@ -238,6 +238,36 @@
         "h": 142
     },
     {
+        "id": "e2bc7ac9aa77279e",
+        "type": "mongodb4-client",
+        "name": "Basic Connection",
+        "protocol": "mongodb",
+        "hostname": "http://127.0.0.1",
+        "port": "22000",
+        "dbName": "CimaMain",
+        "appName": "",
+        "authSource": "admin",
+        "authMechanism": "SCRAM-SHA-256",
+        "tls": false,
+        "tlsCAFile": "",
+        "tlsCertificateKeyFile": "",
+        "tlsInsecure": false,
+        "connectTimeoutMS": "",
+        "socketTimeoutMS": "",
+        "minPoolSize": "",
+        "maxPoolSize": "",
+        "maxIdleTimeMS": "",
+        "uri": "mongodb://127.0.0.1:22000",
+        "advanced": "{\"connectTimeoutMS\": 30000}",
+        "uriTabActive": "tab-uri-advanced"
+    },
+    {
+        "id": "df8a615d6d2cd2e7",
+        "type": "websocket-listener",
+        "path": "/ws/BetInputCheck",
+        "wholemsg": "false"
+    },
+    {
         "id": "4a45cc485f644505",
         "type": "function",
         "z": "5fa172c20f49443b",
@@ -1351,7 +1381,7 @@
         "z": "5fa172c20f49443b",
         "g": "9e02f8f5e79de5a0",
         "name": "EXTRACT 2: Wait for 2 Bets",
-        "func": "var incomingMessage = msg;\nvar betIDVar = msg.fullMessage._id;\nvar resultCounter = 2;\nvar tenPercentStake = 10;\nvar vigMax = 5;\nvar arbPercentageRangeMin = 4;\nvar vigSplitRangeMin = 15;\nvar moneylineRangeMin = 21;\n\n\n//===================================\n// 1. BUFFER FUNCTIONS\nfunction updateBufferWithIncomingMessage(incomingMessage) {\n    // Initialize a buffer object if it doesn't exist\n    if (!context.get(\"buffer\")) {\n        context.set(\"buffer\", {});\n    }\n\n    // Initialize a timeout object to keep track of message timeouts\n    if (!context.get(\"timeouts\")) {\n        context.set(\"timeouts\", {});\n    }\n\n    // Retrieve the buffer and timeouts objects\n    let buffer = context.get(\"buffer\");\n    let timeouts = context.get(\"timeouts\");\n    const timeoutDuration = 60000; // Timeout duration in milliseconds (1 minute)\n\n    // Extract the message ID from the incoming message\n    var betIDVar = incomingMessage.fullMessage._id;\n\n    // Ensure buffer entry exists for the current message ID and initialize it as an empty array if it doesn't\n    if (!buffer[betIDVar]) {\n        buffer[betIDVar] = {};\n        buffer[betIDVar].messages = [];\n    }\n\n    // Add the incoming message to the buffer array for this betIDVar\n    buffer[betIDVar].messages.push(incomingMessage);\n\n    // Persist the updated buffer\n    context.set(\"buffer\", buffer);\n\n    // Return the relevant variables for use outside the function\n    return {\n        buffer, // Updated buffer object\n        timeouts, // Updated timeouts object\n        betIDVar // The message ID variable\n    };\n}\n\n// Call the function to update the buffer with the incoming message and capture the returned values\nvar { buffer, timeouts, betIDVar } = updateBufferWithIncomingMessage(incomingMessage);\n\n// Now `buffer`, `timeouts`, and `betIDVar` are available for use outside the function.\n\n// Assuming cleanupBuffer function is implemented elsewhere\nfunction cleanupBuffer(betIDVar) {\n    let buffer = context.get(\"buffer\");\n    let timeouts = context.get(\"timeouts\");\n\n    delete buffer[betIDVar];\n    context.set(\"buffer\", buffer);\n\n    if (timeouts[betIDVar]) {\n        clearTimeout(timeouts[betIDVar]);\n        delete timeouts[betIDVar];\n        context.set(\"timeouts\", timeouts);\n    }\n}\n//============================================\n// 2. SORTING FUNCTIONS\n// General function to extract and sort messages by a specified property path\n\n//========================\n// 3. EXECUTION FUNCTIONS\n\n// Function to check for messages with a similar fullMessage._id, the same scraped_lineType, and matching team in the buffer\nfunction checkForSimilarity({ betIDVar, incomingMessage }) {\n    // Destructure incomingMessage for easier comparison\n    const {\n        fullMessage: { _id: fullMessageID },\n        scraped_bet: { scraped_lineType: lineType, scraped_timeStamp: timeStamp }\n    } = incomingMessage;\n\n    node.log(fullMessageID);\n    \n    // Filter messages in the buffer for the same betIDVar\n    let similarMessages = buffer[betIDVar].messages.filter(message =>\n        message.fullMessage && message.fullMessage._id === fullMessageID &&\n        message.scraped_bet.scraped_lineType === lineType &&\n        message.scraped_bet.scraped_timeStamp === timeStamp\n    );\n\n    if (similarMessages.length == 2) {\n        // Assuming `node`, `timeouts`, `context`, are available in the scope\n        node.log(\"Found similar message(s) with the same fullMessage._id, scraped_lineType, and team.\");\n        processSimilarMessages({node, similarMessages, betIDVar, timeouts, context});\n    } else {\n        node.log(\"No similar message found with matching criteria.\");\n    }\n}\n\nfunction processSimilarMessages({node, similarMessages, betIDVar, timeouts, context}) { clearTimeout(timeouts[betIDVar]); context.set("timeouts", timeouts); var newMsg = {...similarMessages[0]}; similarMessages.forEach((message, index) => { const details = {...message.scraped_bet}; if (message.scraped_bet.scraped_sport) { details.scraped_sport = message.scraped_bet.scraped_sport; } if (message.scraped_bet.scraped_lineType) { details.scraped_lineType = message.scraped_bet.scraped_lineType; } if (message.scraped_bet.scraped_timestamp) { details.scraped_timestamp = message.scraped_bet.scraped_timestamp; } if (message.scraped_bet.scraped_line) { details.scraped_line = message.scraped_bet.scraped_line; } if (message.scraped_bet.scraped_points) { details.scraped_points = message.scraped_bet.scraped_points; } if (message.scraped_bet.scraped_odds) { details.scraped_odds = message.scraped_bet.scraped_odds; } if (message.scraped_bet.scraped_team) { details.scraped_team = message.scraped_bet.scraped_team; } if (message.scraped_bet.scraped_game_number) { details.scraped_game_number = message.scraped_bet.scraped_game_number; } newMsg[`scraped_bet_${index + 1}`] = details; newMsg[`scraped_bet_${index + 1}`]["req"] = message.req; newMsg[`scraped_bet_${index + 1}`]["res"] = message.res; }); delete newMsg.scraped_bet; node.log("Fixed paired message structure:", JSON.stringify(newMsg, null, 2)); node.send(newMsg); cleanupBuffer(betIDVar);        \n}\n\ncheckForSimilarity({ betIDVar, incomingMessage });",
+        "func": "var incomingMessage = msg;\nvar betIDVar = msg.fullMessage._id;\nvar resultCounter = 2;\nvar tenPercentStake = 10;\nvar vigMax = 5;\nvar arbPercentageRangeMin = 4;\nvar vigSplitRangeMin = 15;\nvar moneylineRangeMin = 21;\n\n\n//===================================\n// 1. BUFFER FUNCTIONS\nfunction updateBufferWithIncomingMessage(incomingMessage) {\n    // Initialize a buffer object if it doesn't exist\n    if (!context.get(\"buffer\")) {\n        context.set(\"buffer\", {});\n    }\n\n    // Initialize a timeout object to keep track of message timeouts\n    if (!context.get(\"timeouts\")) {\n        context.set(\"timeouts\", {});\n    }\n\n    // Retrieve the buffer and timeouts objects\n    let buffer = context.get(\"buffer\");\n    let timeouts = context.get(\"timeouts\");\n    const timeoutDuration = 60000; // Timeout duration in milliseconds (1 minute)\n\n    // Extract the message ID from the incoming message\n    var betIDVar = incomingMessage.fullMessage._id;\n\n    // Ensure buffer entry exists for the current message ID and initialize it as an empty array if it doesn't\n    if (!buffer[betIDVar]) {\n        buffer[betIDVar] = {};\n        buffer[betIDVar].messages = [];\n    }\n\n    // Add the incoming message to the buffer array for this betIDVar\n    buffer[betIDVar].messages.push(incomingMessage);\n\n    // Persist the updated buffer\n    context.set(\"buffer\", buffer);\n\n    // Return the relevant variables for use outside the function\n    return {\n        buffer, // Updated buffer object\n        timeouts, // Updated timeouts object\n        betIDVar // The message ID variable\n    };\n}\n\n// Call the function to update the buffer with the incoming message and capture the returned values\nvar { buffer, timeouts, betIDVar } = updateBufferWithIncomingMessage(incomingMessage);\n\n// Now `buffer`, `timeouts`, and `betIDVar` are available for use outside the function.\n\n// Assuming cleanupBuffer function is implemented elsewhere\nfunction cleanupBuffer(betIDVar) {\n    let buffer = context.get(\"buffer\");\n    let timeouts = context.get(\"timeouts\");\n\n    delete buffer[betIDVar];\n    context.set(\"buffer\", buffer);\n\n    if (timeouts[betIDVar]) {\n        clearTimeout(timeouts[betIDVar]);\n        delete timeouts[betIDVar];\n        context.set(\"timeouts\", timeouts);\n    }\n}\n//============================================\n// 2. SORTING FUNCTIONS\n// General function to extract and sort messages by a specified property path\n\n//========================\n// 3. EXECUTION FUNCTIONS\n\n// Function to check for messages with a similar fullMessage._id, the same scraped_lineType, and matching team in the buffer\nfunction checkForSimilarity({ betIDVar, incomingMessage }) {\n    // Destructure incomingMessage for easier comparison\n    const {\n        fullMessage: { _id: fullMessageID },\n        scraped_bet: { scraped_lineType: lineType, scraped_timeStamp: timeStamp }\n    } = incomingMessage;\n\n    node.log(fullMessageID);\n    \n    // Filter messages in the buffer for the same betIDVar\n    let similarMessages = buffer[betIDVar].messages.filter(message =>\n        message.fullMessage && message.fullMessage._id === fullMessageID &&\n        message.scraped_bet.scraped_lineType === lineType &&\n        message.scraped_bet.scraped_timeStamp === timeStamp\n    );\n\n    if (similarMessages.length == 2) {\n        // Assuming `node`, `timeouts`, `context`, are available in the scope\n        node.log(\"Found similar message(s) with the same fullMessage._id, scraped_lineType, and team.\");\n        processSimilarMessages({node, similarMessages, betIDVar, timeouts, context});\n    } else {\n        node.log(\"No similar message found with matching criteria.\");\n    }\n}\n\nfunction processSimilarMessages({node, similarMessages, betIDVar, timeouts, context}) {\n    clearTimeout(timeouts[betIDVar]);\n    context.set(\"timeouts\", timeouts);\n\n    var newMsg = {...similarMessages[0]}; // Consider starting with an empty object or predefined structure\n\n    // Example of processing multiple messages, adjust according to actual requirements\n    similarMessages.forEach((message, index) => {\n        const details = {...message.scraped_bet};\n        newMsg[`scraped_bet_${index + 1}`] = details; // Dynamically name as scraped_bet_1, scraped_bet_2, etc.\n        newMsg[`scraped_bet_${index + 1}`]['req'] = message.req;\n        newMsg[`scraped_bet_${index + 1}`]['res'] = message.res;         \n    });\n    delete newMsg.scraped_bet;\n//    delete newMsg.req;    \n//    delete newMsg.res;    \n    \n    node.send(newMsg);\n    cleanupBuffer(betIDVar);        \n}\n\ncheckForSimilarity({ betIDVar, incomingMessage });",
         "outputs": 1,
         "timeout": "",
         "noerr": 0,
@@ -1451,43 +1481,5 @@
                 "ce4d24263c44e46c"
             ]
         ]
-    },
-    {
-        "id": "e2bc7ac9aa77279e",
-        "type": "mongodb4-client",
-        "name": "Basic Connection",
-        "protocol": "mongodb",
-        "hostname": "http://127.0.0.1",
-        "port": "22000",
-        "dbName": "CimaMain",
-        "appName": "",
-        "authSource": "admin",
-        "authMechanism": "SCRAM-SHA-256",
-        "tls": false,
-        "tlsCAFile": "",
-        "tlsCertificateKeyFile": "",
-        "tlsInsecure": false,
-        "connectTimeoutMS": "",
-        "socketTimeoutMS": "",
-        "minPoolSize": "",
-        "maxPoolSize": "",
-        "maxIdleTimeMS": "",
-        "uri": "mongodb://127.0.0.1:22000",
-        "advanced": "{\"connectTimeoutMS\": 30000}",
-        "uriTabActive": "tab-uri-advanced"
-    },
-    {
-        "id": "df8a615d6d2cd2e7",
-        "type": "websocket-listener",
-        "path": "/ws/BetInputCheck",
-        "wholemsg": "false"
-    },
-    {
-        "id": "93fc512101bbe4cd",
-        "type": "global-config",
-        "env": [],
-        "modules": {
-            "node-red-contrib-mongodb4": "2.5.2"
-        }
     }
 ]
