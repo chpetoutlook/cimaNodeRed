@@ -79,8 +79,7 @@
       "907bb0adef74d85a",
       "3172a5061aab2782",
       "8dde91e674783ac8",
-      "82f37f0f6985ba34",
-      "991f5a75c2dd331f"
+      "82f37f0f6985ba34"
     ],
     "x": 8,
     "y": 119,
@@ -188,8 +187,7 @@
       "5f817b78b5dfe714",
       "fb5587b589c5cd32",
       "24c74fc74752908c",
-      "054adb80f90a06e5",
-      "f4f02f7b9a092dd3"
+      "054adb80f90a06e5"
     ],
     "x": 44,
     "y": 179,
@@ -1268,10 +1266,10 @@
     "z": "1f92eed3352f8aa5",
     "g": "bf94ecd062e4e70d",
     "name": "Transform 1: LineType Sorter",
-    "func": "var incomingMessage = msg;\\n//--------------------------------------\\n// OUTPUT TO LINE TYPE CALCULATORS\\n// Define output names and their corresponding indexes\\nconst outputMapping = {\\n    \"POINTSPREAD\": 0,\\n    \"TOTAL\": 1,\\n    \"MONEYLINE\": 2,\\n    // Add more output names and indexes as needed\\n};\\n\\nlet outputIndex;\\n\\nfunction outputMappedSend(currentResult, outputIndex) {\\n    // Create an array to store messages for each output, initialized with null values\\n    const outputs = Array(Object.keys(outputMapping).length).fill(null);\\n\\n\\n    // Construct a new message object for the output\\n    var outputMessage = {\\n        req: incomingMessage.req, // Spread operator to copy existing msg properties\\n        res: incomingMessage.res,\\n        transform1Message: currentResult,\\n        extractMessage: incomingMessage.extractMessage,\\n        fullMessage: incomingMessage.fullMessage\\n    };\\n    delete outputMessage.transform1Message.extractMessage;\\n    delete outputMessage.transform1Message.extractMessage;\\n    delete outputMessage.transform1Message.req;\\n    delete outputMessage.transform1Message.res;\\n\\n\\n\\n\\n    // Ensure the extractMessage doesn't carry over unnecessary properties\\n    if (outputMessage.extractMessage) {\\n        //        delete outputMessage.transform1Message.extractMessage;\\n    }\\n\\n    // Assign the new message to the appropriate output based on the index\\n    outputs[outputIndex] = outputMessage;\\n\\n    // Send the messages. Only the targeted output index will have a non-null message.\\n    node.send([outputs]);\\n}\\n\\n//------------\\n//SWITCH\\n\\nlet currentResult = incomingMessage;\\n\\n// Determine the index of the desired output based on the LineType\\n// CRITICAL: Check message structure before accessing LineType\\nlet lineType;\\nif (incomingMessage.scrapeResults && incomingMessage.scrapeResults.scraped_lineType) {\\n    lineType = incomingMessage.scrapeResults.scraped_lineType;\\n} else if (incomingMessage.scraped_bet_1 && incomingMessage.scraped_bet_1.scraped_lineType) {\\n    lineType = incomingMessage.scraped_bet_1.scraped_lineType;\\n} else if (incomingMessage.transform1Message && incomingMessage.transform1Message.scraped_lineType) {\\n    lineType = incomingMessage.transform1Message.scraped_lineType;\\n} else {\\n    node.warn('Unknown LineType: No lineType found in message structure');\\n    node.warn('Available message keys:', Object.keys(incomingMessage));\\n    return;\\n}\\n\\nswitch (lineType) {\\n    case 'POINTSPREAD':\\n        outputIndex = outputMapping[\"POINTSPREAD\"];\\n        outputMappedSend(currentResult, outputIndex);\\n        break;\\n    case 'TOTAL':\\n        outputIndex = outputMapping[\"TOTAL\"];\\n        outputMappedSend(currentResult, outputIndex);\\n        break;\\n    case 'MONEYLINE':\\n        outputIndex = outputMapping[\"MONEYLINE\"];\\n        outputMappedSend(currentResult, outputIndex);\\n        break;\\n    default:\\n        // Handle default case (optional)\\n        node.warn('Unknown LineType: ', incomingMessage);\\n}",
+    "func": "var incomingMessage = msg;\\n//--------------------------------------\\n// OUTPUT TO LINE TYPE CALCULATORS\\n// Define output names and their corresponding indexes\\nconst outputMapping = {\\n    \"POINTSPREAD\": 0,\\n    \"TOTAL\": 1,\\n    \"MONEYLINE\": 2,\\n    // Add more output names and indexes as needed\\n};\\n\\nlet outputIndex;\\n\\nfunction outputMappedSend(currentResult, outputIndex) {\\n    // Create an array to store messages for each output, initialized with null values\\n    const outputs = Array(Object.keys(outputMapping).length).fill(null);\\n    \\n    \\n    // Construct a new message object for the output\\n    var outputMessage = {\\n        req: incomingMessage.req, // Spread operator to copy existing msg properties\\n        res: incomingMessage.res,\\n        transform1Message: currentResult,\\n        extractMessage: incomingMessage.extractMessage,\\n        fullMessage: incomingMessage.fullMessage\\n    };\\n    delete outputMessage.transform1Message.extractMessage;\\n    delete outputMessage.transform1Message.extractMessage;\\n    delete outputMessage.transform1Message.req;\\n    delete outputMessage.transform1Message.res;\\n    \\n\\n    \\n\\n    // Ensure the extractMessage doesn't carry over unnecessary properties\\n    if (outputMessage.extractMessage) {\\n//        delete outputMessage.transform1Message.extractMessage;\\n    }\\n\\n    // Assign the new message to the appropriate output based on the index\\n    outputs[outputIndex] = outputMessage;\\n\\n    // Send the messages. Only the targeted output index will have a non-null message.\\n    node.send([outputs]);\\n}\\n\\n//------------\\n//SWITCH\\n\\nlet currentResult = incomingMessage;\\n\\n// Determine the index of the desired output based on the LineType\\nswitch (incomingMessage.scraped_bet_1.scraped_lineType) {\\n    case 'POINTSPREAD':\\n        outputIndex = outputMapping[\"POINTSPREAD\"];\\n        outputMappedSend(currentResult, outputIndex);\\n        break;\\n    case 'TOTAL':\\n        outputIndex = outputMapping[\"TOTAL\"];\\n        outputMappedSend(currentResult, outputIndex);\\n        break;\\n    case 'MONEYLINE':\\n        outputIndex = outputMapping[\"MONEYLINE\"];\\n        outputMappedSend(currentResult, outputIndex);\\n        break;\\n    default:\\n        // Handle default case (optional)\\n        node.warn('Unknown LineType: ', incomingMessage);\\n}",
     "outputs": 3,
     "timeout": "",
-    "noerr": 4,
+    "noerr": 3,
     "initialize": "",
     "finalize": "",
     "libs": [],
@@ -1567,52 +1565,5 @@
     "x": 1030,
     "y": 380,
     "wires": []
-  },
-  {
-    "id": "f4f02f7b9a092dd3",
-    "type": "function",
-    "z": "1f92eed3352f8aa5",
-    "g": "9e02f8f5e79de5a0",
-    "name": "TEST JSON",
-    "func": "msg.payload = {\n  \"scrapeResults\": {\n    \"scraped_sport\": \"FOOTBALL\",\n    \"scraped_lineType\": \"POINTSPREAD\",\n    \"scraped_line\": \"-3.5\",\n    \"scraped_odds\": -110,\n    \"scraped_team\": \"Team A\",\n    \"scraped_opponent\": \"Team B\",\n    \"scraped_league\": \"CFB\",\n    \"scraped_gameNumber\": \"309225\",\n    \"scraped_book\": \"Bookmaker1\",\n    \"scraped_timestamp\": \"2025-09-04T02:43:54.460Z\"\n  },\n  \"fullBet\": {\n    \"sport\": \"Football\",\n    \"League\": \"CFB\",\n    \"gameNumber\": \"309225\",\n    \"team\": \"Team A\",\n    \"opponent\": \"Team B\",\n    \"line\": \"-3.5\",\n    \"odds\": -110,\n    \"book\": \"Bookmaker1\"\n  },\n  \"scraped_bet_1\": {\n    \"scraped_sport\": \"FOOTBALL\",\n    \"scraped_lineType\": \"POINTSPREAD\",\n    \"scraped_line\": \"-3.5\",\n    \"scraped_odds\": -110,\n    \"scraped_team\": \"Team A\",\n    \"scraped_opponent\": \"Team B\",\n    \"scraped_league\": \"CFB\",\n    \"scraped_gameNumber\": \"309225\",\n    \"scraped_book\": \"Bookmaker1\",\n    \"scraped_timestamp\": \"2025-09-04T02:43:54.460Z\"\n  },\n  \"scraped_bet_2\": {\n    \"scraped_sport\": \"FOOTBALL\",\n    \"scraped_lineType\": \"POINTSPREAD\",\n    \"scraped_line\": \"+3.5\",\n    \"scraped_odds\": -110,\n    \"scraped_team\": \"Team B\",\n    \"scraped_opponent\": \"Team A\",\n    \"scraped_league\": \"CFB\",\n    \"scraped_gameNumber\": \"309225\",\n    \"scraped_book\": \"Bookmaker2\",\n    \"scraped_timestamp\": \"2025-09-04T02:43:56.469Z\"\n  }\n};\nreturn msg;\n",
-    "outputs": 1,
-    "timeout": "",
-    "noerr": 0,
-    "initialize": "",
-    "finalize": "",
-    "libs": [],
-    "x": 250,
-    "y": 300,
-    "wires": [
-      [
-        "054adb80f90a06e5"
-      ]
-    ]
-  },
-  {
-    "id": "991f5a75c2dd331f",
-    "type": "inject",
-    "z": "1f92eed3352f8aa5",
-    "g": "4126bd8cd63414e5",
-    "name": "START INJECT",
-    "props": [
-      {
-        "p": "payload"
-      }
-    ],
-    "repeat": "",
-    "crontab": "",
-    "once": true,
-    "onceDelay": 0.1,
-    "topic": "",
-    "payload": "START",
-    "payloadType": "str",
-    "x": 160,
-    "y": 380,
-    "wires": [
-      [
-        "f4f02f7b9a092dd3"
-      ]
-    ]
   }
 ]

@@ -79,8 +79,7 @@
       "907bb0adef74d85a",
       "3172a5061aab2782",
       "8dde91e674783ac8",
-      "82f37f0f6985ba34",
-      "991f5a75c2dd331f"
+      "82f37f0f6985ba34"
     ],
     "x": 8,
     "y": 119,
@@ -188,8 +187,7 @@
       "5f817b78b5dfe714",
       "fb5587b589c5cd32",
       "24c74fc74752908c",
-      "054adb80f90a06e5",
-      "f4f02f7b9a092dd3"
+      "054adb80f90a06e5"
     ],
     "x": 44,
     "y": 179,
@@ -1567,52 +1565,5 @@
     "x": 1030,
     "y": 380,
     "wires": []
-  },
-  {
-    "id": "f4f02f7b9a092dd3",
-    "type": "function",
-    "z": "1f92eed3352f8aa5",
-    "g": "9e02f8f5e79de5a0",
-    "name": "TEST JSON",
-    "func": "msg.payload = {\n  \"scrapeResults\": {\n    \"scraped_sport\": \"FOOTBALL\",\n    \"scraped_lineType\": \"POINTSPREAD\",\n    \"scraped_line\": \"-3.5\",\n    \"scraped_odds\": -110,\n    \"scraped_team\": \"Team A\",\n    \"scraped_opponent\": \"Team B\",\n    \"scraped_league\": \"CFB\",\n    \"scraped_gameNumber\": \"309225\",\n    \"scraped_book\": \"Bookmaker1\",\n    \"scraped_timestamp\": \"2025-09-04T02:43:54.460Z\"\n  },\n  \"fullBet\": {\n    \"sport\": \"Football\",\n    \"League\": \"CFB\",\n    \"gameNumber\": \"309225\",\n    \"team\": \"Team A\",\n    \"opponent\": \"Team B\",\n    \"line\": \"-3.5\",\n    \"odds\": -110,\n    \"book\": \"Bookmaker1\"\n  },\n  \"scraped_bet_1\": {\n    \"scraped_sport\": \"FOOTBALL\",\n    \"scraped_lineType\": \"POINTSPREAD\",\n    \"scraped_line\": \"-3.5\",\n    \"scraped_odds\": -110,\n    \"scraped_team\": \"Team A\",\n    \"scraped_opponent\": \"Team B\",\n    \"scraped_league\": \"CFB\",\n    \"scraped_gameNumber\": \"309225\",\n    \"scraped_book\": \"Bookmaker1\",\n    \"scraped_timestamp\": \"2025-09-04T02:43:54.460Z\"\n  },\n  \"scraped_bet_2\": {\n    \"scraped_sport\": \"FOOTBALL\",\n    \"scraped_lineType\": \"POINTSPREAD\",\n    \"scraped_line\": \"+3.5\",\n    \"scraped_odds\": -110,\n    \"scraped_team\": \"Team B\",\n    \"scraped_opponent\": \"Team A\",\n    \"scraped_league\": \"CFB\",\n    \"scraped_gameNumber\": \"309225\",\n    \"scraped_book\": \"Bookmaker2\",\n    \"scraped_timestamp\": \"2025-09-04T02:43:56.469Z\"\n  }\n};\nreturn msg;\n",
-    "outputs": 1,
-    "timeout": "",
-    "noerr": 0,
-    "initialize": "",
-    "finalize": "",
-    "libs": [],
-    "x": 250,
-    "y": 300,
-    "wires": [
-      [
-        "054adb80f90a06e5"
-      ]
-    ]
-  },
-  {
-    "id": "991f5a75c2dd331f",
-    "type": "inject",
-    "z": "1f92eed3352f8aa5",
-    "g": "4126bd8cd63414e5",
-    "name": "START INJECT",
-    "props": [
-      {
-        "p": "payload"
-      }
-    ],
-    "repeat": "",
-    "crontab": "",
-    "once": true,
-    "onceDelay": 0.1,
-    "topic": "",
-    "payload": "START",
-    "payloadType": "str",
-    "x": 160,
-    "y": 380,
-    "wires": [
-      [
-        "f4f02f7b9a092dd3"
-      ]
-    ]
   }
 ]
