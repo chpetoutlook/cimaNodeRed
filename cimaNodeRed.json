@@ -1443,7 +1443,7 @@
         "g": "4126bd8cd63414e5",
         "name": "DO NODE RED A>B>C TRACKING COMMENTS",
         "info": "",
-        "x": 620,
+        "x": 680,
         "y": 160,
         "wires": []
     },
@@ -1561,20 +1561,6 @@
             [
                 "272b6d76a23994ba"
             ]
-        ]
-    },
-    {
-        "id": "f24c05d803cfb3b6",
-        "type": "saveflow",
-        "z": "1f92eed3352f8aa5",
-        "name": "",
-        "path": "",
-        "enabled": false,
-        "exporttype": "original",
-        "x": 220,
-        "y": 80,
-        "wires": [
-            []
         ]
     }
 ]
