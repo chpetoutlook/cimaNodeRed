@@ -1,0 +1,2960 @@
+[
+    {
+        "id": "5fa172c20f49443b",
+        "type": "tab",
+        "label": "mainCalc",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "a073baad498bb284",
+        "type": "tab",
+        "label": "BetInputCheck",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "67ce124139a68312",
+        "type": "tab",
+        "label": "globalAssets",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "dynamicCmdSubflow",
+        "type": "subflow",
+        "name": "Dynamic Command Processor",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": 220,
+                "y": 120,
+                "wires": [
+                    {
+                        "id": "inputHandler"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 1480,
+                "y": 180,
+                "wires": [
+                    {
+                        "id": "1c1bc00d9a8c86d6",
+                        "port": 0
+                    },
+                    {
+                        "id": "94b392982f53c55a",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
+        "env": [],
+        "meta": {},
+        "color": "#DDAA99"
+    },
+    {
+        "id": "817a5b2b5a30223d",
+        "type": "subflow",
+        "name": "Working Dynamic Command Processor",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": 200,
+                "y": 100,
+                "wires": [
+                    {
+                        "id": "8b7fda62adc7c26d"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 900,
+                "y": 360,
+                "wires": [
+                    {
+                        "id": "731b22dc42e1a59e",
+                        "port": 0
+                    }
+                ]
+            },
+            {
+                "x": 900,
+                "y": 400,
+                "wires": [
+                    {
+                        "id": "731b22dc42e1a59e",
+                        "port": 1
+                    }
+                ]
+            },
+            {
+                "x": 900,
+                "y": 460,
+                "wires": [
+                    {
+                        "id": "731b22dc42e1a59e",
+                        "port": 2
+                    }
+                ]
+            }
+        ],
+        "env": [],
+        "meta": {},
+        "color": "#DDAA99"
+    },
+    {
+        "id": "db1664ca19e007e4",
+        "type": "group",
+        "z": "5fa172c20f49443b",
+        "name": "Global Settings Load",
+        "style": {
+            "fill": "#d1d1d1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "a0e98eb9e64d9cd6",
+            "4a45cc485f644505",
+            "e5dcf619beeb6d82",
+            "3a76cd70a0954887",
+            "ce4d24263c44e46c",
+            "5926f857c39fa7f8",
+            "a9efc5167470cd12",
+            "97dedff557300f31",
+            "29ee4f96d6e5d988",
+            "fa59f6c4d6ce4b69"
+        ],
+        "x": 354,
+        "y": 219,
+        "w": 1512,
+        "h": 162
+    },
+    {
+        "id": "b93dd9f1ed02b46a",
+        "type": "group",
+        "z": "5fa172c20f49443b",
+        "name": "SortedBetsCheck",
+        "style": {
+            "label": true,
+            "color": "#000000",
+            "fill": "#d1d1d1"
+        },
+        "nodes": [
+            "dd2f628224cbb4c3",
+            "b7f2bcc8b657be27",
+            "803b92c8ed55dc13",
+            "7f099d933bceb328"
+        ],
+        "x": 348,
+        "y": 419,
+        "w": 1524,
+        "h": 708
+    },
+    {
+        "id": "a586fff4950d8220",
+        "type": "group",
+        "z": "67ce124139a68312",
+        "name": "Watch Excel",
+        "style": {
+            "fill": "#d1d1d1",
+            "label": true
+        },
+        "nodes": [
+            "10f68b36e358e292",
+            "fe4819e3d613d93a",
+            "db6e77bc844bc09d",
+            "e8b81628c45befd9",
+            "b939c2ad8f432d14",
+            "dab8435d998c9375",
+            "df992b41e14064be",
+            "08f4933eee0bc124",
+            "0a20fbf7a9ae7a4f"
+        ],
+        "x": 54,
+        "y": 939,
+        "w": 1132,
+        "h": 242
+    },
+    {
+        "id": "4126bd8cd63414e5",
+        "type": "group",
+        "z": "a073baad498bb284",
+        "name": "BetInputCheck",
+        "style": {
+            "label": true,
+            "color": "#000000",
+            "fill": "#d1d1d1"
+        },
+        "nodes": [
+            "9e02f8f5e79de5a0",
+            "bf94ecd062e4e70d",
+            "907bb0adef74d85a",
+            "3172a5061aab2782",
+            "8dde91e674783ac8",
+            "82f37f0f6985ba34"
+        ],
+        "x": 88,
+        "y": 179,
+        "w": 1534,
+        "h": 768
+    },
+    {
+        "id": "dd2f628224cbb4c3",
+        "type": "group",
+        "z": "5fa172c20f49443b",
+        "g": "b93dd9f1ed02b46a",
+        "name": "SortedBetsCheck: Ph1 Extract",
+        "style": {
+            "fill": "#e3f3d3",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "3849cc7df492b362",
+            "a16a17c27bd71bd6",
+            "16001f67efa309e1",
+            "81f5f6ed3582f4a7",
+            "1fe4967103d1edc8",
+            "3f833d99e1e7b34b",
+            "7e905be2ddbf209f",
+            "5bd19c03c084c56e",
+            "6a4c7c8a5d485e67",
+            "79223214381a0e94",
+            "c4b93446aa230ff6",
+            "4ca12deadd3be409"
+        ],
+        "x": 374,
+        "y": 499,
+        "w": 1452,
+        "h": 202
+    },
+    {
+        "id": "b7f2bcc8b657be27",
+        "type": "group",
+        "z": "5fa172c20f49443b",
+        "g": "b93dd9f1ed02b46a",
+        "name": "SortedBetsCheck: Ph2 Transform",
+        "style": {
+            "label": true,
+            "color": "#000000",
+            "fill": "#ffffbf"
+        },
+        "nodes": [
+            "8c83108e97fb0cd2",
+            "651a04261d7b2c0e",
+            "c99ea954399ff73e",
+            "6aa833b66249717c",
+            "6eb1d3bdf91d9769",
+            "6de8c17c083cb8f4",
+            "fb9fbb9ae42710bd",
+            "c59ac708faab91cb",
+            "f617a066e7adfd41",
+            "273cefe442d4e299",
+            "6c93cf3ab8ccd07f"
+        ],
+        "x": 374,
+        "y": 739,
+        "w": 1472,
+        "h": 202
+    },
+    {
+        "id": "803b92c8ed55dc13",
+        "type": "group",
+        "z": "5fa172c20f49443b",
+        "g": "b93dd9f1ed02b46a",
+        "name": "SortedBetsCheck: Ph3 Load",
+        "style": {
+            "fill": "#ffbfbf",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "118cd677cd25eb05",
+            "75d6aaab0021d346",
+            "3bdb39087ef4d457",
+            "62e4b98de6625a13"
+        ],
+        "x": 374,
+        "y": 959,
+        "w": 1462,
+        "h": 142
+    },
+    {
+        "id": "9e02f8f5e79de5a0",
+        "type": "group",
+        "z": "a073baad498bb284",
+        "g": "4126bd8cd63414e5",
+        "name": "BetInputCheck: Ph1 Extract",
+        "style": {
+            "fill": "#e3f3d3",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "272b6d76a23994ba",
+            "3b7490b20fbb7087",
+            "bd4fd4d1e09d770b",
+            "74c06399d74963b0",
+            "f4d0bfed3d6727e6",
+            "5f817b78b5dfe714",
+            "fb5587b589c5cd32",
+            "24c74fc74752908c",
+            "054adb80f90a06e5"
+        ],
+        "x": 124,
+        "y": 239,
+        "w": 1432,
+        "h": 162
+    },
+    {
+        "id": "bf94ecd062e4e70d",
+        "type": "group",
+        "z": "a073baad498bb284",
+        "g": "4126bd8cd63414e5",
+        "name": "BetInputCheck: Ph2 Transform",
+        "style": {
+            "label": true,
+            "color": "#000000",
+            "fill": "#ffffbf"
+        },
+        "nodes": [
+            "9d42e07bd472374f",
+            "aab5da598ff97b79",
+            "6d7830c85b50c511",
+            "b4dca9fd7958c13f",
+            "12551b69148dc875",
+            "18ee888a0e0c3587",
+            "740d874372634aa9",
+            "b753d113f1e07d62",
+            "aa6c72150d31fb90",
+            "148caedec77ae2dc",
+            "7f404f5ee3444148"
+        ],
+        "x": 114,
+        "y": 559,
+        "w": 1462,
+        "h": 202
+    },
+    {
+        "id": "907bb0adef74d85a",
+        "type": "group",
+        "z": "a073baad498bb284",
+        "g": "4126bd8cd63414e5",
+        "name": "BetInputCheck: Ph3 Load",
+        "style": {
+            "fill": "#ffbfbf",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "844825e531e70a8c",
+            "8e05a6c56f99c187",
+            "2e4fb60325f287ea",
+            "37c361494a477963"
+        ],
+        "x": 114,
+        "y": 779,
+        "w": 1482,
+        "h": 142
+    },
+    {
+        "id": "e2bc7ac9aa77279e",
+        "type": "mongodb4-client",
+        "name": "Basic Connection",
+        "protocol": "mongodb",
+        "hostname": "127.0.0.1",
+        "port": "22000",
+        "dbName": "CimaMain",
+        "appName": "",
+        "authSource": "admin",
+        "authMechanism": "SCRAM-SHA-256",
+        "tls": false,
+        "tlsCAFile": "",
+        "tlsCertificateKeyFile": "",
+        "tlsInsecure": false,
+        "connectTimeoutMS": "",
+        "socketTimeoutMS": "",
+        "minPoolSize": "",
+        "maxPoolSize": "",
+        "maxIdleTimeMS": "",
+        "uri": "mongodb://127.0.0.1:22000",
+        "advanced": "{\"connectTimeoutMS\": 30000}",
+        "uriTabActive": "tab-uri-advanced"
+    },
+    {
+        "id": "df8a615d6d2cd2e7",
+        "type": "websocket-listener",
+        "path": "/ws/BetInputCheck",
+        "wholemsg": "false"
+    },
+    {
+        "id": "d21e854a8cd56e18",
+        "type": "jsonlogic_engine",
+        "z": "dynamicCmdSubflow",
+        "name": "",
+        "methods": ""
+    },
+    {
+        "id": "inputHandler",
+        "type": "function",
+        "z": "dynamicCmdSubflow",
+        "name": "inputConditionals",
+        "func": "// Input Handler\nconst flowContext = flow.get('flowContext') || {};",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 430,
+        "y": 180,
+        "wires": [
+            [
+                "1c1bc00d9a8c86d6"
+            ]
+        ],
+        "info": "# processMessage Function Breakdown\r\n\r\n## 1. Input Phase\r\n- **Always executed**\r\n- Update `flowContext` with latest message\r\n- Log function start and input message\r\n\r\n## 2. Processing Phase\r\n\r\n### Case 1: Regular message (most common)\r\n- **Condition:** Message doesn't meet any special conditions\r\n- **Action:** Pass message through unchanged\r\n- **Output:** First output (index 0)\r\n\r\n### Case 2: dynamicCmd message (common)\r\n- **Condition:** `msg.payload` exists, is a string, and contains \"dynamicCmd\"\r\n- **Action:** Pass message through unchanged\r\n- **Output:** First output (index 0)\r\n\r\n### Case 3: sidePrompt completion (less common)\r\n- **Condition:** `msg.sidePromptStatus` equals \"done\"\r\n- **Action:** \r\n  - Update flow variables (`waitingForSidePrompt`, `sidePromptResult`, `flowContext`)\r\n  - Log receipt of sidePrompt completion\r\n- **Output:** Second output (index 1)\r\n\r\n### Case 4: Stop message (edge case)\r\n- **Condition:** `msg.status` equals \"stop\"\r\n- **Action:** Log receipt of stop message\r\n- **Output:** No output (all null)\r\n\r\n## 3. Output Phase\r\n- Determine final output based on processing phase\r\n- Return array with message in appropriate index:\r\n  - [message, null, null] for first output\r\n  - [null, message, null] for second output\r\n  - [null, null, null] for stop message"
+    },
+    {
+        "id": "1c1bc00d9a8c86d6",
+        "type": "function",
+        "z": "dynamicCmdSubflow",
+        "name": "initialParser",
+        "func": "// The initialParser Layer\n\nfunction parseInputText(inputText) {\n    console.log(`[parseInputText] Starting to parse input text`);\n    console.log(`[parseInputText] Input text length: ${inputText.length} characters`);\n\n    const lines = inputText.split('\n');\n    console.log(`[parseInputText] Number of lines: ${lines.length}`);\n\n    let dynamicCmd = { sections: [] };\n    let currentCommand = null;\n    let isCapturingNestedCommand = false;\n    let nestedCommandBuffer = '';\n\n    console.log(`[parseInputText] Initialized parsing variables`);\n\n    const processLine = (line, index) => {\n        console.log(`[parseInputText] Processing line ${index + 1}: '${line}'`);\n\n        const originalLine = line;\n        line = line.replace(/\\\\/\\\\/.*$/, '').trim(); // Remove comments\n\n        if (line !== originalLine) {\n            console.log(`[parseInputText] Removed comment. New line: '${line}'`);\n        }\n\n        if (line === 'dynamicCmd') {\n            dynamicCmd.sections.push({ type: 'commandSet', commands: [] });\n            console.log(`[parseInputText] Detected 'dynamicCmd' section. Created new command set. Total sections: ${dynamicCmd.sections.length}`);\n            return;\n        }\n\n        if (line === '- commandSet') {\n            console.log(`[parseInputText] Detected commandSet line, ignoring.`);\n            return;\n        }\n\n        const mainCommandMatch = line.match(/^-\\\\s*(\\\\w+)(\\\\d+)/);\n        if (mainCommandMatch) {\n            const [, cmdType, cmdNumber] = mainCommandMatch;\n            currentCommand = { type: cmdType, number: cmdNumber, commands: [] };\n            dynamicCmd.sections[dynamicCmd.sections.length - 1].commands.push(currentCommand);\n            console.log(`[parseInputText] Started new main command: ${cmdType}${cmdNumber}. Total commands in current section: ${dynamicCmd.sections[dynamicCmd.sections.length - 1].commands.length}`);\n        } else if (line.startsWith('- `')) {\n            isCapturingNestedCommand = true;\n            nestedCommandBuffer = line.substring(3);\n            console.log(`[parseInputText] Started capturing nested command. Initial buffer: '${nestedCommandBuffer}'`);\n        } else if (isCapturingNestedCommand) {\n            if (line.endsWith('`')) {\n                nestedCommandBuffer += line.substring(0, line.length - 1);\n                currentCommand.commands.push(nestedCommandBuffer);\n                isCapturingNestedCommand = false;\n                console.log(`[parseInputText] Finished capturing nested command: '${nestedCommandBuffer}'`);\n                console.log(`[parseInputText] Total commands for ${currentCommand.type}${currentCommand.number}: ${currentCommand.commands.length}`);\n            } else {\n                nestedCommandBuffer += line + '\n';\n                console.log(`[parseInputText] Capturing nested command. Current buffer length: ${nestedCommandBuffer.length} characters`);\n            }\n        } else if (line.startsWith('-') && currentCommand) {\n            const subCommand = line.substring(1).trim();\n            currentCommand.commands.push(subCommand);\n            console.log(`[parseInputText] Added sub-command to ${currentCommand.type}${currentCommand.number}: '${subCommand}'`);\n            console.log(`[parseInputText] Total commands for ${currentCommand.type}${currentCommand.number}: ${currentCommand.commands.length}`);\n        } else {\n            console.log(`[parseInputText] Skipped line: '${line}'`);\n        }\n    };\n\n    lines.forEach(processLine);\n\n    console.log(`[parseInputText] Finished parsing input text.`);\n    console.log(`[parseInputText] Total sections in dynamicCmd: ${dynamicCmd.sections.length}`);\n    dynamicCmd.sections.forEach((section, index) => {\n        console.log(`[parseInputText] Section ${index + 1} has ${section.commands.length} commands`);\n    });\n    console.log(`[parseInputText] Final parsed dynamicCmd: ${JSON.stringify(dynamicCmd, null, 2)}`);\n\n    return dynamicCmd;\n}",
+        "outputs": 2,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 630,
+        "y": 180,
+        "wires": [
+            [],
+            [
+                "d9c9b8665a5ca2df"
+            ]
+        ],
+        "info": "Function parseInputText(inputText):\r\n    Split inputText into lines\r\n    Initialize dynamicCmd object\r\n\r\n    For each line in lines:\r\n        Remove comments from line\r\n        \r\n        If line is 'dynamicCmd':\r\n            Start new command set in dynamicCmd\r\n        Else if line starts with '- ' and matches command pattern:\r\n            Create new command in current command set\r\n        Else if line starts with '- `':\r\n            Start capturing multi-line command\r\n        Else if currently capturing multi-line command:\r\n            If line ends with '`':\r\n                Finish capturing multi-line command\r\n            Else:\r\n                Continue capturing multi-line command\r\n        Else if line starts with '-':\r\n            Add sub-command to current command\r\n\r\n    Return dynamicCmd object\r\n\r\n// Node-RED function node entry point\r\nIf msg.payload contains 'dynamicCmd':\r\n    Parse msg.payload\r\n    Store result in flow context and msg.dynamicCmd\r\n    Return [msg, null, null]\r\nElse:\r\n    Set msg.dynamicCmd to false\r\n    Return [msg, null, null]"
+    },
+    {
+        "id": "d9c9b8665a5ca2df",
+        "type": "function",
+        "z": "dynamicCmdSubflow",
+        "name": "blockExecutor",
+        "func": "// blockExecutor\n\nconsole.log('[blockExecutor] Starting execution');\n\nconst flowContext = flow.get('flowContext') || {};\n\nfunction helper_waitProcessing(timeout = 30000) {\n    console.log('[helper_waitProcessing] Starting to wait for processed result');\n    return new Promise((resolve, reject) => {\n        const startTime = Date.now();\n        const checkProcessedResult = () => {\n            const currentContext = flow.get('flowContext') || {};\n            if (currentContext.processedResultReady) {\n                console.log('[helper_waitProcessing] Processed result is ready');\n                currentContext.processedResultReady = false;\n                flow.set('flowContext', currentContext);\n                resolve(currentContext.processedResult);\n            } else if (Date.now() - startTime > timeout) {\n                console.warn('[helper_waitProcessing] Timeout reached while waiting for processed result');\n                reject(new Error('Timeout waiting for processed result'));\n            } else {\n                console.log('[helper_waitProcessing] Processed result not ready, checking again in 500ms');\n                setTimeout(checkProcessedResult, 500);\n            }\n        };\n        checkProcessedResult();\n    });\n}\n\nasync function executeCommand(command) {\n    flow.set('currentCommand', command);\n    flow.set('currentResult', '');\n    flow.set('triggerDynamicVars', Date.now());\n    console.log('[executeCommand] Set currentCommand and triggerDynamicVars in flow');\n\n    const msgToSend = {\n        dynamicCmd: true,\n        command: command,\n        triggerDynamicVars: Date.now()\n    };\n    console.log('[executeCommand] Sending message:', JSON.stringify(msgToSend));\n    node.send(msgToSend);\n\n    return await helper_waitProcessing(60000);\n}\n\nasync function executeBlockCommands(dynamicCmd) {\n    console.log('[executeBlockCommands] Starting execution of commands');\n\n    if (!dynamicCmd || !dynamicCmd.sections || !Array.isArray(dynamicCmd.sections)) {\n        console.error(\"[executeBlockCommands] Invalid dynamicCmd structure:\", dynamicCmd);\n        throw new Error(\"Invalid dynamicCmd structure\");\n    }\n\n    let flowContext = flow.get('flowContext') || {};\n    flowContext.previousResponse = flowContext.previousResponse || '[Previous response not available]';\n    flow.set('flowContext', flowContext);\n\n    let finalResult = \"\";\n\n    for (let sectionIndex = 0; sectionIndex < dynamicCmd.sections.length; sectionIndex++) {\n        console.log(`[executeBlockCommands] Processing section ${sectionIndex}`);\n        const section = dynamicCmd.sections[sectionIndex];\n\n        if (!section || !section.commands || !Array.isArray(section.commands)) {\n            console.warn(`[executeBlockCommands] Invalid section structure at index ${sectionIndex}:`, section);\n            continue;\n        }\n\n        for (let commandIndex = 0; commandIndex < section.commands.length; commandIndex++) {\n            console.log(`[executeBlockCommands] Processing command ${commandIndex} in section ${sectionIndex}`);\n            const command = section.commands[commandIndex];\n\n            if (!command || !command.type) {\n                console.warn(`[executeBlockCommands] Invalid command at section ${sectionIndex}, command ${commandIndex}:`, command);\n                continue;\n            }\n\n            let result;\n\n            try {\n                console.log(`[executeBlockCommands] Executing command of type: ${command.type}`);\n                result = await executeCommand(command);\n\n                console.log(`[executeBlockCommands] Command result:`, result);\n                command.result = result;\n                finalResult += (finalResult ? \"\n\" : \"\") + result;\n\n                flowContext[`${command.type}${command.number}Result`] = result;\n                flow.set('flowContext', flowContext);\n\n                command.processedResult = result;\n            } catch (error) {\n                console.error(`[executeBlockCommands] Error executing command ${command.type}:`, error);\n                command.processedResult = `[Error: ${error.message}]`;\n            }\n\n            await new Promise(resolve => setTimeout(resolve, 100));\n        }\n    }\n\n    // Add the dynamicCmdComplete flag\n    msg.dynamicCmdComplete = true;\n    \n    return finalResult;\n}\n\nfunction parseIncomingMessage(msg) {\n    if (msg.dynamicCmd && !msg.currentCommand) {\n        console.log('[parseIncomingMessage] New dynamic command detected');\n        return { type: 'newDynamicCmd', data: msg.dynamicCmd };\n    } else if (msg.type === 'processedResult') {\n        console.log('[parseIncomingMessage] Processed result received');\n        return { type: 'processedResult', data: msg.data, command: msg.command };\n    } else {\n        console.log('[parseIncomingMessage] Pass through message');\n        return { type: 'passThrough', data: msg };\n    }\n}\n\nfunction handleMessage() {\n    console.log('[handleMessage] Starting message handling');\n    try {\n        const parsedMsg = parseIncomingMessage(msg);\n\n        switch (parsedMsg.type) {\n            case 'newDynamicCmd':\n                if (!parsedMsg.data) {\n                    throw new Error(\"Invalid dynamicCmd data\");\n                }\n                console.log('[handleMessage] Executing new dynamic command');\n                executeBlockCommands(parsedMsg.data)\n                    .then(result => {\n                        console.log('[handleMessage] Command execution completed. Result:', result);\n                        flow.set('finalResult', result);\n                        console.log('[handleMessage] Set finalResult in flow');\n                        node.send({ payload: result, dynamicCmdComplete: true });\n                    })\n                    .catch(error => {\n                        console.error(\"[handleMessage] Error processing commands:\", error);\n                        node.error(\"Error processing commands: \" + error.message, msg);\n                    });\n                break;\n\n            case 'processedResult':\n                console.log('[handleMessage] Setting processed result');\n                flow.set('processedResult', parsedMsg.data);\n                flow.set('processedResultReady', true);\n                console.log('[handleMessage] Updated flow variables: processedResult and processedResultReady');\n                break;\n\n            case 'passThrough':\n            default:\n                console.log('[handleMessage] Passing through message');\n                node.send(msg);\n                break;\n        }\n    } catch (error) {\n        console.error(\"[handleMessage] Error in handleMessage:\", error);\n        node.error(\"Error in handleMessage: \" + error.message, msg);\n    }\n}\n\nconsole.log('[blockExecutor] Calling handleMessage');\nhandleMessage();\n\nconsole.log('[blockExecutor] Execution completed');\nreturn null;",
+        "outputs": 2,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1000,
+        "y": 240,
+        "wires": [
+            [
+                "94b392982f53c55a"
+            ],
+            [
+                "c8091fa058f1e46a"
+            ]
+        ],
+        "info": "# Block Executor Control Flow\r\n\r\n1. **Initialization**\r\n   - Log start of execution\r\n   - Retrieve or initialize `flowContext`\r\n\r\n2. **Utility Functions Definition**\r\n   - `sendFlowUpdate`: Send flow updates to another node\r\n   - `helper_waitProcessing`: Wait for processed result\r\n\r\n3. **Main Functions Definition**\r\n   - `executeCommand`: Send a command and wait for processing\r\n   - `executeBlockCommands`: Process a set of commands organized in sections\r\n   - `parseIncomingMessage`: Categorize incoming messages\r\n   - `handleMessage`: Main entry point for processing messages\r\n\r\n4. **Main Execution**\r\n   - Call `handleMessage()`\r\n\r\n5. **Message Handling (in `handleMessage`)**\r\n   - Parse incoming message\r\n   - Based on message type:\r\n     a. 'newDynamicCmd': \r\n        - Call `executeBlockCommands`\r\n        - On completion, update flow and send result\r\n     b. 'processedResult': \r\n        - Update flow variables\r\n     c. Other types: \r\n        - Pass message through\r\n\r\n6. **Block Command Execution (in `executeBlockCommands`)**\r\n   - Iterate through sections and commands\r\n   - For each command:\r\n     - Call `executeCommand`\r\n     - Collect results and update flow variables\r\n\r\n7. **Command Execution (in `executeCommand`)**\r\n   - Send command\r\n   - Wait for processing using `helper_waitProcessing`\r\n\r\n8. **Completion**\r\n   - Log execution completion\r\n   - Return null\r\n\r\nThroughout: Use `sendFlowUpdate` for flow variable updates and extensive error handling and logging."
+    },
+    {
+        "id": "c8091fa058f1e46a",
+        "type": "function",
+        "z": "dynamicCmdSubflow",
+        "name": "commandExecutor",
+        "func": "// commandExecutor\n\nconsole.log('[commandExecutor] Starting execution');\n\nlet flowContext = flow.get('flowContext') || {};\n\nfunction parseDynamicVariables(text, context) {\n    console.log('[parseDynamicVariables] Starting function with text:', text);\n\n    if (typeof text !== 'string') {\n        console.warn('[parseDynamicVariables] Warning: text is not a string. Type:', typeof text);\n        if (text === null || text === undefined) {\n            console.warn('[parseDynamicVariables] Text is null or undefined. Returning empty string.');\n            return '';\n        }\n        try {\n            text = String(text);\n            console.log('[parseDynamicVariables] Converted text to string:', text);\n        } catch (error) {\n            console.error('[parseDynamicVariables] Error converting text to string:', error);\n            return '[Error: Unable to process non-string input]';\n        }\n    }\n\n    if (!msg || typeof msg !== 'object') {\n        console.warn('[parseDynamicVariables] Warning: msg is not a valid object');\n        return text;\n    }\n\n    try {\n        // Handle previousResponse and sidePromptResult\n        if (context && context.latestMsg && typeof context.latestMsg.currentStep === 'number') {\n            const currentStep = context.latestMsg.currentStep;\n            const previousStep = currentStep - 1;\n            const previousResponseKey = `response${previousStep}`;\n\n            if (previousStep >= 0 && context.latestMsg[previousResponseKey]) {\n                const previousResponse = context.latestMsg[previousResponseKey];\n                console.log(`[parseDynamicVariables] Found previousResponse for step ${previousStep}:`, previousResponse);\n                text = text.replace(/{previousResponse}/g, previousResponse);\n            } else {\n                console.warn(`[parseDynamicVariables] No previousResponse found for step ${previousStep}`);\n                text = text.replace(/{previousResponse}/g, '[Previous response not available]');\n            }\n        } else {\n            console.warn('[parseDynamicVariables] Unable to determine previousResponse from context');\n            text = text.replace(/{previousResponse}/g, '[Previous response not available]');\n        }\n\n        console.log('[parseDynamicVariables] After replacing previousResponse:', text);\n        text = text.replace(/{sidePromptResult}/g, context.sidePromptResult || '[Side prompt result not available]');\n\n        // Replace $<<commandTypeNumberResult>>$\n        text = text.replace(/\\\\$<<(\\\\w+)(\\\\d+)Result>>\\\\$/g, (match, cmdType, cmdNumber) => {\n            const resultKey = `${cmdType}${cmdNumber}Result`;\n            const result = context[resultKey] || `[${resultKey} not available]`;\n            console.log(`[parseDynamicVariables] Replaced ${match} with:`, result);\n            return result;\n        });\n\n        // Replace $<<execute(...)>>$\n        text = text.replace(/\\\\$<<execute\\\\((.*?)\\\\)>>\\\\$/g, (match, code) => {\n            console.log(`[parseDynamicVariables] Executing code:`, code);\n            try {\n                code = code.replace(/;$/, '');\n                const safeContext = createSafeContext(msg, context);\n                const result = new Function('context', `with(context) { return (${code}); }`)(safeContext);\n                console.log(`[parseDynamicVariables] Execution result:`, result);\n                return result !== undefined ? result : '[undefined]';\n            } catch (error) {\n                console.error(`[parseDynamicVariables] Error executing: ${error.message}`);\n                return `[Error executing: ${error.message}]`;\n            }\n        });\n\n        // Handle regular msg property access\n        text = text.replace(/\\\\$<<([\\\\w.]+)>>\\\\$/g, (match, path) => {\n            console.log(`[parseDynamicVariables] Accessing msg property:`, path);\n            const parts = path.split('.');\n            let value = msg;\n            for (const part of parts) {\n                if (value && typeof value === 'object' && part in value) {\n                    value = value[part];\n                } else {\n                    console.warn(`[parseDynamicVariables] Warning: ${path} not available in msg`);\n                    return `[${path} not available]`;\n                }\n            }\n            const result = typeof value === 'object' ? JSON.stringify(value) : String(value);\n            console.log(`[parseDynamicVariables] Msg property value:`, result);\n            return result;\n        });\n\n        console.log(`[parseDynamicVariables] Final result: ${text}`);\n        return text;\n    } catch (error) {\n        console.error('[parseDynamicVariables] Unexpected error:', error);\n        return `[Error: ${error.message}]`;\n    }\n}\n\nfunction createSafeContext(msg, context) {\n    return {\n        flow: {\n            get: (key) => {\n                const value = flow.get(key);\n                console.log(`[createSafeContext] flow.get('${key}'):`, value);\n                return value;\n            },\n            set: (key, value) => {\n                console.log(`[createSafeContext] flow.set('${key}'):`, value);\n                flow.set(key, value);\n            }\n        },\n        global: {\n            get: (key) => {\n                const value = global.get(key);\n                console.log(`[createSafeContext] global.get('${key}'):`, value);\n                return value;\n            },\n            set: (key, value) => {\n                console.log(`[createSafeContext] global.set('${key}'):`, value);\n                global.set(key, value);\n            }\n        },\n        msg: msg,\n        context: context\n    };\n}\n\nfunction executeCommand(command, context) {\n    console.log(`[executeCommand] Executing command:`, JSON.stringify(command));\n    let result = '';\n\n    switch (command.type) {\n        case 'localCmd':\n            result = executeLocalCmd(command, msg, context);\n            break;\n        case 'compileCmd':\n        case 'packCmd':\n            result = executeCompileOrPackCmd(command, msg, context);\n            break;\n        case 'mainPromptCmd':\n            result = executeMainPromptCmd(command, msg, context);\n            break;\n        case 'sidePromptCmd':\n            result = executeSidePromptCmd(command, msg, context);\n            break;\n        default:\n            console.warn(`[executeCommand] Unknown command type: ${command.type}`);\n            result = `[Unknown command type: ${command.type}]`;\n    }\n\n    console.log(`[executeCommand] Result:`, result);\n    return result;\n}\n\nfunction executeLocalCmd(command, msg, context) {\n    console.log(`[executeLocalCmd] Executing local command:`, JSON.stringify(command));\n    let result = '';\n    try {\n        const commandString = command.commands.join('\n');\n        console.log(`[executeLocalCmd] Executing: ${commandString}`);\n        const safeContext = createSafeContext(msg, context);\n        const wrappedCommand = `with(this) { ${commandString} }`;\n        const commandResult = new Function(wrappedCommand).call(safeContext);\n        result = commandResult !== undefined ? commandResult : '';\n    } catch (error) {\n        console.error(`[executeLocalCmd] Error: ${error.message}`);\n        result = `[Error: ${error.message}]`;\n    }\n    console.log(`[executeLocalCmd] Result:`, result);\n    return result;\n}\n\nfunction executeCompileOrPackCmd(command, msg, context) {\n    console.log(`[executeCompileOrPackCmd] Executing compile/pack command:`, JSON.stringify(command));\n    let result = '';\n\n    if (command && Array.isArray(command.commands)) {\n        result = command.commands.map(cmd => {\n            return parseDynamicVariables(cmd, context);\n        }).join('\n');\n    } else {\n        console.warn(`[executeCompileOrPackCmd] Invalid command structure:`, JSON.stringify(command));\n        result = '[Error: Invalid command structure]';\n    }\n\n    console.log(`[executeCompileOrPackCmd] Result:`, result);\n    return result.trim();\n}\n\nfunction executeMainPromptCmd(command, msg, context) {\n    console.log(`[executeMainPromptCmd] Executing main prompt command:`, JSON.stringify(command));\n    const result = command.commands.map(cmd => parseDynamicVariables(cmd, context)).join('\n');\n    console.log(`[executeMainPromptCmd] Result:`, result);\n    return result;\n}\n\nasync function executeSidePromptCmd(command, msg, context) {\n    console.log(`[executeSidePromptCmd] Executing side prompt command:`, JSON.stringify(command));\n    const sidePromptCommands = command.commands;\n\n    // Set flow level variable indicating side prompt processing\n    flow.set('waitingForSidePrompt', true);\n\n    // Execute side prompt commands\n    const result = sidePromptCommands.map(cmd => parseDynamicVariables(cmd, context)).join('\n');\n\n    // Send out the message with side prompts\n    node.send({ payload: result, sidePrompt: true });\n\n    console.log(`[executeSidePromptCmd] Sent side prompt, waiting for result`);\n\n    try {\n        // Wait for the side prompt result\n        const sidePromptResult = await waitForSidePromptResult();\n\n        // Update flow context with side prompt result\n        flowContext.sidePromptResult = sidePromptResult;\n        flow.set('flowContext', flowContext);\n\n        console.log(`[executeSidePromptCmd] Received side prompt result:`, sidePromptResult);\n        return sidePromptResult;\n    } catch (error) {\n        console.error(`[executeSidePromptCmd] Error waiting for side prompt result:`, error);\n        return `[Error: ${error.message}]`;\n    } finally {\n        // Reset the processing flag\n        flow.set('waitingForSidePrompt', false);\n    }\n}\n\nfunction waitForSidePromptResult(timeout = 100000) {\n    console.log('[waitForSidePromptResult] Starting to wait for side prompt result');\n    return new Promise((resolve, reject) => {\n        const startTime = Date.now();\n        const checkSidePromptResult = () => {\n            let sidePromptResult = flow.get('sidePromptResult') || {};\n            if (flow.get('waitingForSidePrompt') == false) {\n                console.log('[waitForSidePromptResult] Side prompt result is ready');\n                resolve(sidePromptResult);\n            } else if (Date.now() - startTime > timeout) {\n                console.warn('[waitForSidePromptResult] Timeout reached while waiting for side prompt result');\n                reject(new Error('Timeout waiting for side prompt result'));\n            } else {\n                console.log('[waitForSidePromptResult] Side prompt result not ready, checking again in 1000ms');\n                setTimeout(checkSidePromptResult, 1300);\n            }\n        };\n        checkSidePromptResult();\n    });\n}\n\n\nfunction main() {\n    console.log('[main] Starting main function');\n\n    if (!msg.dynamicCmd) {\n        console.log('[main] Not a dynamic command message, passing through');\n        let outputType = 'normal'; // Default output type\n        return {\n            ...msg,\n            outputType: outputType // Add this line to pass the outputType\n        };\n    }\n\n    const command = msg.command;\n    const triggerDynamicVars = msg.triggerDynamicVars;\n\n    console.log('[main] Received command:', JSON.stringify(command));\n    console.log('[main] triggerDynamicVars:', triggerDynamicVars);\n\n    // Refresh flowContext at the beginning of main\n    let flowContext = flow.get('flowContext') || {};\n\n    if (command && triggerDynamicVars) {\n        console.log('[main] Processing command');\n        let finalResult;\n        let outputType = 'dynamicCmd'; // Default output type\n        console.log('[main] Output type:', outputType);\n\n        try {\n            console.log('[main] Executing command:', JSON.stringify(command));\n            const executedResult = executeCommand(command, flowContext);\n            console.log('[main] Executed result:', executedResult);\n            finalResult = executedResult;\n\n            // Set outputType based on command type\n            if (command.type === 'sidePromptCmd') {\n                outputType = 'sidePrompt';\n            } else if (command.type === 'mainPromptCmd') {\n                outputType = 'normal';\n            }\n            // Add more conditions for other command types if needed\n\n        } catch (error) {\n            console.error('[main] Error executing command:', error);\n            finalResult = `[Error: ${error.message}]`;\n            outputType = 'error';\n        }\n\n        console.log('[main] Final result:', finalResult);\n        console.log('[main] Output type:', outputType);\n\n        flowContext.processedResult = finalResult;\n        flowContext.processedResultReady = true;\n        flow.set('flowContext', flowContext);\n\n        const resultKey = `${command.type}${command.number}Result`;\n        flowContext[resultKey] = finalResult;\n        flow.set('flowContext', flowContext);\n        console.log(`[main] Stored result for ${resultKey} in flowContext`);\n\n        console.log('[main] Returning processed result');\n        return {\n            ...msg,\n            processedResult: {\n                type: 'processedResult',\n                data: finalResult,\n                command: command\n            },\n            outputType: outputType // Add this line to pass the outputType\n        };\n    } else {\n        console.log('[main] Invalid command or trigger, passing through message');\n        return msg;\n    }\n}",
+        "outputs": 2,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 990,
+        "y": 320,
+        "wires": [
+            [],
+            [
+                "7437d3a15148c947"
+            ]
+        ],
+        "info": "# Command Executor Control Flow\r\n\r\n1. **Initialization**\r\n   - Log start of execution\r\n   - Initialize or retrieve `flowContext`\r\n\r\n2. **Utility Functions Definition**\r\n   - `parseDynamicVariables`: Parse and replace dynamic variables in text\r\n   - `createSafeContext`: Create a safe context for executing commands\r\n   - `executeLocalCmd`: Execute local commands\r\n   - `executeCompileOrPackCmd`: Execute compile or pack commands\r\n   - `executeMainPromptCmd`: Execute main prompt commands\r\n   - `waitForSidePromptResult`: Wait for side prompt results\r\n   - `executeSidePromptCmd`: Execute side prompt commands\r\n   - `executeCommand`: Main function to execute commands based on type\r\n\r\n3. **Main Function Definition**\r\n   - `main()`: Core logic for processing commands\r\n\r\n4. **Main Execution**\r\n   - Try-catch block to execute `main()` and handle any errors\r\n\r\n5. **Main Function Flow (`main()`)**\r\n   - Check if message contains a dynamic command\r\n   - If not, pass through the message with an output type\r\n   - If yes:\r\n     a. Extract command and trigger from message\r\n     b. Refresh `flowContext`\r\n     c. Process the command:\r\n        - Execute the command using `executeCommand()`\r\n        - Determine the output type based on command type\r\n        - Handle any errors during execution\r\n     d. Update `flowContext` with the result\r\n     e. Return processed result with output type\r\n\r\n6. **Command Execution (`executeCommand()`)**\r\n   - Switch based on command type:\r\n     - `localCmd`: Execute using `executeLocalCmd()`\r\n     - `compileCmd` or `packCmd`: Execute using `executeCompileOrPackCmd()`\r\n     - `mainPromptCmd`: Execute using `executeMainPromptCmd()`\r\n     - `sidePromptCmd`: Execute using `executeSidePromptCmd()`\r\n\r\n7. **Dynamic Variable Parsing (`parseDynamicVariables()`)**\r\n   - Handle `previousResponse` and `sidePromptResult`\r\n   - Replace command type number results\r\n   - Execute inline code within `$<<execute(...)>>$`\r\n   - Handle regular msg property access\r\n\r\n8. **Side Prompt Execution (`executeSidePromptCmd()`)**\r\n   - Set flow-level variable for side prompt processing\r\n   - Execute side prompt commands\r\n   - Send out message with side prompts\r\n   - Wait for side prompt result using `waitForSidePromptResult()`\r\n   - Update `flowContext` with the result\r\n\r\nThroughout: Extensive logging and error handling at each step"
+    },
+    {
+        "id": "c9770c87f37d1b12",
+        "type": "comment",
+        "z": "dynamicCmdSubflow",
+        "name": "Check Descriptions for Breakdown",
+        "info": "",
+        "x": 1660,
+        "y": 20,
+        "wires": []
+    },
+    {
+        "id": "7437d3a15148c947",
+        "type": "function",
+        "z": "dynamicCmdSubflow",
+        "name": "sectionControllerSide",
+        "func": "//==========================================================================================\n// L1.0.0 Side Prompt Section Controller\n//==========================================================================================",
+        "outputs": 2,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "fs",
+                "module": "fs"
+            },
+            {
+                "var": "path",
+                "module": "path"
+            },
+            {
+                "var": "os",
+                "module": "os"
+            }
+        ],
+        "x": 1000,
+        "y": 400,
+        "wires": [
+            [
+                "5d50ade39f4eed52"
+            ],
+            [
+                "d55ca1dfbf182d65"
+            ]
+        ]
+    },
+    {
+        "id": "5d50ade39f4eed52",
+        "type": "function",
+        "z": "dynamicCmdSubflow",
+        "name": "Run Prompt Side",
+        "func": "//==========================================================================================\n// L1.0.0 Run Prompt Side Node\n//==========================================================================================\n\nconsole.log('[Run Prompt Side] Starting execution');\nnode.status({ fill: \"blue\", shape: \"dot\", text: \"Running...\" });",
+        "outputs": 3,
+        "timeout": "",
+        "noerr": 22,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "playwright",
+                "module": "playwright"
+            }
+        ],
+        "x": 1010,
+        "y": 500,
+        "wires": [
+            [
+                "7437d3a15148c947"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "057d1e420082c237",
+        "type": "comment",
+        "z": "dynamicCmdSubflow",
+        "name": "All Dynamic Cmd is flow level",
+        "info": "- check out the node.send pattern in block exec and wait for processed result\n-- should only send a short, internally coded msg\n- only really pass on the final msg after block execution\n- Make sure all step tracking is done at flow level\n- make sure cmd results are found accurately\n- Also put in side prompt results\n- Also make sure main prompt works\n- Readjust the JSON\nSlapped on as msg at the end.\n---\n- make a short loop with block executor and command executor -> sideprompt\nReorganize side prompt - go straight into block executor\n- move output to loop back to block executor",
+        "x": 1660,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "9897c0bda7821d37",
+        "type": "debug",
+        "z": "dynamicCmdSubflow",
+        "name": "debug 9",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1000,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "3e99deeda814c17e",
+        "type": "comment",
+        "z": "dynamicCmdSubflow",
+        "name": "Block Execution Process",
+        "info": "- Compile Cmd\n- Make sure localCmd1Result is replaced",
+        "x": 1630,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "4ec4db05a8bfb198",
+        "type": "link in",
+        "z": "dynamicCmdSubflow",
+        "name": "link in 5",
+        "links": [
+            "d55ca1dfbf182d65"
+        ],
+        "x": 765,
+        "y": 400,
+        "wires": [
+            [
+                "9897c0bda7821d37",
+                "c8091fa058f1e46a"
+            ]
+        ]
+    },
+    {
+        "id": "d55ca1dfbf182d65",
+        "type": "link out",
+        "z": "dynamicCmdSubflow",
+        "name": "link out 6",
+        "mode": "link",
+        "links": [
+            "4ec4db05a8bfb198"
+        ],
+        "x": 1185,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "a4247e3d1ddaecc1",
+        "type": "comment",
+        "z": "dynamicCmdSubflow",
+        "name": "Internal Dynamic Cmd Flow",
+        "info": "Sends a msg\n",
+        "x": 1640,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "eb37406d0f486c7c",
+        "type": "comment",
+        "z": "dynamicCmdSubflow",
+        "name": "Next",
+        "info": "- Side Prompt Handling\n    - make sure to set a flag to make it wait\n    - make sure to properly store result\n    - In RunPromptSection - figure out how the memory structure works.\n    - Finished sideprompt handling\n        - run prompt side - response key\n\n\n- Pack Command\n- Main Command",
+        "x": 1570,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "08b6869916f384c6",
+        "type": "comment",
+        "z": "dynamicCmdSubflow",
+        "name": "",
+        "info": "- Keep state in flow\n- only pass messages in and out",
+        "x": 1560,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "94b392982f53c55a",
+        "type": "function",
+        "z": "dynamicCmdSubflow",
+        "name": "outputHandler",
+        "func": "// The Output Handler Layer\n\nfunction determineOutputType(msg) {\n    console.log('[determineOutputType] Starting output type determination');\n    console.log(`[determineOutputType] Input message:`, JSON.stringify(msg));\n\n    if (typeof msg !== 'object' || msg === null) {\n        console.warn('[determineOutputType] Invalid message object');\n        return 'normal';\n    }\n\n    if (msg.outputType) {\n        console.log(`[determineOutputType] Output type explicitly set: ${msg.outputType}`);\n        return msg.outputType;\n    }\n\n    if (msg.processedResult && msg.processedResult.type === 'processedResult') {\n        console.log('[determineOutputType] ProcessedResult found');\n        const command = msg.processedResult.command;\n        if (command && command.type === 'sidePromptCmd') {\n            console.log('[determineOutputType] SidePromptCmd detected');\n            return 'sidePrompt';\n        }\n    }\n\n    try {\n        const dynamicCmd = flow.get('dynamicCmd');\n        console.log('[determineOutputType] DynamicCmd:', JSON.stringify(dynamicCmd));\n        if (dynamicCmd && Array.isArray(dynamicCmd.sections) && dynamicCmd.sections.length > 0) {\n            const lastSection = dynamicCmd.sections[dynamicCmd.sections.length - 1];\n            if (Array.isArray(lastSection.commands) && lastSection.commands.length > 0) {\n                const lastCommand = lastSection.commands[lastSection.commands.length - 1];\n                console.log(`[determineOutputType] Last command type: ${lastCommand.type}`);\n                if (lastCommand.type === 'sidePromptCmd') {\n                    return 'sidePrompt';\n                }\n            }\n        }\n    } catch (error) {\n        console.error('[determineOutputType] Error checking dynamic command:', error);\n    }\n\n    if (dynamicCmd === undefined && msg.sidePrompt === true) {\n        console.log('[determineOutputType] dynamicCmd is undefined and msg.sidePrompt is true');\n        return 'sidePrompt';\n    }\n    \n    console.log('[determineOutputType] Defaulting to normal output type');\n    return 'normal';\n}\n\nfunction handleNormalOutput(msg) {\n    console.log('[handleNormalOutput] Handling normal output');\n    console.log('[handleNormalOutput] Returning message:', JSON.stringify(msg));\n    return [msg, null, null];\n}\n\nfunction handleSidePromptOutput(msg) {\n    console.log('[handleSidePromptOutput] Handling side prompt output');\n    console.log('[handleSidePromptOutput] Input message:', JSON.stringify(msg));\n\n    let sidePromptContent;\n    if (msg.processedResult &&\n        msg.processedResult.command &&\n        msg.processedResult.command.type === 'sidePromptCmd' &&\n        Array.isArray(msg.processedResult.command.commands)) {\n        sidePromptContent = msg.processedResult.command.commands;\n    } else if (Array.isArray(msg.payload)) {\n        sidePromptContent = msg.payload;\n    } else {\n        sidePromptContent = [msg.payload];\n    }\n\n    const sidePromptMsg = {\n        ...msg,\n        status: \"start\",\n        sidePrompt: true,\n        payload: sidePromptContent,\n        sidePromptNumber: msg.processedResult.command.number,\n    };\n\n    console.log(`[handleSidePromptOutput] Formatted side prompt message:`, JSON.stringify(sidePromptMsg));\n    return [null, sidePromptMsg, null];\n}\n\nfunction handleErrorOutput(msg) {\n    console.log('[handleErrorOutput] Handling error output');\n    console.log('[handleErrorOutput] Error message:', JSON.stringify(msg));\n    return [null, null, msg];\n}\n\nfunction garbageCollect() {\n    console.log('[garbageCollect] Starting garbage collection');\n    const flowKeys = flow.keys();\n    flowKeys.forEach(key => {\n        flow.set(key, undefined);\n        console.log(`[garbageCollect] Cleared flow variable: ${key}`);\n    });\n    console.log('[garbageCollect] Garbage collection completed');\n}",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1260,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8b7fda62adc7c26d",
+        "type": "function",
+        "z": "817a5b2b5a30223d",
+        "name": "inputConditionals",
+        "func": "// Input Handler\nconst flowContext = flow.get('flowContext') || {};\n\n// Update the latest message\nflowContext.latestMsg = msg;\nflow.set('flowContext', flowContext);\n\nconsole.log(\"[inputConditionals] Starting inputConditionals function.\");\nconsole.log(`[inputConditionals] Input msg: ${JSON.stringify(msg)}`);\n\n// Check if this is a sidePrompt completion message\nif (msg.sidePromptStatus === \"done\") {\n    console.log(\"[inputConditionals] Received sidePrompt completion message.\");\n    flow.set('waitingForSidePrompt', false);\n    flow.set('sidePromptResult', msg.payload);\n    flow.set('flowContext', flowContext);\n    return msg; // Send sidePrompt completion to output2\n}\n// Check if this is a sidePrompt completion message\nif (msg.status === \"stop\") {\n    console.log(\"[inputConditionals] Received stop message.\");\n    return null; // Send sidePrompt completion to output2\n}\n\n// Check if this is a dynamicCmd message\nif (msg.payload && typeof msg.payload === 'string' && msg.payload.includes('dynamicCmd')) {\n    return msg; // Send dynamicCmd messages to mainProcessor\n}\n\n// For all other messages, pass through to output1\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 670,
+        "y": 100,
+        "wires": [
+            [
+                "ce9314d0c6a00494"
+            ]
+        ],
+        "info": "# processMessage Function Breakdown\r\n\r\n## 1. Input Phase\r\n- **Always executed**\r\n- Update `flowContext` with latest message\r\n- Log function start and input message\r\n\r\n## 2. Processing Phase\r\n\r\n### Case 1: Regular message (most common)\r\n- **Condition:** Message doesn't meet any special conditions\r\n- **Action:** Pass message through unchanged\r\n- **Output:** First output (index 0)\r\n\r\n### Case 2: dynamicCmd message (common)\r\n- **Condition:** `msg.payload` exists, is a string, and contains \"dynamicCmd\"\r\n- **Action:** Pass message through unchanged\r\n- **Output:** First output (index 0)\r\n\r\n### Case 3: sidePrompt completion (less common)\r\n- **Condition:** `msg.sidePromptStatus` equals \"done\"\r\n- **Action:** \r\n  - Update flow variables (`waitingForSidePrompt`, `sidePromptResult`, `flowContext`)\r\n  - Log receipt of sidePrompt completion\r\n- **Output:** Second output (index 1)\r\n\r\n### Case 4: Stop message (edge case)\r\n- **Condition:** `msg.status` equals \"stop\"\r\n- **Action:** Log receipt of stop message\r\n- **Output:** No output (all null)\r\n\r\n## 3. Output Phase\r\n- Determine final output based on processing phase\r\n- Return array with message in appropriate index:\r\n  - [message, null, null] for first output\r\n  - [null, message, null] for second output\r\n  - [null, null, null] for stop message"
+    },
+    {
+        "id": "ce9314d0c6a00494",
+        "type": "function",
+        "z": "817a5b2b5a30223d",
+        "name": "initialParser",
+        "func": "// The initialParser Layer\n\nfunction parseInputText(inputText) {\n    console.log(`[parseInputText] Starting to parse input text`);\n    console.log(`[parseInputText] Input text length: ${inputText.length} characters`);\n\n    const lines = inputText.split('\n');\n    console.log(`[parseInputText] Number of lines: ${lines.length}`);\n\n    let dynamicCmd = { sections: [] };\n    let currentCommand = null;\n    let isCapturingNestedCommand = false;\n    let nestedCommandBuffer = '';\n\n    console.log(`[parseInputText] Initialized parsing variables`);\n\n    const processLine = (line, index) => {\n        console.log(`[parseInputText] Processing line ${index + 1}: '${line}'`);\n\n        const originalLine = line;\n        line = line.replace(/\\/\\/.*$/, '').trim(); // Remove comments\n\n        if (line !== originalLine) {\n            console.log(`[parseInputText] Removed comment. New line: '${line}'`);\n        }\n\n        if (line === 'dynamicCmd') {\n            dynamicCmd.sections.push({ type: 'commandSet', commands: [] });\n            console.log(`[parseInputText] Detected 'dynamicCmd' section. Created new command set. Total sections: ${dynamicCmd.sections.length}`);\n            return;\n        }\n\n        if (line === '- commandSet') {\n            console.log(`[parseInputText] Detected commandSet line, ignoring.`);\n            return;\n        }\n\n        const mainCommandMatch = line.match(/^-\\s*(\\w+)(\\d+)/);\n        if (mainCommandMatch) {\n            const [, cmdType, cmdNumber] = mainCommandMatch;\n            currentCommand = { type: cmdType, number: cmdNumber, commands: [] };\n            dynamicCmd.sections[dynamicCmd.sections.length - 1].commands.push(currentCommand);\n            console.log(`[parseInputText] Started new main command: ${cmdType}${cmdNumber}. Total commands in current section: ${dynamicCmd.sections[dynamicCmd.sections.length - 1].commands.length}`);\n        } else if (line.startsWith('- `')) {\n            isCapturingNestedCommand = true;\n            nestedCommandBuffer = line.substring(3);\n            console.log(`[parseInputText] Started capturing nested command. Initial buffer: '${nestedCommandBuffer}'`);\n        } else if (isCapturingNestedCommand) {\n            if (line.endsWith('`')) {\n                nestedCommandBuffer += line.substring(0, line.length - 1);\n                currentCommand.commands.push(nestedCommandBuffer);\n                isCapturingNestedCommand = false;\n                console.log(`[parseInputText] Finished capturing nested command: '${nestedCommandBuffer}'`);\n                console.log(`[parseInputText] Total commands for ${currentCommand.type}${currentCommand.number}: ${currentCommand.commands.length}`);\n            } else {\n                nestedCommandBuffer += line + '\n';\n                console.log(`[parseInputText] Capturing nested command. Current buffer length: ${nestedCommandBuffer.length} characters`);\n            }\n        } else if (line.startsWith('-') && currentCommand) {\n            const subCommand = line.substring(1).trim();\n            currentCommand.commands.push(subCommand);\n            console.log(`[parseInputText] Added sub-command to ${currentCommand.type}${currentCommand.number}: '${subCommand}'`);\n            console.log(`[parseInputText] Total commands for ${currentCommand.type}${currentCommand.number}: ${currentCommand.commands.length}`);\n        } else {\n            console.log(`[parseInputText] Skipped line: '${line}'`);\n        }\n    };\n\n    lines.forEach(processLine);\n\n    console.log(`[parseInputText] Finished parsing input text.`);\n    console.log(`[parseInputText] Total sections in dynamicCmd: ${dynamicCmd.sections.length}`);\n    dynamicCmd.sections.forEach((section, index) => {\n        console.log(`[parseInputText] Section ${index + 1} has ${section.commands.length} commands`);\n    });\n    console.log(`[parseInputText] Final parsed dynamicCmd: ${JSON.stringify(dynamicCmd, null, 2)}`);\n\n    return dynamicCmd;\n}\n\n// Node-RED function node entry point\nif (msg.payload && typeof msg.payload === 'string' && msg.payload.includes('dynamicCmd')) {\n    console.log(`[initialParser] Received message with dynamicCmd content`);\n    const parsedCmd = parseInputText(msg.payload);\n    flow.set('parsedDynamicCmd', parsedCmd);  // This line adds flow-level persistence\n    console.log(`[initialParser] Stored parsed dynamicCmd in flow context`);\n    msg.dynamicCmd = parsedCmd;\n    console.log(`[initialParser] Attached parsed dynamicCmd to msg object`);\n    return [msg, null, null];\n} else {\n    console.log(`[initialParser] Received non-dynamicCmd message, passing through`);\n    msg.dynamicCmd = false;\n    return [msg, null, null]; // Pass through non-dynamicCmd messages\n}",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 650,
+        "y": 180,
+        "wires": [
+            [
+                "773c9afecffb264f"
+            ]
+        ]
+    },
+    {
+        "id": "773c9afecffb264f",
+        "type": "function",
+        "z": "817a5b2b5a30223d",
+        "name": "blockExecutor",
+        "func": "// blockExecutor\n\nconsole.log('[blockExecutor] Starting execution');\n\nconst flowContext = flow.get('flowContext') || {};\n\nfunction helper_waitProcessing(timeout = 30000) {\n    console.log('[helper_waitProcessing] Starting to wait for processed result');\n    return new Promise((resolve, reject) => {\n        const startTime = Date.now();\n        const checkProcessedResult = () => {\n            const currentContext = flow.get('flowContext') || {};\n            if (currentContext.processedResultReady) {\n                console.log('[helper_waitProcessing] Processed result is ready');\n                currentContext.processedResultReady = false;\n                flow.set('flowContext', currentContext);\n                resolve(currentContext.processedResult);\n            } else if (Date.now() - startTime > timeout) {\n                console.warn('[helper_waitProcessing] Timeout reached while waiting for processed result');\n                reject(new Error('Timeout waiting for processed result'));\n            } else {\n                console.log('[helper_waitProcessing] Processed result not ready, checking again in 500ms');\n                setTimeout(checkProcessedResult, 500);\n            }\n        };\n        checkProcessedResult();\n    });\n}\n\nasync function executeCommand(command) {\n    flow.set('currentCommand', command);\n    flow.set('currentResult', '');\n    flow.set('triggerDynamicVars', Date.now());\n    console.log('[executeCommand] Set currentCommand and triggerDynamicVars in flow');\n\n    const msgToSend = {\n        dynamicCmd: true,\n        command: command,\n        triggerDynamicVars: Date.now()\n    };\n    console.log('[executeCommand] Sending message:', JSON.stringify(msgToSend));\n    node.send(msgToSend);\n\n    return await helper_waitProcessing(60000);\n}\n\nasync function executeBlockCommands(dynamicCmd) {\n    console.log('[executeBlockCommands] Starting execution of commands');\n\n    if (!dynamicCmd || !dynamicCmd.sections || !Array.isArray(dynamicCmd.sections)) {\n        console.error(\"[executeBlockCommands] Invalid dynamicCmd structure:\", dynamicCmd);\n        throw new Error(\"Invalid dynamicCmd structure\");\n    }\n\n    let flowContext = flow.get('flowContext') || {};\n    flowContext.previousResponse = flowContext.previousResponse || '[Previous response not available]';\n    flow.set('flowContext', flowContext);\n\n    let finalResult = \"\";\n\n    for (let sectionIndex = 0; sectionIndex < dynamicCmd.sections.length; sectionIndex++) {\n        console.log(`[executeBlockCommands] Processing section ${sectionIndex}`);\n        const section = dynamicCmd.sections[sectionIndex];\n\n        if (!section || !section.commands || !Array.isArray(section.commands)) {\n            console.warn(`[executeBlockCommands] Invalid section structure at index ${sectionIndex}:`, section);\n            continue;\n        }\n\n        for (let commandIndex = 0; commandIndex < section.commands.length; commandIndex++) {\n            console.log(`[executeBlockCommands] Processing command ${commandIndex} in section ${sectionIndex}`);\n            const command = section.commands[commandIndex];\n\n            if (!command || !command.type) {\n                console.warn(`[executeBlockCommands] Invalid command at section ${sectionIndex}, command ${commandIndex}:`, command);\n                continue;\n            }\n\n            let result;\n\n            try {\n                console.log(`[executeBlockCommands] Executing command of type: ${command.type}`);\n                result = await executeCommand(command);\n\n                console.log(`[executeBlockCommands] Command result:`, result);\n                command.result = result;\n                finalResult += (finalResult ? \"\n\" : \"\") + result;\n\n                flowContext[`${command.type}${command.number}Result`] = result;\n                flow.set('flowContext', flowContext);\n\n                command.processedResult = result;\n            } catch (error) {\n                console.error(`[executeBlockCommands] Error executing command ${command.type}:`, error);\n                command.processedResult = `[Error: ${error.message}]`;\n            }\n\n            await new Promise(resolve => setTimeout(resolve, 100));\n        }\n    }\n\n    // Add the dynamicCmdComplete flag\n    msg.dynamicCmdComplete = true;\n    \n    return finalResult;\n}\n\nfunction parseIncomingMessage(msg) {\n    if (msg.dynamicCmd && !msg.currentCommand) {\n        console.log('[parseIncomingMessage] New dynamic command detected');\n        return { type: 'newDynamicCmd', data: msg.dynamicCmd };\n    } else if (msg.type === 'processedResult') {\n        console.log('[parseIncomingMessage] Processed result received');\n        return { type: 'processedResult', data: msg.data, command: msg.command };\n    } else {\n        console.log('[parseIncomingMessage] Pass through message');\n        return { type: 'passThrough', data: msg };\n    }\n}\n\nfunction handleMessage() {\n    console.log('[handleMessage] Starting message handling');\n    try {\n        const parsedMsg = parseIncomingMessage(msg);\n\n        switch (parsedMsg.type) {\n            case 'newDynamicCmd':\n                if (!parsedMsg.data) {\n                    throw new Error(\"Invalid dynamicCmd data\");\n                }\n                console.log('[handleMessage] Executing new dynamic command');\n                executeBlockCommands(parsedMsg.data)\n                    .then(result => {\n                        console.log('[handleMessage] Command execution completed. Result:', result);\n                        flow.set('finalResult', result);\n                        console.log('[handleMessage] Set finalResult in flow');\n                        node.send({ payload: result, dynamicCmdComplete: true });\n                    })\n                    .catch(error => {\n                        console.error(\"[handleMessage] Error processing commands:\", error);\n                        node.error(\"Error processing commands: \" + error.message, msg);\n                    });\n                break;\n\n            case 'processedResult':\n                console.log('[handleMessage] Setting processed result');\n                flow.set('processedResult', parsedMsg.data);\n                flow.set('processedResultReady', true);\n                console.log('[handleMessage] Updated flow variables: processedResult and processedResultReady');\n                break;\n\n            case 'passThrough':\n            default:\n                console.log('[handleMessage] Passing through message');\n                node.send(msg);\n                break;\n        }\n    } catch (error) {\n        console.error(\"[handleMessage] Error in handleMessage:\", error);\n        node.error(\"Error in handleMessage: \" + error.message, msg);\n    }\n}\n\nconsole.log('[blockExecutor] Calling handleMessage');\nhandleMessage();\n\nconsole.log('[blockExecutor] Execution completed');\nreturn null;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 660,
+        "y": 260,
+        "wires": [
+            [
+                "626b45db91593296"
+            ]
+        ]
+    },
+    {
+        "id": "626b45db91593296",
+        "type": "function",
+        "z": "817a5b2b5a30223d",
+        "name": "commandExecutor",
+        "func": "// commandExecutor\n\nconsole.log('[commandExecutor] Starting execution');\n\nlet flowContext = flow.get('flowContext') || {};\n\nfunction parseDynamicVariables(text, context) {\n    console.log('[parseDynamicVariables] Starting function with text:', text);\n\n    if (typeof text !== 'string') {\n        console.warn('[parseDynamicVariables] Warning: text is not a string. Type:', typeof text);\n        if (text === null || text === undefined) {\n            console.warn('[parseDynamicVariables] Text is null or undefined. Returning empty string.');\n            return '';\n        }\n        try {\n            text = String(text);\n            console.log('[parseDynamicVariables] Converted text to string:', text);\n        } catch (error) {\n            console.error('[parseDynamicVariables] Error converting text to string:', error);\n            return '[Error: Unable to process non-string input]';\n        }\n    }\n\n    if (!msg || typeof msg !== 'object') {\n        console.warn('[parseDynamicVariables] Warning: msg is not a valid object');\n        return text;\n    }\n\n    try {\n        // Handle previousResponse and sidePromptResult\n        if (context && context.latestMsg && typeof context.latestMsg.currentStep === 'number') {\n            const currentStep = context.latestMsg.currentStep;\n            const previousStep = currentStep - 1;\n            const previousResponseKey = `response${previousStep}`;\n\n            if (previousStep >= 0 && context.latestMsg[previousResponseKey]) {\n                const previousResponse = context.latestMsg[previousResponseKey];\n                console.log(`[parseDynamicVariables] Found previousResponse for step ${previousStep}:`, previousResponse);\n                text = text.replace(/{previousResponse}/g, previousResponse);\n            } else {\n                console.warn(`[parseDynamicVariables] No previousResponse found for step ${previousStep}`);\n                text = text.replace(/{previousResponse}/g, '[Previous response not available]');\n            }\n        } else {\n            console.warn('[parseDynamicVariables] Unable to determine previousResponse from context');\n            text = text.replace(/{previousResponse}/g, '[Previous response not available]');\n        }\n\n        console.log('[parseDynamicVariables] After replacing previousResponse:', text);\n        text = text.replace(/{sidePromptResult}/g, context.sidePromptResult || '[Side prompt result not available]');\n\n        // Replace $<<commandTypeNumberResult>>$\n        text = text.replace(/\\$<<(\\w+)(\\d+)Result>>\\$/g, (match, cmdType, cmdNumber) => {\n            const resultKey = `${cmdType}${cmdNumber}Result`;\n            const result = context[resultKey] || `[${resultKey} not available]`;\n            console.log(`[parseDynamicVariables] Replaced ${match} with:`, result);\n            return result;\n        });\n\n        // Replace $<<execute(...)>>$\n        text = text.replace(/\\$<<execute\\((.*?)\\)>>\\$/g, (match, code) => {\n            console.log(`[parseDynamicVariables] Executing code:`, code);\n            try {\n                code = code.replace(/;$/, '');\n                const safeContext = createSafeContext(msg, context);\n                const result = new Function('context', `with(context) { return (${code}); }`)(safeContext);\n                console.log(`[parseDynamicVariables] Execution result:`, result);\n                return result !== undefined ? result : '[undefined]';\n            } catch (error) {\n                console.error(`[parseDynamicVariables] Error executing: ${error.message}`);\n                return `[Error executing: ${error.message}]`;\n            }\n        });\n\n        // Handle regular msg property access\n        text = text.replace(/\\$<<([\\w.]+)>>\\$/g, (match, path) => {\n            console.log(`[parseDynamicVariables] Accessing msg property:`, path);\n            const parts = path.split('.');\n            let value = msg;\n            for (const part of parts) {\n                if (value && typeof value === 'object' && part in value) {\n                    value = value[part];\n                } else {\n                    console.warn(`[parseDynamicVariables] Warning: ${path} not available in msg`);\n                    return `[${path} not available]`;\n                }\n            }\n            const result = typeof value === 'object' ? JSON.stringify(value) : String(value);\n            console.log(`[parseDynamicVariables] Msg property value:`, result);\n            return result;\n        });\n\n        console.log(`[parseDynamicVariables] Final result: ${text}`);\n        return text;\n    } catch (error) {\n        console.error('[parseDynamicVariables] Unexpected error:', error);\n        return `[Error: ${error.message}]`;\n    }\n}\n\nfunction createSafeContext(msg, context) {\n    return {\n        flow: {\n            get: (key) => {\n                const value = flow.get(key);\n                console.log(`[createSafeContext] flow.get('${key}'):`, value);\n                return value;\n            },\n            set: (key, value) => {\n                console.log(`[createSafeContext] flow.set('${key}'):`, value);\n                flow.set(key, value);\n            }\n        },\n        global: {\n            get: (key) => {\n                const value = global.get(key);\n                console.log(`[createSafeContext] global.get('${key}'):`, value);\n                return value;\n            },\n            set: (key, value) => {\n                console.log(`[createSafeContext] global.set('${key}'):`, value);\n                global.set(key, value);\n            }\n        },\n        msg: msg,\n        context: context\n    };\n}\n\nfunction executeCommand(command, context) {\n    console.log(`[executeCommand] Executing command:`, JSON.stringify(command));\n    let result = '';\n\n    switch (command.type) {\n        case 'localCmd':\n            result = executeLocalCmd(command, msg, context);\n            break;\n        case 'compileCmd':\n        case 'packCmd':\n            result = executeCompileOrPackCmd(command, msg, context);\n            break;\n        case 'mainPromptCmd':\n            result = executeMainPromptCmd(command, msg, context);\n            break;\n        case 'sidePromptCmd':\n            result = executeSidePromptCmd(command, msg, context);\n            break;\n        default:\n            console.warn(`[executeCommand] Unknown command type: ${command.type}`);\n            result = `[Unknown command type: ${command.type}]`;\n    }\n\n    console.log(`[executeCommand] Result:`, result);\n    return result;\n}\n\nfunction executeLocalCmd(command, msg, context) {\n    console.log(`[executeLocalCmd] Executing local command:`, JSON.stringify(command));\n    let result = '';\n    try {\n        const commandString = command.commands.join('\n');\n        console.log(`[executeLocalCmd] Executing: ${commandString}`);\n        const safeContext = createSafeContext(msg, context);\n        const wrappedCommand = `with(this) { ${commandString} }`;\n        const commandResult = new Function(wrappedCommand).call(safeContext);\n        result = commandResult !== undefined ? commandResult : '';\n    } catch (error) {\n        console.error(`[executeLocalCmd] Error: ${error.message}`);\n        result = `[Error: ${error.message}]`;\n    }\n    console.log(`[executeLocalCmd] Result:`, result);\n    return result;\n}\n\nfunction executeCompileOrPackCmd(command, msg, context) {\n    console.log(`[executeCompileOrPackCmd] Executing compile/pack command:`, JSON.stringify(command));\n    let result = '';\n\n    if (command && Array.isArray(command.commands)) {\n        result = command.commands.map(cmd => {\n            return parseDynamicVariables(cmd, context);\n        }).join('\n');\n    } else {\n        console.warn(`[executeCompileOrPackCmd] Invalid command structure:`, JSON.stringify(command));\n        result = '[Error: Invalid command structure]';\n    }\n\n    console.log(`[executeCompileOrPackCmd] Result:`, result);\n    return result.trim();\n}\n\nfunction executeMainPromptCmd(command, msg, context) {\n    console.log(`[executeMainPromptCmd] Executing main prompt command:`, JSON.stringify(command));\n    const result = command.commands.map(cmd => parseDynamicVariables(cmd, context)).join('\n');\n    console.log(`[executeMainPromptCmd] Result:`, result);\n    return result;\n}\n\nasync function executeSidePromptCmd(command, msg, context) {\n    console.log(`[executeSidePromptCmd] Executing side prompt command:`, JSON.stringify(command));\n    const sidePromptCommands = command.commands;\n\n    // Set flow level variable indicating side prompt processing\n    flow.set('waitingForSidePrompt', true);\n\n    // Execute side prompt commands\n    const result = sidePromptCommands.map(cmd => parseDynamicVariables(cmd, context)).join('\n');\n\n    // Send out the message with side prompts\n    node.send({ payload: result, sidePrompt: true });\n\n    console.log(`[executeSidePromptCmd] Sent side prompt, waiting for result`);\n\n    try {\n        // Wait for the side prompt result\n        const sidePromptResult = await waitForSidePromptResult();\n\n        // Update flow context with side prompt result\n        flowContext.sidePromptResult = sidePromptResult;\n        flow.set('flowContext', flowContext);\n\n        console.log(`[executeSidePromptCmd] Received side prompt result:`, sidePromptResult);\n        return sidePromptResult;\n    } catch (error) {\n        console.error(`[executeSidePromptCmd] Error waiting for side prompt result:`, error);\n        return `[Error: ${error.message}]`;\n    } finally {\n        // Reset the processing flag\n        flow.set('waitingForSidePrompt', false);\n    }\n}\n\nfunction waitForSidePromptResult(timeout = 100000) {\n    console.log('[waitForSidePromptResult] Starting to wait for side prompt result');\n    return new Promise((resolve, reject) => {\n        const startTime = Date.now();\n        const checkSidePromptResult = () => {\n            let sidePromptResult = flow.get('sidePromptResult') || {};\n            if (flow.get('waitingForSidePrompt') == false) {\n                console.log('[waitForSidePromptResult] Side prompt result is ready');\n                resolve(sidePromptResult);\n            } else if (Date.now() - startTime > timeout) {\n                console.warn('[waitForSidePromptResult] Timeout reached while waiting for side prompt result');\n                reject(new Error('Timeout waiting for side prompt result'));\n            } else {\n                console.log('[waitForSidePromptResult] Side prompt result not ready, checking again in 1000ms');\n                setTimeout(checkSidePromptResult, 1300);\n            }\n        };\n        checkSidePromptResult();\n    });\n}\n\n\nfunction main() {\n    console.log('[main] Starting main function');\n\n    if (!msg.dynamicCmd) {\n        console.log('[main] Not a dynamic command message, passing through');\n        let outputType = 'normal'; // Default output type\n        return {\n            ...msg,\n            outputType: outputType // Add this line to pass the outputType\n        };\n    }\n\n    const command = msg.command;\n    const triggerDynamicVars = msg.triggerDynamicVars;\n\n    console.log('[main] Received command:', JSON.stringify(command));\n    console.log('[main] triggerDynamicVars:', triggerDynamicVars);\n\n    // Refresh flowContext at the beginning of main\n    let flowContext = flow.get('flowContext') || {};\n\n    if (command && triggerDynamicVars) {\n        console.log('[main] Processing command');\n        let finalResult;\n        let outputType = 'dynamicCmd'; // Default output type\n        console.log('[main] Output type:', outputType);\n\n        try {\n            console.log('[main] Executing command:', JSON.stringify(command));\n            const executedResult = executeCommand(command, flowContext);\n            console.log('[main] Executed result:', executedResult);\n            finalResult = executedResult;\n\n            // Set outputType based on command type\n            if (command.type === 'sidePromptCmd') {\n                outputType = 'sidePrompt';\n            } else if (command.type === 'mainPromptCmd') {\n                outputType = 'normal';\n            }\n            // Add more conditions for other command types if needed\n\n        } catch (error) {\n            console.error('[main] Error executing command:', error);\n            finalResult = `[Error: ${error.message}]`;\n            outputType = 'error';\n        }\n\n        console.log('[main] Final result:', finalResult);\n        console.log('[main] Output type:', outputType);\n\n        flowContext.processedResult = finalResult;\n        flowContext.processedResultReady = true;\n        flow.set('flowContext', flowContext);\n\n        const resultKey = `${command.type}${command.number}Result`;\n        flowContext[resultKey] = finalResult;\n        flow.set('flowContext', flowContext);\n        console.log(`[main] Stored result for ${resultKey} in flowContext`);\n\n        console.log('[main] Returning processed result');\n        return {\n            ...msg,\n            processedResult: {\n                type: 'processedResult',\n                data: finalResult,\n                command: command\n            },\n            outputType: outputType // Add this line to pass the outputType\n        };\n    } else {\n        console.log('[main] Invalid command or trigger, passing through message');\n        return msg;\n    }\n}\n\n// Add this line to log any errors that might occur\ntry {\n    return main();\n} catch (error) {\n    console.error('[commandExecutor] Error in main function:', error);\n    return msg;\n}",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 670,
+        "y": 340,
+        "wires": [
+            [
+                "731b22dc42e1a59e"
+            ]
+        ]
+    },
+    {
+        "id": "731b22dc42e1a59e",
+        "type": "function",
+        "z": "817a5b2b5a30223d",
+        "name": "outputHandler",
+        "func": "// The Output Handler Layer\n\nfunction determineOutputType(msg) {\n    console.log('[determineOutputType] Starting output type determination');\n    console.log(`[determineOutputType] Input message:`, JSON.stringify(msg));\n\n    if (typeof msg !== 'object' || msg === null) {\n        console.warn('[determineOutputType] Invalid message object');\n        return 'normal';\n    }\n\n    if (msg.outputType) {\n        console.log(`[determineOutputType] Output type explicitly set: ${msg.outputType}`);\n        return msg.outputType;\n    }\n\n    if (msg.processedResult && msg.processedResult.type === 'processedResult') {\n        console.log('[determineOutputType] ProcessedResult found');\n        const command = msg.processedResult.command;\n        if (command && command.type === 'sidePromptCmd') {\n            console.log('[determineOutputType] SidePromptCmd detected');\n            return 'sidePrompt';\n        }\n    }\n\n    try {\n        const dynamicCmd = flow.get('dynamicCmd');\n        console.log('[determineOutputType] DynamicCmd:', JSON.stringify(dynamicCmd));\n        if (dynamicCmd && Array.isArray(dynamicCmd.sections) && dynamicCmd.sections.length > 0) {\n            const lastSection = dynamicCmd.sections[dynamicCmd.sections.length - 1];\n            if (Array.isArray(lastSection.commands) && lastSection.commands.length > 0) {\n                const lastCommand = lastSection.commands[lastSection.commands.length - 1];\n                console.log(`[determineOutputType] Last command type: ${lastCommand.type}`);\n                if (lastCommand.type === 'sidePromptCmd') {\n                    return 'sidePrompt';\n                }\n            }\n        }\n    } catch (error) {\n        console.error('[determineOutputType] Error checking dynamic command:', error);\n    }\n\n    if (dynamicCmd === undefined && msg.sidePrompt === true) {\n        console.log('[determineOutputType] dynamicCmd is undefined and msg.sidePrompt is true');\n        return 'sidePrompt';\n    }\n    \n    console.log('[determineOutputType] Defaulting to normal output type');\n    return 'normal';\n}\n\nfunction handleNormalOutput(msg) {\n    console.log('[handleNormalOutput] Handling normal output');\n    console.log('[handleNormalOutput] Returning message:', JSON.stringify(msg));\n    return [msg, null, null];\n}\n\nfunction handleSidePromptOutput(msg) {\n    console.log('[handleSidePromptOutput] Handling side prompt output');\n    console.log('[handleSidePromptOutput] Input message:', JSON.stringify(msg));\n\n    let sidePromptContent;\n    if (msg.processedResult &&\n        msg.processedResult.command &&\n        msg.processedResult.command.type === 'sidePromptCmd' &&\n        Array.isArray(msg.processedResult.command.commands)) {\n        sidePromptContent = msg.processedResult.command.commands;\n    } else if (Array.isArray(msg.payload)) {\n        sidePromptContent = msg.payload;\n    } else {\n        sidePromptContent = [msg.payload];\n    }\n\n    const sidePromptMsg = {\n        ...msg,\n        status: \"start\",\n        sidePrompt: true,\n        payload: sidePromptContent,\n        sidePromptNumber: msg.processedResult.command.number,\n    };\n\n    console.log(`[handleSidePromptOutput] Formatted side prompt message:`, JSON.stringify(sidePromptMsg));\n    return [null, sidePromptMsg, null];\n}\n\nfunction handleErrorOutput(msg) {\n    console.log('[handleErrorOutput] Handling error output');\n    console.log('[handleErrorOutput] Error message:', JSON.stringify(msg));\n    return [null, null, msg];\n}\n\nfunction garbageCollect() {\n    console.log('[garbageCollect] Starting garbage collection');\n    const flowKeys = flow.keys();\n    flowKeys.forEach(key => {\n        flow.set(key, undefined);\n        console.log(`[garbageCollect] Cleared flow variable: ${key}`);\n    });\n    console.log('[garbageCollect] Garbage collection completed');\n}\n\n// Main execution logic\nconsole.log('[Output Handler] Starting main execution logic');\n\nconst parsedExecutionResult = flow.get('parsedExecutionResult');\nif (parsedExecutionResult) {\n    console.log('[Output Handler] parsedExecutionResult found:', JSON.stringify(parsedExecutionResult));\n    msg.payload = parsedExecutionResult;\n}\n\nconst outputType = determineOutputType(msg);\nconsole.log(`[Output Handler] Determined output type: ${outputType}`);\n\nif (msg.dynamicCmd !== false && msg.dynamicCmdComplete === true) {\n    console.log('[Output Handler] Dynamic command completed, triggering garbage collection');\n    garbageCollect();\n}\n\nflow.set('lastOutputType', outputType);\nconsole.log(`[Output Handler] Stored lastOutputType: ${outputType}`);\n\nconsole.log(`[Output Handler] Switching based on output type: ${outputType}`);\nlet result;\nswitch (outputType) {\n    case 'normal':\n        result = handleNormalOutput(msg);\n        break;\n    case 'dynamicCmd':\n        console.log('[Output Handler] Handling dynamicCmd (no action)');\n        result = [null, null, null];\n        break;\n    case 'sidePrompt':\n        result = handleSidePromptOutput(msg);\n        break;\n    case 'error':\n        result = handleErrorOutput(msg);\n        break;\n    default:\n        console.warn(`[Output Handler] Unknown output type: ${outputType}, treating as normal`);\n        result = handleNormalOutput(msg);\n}\n\nconsole.log('[Output Handler] Final result:', JSON.stringify(result));\nreturn result;\n",
+        "outputs": 4,
+        "timeout": "",
+        "noerr": 5,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 660,
+        "y": 420,
+        "wires": [
+            [],
+            [],
+            [],
+            [
+                "986f04886dac8e5e"
+            ]
+        ]
+    },
+    {
+        "id": "38f3c2ac7ac0b02e",
+        "type": "switch",
+        "z": "817a5b2b5a30223d",
+        "name": "Stage Router",
+        "property": "stage",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "stage1",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "stage2",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "stage3",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "complete",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 5,
+        "x": 380,
+        "y": 260,
+        "wires": [
+            [
+                "8b7fda62adc7c26d"
+            ],
+            [
+                "ce9314d0c6a00494"
+            ],
+            [
+                "773c9afecffb264f"
+            ],
+            [
+                "626b45db91593296"
+            ],
+            [
+                "731b22dc42e1a59e"
+            ]
+        ]
+    },
+    {
+        "id": "c5ea16b270ced36c",
+        "type": "link in",
+        "z": "817a5b2b5a30223d",
+        "name": "link in 4",
+        "links": [],
+        "x": 215,
+        "y": 580,
+        "wires": [
+            [
+                "38f3c2ac7ac0b02e"
+            ]
+        ]
+    },
+    {
+        "id": "986f04886dac8e5e",
+        "type": "link out",
+        "z": "817a5b2b5a30223d",
+        "name": "link out 5",
+        "mode": "link",
+        "links": [],
+        "x": 895,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "4a45cc485f644505",
+        "type": "function",
+        "z": "5fa172c20f49443b",
+        "g": "db1664ca19e007e4",
+        "name": "Load Sports Settings",
+        "func": "msg.extractMessage = msg.payload;\nmsg.timestamp = Date.now();",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 900,
+        "y": 260,
+        "wires": [
+            [
+                "fa59f6c4d6ce4b69"
+            ]
+        ]
+    },
+    {
+        "id": "e5dcf619beeb6d82",
+        "type": "http in",
+        "z": "5fa172c20f49443b",
+        "g": "db1664ca19e007e4",
+        "name": "",
+        "url": "/LoadSettings",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 470,
+        "y": 260,
+        "wires": [
+            [
+                "4a45cc485f644505"
+            ]
+        ]
+    },
+    {
+        "id": "8c83108e97fb0cd2",
+        "type": "comment",
+        "z": "5fa172c20f49443b",
+        "g": "b7f2bcc8b657be27",
+        "name": "Outputs one at a time",
+        "info": "",
+        "x": 740,
+        "y": 900,
+        "wires": []
+    },
+    {
+        "id": "3a76cd70a0954887",
+        "type": "inject",
+        "z": "5fa172c20f49443b",
+        "g": "db1664ca19e007e4",
+        "name": "START INJECT",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "START",
+        "payloadType": "str",
+        "x": 480,
+        "y": 320,
+        "wires": [
+            [
+                "4a45cc485f644505",
+                "a0e98eb9e64d9cd6"
+            ]
+        ]
+    },
+    {
+        "id": "ce4d24263c44e46c",
+        "type": "function",
+        "z": "5fa172c20f49443b",
+        "g": "db1664ca19e007e4",
+        "name": "Sports Settings Results",
+        "func": "var SportsSettingsObject = {};\n\nfor (let index = 0; index < msg.result.length; index++) {\n    // Use the sports name as the key\n    let sportsName = msg.result[index].Sports;\n    SportsSettingsObject[sportsName] = msg.result[index];\n}",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1450,
+        "y": 260,
+        "wires": [
+            [
+                "5926f857c39fa7f8"
+            ]
+        ]
+    },
+    {
+        "id": "5926f857c39fa7f8",
+        "type": "debug",
+        "z": "5fa172c20f49443b",
+        "g": "db1664ca19e007e4",
+        "name": "Sports Settings",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1740,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "a0e98eb9e64d9cd6",
+        "type": "function",
+        "z": "5fa172c20f49443b",
+        "g": "db1664ca19e007e4",
+        "name": "Load Stake Settings",
+        "func": "msg.extractMessage = msg.payload;\nmsg.timestamp = Date.now();",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 900,
+        "y": 340,
+        "wires": [
+            [
+                "a9efc5167470cd12"
+            ]
+        ]
+    },
+    {
+        "id": "a9efc5167470cd12",
+        "type": "mongodb4",
+        "z": "5fa172c20f49443b",
+        "g": "db1664ca19e007e4",
+        "clientNode": "e2bc7ac9aa77279e",
+        "mode": "collection",
+        "collection": "stakeSettings",
+        "operation": "find",
+        "output": "toArray",
+        "maxTimeMS": "",
+        "handleDocId": false,
+        "name": "stakeSettings.find.toArray",
+        "x": 1180,
+        "y": 340,
+        "wires": [
+            [
+                "97dedff557300f31"
+            ]
+        ]
+    },
+    {
+        "id": "97dedff557300f31",
+        "type": "function",
+        "z": "5fa172c20f49443b",
+        "g": "db1664ca19e007e4",
+        "name": "Stake Settings Results",
+        "func": "// Set a global context variable using a message\ncontext.global.set('StakeSettings', msg.payload);\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1450,
+        "y": 340,
+        "wires": [
+            [
+                "29ee4f96d6e5d988"
+            ]
+        ]
+    },
+    {
+        "id": "29ee4f96d6e5d988",
+        "type": "debug",
+        "z": "5fa172c20f49443b",
+        "g": "db1664ca19e007e4",
+        "name": "Stake Settings",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1740,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "651a04261d7b2c0e",
+        "type": "function",
+        "z": "5fa172c20f49443b",
+        "g": "b7f2bcc8b657be27",
+        "name": "Transform 2: LineType Sorter",
+        "func": "var incomingMessage = msg;",
+        "outputs": 3,
+        "timeout": "",
+        "noerr": 3,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 600,
+        "y": 840,
+        "wires": [
+            [
+                "6aa833b66249717c",
+                "6eb1d3bdf91d9769"
+            ],
+            [
+                "6de8c17c083cb8f4"
+            ],
+            [
+                "fb9fbb9ae42710bd"
+            ]
+        ],
+        "outputLabels": [
+            "POINTSPREAD",
+            "TOTAL",
+            "MONEYLINE"
+        ]
+    },
+    {
+        "id": "c99ea954399ff73e",
+        "type": "link in",
+        "z": "5fa172c20f49443b",
+        "g": "b7f2bcc8b657be27",
+        "name": "SBCheck Ph2: IN : Transform1 : Split Messages > Line Type Sorter",
+        "links": [
+            "79223214381a0e94"
+        ],
+        "x": 415,
+        "y": 840,
+        "wires": [
+            [
+                "651a04261d7b2c0e"
+            ]
+        ]
+    },
+    {
+        "id": "6aa833b66249717c",
+        "type": "function",
+        "z": "5fa172c20f49443b",
+        "g": "b7f2bcc8b657be27",
+        "name": "Transform 2: Pointspread",
+        "func": "// 3. Check Bet \n    // If Point Spread (By Sports); If Totals (By Sports); If Moneyline \n    // If Line type x (PS & Totals) or (ML) =  then calculate points ; line ; profit ; vig loss\n    // Then calculate line ; vig ; outcomes\n    // Then Profit & Bet Type : Middle ; Vigsplit ; Arb\n    // Then Compare Risk / Profit (LATER)\n\nvar incomingMessageVar = msg;\nvar SportsSettingsVar = context.global.get('SportsSettings');\nvar transform2Message = incomingMessageVar.transform2Message;\nvar main = {};\nvar vigMax = 5;\nvar globalStake = 100;\nvar arbMin = .05;\nvar arbMax = .07;\n\n\nmain.sport = transform2Message['Sport'];",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 6,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1080,
+        "y": 820,
+        "wires": [
+            [
+                "c59ac708faab91cb",
+                "f617a066e7adfd41"
+            ]
+        ]
+    },
+    {
+        "id": "6eb1d3bdf91d9769",
+        "type": "debug",
+        "z": "5fa172c20f49443b",
+        "g": "b7f2bcc8b657be27",
+        "name": "Debug PspreadSorter",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1080,
+        "y": 780,
+        "wires": []
+    },
+    {
+        "id": "6de8c17c083cb8f4",
+        "type": "function",
+        "z": "5fa172c20f49443b",
+        "g": "b7f2bcc8b657be27",
+        "name": "Transform 2: Totals",
+        "func": "// 3. Check Bet \n// If Point Spread (By Sports); If Totals (By Sports); If Moneyline \n// If Line type x (PS & Totals) or (ML) =  then calculate points ; line ; profit ; vig loss\n// Then calculate line ; vig ; outcomes\n// Then Profit & Bet Type : Middle ; Vigsplit ; Arb\n// Then Compare Risk / Profit (LATER)\n\nvar incomingMessageVar = msg;\nvar SportsSettingsVar = context.global.get('SportsSettings');\nvar transform2Message = incomingMessageVar.transform2Message;\nvar main = {};\nvar vigMax = 5;\nvar globalStake = 100;\nvar arbMin = .05;\nvar arbMax = .07;\n\n\nmain.sport = transform2Message['Sport'];",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 6,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1060,
+        "y": 860,
+        "wires": [
+            [
+                "f617a066e7adfd41"
+            ]
+        ]
+    },
+    {
+        "id": "fb9fbb9ae42710bd",
+        "type": "function",
+        "z": "5fa172c20f49443b",
+        "g": "b7f2bcc8b657be27",
+        "name": "Transform 2: Moneyline",
+        "func": "// 3. Check Bet \n// If Point Spread (By Sports); If Totals (By Sports); If Moneyline \n// If Line type x (PS & Totals) or (ML) =  then calculate points ; line ; profit ; vig loss\n// Then calculate line ; vig ; outcomes\n// Then Profit & Bet Type : Middle ; Vigsplit ; Arb\n// Then Compare Risk / Profit (LATER)\n\nvar incomingMessageVar = msg;\nvar SportsSettingsVar = context.global.get('SportsSettings');\nvar transform2Message = incomingMessageVar.transform2Message;\nvar main = {};\nvar vigMax = 5;\nvar globalStake = 100;\nvar arbMin = .05;\nvar arbMax = .07;\n\n\nmain.sport = transform2Message['Sport'];",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 6,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1080,
+        "y": 900,
+        "wires": [
+            [
+                "f617a066e7adfd41"
+            ]
+        ]
+    },
+    {
+        "id": "c59ac708faab91cb",
+        "type": "debug",
+        "z": "5fa172c20f49443b",
+        "g": "b7f2bcc8b657be27",
+        "name": "Debug PSpread",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1380,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "f617a066e7adfd41",
+        "type": "function",
+        "z": "5fa172c20f49443b",
+        "g": "b7f2bcc8b657be27",
+        "name": "Transform 2: Comparative Bets",
+        "func": "var incomingMessage = msg;\nvar msgIDVar = msg._msgid;\nvar resultCounter = incomingMessage.transform1Message.resultsArray.length;\nvar main = {};\nvar tenPercentStake = 10;\nvar vigMax = 5;\nvar arbPercentageRangeMin = 4;\nvar vigSplitRangeMin = 15;\nvar moneylineRangeMin = 21;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1440,
+        "y": 880,
+        "wires": [
+            [
+                "6c93cf3ab8ccd07f",
+                "273cefe442d4e299"
+            ]
+        ]
+    },
+    {
+        "id": "3849cc7df492b362",
+        "type": "function",
+        "z": "5fa172c20f49443b",
+        "g": "dd2f628224cbb4c3",
+        "name": "Transform1 : Comparative Query Results",
+        "func": "var msgIDVar = msg._msgid;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1260,
+        "y": 600,
+        "wires": [
+            [
+                "1fe4967103d1edc8",
+                "3f833d99e1e7b34b"
+            ]
+        ]
+    },
+    {
+        "id": "a16a17c27bd71bd6",
+        "type": "mongodb4",
+        "z": "5fa172c20f49443b",
+        "g": "dd2f628224cbb4c3",
+        "clientNode": "e2bc7ac9aa77279e",
+        "mode": "collection",
+        "collection": "sortedBets",
+        "operation": "aggregate",
+        "output": "toArray",
+        "maxTimeMS": "",
+        "handleDocId": false,
+        "name": "sortedBets.aggregate.toArray",
+        "x": 920,
+        "y": 660,
+        "wires": [
+            [
+                "3849cc7df492b362",
+                "5bd19c03c084c56e"
+            ]
+        ]
+    },
+    {
+        "id": "16001f67efa309e1",
+        "type": "mongodb4",
+        "z": "5fa172c20f49443b",
+        "g": "dd2f628224cbb4c3",
+        "clientNode": "e2bc7ac9aa77279e",
+        "mode": "collection",
+        "collection": "inProgressBets",
+        "operation": "aggregate",
+        "output": "toArray",
+        "maxTimeMS": "",
+        "handleDocId": false,
+        "name": "inProgressBets.aggregate.toArray",
+        "x": 940,
+        "y": 600,
+        "wires": [
+            [
+                "3849cc7df492b362"
+            ]
+        ]
+    },
+    {
+        "id": "81f5f6ed3582f4a7",
+        "type": "mongodb4",
+        "z": "5fa172c20f49443b",
+        "g": "dd2f628224cbb4c3",
+        "clientNode": "e2bc7ac9aa77279e",
+        "mode": "collection",
+        "collection": "completedTransactions",
+        "operation": "aggregate",
+        "output": "toArray",
+        "maxTimeMS": "",
+        "handleDocId": false,
+        "name": "completedTransactions.aggregate.toArray",
+        "x": 960,
+        "y": 560,
+        "wires": [
+            [
+                "3849cc7df492b362"
+            ]
+        ]
+    },
+    {
+        "id": "1fe4967103d1edc8",
+        "type": "debug",
+        "z": "5fa172c20f49443b",
+        "g": "dd2f628224cbb4c3",
+        "name": "results",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1450,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "3f833d99e1e7b34b",
+        "type": "function",
+        "z": "5fa172c20f49443b",
+        "g": "dd2f628224cbb4c3",
+        "name": "Spit Messages",
+        "func": "// Extract the input array\nvar incomingMessage = msg;\nvar newMsg = msg;\n\n    // MAKE ARRAY\n    var resultsArray = [];\n\n    // Define the properties to check\n    var resultsToGet = [\n        'SortedBets',\n        'InProgressBets',\n        'CompletedTransactions',\n    ];\n\n    // Iterate over the properties and push non-empty values to the array\n    resultsToGet.forEach(property => {\n        // Check if the property exists and is not undefined, and if it is an array\n        if (msg.combinedResults[property] && Array.isArray(msg.combinedResults[property].result)) {\n            // Iterate over the elements of the array and push them to the resultsArray\n            msg.combinedResults[property].result.forEach(entry => {\n                resultsArray.push(entry);\n            });\n        }\n    });\n    \n    // Push the original message\n    resultsArray.push(msg.extractMessage.item);\n\n    // Apply to the newMsg\n    newMsg.resultsArray = resultsArray;\n\n    // Send Message\n    node.send(newMsg);",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1540,
+        "y": 600,
+        "wires": [
+            [
+                "79223214381a0e94",
+                "6a4c7c8a5d485e67"
+            ]
+        ]
+    },
+    {
+        "id": "7e905be2ddbf209f",
+        "type": "function",
+        "z": "5fa172c20f49443b",
+        "g": "dd2f628224cbb4c3",
+        "name": "set payload",
+        "func": "let item = msg.extractMessage.item;\n\nconst oneWeekAgo = new Date(Date.now() - 12 * 7 * 24 * 60 * 60 * 1000); // 12 weeks ago\n\nconst GeneralBetsPipeline = [\n    {\n        $match: {\n            TimeStamp: {\n                $gte: oneWeekAgo,\n                $lt: new Date(),\n            },\n            $and: [\n                // Condition 1: Check if Item.GameNumber is the same\n                { GameNumber: { $eq: item.GameNumber } },\n                // Condition 1a: Check if Item.GameNumber is the same\n                { Sport: { $eq: item.Sport } },\n                // Condition 1b: Check if Item.GameNumber is the same\n                { League: { $eq: item.League } },\n                // Condition 2: Check if Item.Bet1.Book1 is different\n                { \"Bet1.Book1\": { $ne: item.Book1 } },\n                // Condition 3: Check if Item.Bet2.Book2 is different\n                { \"Bet2.Book2\": { $ne: item.Book2 } },\n                // Condition 4: Check Team 1\n                { \"Bet1.Team1\": { $ne: item.Team1 } },\n                // Condition 5: Check Team 2\n                { \"Bet2.Team2\": { $ne: item.Team2 } },\n                // Condition 6: Check if Bet1.BookNameAccountNameAssigned1 is different\n                { \"Bet1.BookNameAccountNameAssigned1\": { $ne: item.BookNameAccountName1 } },\n                // Condition 7: Check if Bet1.BookNameAccountNameAssigned2 is different\n                { \"Bet2.BookNameAccountNameAssigned2\": { $ne: item.BookNameAccountName2 } },\n                \n                // Condition 8: Check if Item.PointsDifference is equal or higher\n\n                // { PointsDifference: { $gt: item.PointsDifference } },\n                // Condition 5: Check if item.RoughSum is higher\n                // { PotentialProfit: { $gt: item.RoughSum } },\n            ],\n        },\n    },\n    {\n        $sort: {\n            GameNumber: -1,\n            LineType: -1,\n            Team1: -1,\n            Line1PriceAmML: -1,\n            Line1PointsAmFloat: -1,\n            TimeStamp: -1,\n        },\n    },\n    {\n        $limit: 1000,\n    },\n];\n\nmsg.payload = [GeneralBetsPipeline];\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 690,
+        "y": 600,
+        "wires": [
+            [
+                "a16a17c27bd71bd6",
+                "16001f67efa309e1",
+                "81f5f6ed3582f4a7"
+            ]
+        ]
+    },
+    {
+        "id": "5bd19c03c084c56e",
+        "type": "debug",
+        "z": "5fa172c20f49443b",
+        "g": "dd2f628224cbb4c3",
+        "name": "output query",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1210,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "6a4c7c8a5d485e67",
+        "type": "debug",
+        "z": "5fa172c20f49443b",
+        "g": "dd2f628224cbb4c3",
+        "name": "Split Message",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1700,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "79223214381a0e94",
+        "type": "link out",
+        "z": "5fa172c20f49443b",
+        "g": "dd2f628224cbb4c3",
+        "name": "SBCheck Ph1 : OUT : Transform1 : Split Messages > Line Type Sorter",
+        "mode": "link",
+        "links": [
+            "c99ea954399ff73e"
+        ],
+        "x": 1645,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "c4b93446aa230ff6",
+        "type": "function",
+        "z": "5fa172c20f49443b",
+        "g": "dd2f628224cbb4c3",
+        "name": "EXTRACT : Receive POST",
+        "func": "// PRIOR TO SET FIELDS - COMING FROM RAWDBS\nlet incomingMessage = msg;\n\nmsg.extractMessage = {\n    announce: 'Received POST request at:',\n    timestamp: msg.timestamp,\n    originalMessage: msg.payload,\n};\n\nmsg.scraped_bet = {\n    scraped_line: incomingMessage.payload.scrapeResults.scraped_line,\n    scraped_points: incomingMessage.payload.scrapeResults.scraped_points,\n    scraped_odds: incomingMessage.payload.scrapeResults.scraped_odds,\n    scraped_lineType: incomingMessage.payload.scrapeResults.scraped_linetype, // Note the lowercase 't' in 'linetype'\n    scraped_game_number: incomingMessage.payload.scrapeResults.scraped_game_number,\n    scraped_team: incomingMessage.payload.scrapeResults.scraped_team,\n    scraped_sport: incomingMessage.payload.scrapeResults.scraped_sport,\n    scraped_timestamp: incomingMessage.payload.scrapeResults.scraped_timestamp\n};\n\nmsg.fullMessage = incomingMessage.payload.fullBet;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 520,
+        "y": 600,
+        "wires": [
+            [
+                "7e905be2ddbf209f"
+            ]
+        ]
+    },
+    {
+        "id": "4ca12deadd3be409",
+        "type": "http in",
+        "z": "5fa172c20f49443b",
+        "g": "dd2f628224cbb4c3",
+        "name": "",
+        "url": "/SortedBetsCheckConditions",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 540,
+        "y": 540,
+        "wires": [
+            [
+                "c4b93446aa230ff6"
+            ]
+        ]
+    },
+    {
+        "id": "273cefe442d4e299",
+        "type": "debug",
+        "z": "5fa172c20f49443b",
+        "g": "b7f2bcc8b657be27",
+        "name": "Debug COMPARE",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1710,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "118cd677cd25eb05",
+        "type": "function",
+        "z": "5fa172c20f49443b",
+        "g": "803b92c8ed55dc13",
+        "name": "Load: Pack to HTTP",
+        "func": "var incomingMessage = msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1420,
+        "y": 1060,
+        "wires": [
+            [
+                "75d6aaab0021d346",
+                "3bdb39087ef4d457"
+            ]
+        ]
+    },
+    {
+        "id": "75d6aaab0021d346",
+        "type": "debug",
+        "z": "5fa172c20f49443b",
+        "g": "803b92c8ed55dc13",
+        "name": "Debug RESPONSE",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1700,
+        "y": 1000,
+        "wires": []
+    },
+    {
+        "id": "3bdb39087ef4d457",
+        "type": "http response",
+        "z": "5fa172c20f49443b",
+        "g": "803b92c8ed55dc13",
+        "name": "HTTP RESP 2",
+        "statusCode": "",
+        "headers": {},
+        "x": 1720,
+        "y": 1060,
+        "wires": []
+    },
+    {
+        "id": "6c93cf3ab8ccd07f",
+        "type": "link out",
+        "z": "5fa172c20f49443b",
+        "g": "b7f2bcc8b657be27",
+        "name": "SBCheck Ph2: OUT :  > Load: Pack to HTTP",
+        "mode": "link",
+        "links": [
+            "62e4b98de6625a13"
+        ],
+        "x": 1785,
+        "y": 880,
+        "wires": []
+    },
+    {
+        "id": "62e4b98de6625a13",
+        "type": "link in",
+        "z": "5fa172c20f49443b",
+        "g": "803b92c8ed55dc13",
+        "name": "SBCheck Ph3 : IN : Compare > Load: Pack to HTTP",
+        "links": [
+            "6c93cf3ab8ccd07f"
+        ],
+        "x": 415,
+        "y": 1060,
+        "wires": [
+            [
+                "118cd677cd25eb05"
+            ]
+        ]
+    },
+    {
+        "id": "7f099d933bceb328",
+        "type": "comment",
+        "z": "5fa172c20f49443b",
+        "g": "b93dd9f1ed02b46a",
+        "name": "SortedBetsCheck : Full Pseudocode",
+        "info": "// 3. Check Bet POINTS & PROFIT 3 different ways: Middle, VigSplit, Arb\n    // Point Spread ; If Totals; If Moneyline\n    // If Line type x (PS & Totals) =  then calculate points ; line ; profit ; vig loss\n    // If Line type y (ML) = calculate line ; profit ; vig loss\n    //--- (DUPLICATE AND DO IT TWICE TO BOTH PASSED AND COMPARE)\n    // filter by Sports\n    // if sports ; check the min and max, get the gap percentage\n    // line ; how much gap.\n\n//--------\n// Make a function also to calculate if it's a high Vigsplit.\n// Middle / Vigsplit / Arb / Moneyline\n\n// 4. Filter 5% or more / Filter 0 risk profit\n    // cut out vig loss > 5%\n    // Filter out 0 risk > Profit #\n\n//--------\n// 5. Check if x or y higher\n// 6. only push if higher 5% threshhold than highest bets in 2 categories.\n\n//================================\n// Later : Do a line scanner.\n// 10. QUERY MONGO, Slap a credit stop loss limit for accounts \n// 11. COME OUT WITH 1 or 2 bets arrays - use same books, different accounts(middle & vigsplit)\n\nmsg.payload = SportsSettingsVar;\nreturn msg;",
+        "x": 530,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "fa59f6c4d6ce4b69",
+        "type": "mongodb4",
+        "z": "5fa172c20f49443b",
+        "g": "db1664ca19e007e4",
+        "clientNode": "e2bc7ac9aa77279e",
+        "mode": "collection",
+        "collection": "sportsSettings",
+        "operation": "find",
+        "output": "toArray",
+        "maxTimeMS": "0",
+        "handleDocId": false,
+        "name": "sportsSettings.find.toArray",
+        "x": 1180,
+        "y": 260,
+        "wires": [
+            [
+                "ce4d24263c44e46c"
+            ]
+        ]
+    },
+    {
+        "id": "272b6d76a23994ba",
+        "type": "function",
+        "z": "a073baad498bb284",
+        "g": "9e02f8f5e79de5a0",
+        "name": "EXTRACT : Receive POST",
+        "func": "// PRIOR TO SET FIELDS - COMING FROM RAWDBS\nlet incomingMessage = msg;\n\nmsg.extractMessage = {\n    announce: 'Received POST request at:',\n    timestamp: msg.timestamp,\n    originalMessage: msg.payload,\n};\n\n// Create proper structure for EXTRACT 2 function\nmsg.scrapeResults = incomingMessage.payload.scrapeResults;\nmsg.fullBet = incomingMessage.payload.fullBet;\n\n// Legacy fields for backward compatibility\nmsg.scraped_bet = {\n    scraped_line: incomingMessage.payload.scrapeResults.scraped_line1PointsAmFloat,\n    scraped_points: incomingMessage.payload.scrapeResults.scraped_line1PointsAmFloat,\n    scraped_odds: incomingMessage.payload.scrapeResults.scraped_line1PriceAm,\n    scraped_lineType: incomingMessage.payload.scrapeResults.scraped_linetype,\n    scraped_game_number: incomingMessage.payload.scrapeResults.scraped_game_number,\n    scraped_team: incomingMessage.payload.scrapeResults.scraped_team1,\n    scraped_sport: incomingMessage.payload.scrapeResults.scraped_sport,\n    scraped_timestamp: incomingMessage.payload.scrapeResults.scraped_timestamp\n};\n\nmsg.fullMessage = incomingMessage.payload.fullBet;\n\n//1. Timestamp ----------------\n\n// GENERATE A TIMESTAMP (SPECIFIC TO PIPELINE)\n// Generate a timestamp for every incoming message\n\n\n// Retrieve the last stored message's timestamp\nvar lastTimestamp = flow.get(\"BetInputCheck_lastTimestamp\") || 0;\n\n// Check if the incoming message is newer\nif (msg.timestamp > lastTimestamp) {\n    // Update the context with the new message payload and timestamp\n    flow.set(\"BetInputCheck_rememberedPayload\", msg.payload);\n    flow.set(\"BetInputCheck_lastTimestamp\", msg.timestamp);\n} else {\n    // Ignore the message, as it's older than what we have stored\n}\n\n//2. QUEUE ----------------\n\n// Retrieve the existing queue or initialize a new one\nvar messageQueue = flow.get(\"BetInputCheck_messageQueue\") || [];\n\n// Add the incoming message to the queue\nmessageQueue.push({ payload: msg.payload});\n\n// Update the queue in the context\nflow.set(\"BetInputCheck_messageQueue\", messageQueue);\n\n// Time limit in milliseconds (10 minutes)\nconst timeLimit = 10 * 60 * 1000; // 10 minutes * 60 seconds * 1000 milliseconds\n\n// Filter the queue to keep only messages from the last 10 minutes\nmessageQueue = messageQueue.filter(item => Date.now() - item.payload.timestamp <= timeLimit);\n\n// Save the updated queue back to the node context\nflow.set('BetInputCheck_messageQueue', messageQueue);\n\ndelete msg.payload;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 740,
+        "y": 360,
+        "wires": [
+            [
+                "f4d0bfed3d6727e6",
+                "5f817b78b5dfe714"
+            ]
+        ]
+    },
+    {
+        "id": "3b7490b20fbb7087",
+        "type": "debug",
+        "z": "a073baad498bb284",
+        "g": "9e02f8f5e79de5a0",
+        "name": "output response",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 710,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "bd4fd4d1e09d770b",
+        "type": "http response",
+        "z": "a073baad498bb284",
+        "g": "9e02f8f5e79de5a0",
+        "name": "HTTP RESP 0",
+        "statusCode": "",
+        "headers": {},
+        "x": 1440,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "74c06399d74963b0",
+        "type": "link out",
+        "z": "a073baad498bb284",
+        "g": "9e02f8f5e79de5a0",
+        "name": " BetInputCheck Ph1 : OUT : Transform1 : Split Messages > Line Type Sorter",
+        "mode": "link",
+        "links": [
+            "6d7830c85b50c511"
+        ],
+        "x": 1445,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "f4d0bfed3d6727e6",
+        "type": "debug",
+        "z": "a073baad498bb284",
+        "g": "9e02f8f5e79de5a0",
+        "name": "Debug POST",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1080,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "5f817b78b5dfe714",
+        "type": "function",
+        "z": "a073baad498bb284",
+        "g": "9e02f8f5e79de5a0",
+        "name": "EXTRACT 2: Wait for 2 Bets",
+        "func": "var incomingMessage = msg;\n\n// Validate incoming message structure\nif (!incomingMessage || !incomingMessage.scrapeResults || !incomingMessage.fullBet) {\n    node.error(\"Invalid message structure received - missing scrapeResults or fullBet\");\n    return null;\n}\n\n// Validate scraped data structure\nif (!incomingMessage.scrapeResults.scraped_team1 || !incomingMessage.scrapeResults.scraped_team2) {\n    node.error(\"Invalid scraped data structure - missing team1 or team2\");\n    return null;\n}\n\n// Create enhanced message with both scraped and original data\nvar enhancedMessage = {\n    ...incomingMessage,\n    \n    // Add processing indicators\n    isSingleBet: true,\n    processedAt: Date.now(),\n    version: \"2.0.0\",\n    \n    // Preserve original fullBet data completely\n    fullBet: {\n        ...incomingMessage.fullBet\n    },\n    \n    // Preserve original scrapeResults data completely\n    scrapeResults: {\n        ...incomingMessage.scrapeResults\n    },\n    \n    // Add enhanced data structure for calculators\n    enhancedData: {\n        // Team 1 enhanced data\n        team1: {\n            original: {\n                team: incomingMessage.fullBet.bet1.team1,\n                book: incomingMessage.fullBet.bet1.book1,\n                line: incomingMessage.fullBet.bet1.line1PointsAmFloat,\n                price: incomingMessage.fullBet.bet1.line1PriceAm\n            },\n            scraped: {\n                team: incomingMessage.scrapeResults.scraped_team1,\n                book: incomingMessage.scrapeResults.scraped_book1,\n                line: incomingMessage.scrapeResults.scraped_line1PointsAmFloat,\n                price: incomingMessage.scrapeResults.scraped_line1PriceAm\n            }\n        },\n        \n        // Team 2 enhanced data\n        team2: {\n            original: {\n                team: incomingMessage.fullBet.bet2.team2,\n                book: incomingMessage.fullBet.bet2.book2,\n                line: incomingMessage.fullBet.bet2.line2PointsAmFloat,\n                price: incomingMessage.fullBet.bet2.line2PriceAm\n            },\n            scraped: {\n                team: incomingMessage.scrapeResults.scraped_team2,\n                book: incomingMessage.scrapeResults.scraped_book2,\n                line: incomingMessage.scrapeResults.scraped_line2PointsAmFloat,\n                price: incomingMessage.scrapeResults.scraped_line2PriceAm\n            }\n        },\n        \n        // Game information\n        game: {\n            sport: incomingMessage.scrapeResults.scraped_sport,\n            league: incomingMessage.scrapeResults.scraped_league,\n            gameNumber: incomingMessage.scrapeResults.scraped_game_number,\n            lineType: incomingMessage.scrapeResults.scraped_linetype\n        }\n    }\n};\n\n// Log the enhanced processing\nnode.log(`Enhanced single bet processing: ${incomingMessage.scrapeResults.scraped_team1} vs ${incomingMessage.scrapeResults.scraped_team2}`);\nnode.log(`Scraped lines: ${incomingMessage.scrapeResults.scraped_line1PointsAmFloat} / ${incomingMessage.scrapeResults.scraped_line2PointsAmFloat}`);\nnode.log(`Scraped prices: ${incomingMessage.scrapeResults.scraped_line1PriceAm} / ${incomingMessage.scrapeResults.scraped_line2PriceAm}`);\n\n// Send enhanced message immediately (no buffering, no waiting)\nnode.send(enhancedMessage);",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1130,
+        "y": 360,
+        "wires": [
+            [
+                "74c06399d74963b0",
+                "fb5587b589c5cd32"
+            ]
+        ]
+    },
+    {
+        "id": "fb5587b589c5cd32",
+        "type": "debug",
+        "z": "a073baad498bb284",
+        "g": "9e02f8f5e79de5a0",
+        "name": "Debug 2 Bets",
+        "active": true,
+        "tosidebar": true,
+        "console": true,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1430,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "24c74fc74752908c",
+        "type": "websocket in",
+        "z": "a073baad498bb284",
+        "g": "9e02f8f5e79de5a0",
+        "name": "/ws/BetInputCheck",
+        "server": "df8a615d6d2cd2e7",
+        "client": "",
+        "x": 240,
+        "y": 300,
+        "wires": [
+            [
+                "054adb80f90a06e5"
+            ]
+        ]
+    },
+    {
+        "id": "054adb80f90a06e5",
+        "type": "json",
+        "z": "a073baad498bb284",
+        "g": "9e02f8f5e79de5a0",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 480,
+        "y": 320,
+        "wires": [
+            [
+                "3b7490b20fbb7087",
+                "272b6d76a23994ba"
+            ]
+        ]
+    },
+    {
+        "id": "9d42e07bd472374f",
+        "type": "comment",
+        "z": "a073baad498bb284",
+        "g": "bf94ecd062e4e70d",
+        "name": "Outputs one at a time",
+        "info": "",
+        "x": 480,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "aab5da598ff97b79",
+        "type": "function",
+        "z": "a073baad498bb284",
+        "g": "bf94ecd062e4e70d",
+        "name": "Transform 1: LineType Sorter",
+        "func": "var incomingMessage = msg;\n\n//--------------------------------------\n// OUTPUT TO LINE TYPE CALCULATORS\n// Define output names and their corresponding indexes\nconst outputMapping = {\n    \"POINTSPREAD\": 0,\n    \"TOTAL\": 1,\n    \"MONEYLINE\": 2\n};\n\n// Get the line type from enhanced data\nvar lineType = incomingMessage.enhancedData.game.lineType;\n\n// Determine output index based on line type\nlet outputIndex;\nif (lineType === 'POINTSPREAD') {\n    outputIndex = 0;\n} else if (lineType === 'TOTAL') {\n    outputIndex = 1;\n} else if (lineType === 'MONEYLINE') {\n    outputIndex = 2;\n} else {\n    node.error('Unknown line type: ' + lineType);\n    return;\n}\n\n// Create array to store messages for each output\nconst outputs = Array(Object.keys(outputMapping).length).fill(null);\n\n// Create enhanced message for the calculator functions\nvar outputMessage = {\n    req: incomingMessage.req,\n    res: incomingMessage.res,\n    enhancedData: incomingMessage.enhancedData,\n    fullBet: incomingMessage.fullBet,\n    scrapeResults: incomingMessage.scrapeResults,\n    extractMessage: incomingMessage.extractMessage,\n    fullMessage: incomingMessage.fullMessage,\n    isSingleBet: incomingMessage.isSingleBet,\n    processedAt: incomingMessage.processedAt,\n    version: incomingMessage.version\n};\n\n// Assign the message to the appropriate output\noutputs[outputIndex] = outputMessage;\n\n// Send the messages - only the targeted output will have a non-null message\nnode.send(outputs);\n\n// Log the routing decision\nnode.log(`Line Type Sorter: Routing ${lineType} bet to output ${outputIndex}`);"",
+        "outputs": 3,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 410,
+        "y": 660,
+        "wires": [
+            [
+                "b4dca9fd7958c13f",
+                "12551b69148dc875"
+            ],
+            [
+                "18ee888a0e0c3587"
+            ],
+            [
+                "740d874372634aa9"
+            ]
+        ],
+        "outputLabels": [
+            "POINTSPREAD",
+            "TOTAL",
+            "MONEYLINE"
+        ]
+    },
+    {
+        "id": "6d7830c85b50c511",
+        "type": "link in",
+        "z": "a073baad498bb284",
+        "g": "bf94ecd062e4e70d",
+        "name": " BetInputCheck Ph2: IN : Transform1 : Split Messages > Line Type Sorter",
+        "links": [
+            "74c06399d74963b0"
+        ],
+        "x": 155,
+        "y": 660,
+        "wires": [
+            [
+                "aab5da598ff97b79"
+            ]
+        ]
+    },
+    {
+        "id": "b4dca9fd7958c13f",
+        "type": "function",
+        "z": "a073baad498bb284",
+        "g": "bf94ecd062e4e70d",
+        "name": "Transform 1: Pointspread",
+        "func": "// Transform 1: Pointspread Calculator (v2.0.0)\n// Process enhanced single bet with both scraped and original data\n\nvar incomingMessageVar = msg;\nvar SportsSettingsVar = context.global.get('SportsSettings');\nif (!SportsSettingsVar) {\n    node.error('SportsSettings not found in global context');\n    return;\n}\n\n// Get enhanced data structure\nvar enhancedData = incomingMessageVar.enhancedData;\nvar fullBet = incomingMessageVar.fullBet;\nvar scrapeResults = incomingMessageVar.scrapeResults;\n\nvar main = {};\nvar vigMax = 5;\nvar globalStake = 100;\nvar arbMin = .05;\nvar arbMax = .07;\n\n// Extract sport from enhanced data\nmain.sport = enhancedData.game.sport;\n\n// Log the processing\nnode.log(`Pointspread Calculator: Processing ${enhancedData.team1.scraped.team} vs ${enhancedData.team2.scraped.team}`);\n\n// Process both teams' scraped data simultaneously\nmain.line = {};\nmain.line[1] = {\n    lineValue: parseFloat(enhancedData.team1.scraped.line),\n    price: parseFloat(enhancedData.team1.scraped.price)\n};\nmain.line[2] = {\n    lineValue: parseFloat(enhancedData.team2.scraped.line),\n    price: parseFloat(enhancedData.team2.scraped.price)\n};\n\n// Calculate points difference using scraped data\nvar pointsDifference = Math.abs(main.line[1].lineValue - main.line[2].lineValue);\n\n// Use original fullBet data for additional calculations\nvar originalRisk = fullBet.bet1.risk + fullBet.bet2.risk;\nvar originalTakeback = fullBet.bet1.takeback + fullBet.bet2.takeback;\n\n// Create enhanced message for next stage\nvar enhancedMessage = {\n    ...incomingMessageVar,\n    transform1Message: {\n        sport: main.sport,\n        lineType: 'POINTSPREAD',\n        pointsDifference: pointsDifference,\n        line1: main.line[1],\n        line2: main.line[2],\n        originalRisk: originalRisk,\n        originalTakeback: originalTakeback,\n        processedAt: Date.now(),\n        version: '2.0.0'\n    }\n};\n\nnode.send(enhancedMessage);",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 7,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 810,
+        "y": 640,
+        "wires": [
+            [
+                "b753d113f1e07d62",
+                "aa6c72150d31fb90"
+            ]
+        ]
+    },
+    {
+        "id": "12551b69148dc875",
+        "type": "debug",
+        "z": "a073baad498bb284",
+        "g": "bf94ecd062e4e70d",
+        "name": "Debug PspreadSorter",
+        "active": true,
+        "tosidebar": true,
+        "console": true,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 820,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "18ee888a0e0c3587",
+        "type": "function",
+        "z": "a073baad498bb284",
+        "g": "bf94ecd062e4e70d",
+        "name": "Transform 1: Totals",
+        "func": "// 3. Check Bet \n// If Point Spread (By Sports); If Totals (By Sports); If Moneyline \n// If Line type x (PS & Totals) or (ML) =  then calculate points ; line ; profit ; vig loss\n// Then calculate line ; vig ; outcomes\n// Then Profit & Bet Type : Middle ; Vigsplit ; Arb\n// Then Compare Risk / Profit (LATER)\n\nvar incomingMessageVar = msg;\nvar SportsSettingsVar = context.global.get('SportsSettings');\nvar transform1Message = incomingMessageVar.transform1Message;\nvar main = {};\nvar vigMax = 5;\nvar globalStake = 100;\nvar arbMin = .05;\nvar arbMax = .07;\n\n\nmain.sport = transform1Message['Sport'];",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 7,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 800,
+        "y": 680,
+        "wires": [
+            [
+                "aa6c72150d31fb90"
+            ]
+        ]
+    },
+    {
+        "id": "740d874372634aa9",
+        "type": "function",
+        "z": "a073baad498bb284",
+        "g": "bf94ecd062e4e70d",
+        "name": "Transform 1: Moneyline",
+        "func": "// 3. Check Bet \n// If Point Spread (By Sports); If Totals (By Sports); If Moneyline \n// If Line type x (PS & Totals) or (ML) =  then calculate points ; line ; profit ; vig loss\n// Then calculate line ; vig ; outcomes\n// Then Profit & Bet Type : Middle ; Vigsplit ; Arb\n// Then Compare Risk / Profit (LATER)\n\nvar incomingMessageVar = msg;\nvar SportsSettingsVar = context.global.get('SportsSettings');\nvar transform1Message = incomingMessageVar.transform1Message;\nvar main = {};\nvar vigMax = 5;\nvar globalStake = 100;\nvar arbMin = .05;\nvar arbMax = .07;\n\n\nmain.sport = transform1Message['Sport'];",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 7,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 810,
+        "y": 720,
+        "wires": [
+            [
+                "aa6c72150d31fb90"
+            ]
+        ]
+    },
+    {
+        "id": "b753d113f1e07d62",
+        "type": "debug",
+        "z": "a073baad498bb284",
+        "g": "bf94ecd062e4e70d",
+        "name": "Debug PSpread",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1120,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "aa6c72150d31fb90",
+        "type": "function",
+        "z": "a073baad498bb284",
+        "g": "bf94ecd062e4e70d",
+        "name": "Transform 1: Comparative Bets",
+        "func": "var incomingMessage = msg;\nvar betIDVar = msg._msgid;\nvar resultCounter = 1\nvar main = {};\nvar tenPercentStake = 10;\nvar vigMax = 5;\nvar arbPercentageRangeMin = 4;\nvar vigSplitRangeMin = 15;\nvar moneylineRangeMin = 21;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 15,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1170,
+        "y": 700,
+        "wires": [
+            [
+                "7f404f5ee3444148",
+                "148caedec77ae2dc"
+            ]
+        ]
+    },
+    {
+        "id": "148caedec77ae2dc",
+        "type": "debug",
+        "z": "a073baad498bb284",
+        "g": "bf94ecd062e4e70d",
+        "name": "Debug COMPARE",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1440,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "7f404f5ee3444148",
+        "type": "link out",
+        "z": "a073baad498bb284",
+        "g": "bf94ecd062e4e70d",
+        "name": " BetInputCheck Ph2 : OUT : Compare > Load: Pack to HTTP",
+        "mode": "link",
+        "links": [
+            "2e4fb60325f287ea"
+        ],
+        "x": 1525,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "844825e531e70a8c",
+        "type": "function",
+        "z": "a073baad498bb284",
+        "g": "907bb0adef74d85a",
+        "name": "Load: Pack to HTTP",
+        "func": "\nvar incomingMessage = msg;\n\n\n//===================================\nmsg.statusCode = 200; // Set HTTP status code to 200 OK\nmsg.headers = {\n    \"Content-Type\": \"application/json\" // Set Content-Type header to text/plain\n};\n// Skip the Sort\nmsg.payload = {\n    extractMessage: incomingMessage.extractMessage,\n    finalMessage: incomingMessage.transform2Message,\n    transform1Message: incomingMessage.transform1Message,\n    _msgid: incomingMessage._msgid,\n};\n//delete msg.req;\n//delete msg.res;\n//msg.req = incomingMessage.transform1Message.scraped_bet_2.req;\n//msg.res = incomingMessage.transform1Message.scraped_bet_2.res;\n\nvar req2 = incomingMessage.transform1Message.scraped_bet_1.req;\nvar res2 = incomingMessage.transform1Message.scraped_bet_1.res; \n\ndelete msg.transform1Message.req;\ndelete msg.transform1Message.res;\ndelete msg.transform1Message.scraped_bet_1.req;\ndelete msg.transform1Message.scraped_bet_1.res;\ndelete msg.transform1Message.scraped_bet_2.req;\ndelete msg.transform1Message.scraped_bet_2.res;\n\n//========================\n// EXECUTION FUNCTIONS\n\nnode.send(msg);\n\n//msg.req = req2;\n//msg.res = res2;\n\n//node.send(msg);\nreturn null\n\n//\n\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1140,
+        "y": 880,
+        "wires": [
+            [
+                "8e05a6c56f99c187",
+                "37c361494a477963"
+            ]
+        ]
+    },
+    {
+        "id": "8e05a6c56f99c187",
+        "type": "debug",
+        "z": "a073baad498bb284",
+        "g": "907bb0adef74d85a",
+        "name": "Debug RESPONSE",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1460,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "2e4fb60325f287ea",
+        "type": "link in",
+        "z": "a073baad498bb284",
+        "g": "907bb0adef74d85a",
+        "name": "BetInputCheck Ph3: IN : Compare > Load: Pack to HTTP",
+        "links": [
+            "7f404f5ee3444148"
+        ],
+        "x": 155,
+        "y": 880,
+        "wires": [
+            [
+                "844825e531e70a8c"
+            ]
+        ]
+    },
+    {
+        "id": "37c361494a477963",
+        "type": "websocket out",
+        "z": "a073baad498bb284",
+        "g": "907bb0adef74d85a",
+        "name": "ws/BetInputCheck",
+        "server": "df8a615d6d2cd2e7",
+        "client": "",
+        "x": 1460,
+        "y": 880,
+        "wires": []
+    },
+    {
+        "id": "3172a5061aab2782",
+        "type": "comment",
+        "z": "a073baad498bb284",
+        "g": "4126bd8cd63414e5",
+        "name": "BETINPUTCHECK : Full Pseudocode",
+        "info": "// TO PARSE:\n\n// 1. BOOK > GAME NUMBER > TIME \n// 2. SPORTS > LEAGUE > TEAM\n// 3. POINTS > LINE >   \n// 4. CHECK WAIT FOR OTHER LINE\n// 5. CHECK FOR ACCEPTABLE RANGE OF PROFIT\n// 6. IF SO, GO AHEAD",
+        "x": 280,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "8dde91e674783ac8",
+        "type": "comment",
+        "z": "a073baad498bb284",
+        "g": "4126bd8cd63414e5",
+        "name": "DO NODE RED A>B>C TRACKING COMMENTS",
+        "info": "",
+        "x": 700,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "82f37f0f6985ba34",
+        "type": "comment",
+        "z": "a073baad498bb284",
+        "g": "4126bd8cd63414e5",
+        "name": "GIVE IT LINETYPE",
+        "info": "",
+        "x": 1110,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "7b7126508f9af701",
+        "type": "comment",
+        "z": "67ce124139a68312",
+        "name": "worked for 2 functions",
+        "info": "",
+        "x": 220,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "8773e3ee5c59c8a8",
+        "type": "inject",
+        "z": "67ce124139a68312",
+        "name": "Set disableWatch to false",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payloadType": "date",
+        "x": 270,
+        "y": 580,
+        "wires": [
+            [
+                "71c51d19f152c495"
+            ]
+        ]
+    },
+    {
+        "id": "71c51d19f152c495",
+        "type": "function",
+        "z": "67ce124139a68312",
+        "name": "Set disableWatch to false",
+        "func": "flow.set('disableWatch', false);\nreturn { payload: 'disableWatch set to false' };",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 540,
+        "y": 580,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f4d8c1d5b61dd214",
+        "type": "function",
+        "z": "67ce124139a68312",
+        "name": "Watch Files",
+        "func": "let filePaths;\nlet userRootPaths = global.get('userRootPaths');\n\nif (Array.isArray(msg.payload)) {\n    filePaths = msg.payload; // Use payload directly if it's an array\n} else if (typeof msg.payload === 'string') {\n    filePaths = msg.payload.split(','); // Split payload into an array if it's a comma-separated string\n} else {\n    node.error('Invalid payload type. Expected an array or a comma-separated string.');\n    return null;\n}\n\nnode.warn('filepaths : ' + filePaths.length);\n\nconst debounceTimeout = 500; // Adjust this value as needed (in milliseconds)\nconst fileChangeTimers = {};\n\nfilePaths.forEach(path => {\n    if (fs.existsSync(path)) {\n        fs.watch(path, (eventType, filename) => {\n            if (filename) {\n                clearTimeout(fileChangeTimers[path]); // Clear any previous timer\n\n                fileChangeTimers[path] = setTimeout(() => {\n                    const changeMsg = {\n                        payload: path,\n                        filename: filename,\n                        topic: path,\n                        file: filename,\n                        type: eventType,\n                        size: fs.statSync(path).size\n                    };\n                    node.send(changeMsg);\n                }, debounceTimeout);\n            }\n        });\n    } else {\n        node.error(`File ${path} does not exist.`);\n    }\n});\n\nreturn null;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "fs",
+                "module": "fs"
+            }
+        ],
+        "x": 670,
+        "y": 760,
+        "wires": [
+            [
+                "62f51b767c95599c",
+                "167bd4fe1602bc45"
+            ]
+        ]
+    },
+    {
+        "id": "167bd4fe1602bc45",
+        "type": "switch",
+        "z": "67ce124139a68312",
+        "name": "Check Disable Watch",
+        "property": "disableWatch",
+        "propertyType": "flow",
+        "rules": [
+            {
+                "t": "false"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 880,
+        "y": 760,
+        "wires": [
+            [
+                "77cc33f0e6808346"
+            ]
+        ]
+    },
+    {
+        "id": "77cc33f0e6808346",
+        "type": "function",
+        "z": "67ce124139a68312",
+        "name": "Read File",
+        "func": "const filePath = msg.payload;\nfs.readFile(filePath, 'utf8', (err, data) => {\n    if (err) {\n        node.error(err, msg);\n        return null;\n    }\n    msg.payload = data;\n    msg.filename = filePath;\n    node.send(msg);\n});\n\nreturn null;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "fs",
+                "module": "fs"
+            }
+        ],
+        "x": 1080,
+        "y": 760,
+        "wires": [
+            [
+                "5c60136a31a2ec75",
+                "ddb31b995a1b064f"
+            ]
+        ]
+    },
+    {
+        "id": "5c60136a31a2ec75",
+        "type": "function",
+        "z": "67ce124139a68312",
+        "name": "Process File",
+        "func": "// Disable the watch node to prevent recursive triggers\nflow.set('disableWatch', true);",
+        "outputs": 2,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "acorn",
+                "module": "acorn"
+            }
+        ],
+        "x": 1290,
+        "y": 740,
+        "wires": [
+            [
+                "9b9a435bea293656",
+                "58915726be2b9b02",
+                "722cf7231496fff6",
+                "2159df481b09d187"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "9b9a435bea293656",
+        "type": "file",
+        "z": "67ce124139a68312",
+        "name": "Write",
+        "filename": "filename",
+        "filenameType": "msg",
+        "appendNewline": false,
+        "createDir": false,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 1570,
+        "y": 720,
+        "wires": [
+            [
+                "a8fe0f568d008b0a"
+            ]
+        ]
+    },
+    {
+        "id": "a8fe0f568d008b0a",
+        "type": "delay",
+        "z": "67ce124139a68312",
+        "name": "Enable Watch",
+        "pauseType": "delay",
+        "timeout": "1.5",
+        "timeoutUnits": "seconds",
+        "rate": "",
+        "nbRateUnits": "",
+        "randomFirst": "",
+        "randomLast": "",
+        "randomUnits": "seconds",
+        "allowrate": false,
+        "outputs": 1,
+        "x": 1740,
+        "y": 720,
+        "wires": [
+            [
+                "1ccade01e7ab1f58"
+            ]
+        ]
+    },
+    {
+        "id": "1ccade01e7ab1f58",
+        "type": "function",
+        "z": "67ce124139a68312",
+        "name": "Reset Disable Watch",
+        "func": "flow.set('disableWatch', false);\nreturn { payload: 'Watch node enabled' };",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1980,
+        "y": 720,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "35930f14f0c1d149",
+        "type": "comment",
+        "z": "67ce124139a68312",
+        "name": "Inner function ; add AI additions together.",
+        "info": "",
+        "x": 540,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "b898be3168fb9760",
+        "type": "function",
+        "z": "67ce124139a68312",
+        "name": "Inject File Names",
+        "func": "// Assuming githubPath is retrieved from the global context\nlet githubPath = global.get('userRootPaths').github;\nlet documents = global.get('userRootPaths').documents;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "path",
+                "module": "path"
+            }
+        ],
+        "x": 450,
+        "y": 760,
+        "wires": [
+            [
+                "f4d8c1d5b61dd214"
+            ]
+        ]
+    },
+    {
+        "id": "62f51b767c95599c",
+        "type": "debug",
+        "z": "67ce124139a68312",
+        "name": "Debug filename",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "filename",
+        "targetType": "msg",
+        "statusVal": "filename",
+        "statusType": "auto",
+        "x": 880,
+        "y": 800,
+        "wires": []
+    },
+    {
+        "id": "e9b0dea1661ab2a6",
+        "type": "inject",
+        "z": "67ce124139a68312",
+        "name": "Inject File Names",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 220,
+        "y": 760,
+        "wires": [
+            [
+                "b898be3168fb9760"
+            ]
+        ]
+    },
+    {
+        "id": "ddb31b995a1b064f",
+        "type": "debug",
+        "z": "67ce124139a68312",
+        "name": "Debug msg",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "filename",
+        "statusType": "auto",
+        "x": 1270,
+        "y": 880,
+        "wires": []
+    },
+    {
+        "id": "58915726be2b9b02",
+        "type": "debug",
+        "z": "67ce124139a68312",
+        "name": "Debug msg",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "filename",
+        "statusType": "auto",
+        "x": 1590,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "b6f65ea7eb4da1df",
+        "type": "inject",
+        "z": "67ce124139a68312",
+        "name": "Start Chat",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "0",
+        "topic": "",
+        "x": 1400,
+        "y": 1000,
+        "wires": [
+            [
+                "722cf7231496fff6"
+            ]
+        ]
+    },
+    {
+        "id": "722cf7231496fff6",
+        "type": "function",
+        "z": "67ce124139a68312",
+        "name": "Format Payload",
+        "func": "// Extract the user message from the incoming message\nconst userMessage = msg.payload;\n\nif (!userMessage) {\n    node.error(\"No user message provided\");\n    return null;\n}",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1600,
+        "y": 900,
+        "wires": [
+            [
+                "d115becca289c5de"
+            ]
+        ]
+    },
+    {
+        "id": "d115becca289c5de",
+        "type": "ollama-chat",
+        "z": "67ce124139a68312",
+        "name": "",
+        "x": 1790,
+        "y": 900,
+        "wires": [
+            [
+                "810e1d4fd254c839",
+                "dfaea92025465515"
+            ]
+        ]
+    },
+    {
+        "id": "43af3e4dc4268ba0",
+        "type": "debug",
+        "z": "67ce124139a68312",
+        "name": "Stripped Message",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2190,
+        "y": 900,
+        "wires": []
+    },
+    {
+        "id": "810e1d4fd254c839",
+        "type": "function",
+        "z": "67ce124139a68312",
+        "name": "Code Block",
+        "func": "// Ensure msg.payload is defined\nif (!msg.payload) {\n    node.error(\"msg.payload is undefined\");\n    return null;\n}",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1990,
+        "y": 900,
+        "wires": [
+            [
+                "43af3e4dc4268ba0"
+            ]
+        ]
+    },
+    {
+        "id": "dfaea92025465515",
+        "type": "debug",
+        "z": "67ce124139a68312",
+        "name": "Chat Response",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2020,
+        "y": 1000,
+        "wires": []
+    },
+    {
+        "id": "cfe5ade48199dcf3",
+        "type": "function",
+        "z": "67ce124139a68312",
+        "name": "Reset Disable Watch (No Change)",
+        "func": "flow.set('disableWatch', false);\nreturn { payload: 'Watch node enabled (no change)' };",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1880,
+        "y": 800,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2159df481b09d187",
+        "type": "delay",
+        "z": "67ce124139a68312",
+        "name": "Enable Watch",
+        "pauseType": "delay",
+        "timeout": ".3",
+        "timeoutUnits": "seconds",
+        "rate": "",
+        "nbRateUnits": "",
+        "randomFirst": "",
+        "randomLast": "",
+        "randomUnits": "seconds",
+        "allowrate": false,
+        "outputs": 1,
+        "x": 1600,
+        "y": 800,
+        "wires": [
+            [
+                "cfe5ade48199dcf3"
+            ]
+        ]
+    },
+    {
+        "id": "5604bb667c62adce",
+        "type": "function",
+        "z": "67ce124139a68312",
+        "name": "Assets Indexer",
+        "func": "",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "let outputMsg = Object;\n\nconst ROOT_PATHS = {\n    'LOU': {\n        log: 'C:\\\\Users\\\\LOU\\\\.node-red\\\\logs',\n        documents: 'C:\\\\Users\\\\LOU\\\\Documents',\n        chrome: 'C:\\\\Users\\\\LOU\\\\AppData\\\\Local\\\\Google\\\\Chrome SxS\\\\Application\\\\chrome.exe',\n        github: 'C:\\\\Users\\\\LOU\\\\Documents\\\\GitHub',\n        //cimaPrompts: String.raw`C:\\\\Users\\\\LOU\\\\Documents\\\\Sync\\\\CimaMainVault\\\\7 - CimaPrompts\\\\Production`,\n\n    },\n    'PETER': {\n        documents: '/Users/peter/Documents',\n        chrome: '/Applications/Google Chrome Canary.app/Contents/MacOS/Google Chrome Canary',\n        github: '/Users/peter/Documents/GitHub',\n    },\n    'JANE': {\n        documents: '/home/jane/Documents',\n    },\n};\n\nconst TARGET_FOLDERS = [\n    //'Sync/CimaMainVault/7 - CimaPrompts/Production',\n];\n\nfunction getUserRootPaths() {\n    const username = os.userInfo().username.toUpperCase();\n    node.log(`Current user: ${username}`);\n    const userPaths = ROOT_PATHS[username];\n    node.log('User root paths: ' + JSON.stringify(userPaths));\n\n    // Store the user paths in the global context\n    global.set('userRootPaths', userPaths);\n    return userPaths;\n}\n\nfunction indexTargetFolders(rootPaths, targetFolders) {\n    const indexedPaths = {};\n\n    for (const [rootKey, rootPath] of Object.entries(rootPaths)) {\n        node.log(`\nIndexing root path: ${rootKey} - ${rootPath}`);\n        indexedPaths[rootKey] = {};\n\n        for (const folder of targetFolders) {\n            const fullPath = path.join(rootPath, folder);\n            node.log(`Checking target folder: ${fullPath}`);\n\n            if (fs.existsSync(fullPath)) {\n                node.log(`Indexing contents of: ${fullPath}`);\n                indexedPaths[rootKey][folder] = indexDirectory(fullPath);\n            } else {\n                node.log(`Target folder not found: ${fullPath}`);\n            }\n        }\n    }\n\n    // Store the indexed paths in the global context\n    global.set('indexedPaths', indexedPaths);\n\n    return indexedPaths;\n}\n\nfunction indexDirectory(dirPath, baseObj = {}) {\n    const items = fs.readdirSync(dirPath, { withFileTypes: true });\n\n    items.forEach(item => {\n        if (item.isDirectory()) {\n            node.log(`Found directory: ${path.join(dirPath, item.name)}`);\n            baseObj[item.name] = { type: 'directory', path: path.join(dirPath, item.name), contents: {} };\n            indexDirectory(path.join(dirPath, item.name), baseObj[item.name].contents);\n        } else {\n            node.log(`Found file: ${path.join(dirPath, item.name)}`);\n            baseObj[item.name] = { type: 'file', path: path.join(dirPath, item.name) };\n        }\n    });\n\n    return baseObj;\n}\n\nfunction countItems(obj) {\n    const counts = { file: 0, directory: 0 };\n    function count(obj) {\n        for (const item of Object.values(obj)) {\n            if (item.type === 'file') {\n                counts.file++;\n            } else if (item.type === 'directory') {\n                counts.directory++;\n                count(item.contents);\n            } else if (typeof item === 'object') {\n                count(item);\n            }\n        }\n    }\n    count(obj);\n    return counts;\n}\n\nlet userPaths = getUserRootPaths();\nlet indexed = indexTargetFolders(userPaths, TARGET_FOLDERS);\nlet stats = countItems(indexed);\nreturn { payload: stats };\n",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "fs",
+                "module": "fs"
+            },
+            {
+                "var": "path",
+                "module": "path"
+            },
+            {
+                "var": "os",
+                "module": "os"
+            }
+        ],
+        "x": 460,
+        "y": 500,
+        "wires": [
+            [
+                "e83c9d3383a75f0a"
+            ]
+        ]
+    },
+    {
+        "id": "e83c9d3383a75f0a",
+        "type": "debug",
+        "z": "67ce124139a68312",
+        "name": "Debug",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 650,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "06093ec0605a8e14",
+        "type": "inject",
+        "z": "67ce124139a68312",
+        "name": "Start Sequence",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "start",
+        "payloadType": "str",
+        "x": 240,
+        "y": 500,
+        "wires": [
+            [
+                "5604bb667c62adce"
+            ]
+        ]
+    },
+    {
+        "id": "2255b109a23ea4f6",
+        "type": "inject",
+        "z": "67ce124139a68312",
+        "name": "Trigger Update",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 320,
+        "y": 1340,
+        "wires": [
+            [
+                "5c11b0e0be27f868"
+            ]
+        ]
+    },
+    {
+        "id": "5c11b0e0be27f868",
+        "type": "function",
+        "z": "67ce124139a68312",
+        "name": "Prepare Update",
+        "func": "msg.method = 'GET';\nmsg.url = 'http://localhost:1880/flow/your-flow-id';\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 520,
+        "y": 1340,
+        "wires": [
+            [
+                "e55f1c0b5e2b5a23"
+            ]
+        ]
+    },
+    {
+        "id": "e55f1c0b5e2b5a23",
+        "type": "http request",
+        "z": "67ce124139a68312",
+        "name": "Get Flow",
+        "method": "use",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 720,
+        "y": 1340,
+        "wires": [
+            [
+                "ca20c306ae4bf461"
+            ]
+        ]
+    },
+    {
+        "id": "ca20c306ae4bf461",
+        "type": "function",
+        "z": "67ce124139a68312",
+        "name": "Update Function Node",
+        "func": "const functionNodeId = 'your-function-node-id';\nconst newFunctionCode = `\nmsg.payload = \"Updated dynamically!\";\nreturn msg;\n`;\n\nlet flow = msg.payload;\nlet functionNode = flow.nodes.find(node => node.id === functionNodeId);\nif (functionNode) {\n    functionNode.func = newFunctionCode;\n    msg.method = 'PUT';\n    msg.url = `http://localhost:1880/flow/${flow.id}`;\n    msg.payload = flow;\n    return msg;\n} else {\n    node.error('Function node not found');\n    return null;\n}",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 2,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 920,
+        "y": 1340,
+        "wires": [
+            [
+                "1f863bb49d4e2f34"
+            ]
+        ]
+    },
+    {
+        "id": "1f863bb49d4e2f34",
+        "type": "http request",
+        "z": "67ce124139a68312",
+        "name": "Update Flow",
+        "method": "use",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 1120,
+        "y": 1340,
+        "wires": [
+            [
+                "179990bfe6a2bd7e"
+            ]
+        ]
+    },
+    {
+        "id": "179990bfe6a2bd7e",
+        "type": "debug",
+        "z": "67ce124139a68312",
+        "name": "Debug",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "x": 1270,
+        "y": 1340,
+        "wires": []
+    },
+    {
+        "id": "f5bdf20f61bfcf55",
+        "type": "comment",
+        "z": "67ce124139a68312",
+        "name": "Global Assets Indexer",
+        "info": "",
+        "x": 240,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "10f68b36e358e292",
+        "type": "function",
+        "z": "67ce124139a68312",
+        "g": "a586fff4950d8220",
+        "name": "Watch Files",
+        "func": "let filePaths;\nlet userRootPaths = global.get('userRootPaths');\n\nif (Array.isArray(msg.payload)) {\n    filePaths = msg.payload; // Use payload directly if it's an array\n} else if (typeof msg.payload === 'string') {\n    filePaths = msg.payload.split(','); // Split payload into an array if it's a comma-separated string\n} else {\n    node.error('Invalid payload type. Expected an array or a comma-separated string.');\n    return null;\n}\n\nnode.warn('filepaths : ' + filePaths.length);\n\nconst debounceTimeout = 500; // Adjust this value as needed (in milliseconds)\nconst fileChangeTimers = {};\n\nfilePaths.forEach(path => {\n    if (fs.existsSync(path)) {\n        fs.watch(path, (eventType, filename) => {\n            if (filename) {\n                clearTimeout(fileChangeTimers[path]); // Clear any previous timer\n\n                fileChangeTimers[path] = setTimeout(() => {\n                    const changeMsg = {\n                        payload: path,\n                        filename: filename,\n                        topic: path,\n                        file: filename,\n                        type: eventType,\n                        size: fs.statSync(path).size\n                    };\n                    node.send(changeMsg);\n                }, debounceTimeout);\n            }\n        });\n    } else {\n        node.error(`File ${path} does not exist.`);\n    }\n});\n\nreturn null;\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "fs",
+                "module": "fs"
+            }
+        ],
+        "x": 590,
+        "y": 1020,
+        "wires": [
+            [
+                "db6e77bc844bc09d",
+                "e8b81628c45befd9"
+            ]
+        ]
+    },
+    {
+        "id": "fe4819e3d613d93a",
+        "type": "function",
+        "z": "67ce124139a68312",
+        "g": "a586fff4950d8220",
+        "name": "Inject Excel",
+        "func": "// Assuming githubPath is retrieved from the global context\nlet githubPath = global.get('userRootPaths').github;\nlet documents = global.get('userRootPaths').documents;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "path",
+                "module": "path"
+            }
+        ],
+        "x": 410,
+        "y": 1020,
+        "wires": [
+            [
+                "10f68b36e358e292"
+            ]
+        ]
+    },
+    {
+        "id": "08f4933eee0bc124",
+        "type": "inject",
+        "z": "67ce124139a68312",
+        "g": "a586fff4950d8220",
+        "name": "Inject File Names",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 190,
+        "y": 1020,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "db6e77bc844bc09d",
+        "type": "switch",
+        "z": "67ce124139a68312",
+        "g": "a586fff4950d8220",
+        "name": "Check Disable Watch",
+        "property": "disableWatch",
+        "propertyType": "flow",
+        "rules": [
+            {
+                "t": "false"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 820,
+        "y": 1020,
+        "wires": [
+            [
+                "df992b41e14064be"
+            ]
+        ]
+    },
+    {
+        "id": "e8b81628c45befd9",
+        "type": "debug",
+        "z": "67ce124139a68312",
+        "g": "a586fff4950d8220",
+        "name": "Debug filename",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "filename",
+        "targetType": "msg",
+        "statusVal": "filename",
+        "statusType": "auto",
+        "x": 800,
+        "y": 1060,
+        "wires": []
+    },
+    {
+        "id": "0a20fbf7a9ae7a4f",
+        "type": "function",
+        "z": "67ce124139a68312",
+        "g": "a586fff4950d8220",
+        "name": "Reset Disable Watch (No Change)",
+        "func": "flow.set('disableWatch', false);\nreturn { payload: 'Watch node enabled (no change)' };",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1020,
+        "y": 1140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b939c2ad8f432d14",
+        "type": "delay",
+        "z": "67ce124139a68312",
+        "g": "a586fff4950d8220",
+        "name": "Enable Watch",
+        "pauseType": "delay",
+        "timeout": ".3",
+        "timeoutUnits": "seconds",
+        "rate": "",
+        "nbRateUnits": "",
+        "randomFirst": "",
+        "randomLast": "",
+        "randomUnits": "seconds",
+        "allowrate": false,
+        "outputs": 1,
+        "x": 1060,
+        "y": 1080,
+        "wires": [
+            [
+                "0a20fbf7a9ae7a4f"
+            ]
+        ]
+    },
+    {
+        "id": "dab8435d998c9375",
+        "type": "comment",
+        "z": "67ce124139a68312",
+        "g": "a586fff4950d8220",
+        "name": "Excel Watch",
+        "info": "",
+        "x": 410,
+        "y": 980,
+        "wires": []
+    },
+    {
+        "id": "df992b41e14064be",
+        "type": "function",
+        "z": "67ce124139a68312",
+        "g": "a586fff4950d8220",
+        "name": "Trigger Loader File",
+        "func": "// Function node to trigger A0_GeneralLoader.js\nlet githubPath = global.get('userRootPaths').github;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "fs",
+                "module": "fs"
+            },
+            {
+                "var": "path",
+                "module": "path"
+            },
+            {
+                "var": "childProcess",
+                "module": "child_process"
+            }
+        ],
+        "x": 1050,
+        "y": 1020,
+        "wires": [
+            [
+                "b939c2ad8f432d14"
+            ]
+        ]
+    }
+]
