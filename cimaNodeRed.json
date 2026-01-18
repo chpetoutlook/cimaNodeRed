@@ -281,6 +281,30 @@
         "wholemsg": "false"
     },
     {
+        "id": "14d05059c9c5dcb2",
+        "type": "mongodb4-client",
+        "name": "Cima Main Connection",
+        "protocol": "mongodb",
+        "hostname": "127.0.0.1",
+        "port": "22000",
+        "dbName": "CimaMain",
+        "appName": "",
+        "authSource": "admin",
+        "authMechanism": "SCRAM-SHA-256",
+        "tls": false,
+        "tlsCAFile": "",
+        "tlsCertificateKeyFile": "",
+        "tlsInsecure": false,
+        "connectTimeoutMS": "",
+        "socketTimeoutMS": "0",
+        "minPoolSize": "0",
+        "maxPoolSize": "",
+        "maxIdleTimeMS": "0",
+        "uri": "mongodb://127.0.0.1:22000",
+        "advanced": "{}",
+        "uriTabActive": "tab-uri-advanced"
+    },
+    {
         "id": "033fe16e9cc49266",
         "type": "function",
         "z": "a3db7a0bed089aba",
@@ -1614,106 +1638,5 @@
         "x": 700,
         "y": 520,
         "wires": []
-    },
-    {
-        "id": "1f92eed3352f8aa5",
-        "type": "tab",
-        "label": "BetInputCheck",
-        "disabled": false,
-        "info": "",
-        "env": []
-    },
-    {
-        "id": "14d05059c9c5dcb2",
-        "type": "mongodb4-client",
-        "name": "Cima Main Connection",
-        "protocol": "mongodb",
-        "hostname": "127.0.0.1",
-        "port": "22000",
-        "dbName": "CimaMain",
-        "appName": "",
-        "authSource": "admin",
-        "authMechanism": "SCRAM-SHA-256",
-        "tls": false,
-        "tlsCAFile": "",
-        "tlsCertificateKeyFile": "",
-        "tlsInsecure": false,
-        "connectTimeoutMS": "",
-        "socketTimeoutMS": "0",
-        "minPoolSize": "0",
-        "maxPoolSize": "",
-        "maxIdleTimeMS": "0",
-        "uri": "mongodb://127.0.0.1:22000",
-        "advanced": "{}",
-        "uriTabActive": "tab-uri-advanced"
-    },
-    {
-        "id": "f4f02f7b9a092dd3",
-        "type": "function",
-        "z": "1f92eed3352f8aa5",
-        "g": "9e02f8f5e79de5a0",
-        "name": "TEST JSON 1",
-        "func": "msg.payload = {\n  scrapeResults: {\n    scraped_sport: \"Football\",\n    scraped_linetype: \"POINTSPREAD\",\n    scraped_line: \"6.5\",\n    scraped_points: \"6.5\",\n    scraped_odds: 100,\n    scraped_team: \"N. Carolina A & T\",\n    scraped_opponent: \"NC Central\",\n    scraped_league: \"CFB\",\n    scraped_game_number: \"309225\",\n    scraped_book: \"SBGGlobal\",\n    scraped_timestamp: \"2025-09-04T02:43:54.460Z\"\n  },\n  fullBet: {\n    _id: \"64fcde48596995d08bb7750e\",\n    bet1: {\n      team1: \"NC Central\",\n      book1: \"Bovada\",\n      line1PointsAmFloat: 6.5,\n      line1PriceAm: 100,\n      book1AccountAssigned: \"Sportsbetting_Chucky\",\n      usLineSpeed: \"2\",\n      euLineSpeed: \"default\",\n      expressServerCheck: \"default\",\n      cityServerCheck: \"default\",\n      rabbitChildCheck: \"default\"\n    },\n    bet2: {\n      team2: \"N. Carolina A & T\",\n      book2: \"SBGGlobal\",\n      line2PointsAmFloat: -3,\n      line2PriceAm: 115,\n      book2AccountAssigned: \"Betdsi_Chucky\",\n      usLineSpeed: \"2\",\n      euLineSpeed: \"default\",\n      expressServerCheck: \"default\",\n      cityServerCheck: \"default\",\n      childProcessCheck: \"default\"\n    },\n    primaryBets: {\n      Stage1: \"default\",\n      Stage2: \"default\",\n      Stage3: \"default\",\n      Stage4a: \"default\",\n      Stage4b: \"default\",\n      Wager1Placed: \"default\",\n      Wager2Placed: \"default\"\n    },\n    Rabbit1: {\n      Stage1: \"default\",\n      Stage2: \"default\",\n      Stage3: \"default\",\n      Stage4a: \"default\",\n      Stage4b: \"default\",\n      Wager1Placed: \"default\",\n      Wager2Placed: \"default\"\n    },\n    Rabbit2: {\n      Stage1: \"default\",\n      Stage2: \"default\",\n      Stage3: \"default\",\n      Stage4a: \"default\",\n      Stage4b: \"default\",\n      Wager1Placed: \"default\",\n      Wager2Placed: \"default\"\n    },\n    Lay: {\n      Stage1: \"default\",\n      Stage2: \"default\",\n      Stage3: \"default\",\n      Stage4: \"default\",\n      LayState: \"default\"\n    },\n    rawDBSID: \"64fcde48596995d08bb7750e\",\n    alertName: \"Middle Alert\",\n    timeStamp: \"2023-09-09T21:05:53.000Z\",\n    timeStampEST: \"09/09/23 05:05:53pm\",\n    betType: \"MIDDLEBET\",\n    pointsDifference: 3.5,\n    roughSum: 215,\n    potentialProfitLowLeg: 100,\n    potentialProfitHighLeg: 115,\n    potentialProfitLine1: 100,\n    potentialProfitLine2: 115,\n    potentialProfitMiddle: 215,\n    potentialCostLine1: -100,\n    potentialCostLine2: -100,\n    potentialLoss: -200,\n    middleVigRate: 215,\n    lineType: \"POINTSPREAD\",\n    sport: \"Football\",\n    league: \"CFB\",\n    gameNumber: \"309225\",\n    line1PriceAmTop: \"100\",\n    line2PriceAmGUI: \"115\",\n    line1FlagCheckPassed: \"default\",\n    line1PriceConfirm: \"default\",\n    line2FlagCheckPassed: \"default\",\n    line2PriceConfirm: \"default\",\n    middleVigMargin: \"default\",\n    vigSplitMargin: \"default\",\n    moneylineMargin: \"default\",\n    confirmedBet1Time: \"default\",\n    confirmedBet1Points: \"default\",\n    confirmedBet1Line: \"default\",\n    confirmedBet1Slip: \"default\",\n    confirmedBet2Time: \"default\",\n    confirmedBet2Points: \"default\",\n    confirmedBet2Line: \"default\",\n    confirmedBet2Slip: \"default\",\n    confirmedbetType: \"default\",\n    confirmedPointsDifference: \"default\",\n    confirmedProfit: \"default\",\n    confirmedMargin: \"default\",\n    fastBookLocation: \"US\",\n    conditionCheck: \"default\",\n    bet1Placed: \"default\",\n    bet2Placed: \"default\",\n    Error: \"none\",\n    errorLine1PriceAm: \"none\",\n    errorLine2PriceAm: \"none\",\n    windowsLeft: 707,\n    finalStatus: \"default\",\n    __v: 0\n  }\n};\nreturn msg;\n",
-        "outputs": 1,
-        "timeout": "",
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 380,
-        "y": 320,
-        "wires": [
-            [
-                "272b6d76a23994ba"
-            ]
-        ]
-    },
-    {
-        "id": "991f5a75c2dd331f",
-        "type": "inject",
-        "z": "1f92eed3352f8aa5",
-        "g": "9e02f8f5e79de5a0",
-        "name": "START INJECT",
-        "props": [
-            {
-                "p": "payload"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "START",
-        "payloadType": "str",
-        "x": 200,
-        "y": 320,
-        "wires": [
-            [
-                "f4f02f7b9a092dd3",
-                "14efe5eefe47b302"
-            ]
-        ]
-    },
-    {
-        "id": "14efe5eefe47b302",
-        "type": "function",
-        "z": "1f92eed3352f8aa5",
-        "g": "9e02f8f5e79de5a0",
-        "name": "TEST JSON 2",
-        "func": "msg.payload = {\n  scrapeResults: {\n    scraped_sport: \"FOOTBALL\",\n    scraped_linetype: \"POINTSPREAD\",\n    scraped_line: \"6.5\",\n    scraped_points: \"6.5\",\n    scraped_odds: 100,\n    scraped_team: \"N. Carolina A & T\",\n    scraped_opponent: \"NC Central\",\n    scraped_league: \"CFB\",\n    scraped_game_number: \"309225\",\n    scraped_book: \"SBGGlobal\",\n    scraped_timestamp: \"2025-09-04T02:43:54.460Z\"\n  },\n  fullBet: {\n    _id: \"64fcde48596995d08bb7750e\",\n    bet1: {\n      team1: \"NC Central\",\n      book1: \"Bovada\",\n      line1PointsAmFloat: 6.5,\n      line1PriceAm: 100,\n      book1AccountAssigned: \"Sportsbetting_Chucky\",\n      usLineSpeed: \"2\",\n      euLineSpeed: \"default\",\n      expressServerCheck: \"default\",\n      cityServerCheck: \"default\",\n      rabbitChildCheck: \"default\"\n    },\n    bet2: {\n      team2: \"N. Carolina A & T\",\n      book2: \"SBGGlobal\",\n      line2PointsAmFloat: -3,\n      line2PriceAm: 115,\n      book2AccountAssigned: \"Betdsi_Chucky\",\n      usLineSpeed: \"2\",\n      euLineSpeed: \"default\",\n      expressServerCheck: \"default\",\n      cityServerCheck: \"default\",\n      childProcessCheck: \"default\"\n    },\n    primaryBets: {\n      Stage1: \"default\",\n      Stage2: \"default\",\n      Stage3: \"default\",\n      Stage4a: \"default\",\n      Stage4b: \"default\",\n      Wager1Placed: \"default\",\n      Wager2Placed: \"default\"\n    },\n    Rabbit1: {\n      Stage1: \"default\",\n      Stage2: \"default\",\n      Stage3: \"default\",\n      Stage4a: \"default\",\n      Stage4b: \"default\",\n      Wager1Placed: \"default\",\n      Wager2Placed: \"default\"\n    },\n    Rabbit2: {\n      Stage1: \"default\",\n      Stage2: \"default\",\n      Stage3: \"default\",\n      Stage4a: \"default\",\n      Stage4b: \"default\",\n      Wager1Placed: \"default\",\n      Wager2Placed: \"default\"\n    },\n    Lay: {\n      Stage1: \"default\",\n      Stage2: \"default\",\n      Stage3: \"default\",\n      Stage4: \"default\",\n      LayState: \"default\"\n    },\n    rawDBSID: \"64fcde48596995d08bb7750e\",\n    alertName: \"Middle Alert\",\n    timeStamp: \"2023-09-09T21:05:53.000Z\",\n    timeStampEST: \"09/09/23 05:05:53pm\",\n    betType: \"MIDDLEBET\",\n    pointsDifference: 3.5,\n    roughSum: 215,\n    potentialProfitLowLeg: 100,\n    potentialProfitHighLeg: 115,\n    potentialProfitLine1: 100,\n    potentialProfitLine2: 115,\n    potentialProfitMiddle: 215,\n    potentialCostLine1: -100,\n    potentialCostLine2: -100,\n    potentialLoss: -200,\n    middleVigRate: 215,\n    lineType: \"POINTSPREAD\",\n    sport: \"Football\",\n    league: \"CFB\",\n    gameNumber: \"309225\",\n    line1PriceAmTop: \"100\",\n    line2PriceAmGUI: \"115\",\n    line1FlagCheckPassed: \"default\",\n    line1PriceConfirm: \"default\",\n    line2FlagCheckPassed: \"default\",\n    line2PriceConfirm: \"default\",\n    middleVigMargin: \"default\",\n    vigSplitMargin: \"default\",\n    moneylineMargin: \"default\",\n    confirmedBet1Time: \"default\",\n    confirmedBet1Points: \"default\",\n    confirmedBet1Line: \"default\",\n    confirmedBet1Slip: \"default\",\n    confirmedBet2Time: \"default\",\n    confirmedBet2Points: \"default\",\n    confirmedBet2Line: \"default\",\n    confirmedBet2Slip: \"default\",\n    confirmedbetType: \"default\",\n    confirmedPointsDifference: \"default\",\n    confirmedProfit: \"default\",\n    confirmedMargin: \"default\",\n    fastBookLocation: \"US\",\n    conditionCheck: \"default\",\n    bet1Placed: \"default\",\n    bet2Placed: \"default\",\n    Error: \"none\",\n    errorLine1PriceAm: \"none\",\n    errorLine2PriceAm: \"none\",\n    windowsLeft: 707,\n    finalStatus: \"default\",\n    __v: 0\n  }\n};\nreturn msg;\n",
-        "outputs": 1,
-        "timeout": "",
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 360,
-        "y": 380,
-        "wires": [
-            [
-                "272b6d76a23994ba"
-            ]
-        ]
     }
 ]
