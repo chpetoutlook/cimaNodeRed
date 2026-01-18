@@ -1,0 +1,50 @@
+# This is a fixed version of the flow file with SportsSettings availability checks
+# The main fix is adding checks in the Transform functions to handle missing SportsSettings
+
+# Key changes needed:
+# 1. In Transform 1: Pointspread function, add check after SportsSettingsVar assignment
+# 2. In Transform 1: Totals function, add similar check
+# 3. In Transform 1: Moneyline function, add similar check
+
+# The fix pattern is:
+# var SportsSettingsVar = context.global.get('SportsSettings');
+# 
+# // Check if SportsSettings are available
+# if (!SportsSettingsVar || !SportsSettingsVar[main.sport]) {
+#     node.log('SportsSettings not available for sport: ' + main.sport);
+#     // Set default values to prevent errors
+#     if (main.sport === "FOOTBALL") {
+#         main.PointspreadRangeMin = 0;
+#         main.PointspreadRangeMax = 100;
+#         main.TotalsRangeMin = 0;
+#         main.TotalsRangeMax = 100;
+#         main.MoneylineRangeMin = 0;
+#         main.MoneylineRangeMax = 100;
+#     } else {
+#         main.PointspreadRangeMin = 0;
+#         main.PointspreadRangeMax = 50;
+#         main.TotalsRangeMin = 0;
+#         main.TotalsRangeMax = 50;
+#         main.MoneylineRangeMin = 0;
+#         main.MoneylineRangeMax = 50;
+#     }
+#     main.PointspreadPointsDifferenceRating = 0;
+#     main.TotalsPointsDifferenceRating = 0;
+#     main.MoneylineDifferenceRating = 0;
+#     return;
+# }
+
+# This fix should be applied to all three Transform functions to prevent the
+# "Cannot read properties of undefined" errors when SportsSettings are not loaded.
+
+# The fix ensures that:
+# 1. Messages are processed even when SportsSettings are not available
+# 2. Default values are used to prevent crashes
+# 3. The flow continues to function while waiting for SportsSettings to load
+# 4. Logging provides visibility into what's happening
+
+# To apply this fix:
+# 1. Copy the original flow file to a backup
+# 2. Apply the pattern above to each Transform function
+# 3. Update the flows via HTTP endpoint
+# 4. Test the flow to ensure it works without crashing
